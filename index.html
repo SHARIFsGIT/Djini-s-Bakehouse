@@ -13,60 +13,52 @@
 </head>
 
 <body class="text-[#777777]">
-  <nav class="fixed inset-x-0 top-0 z-30 w-full border border-gray-100 bg-white/80 py-1 px-10 shadow backdrop-blur-lg">
-
-    <div class="px-4">
-      <div class="flex items-center justify-between">
-        <div class="flex shrink-0">
-          <a aria-current="page" class="flex items-center" href="/">
-            <img class="h-20 w-auto ms-40" src="images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="">
-            <p class="sr-only">Djini’s Bakehouse</p>
-          </a>
-        </div>
-        <div class="hidden md:flex md:items-center md:justify-center md:gap-5">
-          <a aria-current="page"
-            class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
-            href="#">Home</a>
-          <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
-            href="#">Products</a>
-          <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
-            href="#">Pricing</a>
-          <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
-            href="#">Online Order</a>
-          <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
-            href="#">About</a>
-        </div>
-        <div class="flex items-center justify-end gap-3">
-          <a class="hidden items-center justify-center rounded-xl bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-all duration-150 hover:bg-gray-50 sm:inline-flex"
-            href="/login">Sign up</a>
-          <a class="inline-flex items-center justify-center rounded-xl bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-            href="/login">Login</a>
-        </div>
+  <nav class="fixed inset-x-0 top-0 z-30 w-full border border-gray-100 bg-white/80 py-2 px-4 shadow backdrop-blur-lg">
+    <div class="flex items-center justify-between">
+      <a class="flex items-center" href="/">
+        <img class="h-16 w-auto" src="images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="Djini’s Bakehouse">
+        <span class="sr-only">Djini’s Bakehouse</span>
+      </a>
+      <button id="menu-btn" class="block md:hidden focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+      <div id="menu" class="hidden md:flex md:items-center md:gap-4">
+        <a href="#" class="text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Home</a>
+        <a href="#" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
+        <a href="#" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Pricing</a>
+        <a href="#" class="text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order Online</a>
+        <a href="#" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">About</a>
+      </div>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="/signup" class="text-gray-900 bg-white px-4 py-2 rounded-xl shadow">Sign Up</a>
+        <a href="/login" class="text-white bg-blue-600 px-4 py-2 rounded-xl shadow">Login</a>
       </div>
     </div>
   </nav>
-  <header class="container mx-auto px-4 my-16 lg:my-28 lg:flex lg:items-center lg:gap-20 ">
-    <div class="space-y-6 flex-1">
-      <h1 class="text-5xl md:text-7xl font-bold text-gray-700">Enjoy your food with <span class="text-red-500">Djini’s
-          Bakehouse</span>
-      </h1>
-      <p>At <span class="text-red-500 font-bold"> Djini’s Bakehouse </span> every treat is made fresh with love and
-        care. From golden crusts to soft, fluffy centers, we ensure that each creation is crafted to perfection.
-        Discover the joy of freshly baked goodness that brings warmth and happiness to your day, every time.</p>
+
+  <header class="mt-20 container mx-auto px-4 lg:flex lg:items-center lg:gap-20">
+    <div class="space-y-6 text-center lg:text-left flex-1">
+      <h1 class="text-6xl md:text-6xl font-bold text-gray-700">Enjoy your food with <br><span
+          class="text-red-500">Djini’s Bakehouse</span></h1>
+      <p class="text-justify">At <span class="text-red-500 font-bold"> Djini’s Bakehouse </span> every treat is made
+        fresh with love and care. From golden crusts to soft, fluffy centers, we ensure that each creation is crafted to
+        perfection. Discover the joy of freshly baked goodness that brings warmth and happiness to your day, every time.
+      </p>
       <button
-        class="text-white bg-gradient-to-br from-[#ff8f45] to-[#ff5050] hover:bg-gradient-to-bl duration-500 focus:ring-0 hover:scale-105 font-bold rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2 shadow-xl">Book
-        now <img class="inline-block w-4" src="images/arrow.png" alt="">
+        class="bg-gradient-to-br from-[#ff8f45] to-[#ff5050] text-white px-6 py-3 rounded-lg hover:scale-105 transition">
+        Book Now
       </button>
     </div>
-    <div class="relative lg:flex-1">
-      <img class="rounded-3xl" src="images/Banner photo 2.png" alt="" />
-    </div>
+    <div class="flex justify-center lg:flex-1">
+      <img class="rounded-3xl mt-6 w-3/4 lg:w-full" src="images/Banner photo 2.png" alt="Djini’s Bakehouse Banner">
     </div>
   </header>
 
   <main class="p-5 md:p-0 lg:p-0 container mx-auto">
     <!-- start featured products -->
-    <section class="my-16 lg:my-28">
+    <section class="my-6 lg:my-28">
       <div class="text-center p-4 space-y-4">
         <h2 class="text-5xl font-bold text-gray-700">Discover <span class="text-red-500">Djini’s Bakehouse</span></h2>
         <p>
@@ -166,9 +158,9 @@
       <div class="text-center p-4 space-y-4">
         <h2 class="text-5xl font-bold text-gray-700">Freshly Baked Items at <span class="text-red-500">Djini’s
             Bakehouse</span></h2>
-        <p>
+        <p class="text-center lg:mx-56">
           At Djini’s Bakehouse, every day begins with the aroma of freshly baked goodness. From crusty artisan breads to
-          buttery pastries <br> and decadent sweets, our baked delights are crafted with the finest ingredients for
+          buttery pastries and decadent sweets, our baked delights are crafted with the finest ingredients for
           unbeatable flavor and freshness. Stop by and treat yourself to a taste of perfection!
         </p>
       </div>
@@ -327,9 +319,9 @@
 
   <footer class="bg-red-50">
     <div class="container mx-auto py-4 px-4">
-      <div class="flex flex-col md:flex-row gap-6 items-center justify-between mb-20">
+      <div class="flex flex-col md:flex-row gap-6 items-center justify-between mb-2">
         <div>
-          <img class="h-56" src="images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="" />
+          <img class="h-72" src="images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="" />
         </div>
         <div class="flex items-center gap-4">
           <h3 class="text-xl me-10">
@@ -394,6 +386,7 @@
     </div>
     <h5 class="text-center font-semibold">All credits @ Djini’s Bakehouse</h5>
   </footer>
+
 </body>
 
 </html>
