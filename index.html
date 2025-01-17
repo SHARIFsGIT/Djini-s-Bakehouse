@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Djini’s Bakehouse</title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="images/Djini_s_Bakehouse_1_-removebg-preview.png" type="image/x-icon">
+  <!-- tailwind cdn -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="text-[#777777]">
+  <nav class="fixed inset-x-0 top-0 z-30 w-full border border-gray-100 bg-white/80 py-1 px-10 shadow backdrop-blur-lg">
+
+    <div class="px-4">
+      <div class="flex items-center justify-between">
+        <div class="flex shrink-0">
+          <a aria-current="page" class="flex items-center" href="/">
+            <img class="h-20 w-auto ms-40" src="images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="">
+            <p class="sr-only">Djini’s Bakehouse</p>
+          </a>
+        </div>
+        <div class="hidden md:flex md:items-center md:justify-center md:gap-5">
+          <a aria-current="page"
+            class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+            href="#">Home</a>
+          <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+            href="#">Products</a>
+          <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+            href="#">Pricing</a>
+          <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+            href="#">Online Order</a>
+          <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+            href="#">About</a>
+        </div>
+        <div class="flex items-center justify-end gap-3">
+          <a class="hidden items-center justify-center rounded-xl bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-all duration-150 hover:bg-gray-50 sm:inline-flex"
+            href="/login">Sign up</a>
+          <a class="inline-flex items-center justify-center rounded-xl bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            href="/login">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <header class="container mx-auto px-4 my-16 lg:my-28 lg:flex lg:items-center lg:gap-20 ">
+    <div class="space-y-6 flex-1 text-justify">
+      <h1 class="text-5xl md:text-7xl font-bold text-gray-700">Enjoy your food with <span class="text-red-500">Djini’s
+          Bakehouse</span>
+      </h1>
+      <p>At <span class="text-red-500 font-bold"> Djini’s Bakehouse </span> every treat is made fresh with love and
+        care. From golden crusts to soft, fluffy centers, we ensure that each creation is crafted to perfection.
+        Discover the joy of freshly baked goodness that brings warmth and happiness to your day, every time.</p>
+      <button
+        class="text-white bg-gradient-to-br from-[#ff8f45] to-[#ff5050] hover:bg-gradient-to-bl duration-500 focus:ring-0 hover:scale-105 font-bold rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2 shadow-xl">Book
+        now <img class="inline-block w-4" src="images/arrow.png" alt="">
+      </button>
+    </div>
+    <div class="relative lg:flex-1">
+      <img class="rounded-3xl" src="images/Banner photo 2.png" alt="" />
+    </div>
+    </div>
+  </header>
+
+  <main class="p-5 md:p-0 lg:p-0 container mx-auto">
+    <!-- start featured products -->
+    <section class="my-16 lg:my-28">
+      <div class="text-center p-4 space-y-4">
+        <h2 class="text-5xl font-bold text-gray-700">Discover <span class="text-red-500">Djini’s Bakehouse</span></h2>
+        <p>
+          Indulge in the magic of <span class="text-red-500 font-semibold">Djini’s Bakehouse</span>, where every bite is
+          a celebration
+          of warmth, sweetness, and freshly baked perfection.
+        </p>
+      </div>
+      <div class="space-y-8 md:space-y-0 my-6 grid md:grid-cols-2 lg:grid-cols-4 gap-8 items-center md:justify-between">
+        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-orange-50 text-center space-y-6 shadow-md">
+          <img class="rounded-lg" src="images/Apple Strudle.jpg" alt="Apple Strudle" class="mx-auto" />
+          <h3 class="font-bold text-2xl text-gray-700">Apple Strudle</h3>
+          <p>Savor the warm, flaky goodness of apple strudel</p>
+        </div>
+        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-red-50 text-center space-y-6 shadow-md">
+          <img class="rounded-lg" src="images/Bagelen.jpg" alt="Bagelen" class="mx-auto" />
+          <h3 class="font-bold text-2xl text-gray-700">Bagelen</h3>
+          <p>A crispy, sweet toasted bread often enjoyed as a snack or dessert</p>
+        </div>
+        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-orange-50 text-center space-y-6 shadow-md">
+          <img class="rounded-lg" src="images/Baguette.jpg" alt="Baguette" class="mx-auto" />
+          <h3 class="font-bold text-2xl text-gray-700">Baguette</h3>
+          <p>A long, crusty French bread, perfect for sandwiches or with butter and jam</p>
+        </div>
+        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-red-50 text-center space-y-6 shadow-md">
+          <img class="rounded-lg" src="images/Beef Curry Puff.jpg" alt="Beef Curry Puff" class="mx-auto" />
+          <h3 class="font-bold text-2xl text-gray-700">Beef Curry Puff</h3>
+          <p>A flaky pastry filled with savory beef curry, spices, and potatoes. Perfect snack!</p>
+        </div>
+        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-red-50 text-center space-y-6 shadow-md">
+          <img class="rounded-lg" src="images/Blueberry cheese bread.jpg" alt="Blueberry cheese bread"
+            class="mx-auto" />
+          <h3 class="font-bold text-2xl text-gray-700">Blueberry Cheesebread</h3>
+          <p>A delightful bread combining creamy cheese and sweet blueberries, perfect for tea</p>
+        </div>
+        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-orange-50 text-center space-y-6 shadow-md">
+          <img class="rounded-lg" src="images/Cheese Straw.jpg" alt="Cheese Straw" class="mx-auto" />
+          <h3 class="font-bold text-2xl text-gray-700">Cheese Straw</h3>
+          <p>Golden, flaky sticks packed with savory, cheesy goodness in every bite</p>
+        </div>
+        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-red-50 text-center space-y-6 shadow-md">
+          <img class="rounded-lg" src="images/Choco Cream Puff.jpg" alt="Choco Cream Puff" class="mx-auto" />
+          <h3 class="font-bold text-2xl text-gray-700">Choco Cream Puff</h3>
+          <p>Delicate, airy pastry bursting with smooth, decadent chocolate cream</p>
+        </div>
+        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-orange-50 text-center space-y-6 shadow-md">
+          <img class="rounded-lg" src="images/Christmas stollen.jpg" alt="Christmas stollen" class="mx-auto" />
+          <h3 class="font-bold text-2xl text-gray-700">Christmas Stollen</h3>
+          <p>A festive treat of spiced, fruit-filled bread dusted with sugar</p>
+        </div>
+        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-orange-50 text-center space-y-6 shadow-md">
+          <img class="rounded-lg" src="images/Croffle.jpg" alt="Croffle" class="mx-auto" />
+          <h3 class="font-bold text-2xl text-gray-700">Croffle</h3>
+          <p>Try buttery, crispy croffles – the perfect mix of croissant & waffle at Djini’s Bakehouse!</p>
+        </div>
+        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-red-50 text-center space-y-6 shadow-md">
+          <img class="rounded-lg" src="images/Croissant.jpg" alt="Croissant" class="mx-auto" />
+          <h3 class="font-bold text-2xl text-gray-700">Croissant</h3>
+          <p>Flaky, buttery, and golden – our croissants are baked fresh daily at Djini’s Bakehouse!</p>
+        </div>
+        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-orange-50 text-center space-y-6 shadow-md">
+          <img class="rounded-lg" src="images/Double Choco Cream.jpg" alt="Double Choco Cream" class="mx-auto" />
+          <h3 class="font-bold text-2xl text-gray-700">Double Choco Cream</h3>
+          <p>Indulge in our Double Choco Cream – rich, creamy, and chocolatey bliss in every bite!</p>
+        </div>
+        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-red-50 text-center space-y-6 shadow-md">
+          <img class="rounded-lg" src="images/Doughnuts.jpg" alt="Doughnuts" class="mx-auto" />
+          <h3 class="font-bold text-2xl text-gray-700">Doughnuts</h3>
+          <p>Soft, fluffy, and topped to perfection – our doughnuts are pure delight in every bite!</p>
+        </div>
+        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-red-50 text-center space-y-6 shadow-md">
+          <img class="rounded-lg" src="images/Floss bread.jpg" alt="Floss bread" class="mx-auto" />
+          <h3 class="font-bold text-2xl text-gray-700">Floss Bread</h3>
+          <p>Soft bread meets savory perfection with our irresistible floss topping!</p>
+        </div>
+        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-orange-50 text-center space-y-6 shadow-md">
+          <img class="rounded-lg" src="images/Foccacia Art.jpg" alt="Foccacia Art" class="mx-auto" />
+          <h3 class="font-bold text-2xl text-gray-700">Foccacia Art</h3>
+          <p>Edible art on focaccia – fresh, flavorful, and beautifully crafted!</p>
+        </div>
+        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-red-50 text-center space-y-6 shadow-md">
+          <img class="rounded-lg" src="images/Foccacia.jpg" alt="Foccacia" class="mx-auto" />
+          <h3 class="font-bold text-2xl text-gray-700">Foccacia</h3>
+          <p>Soft, herby, and deliciously golden – our focaccia is baked to perfection!</p>
+        </div>
+        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-orange-50 text-center space-y-6 shadow-md">
+          <img class="rounded-lg" src="images/Fruit Cushion Pastry.jpg" alt="Fruit Cushion Pastry" class="mx-auto" />
+          <h3 class="font-bold text-2xl text-gray-700">Fruit Cushion Pastry</h3>
+          <p>Light, flaky pastry topped with creamy filling and fresh, vibrant fruits – a true delight!</p>
+        </div>
+      </div>
+    </section>
+    <!-- end featured products -->
+
+    <!-- start news -->
+    <section class="my-16 lg:my-28">
+      <div class="text-center p-4 space-y-4">
+        <h2 class="text-5xl font-bold text-gray-700">Freshly Baked Items at <span class="text-red-500">Djini’s
+            Bakehouse</span></h2>
+        <p>
+          At Djini’s Bakehouse, every day begins with the aroma of freshly baked goodness. From crusty artisan breads to
+          buttery pastries <br> and decadent sweets, our baked delights are crafted with the finest ingredients for
+          unbeatable flavor and freshness. Stop by and treat yourself to a taste of perfection!
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:items-center md:justify-center gap-6 md:space-y-0">
+        <div class="border rounded-lg p-5 space-y-4 shadow-2xl hover:scale-105 duration-700">
+          <img src="images/Maritozzo.jpg" alt="" class="w-full" />
+          <p class="text-sm">Feb 05, 2024</p>
+          <h3 class="text-xl font-bold text-gray-700">
+            Maritozzo
+          </h3>
+          <p>
+            Experience the rich, creamy delight of our Maritozzo, a classic Italian treat at its finest!
+          </p>
+        </div>
+        <div class="border rounded-lg p-5 space-y-4 shadow-2xl hover:scale-105 duration-700">
+          <img src="images/Pretzel and Bagels.jpg" alt="" class="w-full" />
+          <p class="text-sm">Feb 07, 2024</p>
+          <h3 class="text-xl font-bold text-gray-700">
+            Pretzel and Bagels
+          </h3>
+          <p>
+            From soft, salty pretzels to chewy, flavorful bagels, we bake perfection every day!
+          </p>
+        </div>
+        <div class="border rounded-lg p-5 space-y-4 hover:scale-105 duration-700 shadow-2xl">
+          <img src="images/Rhum Horn.jpg" alt="" class="w-full" />
+          <p class="text-sm">Feb 11, 2024</p>
+          <h3 class="text-xl font-bold text-gray-700">
+            Rhum Horn
+          </h3>
+          <p>
+            Delight in our Rhum Horn – crisp pastry filled with rich, rum-infused cream!
+          </p>
+        </div>
+        <div class="border rounded-lg p-5 space-y-4 hover:scale-105 duration-700 shadow-2xl">
+          <img src="images/Strawberry Maritozzo.jpg" alt="" class="w-full" />
+          <p class="text-sm">Feb 15, 2024</p>
+          <h3 class="text-xl font-bold text-gray-700">
+            Strawberry Maritozzo
+          </h3>
+          <p>
+            Enjoy our Strawberry Maritozzo – soft brioche filled with luscious cream and fresh strawberries!
+          </p>
+        </div>
+        <div class="border rounded-lg p-5 space-y-4 hover:scale-105 duration-700 shadow-2xl">
+          <img src="images/Strawberry Mille Fuille.jpg" alt="" class="w-full" />
+          <p class="text-sm">Feb 16, 2024</p>
+          <h3 class="text-xl font-bold text-gray-700">
+            Strawberry Mille Fuille
+          </h3>
+          <p>
+            Layers of crisp pastry, velvety cream, and fresh strawberries make our Strawberry Mille-Feuille
+            irresistible!
+          </p>
+        </div>
+        <div class="border rounded-lg p-5 space-y-4 hover:scale-105 duration-700 shadow-2xl">
+          <img src="images/Strawberry Puff.jpg" alt="" class="w-full" />
+          <p class="text-sm">Feb 18, 2024</p>
+          <h3 class="text-xl font-bold text-gray-700">
+            Strawberry Puff
+          </h3>
+          <p>
+            Flaky, golden puff pastry filled with cream and topped with fresh strawberries – a treat you can't resist!
+          </p>
+        </div>
+        <div class="border rounded-lg p-5 space-y-4 hover:scale-105 duration-700 shadow-2xl">
+          <img src="images/Triple cheese bread.jpg" alt="" class="w-full" />
+          <p class="text-sm">Feb 20, 2024</p>
+          <h3 class="text-xl font-bold text-gray-700">
+            Triple Cheese Bread
+          </h3>
+          <p>
+            Soft, cheesy, and packed with triple the flavor – our Triple Cheese Bread is a savory delight!
+          </p>
+        </div>
+        <div class="border rounded-lg p-5 space-y-4 hover:scale-105 duration-700 shadow-2xl">
+          <img src="images/Val Au Vent.jpg" alt="" class="w-full" />
+          <p class="text-sm">Feb 22, 2024</p>
+          <h3 class="text-xl font-bold text-gray-700">
+            Val Au Vent
+          </h3>
+          <p>
+            Delicate and flaky, our Vol-au-Vent is filled with savory goodness in every bite!
+          </p>
+        </div>
+        <div class="border rounded-lg p-5 space-y-4 hover:scale-105 duration-700 shadow-2xl">
+          <img src="images/Woll Roll Bread.jpg" alt="" class="w-full" />
+          <p class="text-sm">Feb 24, 2024</p>
+          <h3 class="text-xl font-bold text-gray-700">
+            Woll Roll Bread
+          </h3>
+          <p>
+            Soft, fluffy, and beautifully swirled – our Wool Roll Bread is a feast for the eyes and the palate!
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- end news -->
+
+    <!-- start meet super -->
+    <section
+      class="my-16 lg:my-28 px-16 py-20 grid grid-cols-1 lg:grid-cols-2 items-center gap-8 bg-gradient-to-r from-[#FF8938] to-[#FF0000] rounded-lg">
+      <div class="space-y-6 text-white">
+        <h2 class="text-5xl font-bold">Meet Our Loyal Customers
+        </h2>
+        <p class="text-justify pr-8">
+          At Djini’s Bakehouse, we take pride in serving our amazing clients. While there are countless stories behind
+          each bite, most share a common love for our handcrafted pastries and baked delights. Each moment spent here is
+          a blend of authentic flavors and heartfelt connections. Join the family today!
+        </p>
+        <button type="button"
+          class="text-red-500 bg-white focus:ring-4 focus:outline-none focus:ring-pink-500 dark:focus:ring-pink-100 hover:scale-105 transition duration-700 font-bold rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2">
+          Show All
+        </button>
+      </div>
+      <div class="space-y-12 relative">
+        <div class="relative rounded-lg bg-white p-10 space-y-4 w-10/12 ml-auto opacity-80 shadow-2xl">
+          <img src="images/client.png" alt="client"
+            class="absolute -left-6 -top-6 border-4 bg-white rounded-full w-16 h-16" />
+          <p>
+            Djini’s Bakehouse is amazing! Their pastries are fresh, flavorful & perfect. The friendly staff and cozy
+            atmosphere make every visit special. Highly recommend! 🌟🌟🌟🌟🌟
+          </p>
+          <h3 class="font-bold text-gray-700">Shariful Islam</h3>
+          <p>Engineer</p>
+        </div>
+        <div class="absolute left-0 top-2/4 bottom-0 -translate-y-2/4 m-auto w-10/12 z-10 shadow-2xl">
+          <div class="relative rounded-lg bg-white p-10 space-y-4">
+            <img src="images/client2.png" alt="client"
+              class="absolute -left-6 -top-6 w-16 h-16 border-4 bg-white rounded-full" />
+            <p>
+              Absolutely love Djini’s Bakehouse! Their baked goods are delicious, fresh, and full of flavor. The
+              blueberry cheesebread is a must-try. Great service and cozy vibes! 🌟🌟🌟🌟
+            </p>
+            <h3 class="font-bold text-gray-700">Budiman</h3>
+            <div class="flex justify-between">
+              <p>Chef</p>
+              <img src="images/circles.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="relative rounded-lg bg-white p-10 space-y-4 w-10/12 ml-auto opacity-50 shadow-2xl">
+          <img src="images/client.png" alt="client"
+            class="absolute -left-6 -top-6 w-16 h-16 border-4 bg-white rounded-full" />
+          <p>
+            We are providing the best and suitable home insurance services for
+            the people who are interested to treatment
+          </p>
+          <h3 class="font-bold text-gray-700">Ilham Yuda</h3>
+          <p>Businessman</p>
+        </div>
+      </div>
+    </section>
+    <!-- end meet super -->
+  </main>
+
+  <footer class="bg-red-50">
+    <div class="container mx-auto py-4 px-4">
+      <div class="flex flex-col md:flex-row gap-6 items-center justify-between mb-20">
+        <div>
+          <img class="h-56" src="images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="" />
+        </div>
+        <div class="flex items-center gap-4">
+          <h3 class="text-xl me-10">
+            Become a part of us?
+          </h3>
+          <button type="button"
+            class="text-white bg-gradient-to-br from-[#FF8938] to-[#FF0000] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 hover:scale-105 duration-500 transition font-bold rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2">
+            Contact
+          </button>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-center md:text-start">
+        <div class="my-8 space-y-4">
+          <h3 class="text-xl text-gray-700 font-bold">Quick Links</h3>
+          <a href="#" class="block">Home</a>
+          <a href="#" class="block">Djini’s Bakehouse</a>
+          <a href="#" class="block">About Us</a>
+          <a href="#" class="block">Privacy Policy</a>
+        </div>
+        <div class="my-8 space-y-4">
+          <h3 class="text-xl text-gray-700 font-bold">Our Service</h3>
+          <a href="#" class="block">Custom Orders</a>
+          <a href="#" class="block">Online Ordering</a>
+          <a href="#" class="block">Seasonal Specials</a>
+          <a href="#" class="block">Gift Packaging</a>
+        </div>
+        <div class="my-8 space-y-4">
+          <h3 class="text-xl text-gray-700 font-bold">Help</h3>
+          <a href="#" class="block">FAQs</a>
+          <a href="#" class="block">Contact Us</a>
+        </div>
+        <div class="my-8 space-y-4">
+          <h3 class="text-xl text-gray-700 font-bold">
+            Be a part of our team
+          </h3>
+          <!-- subscribe -->
+          <div class="flex items-center justify-center md:justify-start">
+            <input type="email" placeholder="Email address" class="bg-transparent border-b-2 py-2 focus:outline-none" />
+            <button type="button"
+              class="text-white bg-gradient-to-br from-[#FF8938] to-[#FF0000] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 hover:scale-105 transition font-bold rounded-full text-xl p-2 text-center -ml-4 mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                stroke="currentColor" class="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+          </div>
+          <!-- social links -->
+          <div class="space-x-4">
+            <a href="#" class="w-6 h-6 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path
+                  d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+              </svg></a>
+            <a href="#" class="w-6 h-6 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+              </svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h5 class="text-center font-semibold">All credits @ Djini’s Bakehouse</h5>
+  </footer>
+</body>
+
+</html>
