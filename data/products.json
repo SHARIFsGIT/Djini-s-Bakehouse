@@ -1,0 +1,877 @@
+[
+    {
+      "id": "apple-strudel-1",
+      "name": "Apple Strudel",
+      "price": 6.99,
+      "originalPrice": 8.99,
+      "description": "Savor the warm, flaky goodness of apple strudel with cinnamon-dusted apples wrapped in delicate pastry.",
+      "longDescription": "Our Apple Strudel is a traditional European pastry that combines thinly sliced apples, cinnamon, sugar, and raisins, all wrapped in layers of delicate, flaky pastry. Baked to golden perfection, each slice offers the perfect balance of sweet and tart flavors with a hint of warm spices. Served with a dusting of powdered sugar, this classic dessert is perfect for breakfast, afternoon tea, or as a comforting sweet treat any time of day.",
+      "image": "images/Apple Strudle.jpg",
+      "gallery": [
+        "images/Apple Strudle.jpg",
+        "images/products/apple-strudel-2.jpg",
+        "images/products/apple-strudel-3.jpg",
+        "images/products/apple-strudel-slice.jpg"
+      ],
+      "category": "pastry",
+      "categories": ["pastry", "dessert"],
+      "tags": ["apple", "pastry", "dessert", "sweet"],
+      "rating": 4.8,
+      "reviewCount": 124,
+      "popularity": 95,
+      "onSale": true,
+      "discountPercentage": 22,
+      "isNew": false,
+      "limited": false,
+      "dateAdded": "2023-03-15T00:00:00Z",
+      "ingredients": [
+        "Flour", "Butter", "Apples", "Sugar", "Cinnamon", "Raisins", "Powdered Sugar"
+      ],
+      "nutrition": {
+        "Calories": "320 kcal",
+        "Fat": "14g",
+        "Carbohydrates": "45g",
+        "Protein": "4g",
+        "Sugar": "22g"
+      },
+      "allergens": ["Wheat", "Dairy"],
+      "storageTips": "Store at room temperature for up to 2 days or refrigerate for up to 5 days. Warm in oven before serving for best taste.",
+      "servingSize": "1 slice (100g)"
+    },
+    {
+      "id": "bagelen-1",
+      "name": "Bagelen",
+      "price": 4.50,
+      "description": "A crispy, sweet toasted bread often enjoyed as a snack or dessert with a sprinkle of sugar on top.",
+      "longDescription": "Bagelen is a popular Indonesian sweet toasted bread that's crispy on the outside and slightly chewy on the inside. Made from bread slices that are brushed with butter and sugar, then baked until perfectly golden and crispy. Our Bagelen has a delightful sweetness that makes it perfect as a snack with tea or coffee. Each piece is carefully baked to achieve the perfect texture and flavor balance.",
+      "image": "images/Bagelen.jpg",
+      "gallery": [
+        "images/Bagelen.jpg",
+        "images/products/bagelen-2.jpg",
+        "images/products/bagelen-3.jpg" 
+      ],
+      "category": "bread",
+      "categories": ["bread", "snack"],
+      "tags": ["crispy", "sweet", "snack", "toasted", "indonesian"],
+      "rating": 4.5,
+      "reviewCount": 86,
+      "popularity": 85,
+      "onSale": false,
+      "isNew": false,
+      "limited": false,
+      "dateAdded": "2023-05-20T00:00:00Z",
+      "ingredients": [
+        "Bread", "Butter", "Sugar", "Milk"
+      ],
+      "nutrition": {
+        "Calories": "180 kcal",
+        "Fat": "6g",
+        "Carbohydrates": "28g",
+        "Protein": "3g",
+        "Sugar": "12g"
+      },
+      "allergens": ["Wheat", "Dairy"],
+      "storageTips": "Store in an airtight container at room temperature for up to 1 week.",
+      "servingSize": "2 pieces (50g)"
+    },
+    {
+      "id": "baguette-1",
+      "name": "Baguette",
+      "price": 3.99,
+      "description": "A long, crusty French bread, perfect for sandwiches or with butter and jam.",
+      "longDescription": "Our authentic French Baguette is crafted with just four simple ingredients: flour, water, salt, and yeast. Each baguette is hand-shaped and baked in a stone hearth to achieve that classic crusty exterior and light, airy interior. The distinctive slash marks on top aren't just decorative - they allow the bread to expand perfectly during baking. Enjoy it fresh with butter and jam for breakfast, slice it for gourmet sandwiches, or serve it alongside soups and salads.",
+      "image": "images/Baguette.jpg",
+      "gallery": [
+        "images/Baguette.jpg",
+        "images/products/baguette-2.jpg",
+        "images/products/baguette-3.jpg"
+      ],
+      "category": "bread",
+      "categories": ["bread", "french"],
+      "tags": ["crusty", "french", "traditional", "sandwich"],
+      "rating": 4.7,
+      "reviewCount": 152,
+      "popularity": 92,
+      "onSale": false,
+      "isNew": false,
+      "limited": false,
+      "dateAdded": "2023-01-10T00:00:00Z",
+      "ingredients": [
+        "Flour", "Water", "Salt", "Yeast"
+      ],
+      "nutrition": {
+        "Calories": "150 kcal",
+        "Fat": "1g",
+        "Carbohydrates": "30g",
+        "Protein": "5g",
+        "Sugar": "1g"
+      },
+      "allergens": ["Wheat"],
+      "storageTips": "Best eaten the same day. To store, wrap in paper (not plastic) and consume within 2 days.",
+      "servingSize": "1/6 baguette (50g)"
+    },
+    {
+      "id": "beef-curry-puff-1",
+      "name": "Beef Curry Puff",
+      "price": 5.25,
+      "description": "A flaky pastry filled with savory beef curry, spices, and potatoes. Perfect snack!",
+      "longDescription": "Our Beef Curry Puffs feature a golden, flaky pastry shell filled with seasoned ground beef, tender potatoes, and a blend of authentic curry spices. The filling is slow-cooked to perfection to develop deep flavors, then wrapped in our special laminated dough that creates dozens of crisp, buttery layers when baked. The result is a satisfying savory treat that's perfect as a grab-and-go lunch, appetizer, or anytime snack.",
+      "image": "images/Beef Curry Puff.jpg",
+      "gallery": [
+        "images/Beef Curry Puff.jpg",
+        "images/products/beef-curry-puff-2.jpg",
+        "images/products/beef-curry-puff-3.jpg"
+      ],
+      "category": "savory",
+      "categories": ["savory", "pastry", "snack"],
+      "tags": ["beef", "curry", "savory", "spicy", "pastry"],
+      "rating": 4.6,
+      "reviewCount": 98,
+      "popularity": 88,
+      "onSale": false,
+      "isNew": true,
+      "limited": false,
+      "dateAdded": "2024-01-05T00:00:00Z",
+      "ingredients": [
+        "Flour", "Butter", "Beef", "Potatoes", "Onions", "Curry Powder", "Garlic", "Ginger"
+      ],
+      "nutrition": {
+        "Calories": "220 kcal",
+        "Fat": "12g",
+        "Carbohydrates": "22g",
+        "Protein": "8g",
+        "Sugar": "1g"
+      },
+      "allergens": ["Wheat", "Dairy"],
+      "storageTips": "Keep refrigerated for up to 3 days. Reheat in oven at 350°F for 5-7 minutes for best texture.",
+      "servingSize": "1 piece (80g)"
+    },
+    {
+      "id": "christmas-stollen-1",
+      "name": "Festive Stollen",
+      "price": 12.99,
+      "description": "Traditional fruit bread filled with dried fruits, nuts, and dusted with powdered sugar.",
+      "longDescription": "Our Festive Stollen is a traditional German holiday bread filled with rum-soaked dried fruits, candied citrus peel, and toasted almonds. The dough is enriched with butter and marzipan, giving it a rich, tender texture. Each loaf is baked to golden perfection, then brushed with melted butter and generously dusted with powdered sugar, creating the iconic snow-covered appearance. This celebratory bread is perfect for holiday gatherings or as a special homemade gift.",
+      "image": "images/Christmas stollen.jpg",
+      "gallery": [
+        "images/Christmas stollen.jpg",
+        "images/products/stollen-2.jpg",
+        "images/products/stollen-3.jpg"
+      ],
+      "category": "special",
+      "categories": ["bread", "special", "seasonal"],
+      "tags": ["festive", "fruit", "nuts", "traditional", "seasonal", "holiday"],
+      "rating": 4.9,
+      "reviewCount": 64,
+      "popularity": 96,
+      "onSale": false,
+      "isNew": false,
+      "limited": true,
+      "dateAdded": "2023-11-15T00:00:00Z",
+      "ingredients": [
+        "Flour", "Butter", "Milk", "Sugar", "Dried Fruits", "Almonds", "Marzipan", "Rum", "Spices", "Powdered Sugar"
+      ],
+      "nutrition": {
+        "Calories": "310 kcal",
+        "Fat": "16g",
+        "Carbohydrates": "38g",
+        "Protein": "5g",
+        "Sugar": "22g"
+      },
+      "allergens": ["Wheat", "Dairy", "Tree Nuts"],
+      "storageTips": "Keeps well for 2-3 weeks when wrapped tightly. Flavors develop and improve over time.",
+      "servingSize": "1 slice (80g)"
+    },
+    {
+      "id": "croissant-1",
+      "name": "Croissant",
+      "price": 3.50,
+      "description": "A buttery, flaky French pastry, golden-brown and delicious.",
+      "longDescription": "Our classic French Croissants are made using traditional techniques with over 60 layers of butter and dough, creating that distinctive flaky texture and buttery flavor. Each croissant is hand-rolled, shaped into the iconic crescent, and baked until golden-brown. The outside is shatteringly crisp while the inside remains soft and slightly chewy. Perfect for breakfast with jam and coffee, or split and filled for a gourmet sandwich.",
+      "image": "images/Croissant.jpg",
+      "gallery": [
+        "images/Croissant.jpg",
+        "images/products/croissant-2.jpg",
+        "images/products/croissant-3.jpg"
+      ],
+      "category": "pastry",
+      "categories": ["pastry", "french", "breakfast"],
+      "tags": ["buttery", "flaky", "french", "breakfast"],
+      "rating": 4.7,
+      "reviewCount": 235,
+      "popularity": 98,
+      "onSale": false,
+      "isNew": false,
+      "limited": false,
+      "dateAdded": "2023-01-05T00:00:00Z",
+      "ingredients": [
+        "Flour", "Butter", "Sugar", "Yeast", "Salt", "Milk"
+      ],
+      "nutrition": {
+        "Calories": "240 kcal",
+        "Fat": "14g",
+        "Carbohydrates": "25g",
+        "Protein": "4g",
+        "Sugar": "3g"
+      },
+      "allergens": ["Wheat", "Dairy"],
+      "storageTips": "Best enjoyed fresh. Can be stored in a paper bag for 1 day or frozen for up to 1 month.",
+      "servingSize": "1 croissant (60g)"
+    },
+    {
+      "id": "triple-cheese-bread-1",
+      "name": "Triple Cheese Bread",
+      "price": 6.74,
+      "originalPrice": 8.99,
+      "description": "A savory bread loaded with three different types of cheese baked to perfection.",
+      "longDescription": "Our Triple Cheese Bread combines the rich flavors of cheddar, mozzarella, and parmesan cheese baked into a soft, flavorful loaf. The cheese is layered throughout the dough, creating pockets of melty goodness and a beautiful marbled effect. The crust is golden and slightly crisp, while the inside remains moist and tender. This savory bread is perfect for sandwiches, alongside soups, or simply enjoyed on its own with a bit of butter.",
+      "image": "images/Triple cheese bread.jpg",
+      "gallery": [
+        "images/Triple cheese bread.jpg",
+        "images/products/cheese-bread-2.jpg",
+        "images/products/cheese-bread-3.jpg"
+      ],
+      "category": "bread",
+      "categories": ["bread", "savory", "cheese"],
+      "tags": ["cheese", "savory", "baked"],
+      "rating": 4.8,
+      "reviewCount": 115,
+      "popularity": 94,
+      "onSale": true,
+      "discountPercentage": 25,
+      "isNew": false,
+      "limited": false,
+      "dateAdded": "2023-07-12T00:00:00Z",
+      "ingredients": [
+        "Flour", "Milk", "Cheddar Cheese", "Mozzarella Cheese", "Parmesan Cheese", "Butter", "Yeast", "Salt", "Herbs"
+      ],
+      "nutrition": {
+        "Calories": "280 kcal",
+        "Fat": "12g",
+        "Carbohydrates": "32g",
+        "Protein": "10g",
+        "Sugar": "2g"
+      },
+      "allergens": ["Wheat", "Dairy"],
+      "storageTips": "Store in an airtight container for up to 3 days or freeze for up to 1 month.",
+      "servingSize": "1 slice (75g)"
+    },
+    {
+      "id": "maritozzo-1",
+      "name": "Maritozzo",
+      "price": 7.50,
+      "description": "Experience the rich, creamy delight of our Maritozzo, a classic Italian treat at its finest!",
+      "longDescription": "The Maritozzo is a beloved Roman pastry consisting of a soft, slightly sweet brioche bun that's sliced and generously filled with lightly sweetened whipped cream. Our version follows the traditional recipe, creating a light, airy bun with hints of orange zest and vanilla. The bun is sliced and filled with a cloud of freshly whipped cream that's just sweet enough to complement the brioche. Perfect for breakfast or an afternoon treat with espresso.",
+      "image": "images/Maritozzo.jpg",
+      "gallery": [
+        "images/Maritozzo.jpg",
+        "images/products/maritozzo-2.jpg",
+        "images/products/maritozzo-3.jpg"
+      ],
+      "category": "pastry",
+      "categories": ["pastry", "italian", "dessert"],
+      "tags": ["creamy", "italian", "sweet", "dessert", "filled"],
+      "rating": 4.9,
+      "reviewCount": 78,
+      "popularity": 90,
+      "onSale": false,
+      "isNew": true,
+      "limited": false,
+      "dateAdded": "2023-12-20T00:00:00Z",
+      "ingredients": [
+        "Flour", "Butter", "Eggs", "Sugar", "Yeast", "Orange Zest", "Vanilla", "Heavy Cream"
+      ],
+      "nutrition": {
+        "Calories": "360 kcal",
+        "Fat": "22g",
+        "Carbohydrates": "35g",
+        "Protein": "5g",
+        "Sugar": "18g"
+      },
+      "allergens": ["Wheat", "Dairy", "Eggs"],
+      "storageTips": "Best consumed on the day of purchase. Can be refrigerated for up to 24 hours, but the texture will change.",
+      "servingSize": "1 maritozzo (120g)"
+    },
+    {
+      "id": "chocolate-croissant-1",
+      "name": "Chocolate Croissant",
+      "price": 4.25,
+      "description": "Buttery, flaky croissant filled with rich dark chocolate.",
+      "longDescription": "Our Chocolate Croissants, also known as Pain au Chocolat, feature the same flaky, buttery layers as our classic croissants, but with the indulgent addition of high-quality dark chocolate batons folded into the center. As the croissant bakes, the chocolate softens to create a perfect melty core within the crisp, golden pastry. The combination of buttery pastry and rich chocolate makes for an irresistible breakfast treat or afternoon indulgence.",
+      "image": "images/products/chocolate-croissant.jpg",
+      "gallery": [
+        "images/products/chocolate-croissant.jpg",
+        "images/products/chocolate-croissant-2.jpg",
+        "images/products/chocolate-croissant-3.jpg"
+      ],
+      "category": "pastry",
+      "categories": ["pastry", "french", "breakfast", "chocolate"],
+      "tags": ["chocolate", "buttery", "flaky", "french", "breakfast", "sweet"],
+      "rating": 4.8,
+      "reviewCount": 189,
+      "popularity": 96,
+      "onSale": false,
+      "isNew": false,
+      "limited": false,
+      "dateAdded": "2023-02-15T00:00:00Z",
+      "ingredients": [
+        "Flour", "Butter", "Sugar", "Yeast", "Salt", "Milk", "Dark Chocolate"
+      ],
+      "nutrition": {
+        "Calories": "280 kcal",
+        "Fat": "16g",
+        "Carbohydrates": "28g",
+        "Protein": "4g",
+        "Sugar": "8g"
+      },
+      "allergens": ["Wheat", "Dairy", "May Contain Soy"],
+      "storageTips": "Best enjoyed fresh. Can be stored in a paper bag for 1 day or frozen for up to 1 month.",
+      "servingSize": "1 croissant (75g)"
+    },
+    {
+      "id": "sourdough-bread-1",
+      "name": "Artisan Sourdough",
+      "price": 7.99,
+      "description": "Traditional sourdough bread with a crispy crust and tangy flavor.",
+      "longDescription": "Our Artisan Sourdough is crafted using a 100-year-old starter and traditional long fermentation techniques. The dough ferments for 24 hours, developing complex flavors and that signature tangy sourdough taste. Each loaf is hand-shaped and scored, then baked on a stone hearth to create a crackling crust and moist, open crumb structure. The result is a bread with character – slightly chewy, full of flavor, and with an irresistible crust that crackles when pressed.",
+      "image": "images/products/sourdough.jpg",
+      "gallery": [
+        "images/products/sourdough.jpg",
+        "images/products/sourdough-2.jpg",
+        "images/products/sourdough-3.jpg"
+      ],
+      "category": "bread",
+      "categories": ["bread", "artisan"],
+      "tags": ["sourdough", "artisan", "crusty", "tangy", "traditional"],
+      "rating": 4.9,
+      "reviewCount": 211,
+      "popularity": 97,
+      "onSale": false,
+      "isNew": false,
+      "limited": false,
+      "dateAdded": "2023-03-10T00:00:00Z",
+      "ingredients": [
+        "Flour", "Water", "Salt", "Sourdough Starter"
+      ],
+      "nutrition": {
+        "Calories": "120 kcal",
+        "Fat": "0.5g",
+        "Carbohydrates": "24g",
+        "Protein": "4g",
+        "Sugar": "0g"
+      },
+      "allergens": ["Wheat"],
+      "storageTips": "Store cut-side down on a cutting board for up to 3 days. Freezes well for up to 3 months.",
+      "servingSize": "1 slice (50g)"
+    },
+    {
+      "id": "carrot-cake-1",
+      "name": "Carrot Cake",
+      "price": 38.99,
+      "description": "Moist carrot cake with cream cheese frosting, walnuts, and a hint of spice.",
+      "longDescription": "Our Carrot Cake is a perfect balance of sweet and spice, made with freshly grated carrots, crushed pineapple, toasted walnuts, and a blend of warm spices including cinnamon, nutmeg, and ginger. The cake is incredibly moist and topped with our signature cream cheese frosting – silky smooth and not too sweet. Decorated with a sprinkle of chopped walnuts and delicate marzipan carrots, this cake is perfect for birthdays, celebrations, or any occasion that calls for something special.",
+      "image": "images/products/carrot-cake.jpg",
+      "gallery": [
+        "images/products/carrot-cake.jpg",
+        "images/products/carrot-cake-2.jpg",
+        "images/products/carrot-cake-3.jpg"
+      ],
+      "category": "cake",
+      "categories": ["cake", "dessert"],
+      "tags": ["carrot", "cream cheese", "spice", "nuts", "celebration", "whole cake"],
+      "rating": 4.8,
+      "reviewCount": 142,
+      "popularity": 93,
+      "onSale": false,
+      "isNew": false,
+      "limited": false,
+      "dateAdded": "2023-04-20T00:00:00Z",
+      "ingredients": [
+        "Flour", "Sugar", "Vegetable Oil", "Eggs", "Carrots", "Pineapple", "Walnuts", "Cinnamon", "Nutmeg", "Ginger", "Cream Cheese", "Butter", "Powdered Sugar", "Vanilla"
+      ],
+      "nutrition": {
+        "Calories": "420 kcal",
+        "Fat": "24g",
+        "Carbohydrates": "48g",
+        "Protein": "5g",
+        "Sugar": "32g"
+      },
+      "allergens": ["Wheat", "Dairy", "Eggs", "Tree Nuts"],
+      "storageTips": "Refrigerate for up to 5 days. Bring to room temperature before serving for best flavor.",
+      "servingSize": "1 slice (120g)",
+      "serves": "10-12 people"
+    },
+    {
+      "id": "tiramisu-1",
+      "name": "Tiramisu",
+      "price": 6.99,
+      "description": "Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream.",
+      "longDescription": "Our Tiramisu is made according to the authentic Italian recipe, featuring layers of ladyfingers soaked in espresso and a hint of liqueur, alternated with a light, airy mascarpone cream. The dessert is dusted with premium cocoa powder just before serving, adding a slight bitterness that balances the sweet, creamy layers. Each spoonful delivers the perfect balance of coffee, cream, and subtle sweetness that makes tiramisu a beloved classic. Served in a individual glass container for an elegant presentation.",
+      "image": "images/products/tiramisu.jpg",
+      "gallery": [
+        "images/products/tiramisu.jpg",
+        "images/products/tiramisu-2.jpg",
+        "images/products/tiramisu-3.jpg"
+      ],
+      "category": "dessert",
+      "categories": ["dessert", "italian"],
+      "tags": ["italian", "coffee", "creamy", "mascarpone", "individual portion"],
+      "rating": 4.9,
+      "reviewCount": 168,
+      "popularity": 95,
+      "onSale": false,
+      "isNew": false,
+      "limited": false,
+      "dateAdded": "2023-05-15T00:00:00Z",
+      "ingredients": [
+        "Ladyfingers", "Espresso", "Mascarpone Cheese", "Eggs", "Sugar", "Cocoa Powder", "Coffee Liqueur"
+      ],
+      "nutrition": {
+        "Calories": "350 kcal",
+        "Fat": "22g",
+        "Carbohydrates": "30g",
+        "Protein": "7g",
+        "Sugar": "24g"
+      },
+      "allergens": ["Wheat", "Dairy", "Eggs", "May Contain Alcohol"],
+      "storageTips": "Keep refrigerated. Best consumed within 2 days of purchase.",
+      "servingSize": "1 cup (120g)"
+    },
+    {
+      "id": "pretzel-1",
+      "name": "Bavarian Pretzel",
+      "price": 4.50,
+      "description": "Traditional German-style soft pretzel with a dark, shiny crust and soft interior.",
+      "longDescription": "Our Bavarian Pretzels are hand-twisted and prepared in the traditional German style. Each pretzel is dipped in a food-grade lye solution before baking, which gives it that distinctive dark, shiny crust and unique pretzel flavor. The interior remains soft and chewy with a subtle malty taste. Topped with coarse sea salt, these pretzels are perfect on their own or served with mustard, cheese dip, or butter. A perfect savory snack any time of day.",
+      "image": "images/products/pretzel.jpg",
+      "gallery": [
+        "images/products/pretzel.jpg",
+        "images/products/pretzel-2.jpg",
+        "images/products/pretzel-3.jpg"
+      ],
+      "category": "savory",
+      "categories": ["savory", "snack", "german"],
+      "tags": ["pretzel", "german", "savory", "salted", "snack"],
+      "rating": 4.7,
+      "reviewCount": 103,
+      "popularity": 88,
+      "onSale": false,
+      "isNew": false,
+      "limited": false,
+      "dateAdded": "2023-06-10T00:00:00Z",
+      "ingredients": [
+        "Flour", "Water", "Yeast", "Salt", "Butter", "Brown Sugar", "Food-Grade Lye", "Coarse Sea Salt"
+      ],
+      "nutrition": {
+        "Calories": "260 kcal",
+        "Fat": "3g",
+        "Carbohydrates": "52g",
+        "Protein": "7g",
+        "Sugar": "2g"
+      },
+      "allergens": ["Wheat", "Contains Small Amount of Dairy"],
+      "storageTips": "Best eaten fresh. Can be stored in a paper bag for 1 day.",
+      "servingSize": "1 pretzel (120g)"
+    },
+    {
+      "id": "chocolate-chip-cookie-1",
+      "name": "Chocolate Chip Cookie",
+      "price": 2.99,
+      "description": "Classic cookie with a soft center, crisp edges, and plenty of chocolate chips.",
+      "longDescription": "Our Chocolate Chip Cookies are the perfect combination of crisp edges and soft, chewy centers. Made with European-style butter and a mix of brown and white sugar for depth of flavor, each cookie is generously studded with high-quality chocolate chips that melt into perfect pools when baked. We use a special resting period for the dough to develop complex flavors and the perfect texture. Slightly sprinkled with sea salt before baking to enhance the chocolate flavor, these cookies are an elevated version of the classic favorite.",
+      "image": "images/products/chocolate-chip-cookie.jpg",
+      "gallery": [
+        "images/products/chocolate-chip-cookie.jpg",
+        "images/products/chocolate-chip-cookie-2.jpg",
+        "images/products/chocolate-chip-cookie-3.jpg"
+      ],
+      "category": "dessert",
+      "categories": ["dessert", "cookie"],
+      "tags": ["cookie", "chocolate", "sweet", "classic", "snack"],
+      "rating": 4.8,
+      "reviewCount": 225,
+      "popularity": 99,
+      "onSale": false,
+      "isNew": false,
+      "limited": false,
+      "dateAdded": "2023-01-20T00:00:00Z",
+      "ingredients": [
+        "Flour", "Butter", "Brown Sugar", "White Sugar", "Eggs", "Vanilla Extract", "Chocolate Chips", "Baking Soda", "Salt"
+      ],
+      "nutrition": {
+        "Calories": "220 kcal",
+        "Fat": "12g",
+        "Carbohydrates": "28g",
+        "Protein": "2g",
+        "Sugar": "18g"
+      },
+      "allergens": ["Wheat", "Dairy", "Eggs"],
+      "storageTips": "Store in an airtight container at room temperature for up to 5 days.",
+      "servingSize": "1 cookie (50g)"
+    },
+    {
+      "id": "cinnamon-roll-1",
+      "name": "Cinnamon Roll",
+      "price": 4.75,
+      "description": "Soft, swirled pastry with cinnamon-sugar filling and cream cheese frosting.",
+      "longDescription": "Our Cinnamon Rolls feature a tender, enriched dough that's rolled with a generous filling of butter, brown sugar, and aromatic cinnamon. After baking to a perfect golden brown, each roll is topped with our signature cream cheese frosting that melts slightly into the warm swirls. The result is a heavenly combination of soft, fragrant pastry and sweet, tangy frosting. These oversized rolls are perfect for a special breakfast treat or an indulgent dessert.",
+      "image": "images/products/cinnamon-roll.jpg",
+      "gallery": [
+        "images/products/cinnamon-roll.jpg",
+        "images/products/cinnamon-roll-2.jpg",
+        "images/products/cinnamon-roll-3.jpg"
+      ],
+      "category": "pastry",
+      "categories": ["pastry", "breakfast", "dessert"],
+      "tags": ["cinnamon", "sweet", "frosting", "breakfast", "dessert"],
+      "rating": 4.9,
+      "reviewCount": 194,
+      "popularity": 97,
+      "onSale": false,
+      "isNew": false,
+      "limited": false,
+      "dateAdded": "2023-02-05T00:00:00Z",
+      "ingredients": [
+        "Flour", "Butter", "Milk", "Eggs", "Sugar", "Cinnamon", "Brown Sugar", "Cream Cheese", "Vanilla", "Yeast"
+      ],
+      "nutrition": {
+        "Calories": "390 kcal",
+        "Fat": "18g",
+        "Carbohydrates": "52g",
+        "Protein": "6g",
+        "Sugar": "28g"
+      },
+      "allergens": ["Wheat", "Dairy", "Eggs"],
+      "storageTips": "Best enjoyed fresh. Can be refrigerated for up to 3 days. Warm before serving.",
+      "servingSize": "1 roll (110g)"
+    },
+    {
+      "id": "focaccia-1",
+      "name": "Rosemary Focaccia",
+      "price": 6.50,
+      "description": "Italian flatbread topped with olive oil, rosemary, and sea salt.",
+      "longDescription": "Our Rosemary Focaccia is a traditional Italian flatbread made with a high-hydration dough that creates a light, airy interior with large, irregular holes. Before baking, the dough is dimpled by hand and generously drizzled with extra virgin olive oil, fresh rosemary, and flaky sea salt. This creates a crisp, golden crust with those signature focaccia wells that catch the flavorful oil and herbs. Perfect as a side for soups and salads, as sandwich bread, or simply enjoyed on its own.",
+      "image": "images/products/focaccia.jpg",
+      "gallery": [
+        "images/products/focaccia.jpg",
+        "images/products/focaccia-2.jpg",
+        "images/products/focaccia-3.jpg"
+      ],
+      "category": "bread",
+      "categories": ["bread", "italian", "savory"],
+      "tags": ["italian", "herb", "olive oil", "flatbread", "savory"],
+      "rating": 4.7,
+      "reviewCount": 117,
+      "popularity": 89,
+      "onSale": false,
+      "isNew": false,
+      "limited": false,
+      "dateAdded": "2023-05-05T00:00:00Z",
+      "ingredients": [
+        "Flour", "Water", "Olive Oil", "Fresh Rosemary", "Sea Salt", "Yeast"
+      ],
+      "nutrition": {
+        "Calories": "180 kcal",
+        "Fat": "7g",
+        "Carbohydrates": "26g",
+        "Protein": "4g",
+        "Sugar": "1g"
+      },
+      "allergens": ["Wheat"],
+      "storageTips": "Store in an airtight container at room temperature for up to 2 days. Refresh in a warm oven before serving.",
+      "servingSize": "1 slice (75g)"
+    },
+    {
+      "id": "almond-croissant-1",
+      "name": "Almond Croissant",
+      "price": 4.75,
+      "description": "Buttery croissant filled with almond cream, topped with sliced almonds and powdered sugar.",
+      "longDescription": "Our Almond Croissants begin with our classic butter croissants that are split and filled with a rich almond cream made from ground almonds, butter, sugar, and a hint of rum. The filled croissants are then topped with more almond cream, sprinkled with sliced almonds, and baked again until golden. A light dusting of powdered sugar completes this French bakery favorite. The result is a croissant with all the usual buttery flakiness, but with an interior that's moist, sweet, and infused with the irresistible flavor of almonds.",
+      "image": "images/products/almond-croissant.jpg",
+      "gallery": [
+        "images/products/almond-croissant.jpg",
+        "images/products/almond-croissant-2.jpg",
+        "images/products/almond-croissant-3.jpg"
+      ],
+      "category": "pastry",
+      "categories": ["pastry", "french", "breakfast"],
+      "tags": ["almond", "croissant", "french", "sweet", "breakfast", "nuts"],
+      "rating": 4.8,
+      "reviewCount": 156,
+      "popularity": 94,
+      "onSale": false,
+      "isNew": false,
+      "limited": false,
+      "dateAdded": "2023-03-20T00:00:00Z",
+      "ingredients": [
+        "Flour", "Butter", "Almonds", "Sugar", "Eggs", "Milk", "Rum Extract", "Powdered Sugar", "Yeast"
+      ],
+      "nutrition": {
+        "Calories": "320 kcal",
+        "Fat": "19g",
+        "Carbohydrates": "30g",
+        "Protein": "7g",
+        "Sugar": "14g"
+      },
+      "allergens": ["Wheat", "Dairy", "Eggs", "Tree Nuts"],
+      "storageTips": "Best enjoyed fresh. Can be stored in a paper bag for 1 day.",
+      "servingSize": "1 croissant (85g)"
+    },
+    {
+      "id": "cheesecake-1",
+      "name": "New York Cheesecake",
+      "price": 42.99,
+      "description": "Rich, creamy cheesecake with a graham cracker crust and a smooth, dense texture.",
+      "longDescription": "Our New York Cheesecake follows the classic recipe that made this dessert famous. It features a buttery graham cracker crust topped with a dense, rich filling made from premium cream cheese, fresh eggs, and pure vanilla. Baked slowly at a low temperature and then allowed to cool gradually, the cheesecake develops that signature smooth, velvety texture without cracks. Served plain in the traditional New York style to let the pure, tangy-sweet flavor shine, this cheesecake is perfect for any celebration or special occasion.",
+      "image": "images/products/cheesecake.jpg",
+      "gallery": [
+        "images/products/cheesecake.jpg",
+        "images/products/cheesecake-2.jpg",
+        "images/products/cheesecake-3.jpg"
+      ],
+      "category": "cake",
+      "categories": ["cake", "dessert"],
+      "tags": ["cheesecake", "creamy", "classic", "celebration", "whole cake"],
+      "rating": 4.9,
+      "reviewCount": 183,
+      "popularity": 96,
+      "onSale": false,
+      "isNew": false,
+      "limited": false,
+      "dateAdded": "2023-04-10T00:00:00Z",
+      "ingredients": [
+        "Cream Cheese", "Sugar", "Eggs", "Vanilla", "Graham Crackers", "Butter", "Sour Cream"
+      ],
+      "nutrition": {
+        "Calories": "450 kcal",
+        "Fat": "32g",
+        "Carbohydrates": "36g",
+        "Protein": "7g",
+        "Sugar": "28g"
+      },
+      "allergens": ["Wheat", "Dairy", "Eggs"],
+      "storageTips": "Keep refrigerated for up to 5 days. Bring to room temperature for 30 minutes before serving for best flavor.",
+      "servingSize": "1 slice (125g)",
+      "serves": "12-14 people"
+    },
+    {
+      "id": "chocolate-cake-1",
+      "name": "Triple Chocolate Cake",
+      "price": 45.99,
+      "description": "Decadent chocolate cake with chocolate ganache filling and chocolate buttercream frosting.",
+      "longDescription": "Our Triple Chocolate Cake is the ultimate chocolate lover's dream. Three layers of moist, rich chocolate cake are filled with smooth dark chocolate ganache and frosted with silky chocolate buttercream. Made with high-quality cocoa powder and dark chocolate, each bite delivers intense chocolate flavor without being overly sweet. The cake is decorated with chocolate shavings and a drizzle of ganache for an elegant finish. Perfect for birthdays, celebrations, or any occasion that calls for chocolate indulgence.",
+      "image": "images/products/chocolate-cake.jpg",
+      "gallery": [
+        "images/products/chocolate-cake.jpg",
+        "images/products/chocolate-cake-2.jpg",
+        "images/products/chocolate-cake-3.jpg"
+      ],
+      "category": "cake",
+      "categories": ["cake", "dessert", "chocolate"],
+      "tags": ["chocolate", "cake", "ganache", "buttercream", "celebration", "whole cake"],
+      "rating": 4.9,
+      "reviewCount": 205,
+      "popularity": 98,
+      "onSale": true,
+      "originalPrice": 49.99,
+      "discountPercentage": 8,
+      "isNew": false,
+      "limited": false,
+      "dateAdded": "2023-02-25T00:00:00Z",
+      "ingredients": [
+        "Flour", "Sugar", "Cocoa Powder", "Dark Chocolate", "Butter", "Eggs", "Buttermilk", "Vanilla", "Heavy Cream"
+      ],
+      "nutrition": {
+        "Calories": "480 kcal",
+        "Fat": "26g",
+        "Carbohydrates": "58g",
+        "Protein": "6g",
+        "Sugar": "42g"
+      },
+      "allergens": ["Wheat", "Dairy", "Eggs"],
+      "storageTips": "Store refrigerated for up to 5 days. For best flavor, allow to come to room temperature for 30 minutes before serving.",
+      "servingSize": "1 slice (120g)",
+      "serves": "10-12 people"
+    },
+    {
+      "id": "lemon-tart-1",
+      "name": "Lemon Tart",
+      "price": 32.99,
+      "description": "Buttery shortbread crust filled with tangy lemon curd and garnished with fresh berries.",
+      "longDescription": "Our Lemon Tart features a crisp, buttery shortbread crust filled with a smooth, vibrant lemon curd made from fresh lemon juice and zest. The perfect balance of sweet and tart, this classic French dessert is finished with a light dusting of powdered sugar and garnished with fresh seasonal berries and edible flowers. Each bite offers a refreshing burst of bright lemon flavor complemented by the rich, crumbly crust. This elegant tart is perfect for spring gatherings, afternoon tea, or as a light dessert after dinner.",
+      "image": "images/products/lemon-tart.jpg",
+      "gallery": [
+        "images/products/lemon-tart.jpg",
+        "images/products/lemon-tart-2.jpg",
+        "images/products/lemon-tart-3.jpg"
+      ],
+      "category": "dessert",
+      "categories": ["dessert", "tart", "french"],
+      "tags": ["lemon", "tart", "citrus", "berries", "elegant", "whole tart"],
+      "rating": 4.8,
+      "reviewCount": 142,
+      "popularity": 90,
+      "onSale": false,
+      "isNew": false,
+      "limited": false,
+      "dateAdded": "2023-03-15T00:00:00Z",
+      "ingredients": [
+        "Flour", "Butter", "Sugar", "Lemons", "Eggs", "Heavy Cream", "Powdered Sugar", "Fresh Berries"
+      ],
+      "nutrition": {
+        "Calories": "380 kcal",
+        "Fat": "22g",
+        "Carbohydrates": "42g",
+        "Protein": "5g",
+        "Sugar": "28g"
+      },
+      "allergens": ["Wheat", "Dairy", "Eggs"],
+      "storageTips": "Keep refrigerated for up to 3 days. Best served slightly chilled.",
+      "servingSize": "1 slice (100g)",
+      "serves": "8 people"
+    },
+    {
+      "id": "french-bread-1",
+      "name": "Country French Bread",
+      "price": 4.99,
+      "description": "Rustic French bread with a crusty exterior and soft, airy interior.",
+      "longDescription": "Our Country French Bread, also known as Pain de Campagne, is a rustic loaf made with a blend of white and whole wheat flours for deeper flavor. Each loaf is hand-shaped and scored, then baked in our stone hearth oven to develop a thick, crackling crust and an open, airy crumb structure. The extended fermentation process gives this bread its subtle, complex flavor and excellent keeping qualities. Perfect for sandwiches, French toast, or served alongside soups and stews.",
+      "image": "images/products/french-bread.jpg",
+      "gallery": [
+        "images/products/french-bread.jpg",
+        "images/products/french-bread-2.jpg",
+        "images/products/french-bread-3.jpg"
+      ],
+      "category": "bread",
+      "categories": ["bread", "french", "artisan"],
+      "tags": ["crusty", "french", "artisan", "rustic"],
+      "rating": 4.7,
+      "reviewCount": 132,
+      "popularity": 93,
+      "onSale": false,
+      "isNew": false,
+      "limited": false,
+      "dateAdded": "2023-01-15T00:00:00Z",
+      "ingredients": [
+        "White Flour", "Whole Wheat Flour", "Water", "Salt", "Yeast"
+      ],
+      "nutrition": {
+        "Calories": "130 kcal",
+        "Fat": "0.5g",
+        "Carbohydrates": "26g",
+        "Protein": "5g",
+        "Sugar": "0g"
+      },
+      "allergens": ["Wheat"],
+      "storageTips": "Store in a paper bag at room temperature for 1-2 days. Freeze for longer storage.",
+      "servingSize": "1 slice (45g)"
+    },
+    {
+      "id": "pain-au-raisin-1",
+      "name": "Pain au Raisin",
+      "price": 4.25,
+      "description": "Swirled pastry filled with custard cream and rum-soaked raisins.",
+      "longDescription": "Our Pain au Raisin combines buttery, flaky croissant dough with a rich filling of vanilla custard cream and plump, rum-soaked raisins. The dough is rolled into a spiral shape, creating beautiful layers of pastry, cream, and raisins that caramelize slightly during baking. Each pastry is finished with a light glaze that adds a subtle sweetness and beautiful shine. The combination of buttery pastry, creamy custard, and sweet raisins makes for a delightful breakfast treat or afternoon snack.",
+      "image": "images/products/pain-au-raisin.jpg",
+      "gallery": [
+        "images/products/pain-au-raisin.jpg",
+        "images/products/pain-au-raisin-2.jpg",
+        "images/products/pain-au-raisin-3.jpg"
+      ],
+      "category": "pastry",
+      "categories": ["pastry", "french", "breakfast"],
+      "tags": ["raisin", "custard", "french", "sweet", "breakfast"],
+      "rating": 4.6,
+      "reviewCount": 118,
+      "popularity": 87,
+      "onSale": false,
+      "isNew": false,
+      "limited": false,
+      "dateAdded": "2023-02-10T00:00:00Z",
+      "ingredients": [
+        "Flour", "Butter", "Sugar", "Milk", "Eggs", "Vanilla", "Raisins", "Rum Extract", "Yeast"
+      ],
+      "nutrition": {
+        "Calories": "310 kcal",
+        "Fat": "16g",
+        "Carbohydrates": "37g",
+        "Protein": "5g",
+        "Sugar": "18g"
+      },
+      "allergens": ["Wheat", "Dairy", "Eggs"],
+      "storageTips": "Best enjoyed fresh. Can be stored in a paper bag for 1 day.",
+      "servingSize": "1 pastry (90g)"
+    },
+    {
+      "id": "gluten-free-bread-1",
+      "name": "Gluten-Free Sandwich Bread",
+      "price": 8.99,
+      "description": "Soft, versatile gluten-free bread perfect for sandwiches and toast.",
+      "longDescription": "Our Gluten-Free Sandwich Bread is specially formulated to have the taste and texture of traditional wheat bread without the gluten. Made with a blend of rice flour, tapioca starch, and potato flour, this bread has a soft, tender crumb and a mild flavor that pairs well with both sweet and savory toppings. Each loaf is certified gluten-free and produced in a dedicated gluten-free facility to prevent cross-contamination. Enjoy it toasted for breakfast, as sandwich bread for lunch, or alongside dinner.",
+      "image": "images/products/gluten-free-bread.jpg",
+      "gallery": [
+        "images/products/gluten-free-bread.jpg",
+        "images/products/gluten-free-bread-2.jpg",
+        "images/products/gluten-free-bread-3.jpg"
+      ],
+      "category": "bread",
+      "categories": ["bread", "gluten-free"],
+      "tags": ["gluten-free", "sandwich", "allergen-friendly", "specialty"],
+      "rating": 4.5,
+      "reviewCount": 96,
+      "popularity": 82,
+      "onSale": false,
+      "isNew": true,
+      "limited": false,
+      "dateAdded": "2024-01-10T00:00:00Z",
+      "ingredients": [
+        "Rice Flour", "Tapioca Starch", "Potato Flour", "Eggs", "Milk", "Vegetable Oil", "Honey", "Xanthan Gum", "Yeast", "Salt"
+      ],
+      "nutrition": {
+        "Calories": "140 kcal",
+        "Fat": "3g",
+        "Carbohydrates": "26g",
+        "Protein": "3g",
+        "Sugar": "2g"
+      },
+      "allergens": ["Eggs", "Dairy"],
+      "storageTips": "Keeps best refrigerated for up to 5 days or frozen for up to 3 months. Toast before serving for best texture.",
+      "servingSize": "1 slice (45g)"
+    },
+    {
+      "id": "vegan-muffin-1",
+      "name": "Vegan Blueberry Muffin",
+      "price": 3.99,
+      "description": "Moist, dairy-free muffin packed with juicy blueberries and topped with a crunchy streusel.",
+      "longDescription": "Our Vegan Blueberry Muffins are made without any animal products but don't compromise on flavor or texture. These moist, tender muffins are loaded with plump, juicy blueberries and topped with a crunchy cinnamon streusel. We use plant-based milk, coconut oil, and flax seeds to create a perfectly tender crumb that's as delicious as traditional muffins. These vegan treats are perfect for breakfast on the go, a midday snack, or anytime you need a sweet pick-me-up.",
+      "image": "images/products/vegan-muffin.jpg",
+      "gallery": [
+        "images/products/vegan-muffin.jpg",
+        "images/products/vegan-muffin-2.jpg",
+        "images/products/vegan-muffin-3.jpg"
+      ],
+      "category": "pastry",
+      "categories": ["pastry", "vegan", "breakfast"],
+      "tags": ["vegan", "blueberry", "plant-based", "dairy-free", "egg-free", "breakfast"],
+      "rating": 4.7,
+      "reviewCount": 89,
+      "popularity": 85,
+      "onSale": false,
+      "isNew": true,
+      "limited": false,
+      "dateAdded": "2023-12-15T00:00:00Z",
+      "ingredients": [
+        "Flour", "Plant-Based Milk", "Coconut Oil", "Sugar", "Blueberries", "Flax Seeds", "Baking Powder", "Vanilla Extract", "Cinnamon", "Brown Sugar"
+      ],
+      "nutrition": {
+        "Calories": "270 kcal",
+        "Fat": "11g",
+        "Carbohydrates": "40g",
+        "Protein": "4g",
+        "Sugar": "22g"
+      },
+      "allergens": ["Wheat"],
+      "storageTips": "Store in an airtight container at room temperature for up to 2 days or refrigerate for up to 5 days.",
+      "servingSize": "1 muffin (100g)"
+    }
+  ]

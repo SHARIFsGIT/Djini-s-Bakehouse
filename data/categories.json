@@ -1,0 +1,128 @@
+[
+    {
+      "id": "bread",
+      "name": "Bread",
+      "icon": "fas fa-bread-slice",
+      "description": "Freshly baked breads made with quality ingredients and traditional techniques",
+      "count": 5,
+      "featured": true,
+      "image": "images/categories/bread.jpg"
+    },
+    {
+      "id": "pastry",
+      "name": "Pastries",
+      "icon": "fas fa-cookie",
+      "description": "Flaky, buttery pastries that bring a touch of sweetness to your day",
+      "count": 4,
+      "featured": true,
+      "image": "images/categories/pastries.jpg"
+    },
+    {
+      "id": "cake",
+      "name": "Cakes",
+      "icon": "fas fa-birthday-cake",
+      "description": "Celebratory cakes for special occasions or everyday indulgence",
+      "count": 3,
+      "featured": true,
+      "image": "images/categories/cakes.jpg"
+    },
+    {
+      "id": "savory",
+      "name": "Savory Items",
+      "icon": "fas fa-cheese",
+      "description": "Delicious savory treats perfect for lunch, snacks, or light meals",
+      "count": 4,
+      "featured": true,
+      "image": "images/categories/savory.jpg"
+    },
+    {
+      "id": "dessert",
+      "name": "Desserts",
+      "icon": "fas fa-ice-cream",
+      "description": "Sweet treats to satisfy your cravings and finish your meal on a high note",
+      "count": 5,
+      "featured": true,
+      "image": "images/categories/desserts.jpg"
+    },
+    {
+      "id": "special",
+      "name": "Seasonal Specials",
+      "icon": "fas fa-star",
+      "description": "Limited-time offerings that celebrate the flavors of the season",
+      "count": 2,
+      "featured": true,
+      "image": "images/categories/seasonal.jpg"
+    },
+    {
+      "id": "breakfast",
+      "name": "Breakfast",
+      "icon": "fas fa-coffee",
+      "description": "Start your day right with our selection of breakfast pastries and breads",
+      "count": 4,
+      "featured": false,
+      "image": "images/categories/breakfast.jpg"
+    },
+    {
+      "id": "french",
+      "name": "French Bakery",
+      "icon": "fas fa-utensils",
+      "description": "Authentic French pastries and breads made with traditional techniques",
+      "count": 3,
+      "featured": false,
+      "image": "images/categories/french.jpg"
+    },
+    {
+      "id": "italian",
+      "name": "Italian Favorites",
+      "icon": "fas fa-pizza-slice",
+      "description": "Classic Italian desserts and bakery items with authentic flavors",
+      "count": 2,
+      "featured": false,
+      "image": "images/categories/italian.jpg"
+    },
+    {
+      "id": "german",
+      "name": "German Bakery",
+      "icon": "fas fa-beer",
+      "description": "Traditional German breads and pastries crafted with care",
+      "count": 2,
+      "featured": false,
+      "image": "images/categories/german.jpg"
+    },
+    {
+      "id": "cookie",
+      "name": "Cookies",
+      "icon": "fas fa-cookie-bite",
+      "description": "Freshly baked cookies in a variety of flavors and styles",
+      "count": 3,
+      "featured": false,
+      "image": "images/categories/cookies.jpg"
+    },
+    {
+      "id": "gluten-free",
+      "name": "Gluten-Free",
+      "icon": "fas fa-wheat-awn-circle-exclamation",
+      "description": "Delicious gluten-free options that don't compromise on taste",
+      "count": 2,
+      "featured": false,
+      "image": "images/categories/gluten-free.jpg"
+    },
+    {
+      "id": "vegan",
+      "name": "Vegan",
+      "icon": "fas fa-seedling",
+      "description": "Plant-based bakery items made without animal products",
+      "count": 2,
+      "featured": false,
+      "image": "images/categories/vegan.jpg"
+    },
+    {
+      "id": "artisan",
+      "name": "Artisan",
+      "icon": "fas fa-mortar-pestle",
+      "description": "Handcrafted specialty items made with traditional methods",
+      "count": 3,
+      "featured": false,
+      "image": "images/categories/artisan.jpg"
+    }
+  ]

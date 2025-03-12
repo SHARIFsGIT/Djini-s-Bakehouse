@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Products - Djini's Bakehouse</title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="../images/Djini_s_Bakehouse_1_-removebg-preview.png" type="image/x-icon">
+  <!-- tailwind cdn -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body class="text-[#777777] bg-gray-50">
+  <!-- Mobile menu JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      menuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    });
+  </script>
+
+  <nav class="fixed inset-x-0 top-0 z-30 w-full border border-gray-100 bg-white/80 py-2 px-4 shadow backdrop-blur-lg">
+    <div class="flex items-center justify-between">
+      <a class="flex items-center" href="../index.html">
+        <img class="h-16 w-auto" src="../images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="Djini's Bakehouse">
+        <span class="sr-only">Djini's Bakehouse</span>
+      </a>
+      <button id="menu-btn" class="block md:hidden focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+      <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-white shadow-md md:hidden z-40 p-4">
+        <a href="../index.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Home</a>
+        <a href="products.html" class="block text-gray-900 bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
+        <a href="order.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order Online</a>
+        <a href="about.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">About</a>
+        <a href="contact.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Contact</a>
+        <div class="mt-3 border-t pt-3">
+          <a href="signup.html" class="block text-gray-900 bg-gray-100 px-4 py-2 rounded-xl shadow mb-2 text-center">Sign Up</a>
+          <a href="login.html" class="block text-white bg-blue-600 px-4 py-2 rounded-xl shadow text-center">Login</a>
+        </div>
+      </div>
+      <div id="menu" class="hidden md:flex md:items-center md:gap-4">
+        <a href="../index.html" class="text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Home</a>
+        <a href="products.html" class="text-gray-900 bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
+        <a href="order.html" class="text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order Online</a>
+        <a href="about.html" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">About</a>
+        <a href="contact.html" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Contact</a>
+      </div>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="cart.html" class="text-gray-900 hover:text-red-500 relative">
+          <i class="fas fa-shopping-cart text-xl cart-icon"></i>
+          <span id="cart-count" class="cart-count absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+        </a>
+        <a href="signup.html" class="text-gray-900 bg-white px-4 py-2 rounded-xl shadow">Sign Up</a>
+        <a href="login.html" class="text-white bg-blue-600 px-4 py-2 rounded-xl shadow">Login</a>
+        
+        <!-- Profile Menu (hidden by default, shown when logged in) -->
+        <div class="relative group profile-menu hidden">
+          <button class="flex items-center space-x-1 text-gray-900">
+            <img src="../images/profile-placeholder.png" alt="Profile" class="w-8 h-8 rounded-full border-2 border-red-500">
+            <span class="font-medium" id="user-name">John Doe</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-10 hidden group-hover:block">
+            <a href="profile.html" class="block px-4 py-2 text-gray-800 hover:bg-red-50">
+              <i class="fas fa-user mr-2"></i> My Profile
+            </a>
+            <a href="orders.html" class="block px-4 py-2 text-gray-800 hover:bg-red-50">
+              <i class="fas fa-shopping-bag mr-2"></i> My Orders
+            </a>
+            <a href="favorites.html" class="block px-4 py-2 text-gray-800 hover:bg-red-50">
+              <i class="fas fa-heart mr-2"></i> Wishlist
+            </a>
+            <div class="border-t my-2"></div>
+            <a href="#" class="logout-button block px-4 py-2 text-gray-800 hover:bg-red-50">
+              <i class="fas fa-sign-out-alt mr-2"></i> Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Product Grid with Sidebar -->
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+      <!-- Categories Sidebar -->
+      <div class="lg:col-span-1">
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden sticky top-24">
+          <h2 class="bg-red-500 text-white p-4 text-xl font-semibold">Filter By</h2>
+          
+          <!-- Categories -->
+          <div class="p-4 border-b">
+            <h3 class="font-semibold text-gray-700 mb-3">Categories</h3>
+            <div id="categories-container" class="space-y-1">
+              <!-- Categories will be populated by JavaScript -->
+              <div class="animate-pulse">
+                <div class="h-8 bg-gray-200 rounded mb-2"></div>
+                <div class="h-8 bg-gray-200 rounded mb-2"></div>
+                <div class="h-8 bg-gray-200 rounded mb-2"></div>
+                <div class="h-8 bg-gray-200 rounded mb-2"></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Price Range -->
+          <div class="p-4 border-b">
+            <h3 class="font-semibold text-gray-700 mb-3">Price Range</h3>
+            <div class="space-y-2">
+              <div>
+                <input type="range" id="price-range" min="0" max="100" value="100" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                <div class="flex justify-between text-xs text-gray-500 mt-1">
+                  <span>$0</span>
+                  <span id="price-range-value">$100</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Dietary Preferences -->
+          <div class="p-4 border-b">
+            <h3 class="font-semibold text-gray-700 mb-3">Dietary Preferences</h3>
+            <div class="space-y-2">
+              <label class="custom-checkbox flex items-start">
+                <input type="checkbox" id="filter-gluten-free">
+                <span class="checkmark mt-1"></span>
+                <span class="ml-3">Gluten-Free</span>
+              </label>
+              <label class="custom-checkbox flex items-start">
+                <input type="checkbox" id="filter-vegan">
+                <span class="checkmark mt-1"></span>
+                <span class="ml-3">Vegan</span>
+              </label>
+              <label class="custom-checkbox flex items-start">
+                <input type="checkbox" id="filter-nut-free">
+                <span class="checkmark mt-1"></span>
+                <span class="ml-3">Nut-Free</span>
+              </label>
+            </div>
+          </div>
+          
+          <!-- Special Filters -->
+          <div class="p-4">
+            <h3 class="font-semibold text-gray-700 mb-3">Special Offers</h3>
+            <div class="space-y-2">
+              <label class="custom-checkbox flex items-start">
+                <input type="checkbox" id="filter-on-sale">
+                <span class="checkmark mt-1"></span>
+                <span class="ml-3">On Sale</span>
+              </label>
+              <label class="custom-checkbox flex items-start">
+                <input type="checkbox" id="filter-new">
+                <span class="checkmark mt-1"></span>
+                <span class="ml-3">New Arrivals</span>
+              </label>
+              <label class="custom-checkbox flex items-start">
+                <input type="checkbox" id="filter-limited">
+                <span class="checkmark mt-1"></span>
+                <span class="ml-3">Limited Edition</span>
+              </label>
+            </div>
+          </div>
+          
+          <!-- Reset Filters Button -->
+          <div class="p-4 bg-gray-50">
+            <button id="reset-filters" class="w-full py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg transition">
+              Reset Filters
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Product Grid -->
+      <div class="lg:col-span-3">
+        <div class="mb-6 flex flex-col md:flex-row md:items-center md:justify-between">
+          <h2 class="text-2xl font-bold text-gray-700 mb-2 md:mb-0">All Products</h2>
+          <div class="flex items-center">
+            <label for="sort-menu" class="text-sm font-medium mr-2">Sort by:</label>
+            <select id="sort-menu" class="px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+              <option value="popular">Most Popular</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="name-asc">Name: A to Z</option>
+              <option value="name-desc">Name: Z to A</option>
+              <option value="newest">Newest First</option>
+            </select>
+          </div>
+        </div>
+        
+        <!-- Product Grid -->
+        <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <!-- Products will be populated by JavaScript -->
+          <div class="animate-pulse">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div class="h-48 bg-gray-300"></div>
+              <div class="p-4 space-y-3">
+                <div class="h-6 bg-gray-300 rounded"></div>
+                <div class="h-4 bg-gray-300 rounded w-1/4"></div>
+                <div class="h-4 bg-gray-300 rounded"></div>
+                <div class="h-4 bg-gray-300 rounded w-3/4"></div>
+                <div class="flex justify-between">
+                  <div class="h-6 bg-gray-300 rounded w-1/4"></div>
+                  <div class="h-6 bg-gray-300 rounded w-1/3"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="animate-pulse">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div class="h-48 bg-gray-300"></div>
+              <div class="p-4 space-y-3">
+                <div class="h-6 bg-gray-300 rounded"></div>
+                <div class="h-4 bg-gray-300 rounded w-1/4"></div>
+                <div class="h-4 bg-gray-300 rounded"></div>
+                <div class="h-4 bg-gray-300 rounded w-3/4"></div>
+                <div class="flex justify-between">
+                  <div class="h-6 bg-gray-300 rounded w-1/4"></div>
+                  <div class="h-6 bg-gray-300 rounded w-1/3"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="animate-pulse">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div class="h-48 bg-gray-300"></div>
+              <div class="p-4 space-y-3">
+                <div class="h-6 bg-gray-300 rounded"></div>
+                <div class="h-4 bg-gray-300 rounded w-1/4"></div>
+                <div class="h-4 bg-gray-300 rounded"></div>
+                <div class="h-4 bg-gray-300 rounded w-3/4"></div>
+                <div class="flex justify-between">
+                  <div class="h-6 bg-gray-300 rounded w-1/4"></div>
+                  <div class="h-6 bg-gray-300 rounded w-1/3"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Pagination -->
+        <div class="flex justify-center mt-10">
+          <nav class="inline-flex rounded-md shadow">
+            <a href="#" class="px-4 py-2 border border-gray-300 rounded-l-md text-gray-700 bg-white hover:bg-gray-50">
+              Previous
+            </a>
+            <a href="#" class="px-4 py-2 border-t border-b border-gray-300 text-gray-700 bg-white hover:bg-gray-50">
+              1
+            </a>
+            <a href="#" class="px-4 py-2 border-t border-b border-gray-300 text-white bg-red-500">
+              2
+            </a>
+            <a href="#" class="px-4 py-2 border-t border-b border-gray-300 text-gray-700 bg-white hover:bg-gray-50">
+              3
+            </a>
+            <a href="#" class="px-4 py-2 border border-gray-300 rounded-r-md text-gray-700 bg-white hover:bg-gray-50">
+              Next
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Newsletter Sign-up -->
+  <section class="bg-red-50 py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Join Our Newsletter</h2>
+        <p class="text-gray-600 mb-6">Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
+        <form id="newsletter-form" class="flex flex-col sm:flex-row gap-2">
+          <input type="email" placeholder="Your email address" required class="flex-1 px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-red-500">
+          <button type="submit" class="px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition">
+            Subscribe
+          </button>
+        </form>
+        <p class="text-gray-500 text-sm mt-3">By subscribing, you agree to our <a href="privacy.html" class="text-red-500 hover:underline">Privacy Policy</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-red-50">
+    <div class="container mx-auto py-4 px-4">
+      <div class="flex flex-col md:flex-row gap-6 items-center justify-between mb-2">
+        <div>
+          <img class="h-72" src="../images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="" />
+        </div>
+        <div class="flex flex-col md:flex-row items-center gap-4">
+          <h3 class="text-xl me-10">
+            Become a part of us?
+          </h3>
+          <a href="contact.html" type="button"
+            class="text-white bg-gradient-to-br from-[#FF8938] to-[#FF0000] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 hover:scale-105 duration-500 transition font-bold rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2">
+            Contact
+          </a>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-center md:text-start">
+        <div class="my-8 space-y-4">
+          <h3 class="text-xl text-gray-700 font-bold">Quick Links</h3>
+          <a href="../index.html" class="block">Home</a>
+          <a href="products.html" class="block">Products</a>
+          <a href="about.html" class="block">About Us</a>
+          <a href="privacy.html" class="block">Privacy Policy</a>
+          <a href="terms.html" class="block">Terms & Conditions</a>
+        </div>
+        <div class="my-8 space-y-4">
+          <h3 class="text-xl text-gray-700 font-bold">Our Service</h3>
+          <a href="custom-orders.html" class="block">Custom Orders</a>
+          <a href="order.html" class="block">Online Ordering</a>
+          <a href="products.html?filter=special" class="block">Seasonal Specials</a>
+          <a href="gift-packaging.html" class="block">Gift Packaging</a>
+        </div>
+        <div class="my-8 space-y-4">
+          <h3 class="text-xl text-gray-700 font-bold">Help</h3>
+          <a href="faq.html" class="block">FAQs</a>
+          <a href="contact.html" class="block">Contact Us</a>
+          <a href="order-tracking.html" class="block">Track Order</a>
+          <a href="shipping.html" class="block">Shipping Information</a>
+        </div>
+        <div class="my-8 space-y-4">
+          <h3 class="text-xl text-gray-700 font-bold">
+            Be a part of our team
+          </h3>
+          <!-- subscribe -->
+          <div class="flex items-center justify-center md:justify-start">
+            <input type="email" placeholder="Email address" class="bg-transparent border-b-2 py-2 focus:outline-none" />
+            <button type="button"
+              class="text-white bg-gradient-to-br from-[#FF8938] to-[#FF0000] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 hover:scale-105 transition font-bold rounded-full text-xl p-2 text-center -ml-4 mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                stroke="currentColor" class="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+          </div>
+          <!-- social links -->
+          <div class="space-x-4">
+            <a href="#" class="w-6 h-6 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path
+                  d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+              </svg></a>
+            <a href="#" class="w-6 h-6 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+              </svg></a>
+            <a href="#" class="w-6 h-6 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/>
+              </svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h5 class="text-center font-semibold py-4">All rights reserved © Djini's Bakehouse 2024</h5>
+  </footer>
+
+  <!-- Cart Notification Toast -->
+  <div id="cart-toast" class="fixed bottom-4 right-4 bg-white shadow-lg rounded-lg p-4 hidden transform transition-transform duration-300 z-50">
+    <div class="flex items-center">
+      <div id="toast-icon" class="bg-green-100 p-2 rounded-full mr-3">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+      <div>
+        <p id="toast-message" class="font-medium">Item added to cart!</p>
+        <a href="cart.html" class="text-sm text-blue-600 hover:underline">View Cart</a>
+      </div>
+      <button id="close-toast" class="ml-4 text-gray-400 hover:text-gray-500">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/utils.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/cart.js"></script>
+  <script src="../assets/js/product.js"></script>
+  
+  <!-- Additional Product Page JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Price Range Slider
+      const priceRange = document.getElementById('price-range');
+      const priceRangeValue = document.getElementById('price-range-value');
+      
+      if (priceRange && priceRangeValue) {
+        priceRange.addEventListener('input', function() {
+          priceRangeValue.textContent = '
+  </nav>
+
+  <!-- Page Header -->
+  <header class="mt-24 container mx-auto px-4 py-8">
+    <h1 class="text-4xl md:text-5xl font-bold text-center text-gray-700">Our <span class="text-red-500">Products</span></h1>
+    <p class="text-center mt-4 max-w-2xl mx-auto">Discover our delicious selection of freshly baked goods, made daily with love and the finest ingredients. From artisan bread to decadent pastries, we have something for every taste and occasion.</p>
+  </header>
+
+  <main class="container mx-auto px-4 py-8">
+    <!-- Search Bar -->
+    <div class="max-w-2xl mx-auto mb-10">
+      <div class="relative">
+        <input type="text" id="product-search" placeholder="Search for products..." class="w-full p-4 pl-12 pr-10 rounded-lg border-2 border-gray-200 focus:outline-none focus:border-red-500">
+        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+          <i class="fas fa-search text-gray-400"></i>
+        </div>
+        <button id="clear-search" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div id="search-results-count" class="mt-2 text-gray-600 text-sm hidden"></div>
+    </div>
+    
+    <!-- Category Showcase -->
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-700 mb-6">Browse By Category</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <!-- Categories will be populated by JavaScript -->
+        <div class="text-center py-10">
+          <div class="loading-spinner mx-auto"></div>
+          <p class="mt-2">Loading categories...</p>
+        </div>
+      </div>
+    </div> + this.value;
+          
+          // Filter products by price
+          if (window.djinisProducts) {
+            window.djinisProducts.filterByPrice(parseInt(this.value));
+          }
+        });
+      }
+      
+      // Filter checkboxes
+      const filterCheckboxes = document.querySelectorAll('input[type="checkbox"][id^="filter-"]');
+      filterCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+          // Apply filters
+          if (window.djinisProducts) {
+            window.djinisProducts.applyFilters();
+          }
+        });
+      });
+      
+      // Reset filters button
+      const resetFiltersButton = document.getElementById('reset-filters');
+      if (resetFiltersButton) {
+        resetFiltersButton.addEventListener('click', function() {
+          // Reset price range
+          if (priceRange) {
+            priceRange.value = 100;
+            priceRangeValue.textContent = '$100';
+          }
+          
+          // Uncheck all filter checkboxes
+          filterCheckboxes.forEach(checkbox => {
+            checkbox.checked = false;
+          });
+          
+          // Reset filters
+          if (window.djinisProducts) {
+            window.djinisProducts.resetFilters();
+          }
+        });
+      }
+      
+      // Newsletter form
+      const newsletterForm = document.getElementById('newsletter-form');
+      
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const emailInput = newsletterForm.querySelector('input[type="email"]');
+          const email = emailInput.value;
+          
+          // Validate email
+          if (!DjinisUtils.isValidEmail(email)) {
+            DjinisUtils.showToast('Please enter a valid email address', 'error');
+            return;
+          }
+          
+          // Store subscription in localStorage (in a real site, this would be sent to a server)
+          const subscriptions = JSON.parse(localStorage.getItem('djinisNewsletterSubscriptions')) || [];
+          
+          // Check if already subscribed
+          if (subscriptions.includes(email)) {
+            DjinisUtils.showToast('You are already subscribed to our newsletter!', 'info');
+            return;
+          }
+          
+          // Add subscription
+          subscriptions.push(email);
+          localStorage.setItem('djinisNewsletterSubscriptions', JSON.stringify(subscriptions));
+          
+          // Show success message
+          DjinisUtils.showToast('Thank you for subscribing to our newsletter!', 'success');
+          
+          // Reset form
+          newsletterForm.reset();
+        });
+      }
+      
+      // Check for filter parameters in URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const filterCategory = urlParams.get('filter');
+      const searchQuery = urlParams.get('search');
+      
+      if (filterCategory && window.djinisProducts) {
+        // Will be applied once products are loaded
+        window.djinisProducts.pendingFilterCategory = filterCategory;
+      }
+      
+      if (searchQuery && window.djinisProducts) {
+        // Will be applied once products are loaded
+        window.djinisProducts.pendingSearchQuery = searchQuery;
+        
+        // Also set the search input value
+        const searchInput = document.getElementById('product-search');
+        if (searchInput) {
+          searchInput.value = searchQuery;
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="mt-24 container mx-auto px-4 py-8">
+    <h1 class="text-4xl md:text-5xl font-bold text-center text-gray-700">Our <span class="text-red-500">Products</span></h1>
+    <p class="text-center mt-4 max-w-2xl mx-auto">Discover our delicious selection of freshly baked goods, made daily with love and the finest ingredients. From artisan bread to decadent pastries, we have something for every taste and occasion.</p>
+  </header>
+
+  <main class="container mx-auto px-4 py-8">
+    <!-- Search Bar -->
+    <div class="max-w-2xl mx-auto mb-10">
+      <div class="relative">
+        <input type="text" id="product-search" placeholder="Search for products..." class="w-full p-4 pl-12 pr-10 rounded-lg border-2 border-gray-200 focus:outline-none focus:border-red-500">
+        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+          <i class="fas fa-search text-gray-400"></i>
+        </div>
+        <button id="clear-search" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div id="search-results-count" class="mt-2 text-gray-600 text-sm hidden"></div>
+    </div>
+    
+    <!-- Category Showcase -->
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-700 mb-6">Browse By Category</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <!-- Categories will be populated by JavaScript -->
+        <div class="text-center py-10">
+          <div class="loading-spinner mx-auto"></div>
+          <p class="mt-2">Loading categories...</p>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,1012 @@
+<a href="about.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">About</a>
+        <a href="contact.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Contact</a>
+        <div class="mt-3 border-t pt-3">
+          <a href="signup.html" class="block text-gray-900 bg-gray-100 px-4 py-2 rounded-xl shadow mb-2 text-center">Sign Up</a>
+          <a href="login.html" class="block text-white bg-blue-600 px-4 py-2 rounded-xl shadow text-center">Login</a>
+        </div>
+      </div>
+      <div id="menu" class="hidden md:flex md:items-center md:gap-4">
+        <a href="../index.html" class="text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Home</a>
+        <a href="products.html" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
+        <a href="order.html" class="text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order Online</a>
+        <a href="about.html" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">About</a>
+        <a href="contact.html" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Contact</a>
+      </div>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="cart.html" class="text-gray-900 hover:text-red-500 relative">
+          <i class="fas fa-shopping-cart text-xl cart-icon"></i>
+          <span id="cart-count" class="cart-count absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+        </a>
+        <a href="signup.html" class="text-gray-900 bg-white px-4 py-2 rounded-xl shadow">Sign Up</a>
+        <a href="login.html" class="text-white bg-blue-600 px-4 py-2 rounded-xl shadow">Login</a>
+        
+        <!-- Profile Menu (hidden by default, shown when logged in) -->
+        <div class="relative group profile-menu hidden">
+          <button class="flex items-center space-x-1 text-gray-900">
+            <img src="../images/profile-placeholder.png" alt="Profile" class="w-8 h-8 rounded-full border-2 border-red-500">
+            <span class="font-medium" id="user-name">John Doe</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-10 hidden group-hover:block">
+            <a href="profile.html" class="block px-4 py-2 text-gray-800 hover:bg-red-50">
+              <i class="fas fa-user mr-2"></i> My Profile
+            </a>
+            <a href="orders.html" class="block px-4 py-2 text-gray-800 hover:bg-red-50">
+              <i class="fas fa-shopping-bag mr-2"></i> My Orders
+            </a>
+            <a href="favorites.html" class="block px-4 py-2 text-gray-800 hover:bg-red-50">
+              <i class="fas fa-heart mr-2"></i> Wishlist
+            </a>
+            <div class="border-t my-2"></div>
+            <a href="#" class="logout-button block px-4 py-2 text-gray-800 hover:bg-red-50">
+              <i class="fas fa-sign-out-alt mr-2"></i> Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="mt-24 container mx-auto px-4 py-8">
+    <h1 class="text-4xl md:text-5xl font-bold text-center text-gray-700">Track Your <span class="text-red-500">Order</span></h1>
+    <p class="text-center mt-4 max-w-2xl mx-auto">Enter your order ID and email address to check your order status or track your delivery.</p>
+  </header>
+
+  <main class="container mx-auto px-4 py-8">
+    <div class="max-w-3xl mx-auto">
+      <!-- Order Tracking Form -->
+      <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold text-gray-700 mb-6">Order Tracking</h2>
+        
+        <form id="tracking-form" class="space-y-6">
+          <div>
+            <label for="order-id" class="block text-sm font-medium text-gray-700 mb-1">Order ID *</label>
+            <input type="text" id="order-id" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="e.g., DJB-12345678">
+            <p class="text-xs text-gray-500 mt-1">Your order ID can be found in your order confirmation email.</p>
+          </div>
+          
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+            <input type="email" id="email" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="The email address used for your order">
+          </div>
+          
+          <div>
+            <button type="submit" class="w-full py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition">
+              Track Order
+            </button>
+          </div>
+        </form>
+      </div>
+      
+      <!-- Order Status (initially hidden, shown after form submission) -->
+      <div id="order-status" class="bg-white rounded-lg shadow-lg p-6 hidden">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-bold text-gray-700">Order Status</h2>
+          <span id="order-date" class="text-gray-600 text-sm"></span>
+        </div>
+        
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <h3 class="font-medium">Order ID:</h3>
+            <p id="status-order-id" class="text-gray-700 font-semibold"></p>
+          </div>
+          <div>
+            <h3 class="font-medium">Status:</h3>
+            <p id="status-badge" class="text-white text-sm font-medium px-3 py-1 rounded-full bg-blue-500"></p>
+          </div>
+        </div>
+        
+        <!-- Order Progress -->
+        <div class="mb-8">
+          <h3 class="font-medium mb-4">Order Progress</h3>
+          <div class="relative">
+            <!-- Progress Steps -->
+            <div class="flex items-center justify-between mb-2">
+              <div id="step-1" class="flex flex-col items-center">
+                <div class="w-10 h-10 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center">
+                  <i class="fas fa-clipboard-check"></i>
+                </div>
+                <span class="text-xs text-gray-500 mt-1">Order Placed</span>
+              </div>
+              <div id="step-2" class="flex flex-col items-center">
+                <div class="w-10 h-10 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center">
+                  <i class="fas fa-cookie"></i>
+                </div>
+                <span class="text-xs text-gray-500 mt-1">Preparing</span>
+              </div>
+              <div id="step-3" class="flex flex-col items-center">
+                <div class="w-10 h-10 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center">
+                  <i class="fas fa-box"></i>
+                </div>
+                <span class="text-xs text-gray-500 mt-1">Ready</span>
+              </div>
+              <div id="step-4" class="flex flex-col items-center">
+                <div class="w-10 h-10 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center">
+                  <i class="fas fa-truck"></i>
+                </div>
+                <span class="text-xs text-gray-500 mt-1">On the Way</span>
+              </div>
+              <div id="step-5" class="flex flex-col items-center">
+                <div class="w-10 h-10 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center">
+                  <i class="fas fa-home"></i>
+                </div>
+                <span class="text-xs text-gray-500 mt-1">Delivered</span>
+              </div>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
+              <div id="progress-bar" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Estimated Delivery -->
+        <div class="mb-8">
+          <h3 class="font-medium mb-2">Estimated Delivery</h3>
+          <div class="flex items-center text-gray-700">
+            <i class="fas fa-clock text-red-500 mr-2"></i>
+            <span id="estimated-delivery">Calculating...</span>
+          </div>
+        </div>
+        
+        <!-- Order Details -->
+        <div class="mb-8">
+          <h3 class="font-medium mb-4">Order Details</h3>
+          <div class="border rounded-lg overflow-hidden">
+            <table class="w-full text-left">
+              <thead class="bg-gray-50 border-b">
+                <tr>
+                  <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Item</th>
+                  <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Qty</th>
+                  <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Price</th>
+                </tr>
+              </thead>
+              <tbody id="order-items" class="divide-y divide-gray-200">
+                <!-- Order items will be populated here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <!-- Order Summary -->
+        <div class="mb-8">
+          <h3 class="font-medium mb-4">Order Summary</h3>
+          <div class="bg-gray-50 rounded-lg p-4">
+            <div class="flex justify-between py-2">
+              <span class="text-gray-600">Subtotal</span>
+              <span id="order-subtotal" class="font-medium"></span>
+            </div>
+            <div id="discount-row" class="flex justify-between py-2 text-green-600 hidden">
+              <span>Discount</span>
+              <span id="order-discount" class="font-medium"></span>
+            </div>
+            <div class="flex justify-between py-2">
+              <span class="text-gray-600">Shipping</span>
+              <span id="order-shipping" class="font-medium"></span>
+            </div>
+            <div class="flex justify-between py-2">
+              <span class="text-gray-600">Tax</span>
+              <span id="order-tax" class="font-medium"></span>
+            </div>
+            <div class="flex justify-between py-2 border-t mt-2 pt-2">
+              <span class="font-bold">Total</span>
+              <span id="order-total" class="font-bold text-red-500"></span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Need Help Section -->
+        <div class="bg-red-50 rounded-lg p-4">
+          <h3 class="font-medium mb-2">Need Help?</h3>
+          <p class="text-gray-600 text-sm mb-3">If you have questions about your order or need assistance, our customer support team is here to help.</p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="contact.html" class="px-4 py-2 bg-white text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-center">
+              <i class="fas fa-comment-alt mr-2"></i> Contact Support
+            </a>
+            <a href="tel:+15551234567" class="px-4 py-2 bg-white text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-center">
+              <i class="fas fa-phone-alt mr-2"></i> Call Us: (555) 123-4567
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Error Message (initially hidden) -->
+      <div id="error-message" class="bg-red-100 text-red-700 p-4 rounded-lg mb-8 hidden">
+        <div class="flex items-center">
+          <i class="fas fa-exclamation-circle mr-2"></i>
+          <span id="error-text">We couldn't find an order with that information. Please check your Order ID and email address and try again.</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FAQ Section -->
+  <section class="bg-gray-50 py-12">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-gray-700 mb-8 text-center">Frequently Asked Questions</h2>
+      
+      <div class="max-w-3xl mx-auto">
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+          <div class="divide-y">
+            <div class="p-6">
+              <button class="faq-question flex justify-between items-center w-full text-left font-semibold">
+                <span>How long does delivery take?</span>
+                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+              </button>
+              <div class="faq-answer hidden mt-4 text-gray-600">
+                <p>For standard delivery, we typically deliver within 2-3 hours of order placement. Express delivery is available for a small additional fee and delivers within 1 hour. During peak times, delivery may take slightly longer. You can always track your order in real-time using our order tracking system.</p>
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <button class="faq-question flex justify-between items-center w-full text-left font-semibold">
+                <span>What if my order is late?</span>
+                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+              </button>
+              <div class="faq-answer hidden mt-4 text-gray-600">
+                <p>We strive to deliver all orders on time, but occasionally delays may occur due to traffic, weather conditions, or high volume of orders. If your order is significantly delayed beyond the estimated delivery time, please contact our customer service team, and we'll make it right. Depending on the circumstances, we may offer compensation such as a discount on your next order.</p>
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <button class="faq-question flex justify-between items-center w-full text-left font-semibold">
+                <span>Can I change or cancel my order?</span>
+                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+              </button>
+              <div class="faq-answer hidden mt-4 text-gray-600">
+                <p>Orders can be modified or canceled up to 15 minutes after placing them. After that time, your order may already be in preparation, and changes or cancellations might not be possible. To make changes or request a cancellation, please call our customer service line immediately at (555) 123-4567.</p>
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <button class="faq-question flex justify-between items-center w-full text-left font-semibold">
+                <span>What if something is wrong with my order?</span>
+                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+              </button>
+              <div class="faq-answer hidden mt-4 text-gray-600">
+                <p>We take great pride in our products and aim for perfection with every order. If you're not completely satisfied with your order, please contact us within 2 hours of delivery. We'll gladly replace any items that don't meet our quality standards or offer a refund or store credit.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-red-50 mt-12">
+    <div class="container mx-auto py-4 px-4">
+      <div class="flex flex-col md:flex-row gap-6 items-center justify-between mb-2">
+        <div>
+          <img class="h-72" src="../images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="" />
+        </div>
+        <div class="flex flex-col md:flex-row items-center gap-4">
+          <h3 class="text-xl me-10">
+            Become a part of us?
+          </h3>
+          <a href="contact.html" type="button"
+            class="text-white bg-gradient-to-br from-[#FF8938] to-[#FF0000] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 hover:scale-105 duration-500 transition font-bold rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2">
+            Contact
+          </a>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-center md:text-start">
+        <div class="my-8 space-y-4">
+          <h3 class="text-xl text-gray-700 font-bold">Quick Links</h3>
+          <a href="../index.html" class="block">Home</a>
+          <a href="products.html" class="block">Products</a>
+          <a href="about.html" class="block">About Us</a>
+          <a href="privacy.html" class="block">Privacy Policy</a>
+          <a href="terms.html" class="block">Terms & Conditions</a>
+        </div>
+        <div class="my-8 space-y-4">
+          <h3 class="text-xl text-gray-700 font-bold">Our Service</h3>
+          <a href="custom-orders.html" class="block">Custom Orders</a>
+          <a href="order.html" class="block">Online Ordering</a>
+          <a href="products.html?filter=special" class="block">Seasonal Specials</a>
+          <a href="gift-packaging.html" class="block">Gift Packaging</a>
+        </div>
+        <div class="my-8 space-y-4">
+          <h3 class="text-xl text-gray-700 font-bold">Help</h3>
+          <a href="faq.html" class="block">FAQs</a>
+          <a href="contact.html" class="block">Contact Us</a>
+          <a href="order-tracking.html" class="block">Track Order</a>
+          <a href="shipping.html" class="block">Shipping Information</a>
+        </div>
+        <div class="my-8 space-y-4">
+          <h3 class="text-xl text-gray-700 font-bold">
+            Be a part of our team
+          </h3>
+          <!-- subscribe -->
+          <div class="flex items-center justify-center md:justify-start">
+            <input type="email" placeholder="Email address" class="bg-transparent border-b-2 py-2 focus:outline-none" />
+            <button type="button"
+              class="text-white bg-gradient-to-br from-[#FF8938] to-[#FF0000] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 hover:scale-105 transition font-bold rounded-full text-xl p-2 text-center -ml-4 mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                stroke="currentColor" class="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+          </div>
+          <!-- social links -->
+          <div class="space-x-4">
+            <a href="#" class="w-6 h-6 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path
+                  d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+              </svg></a>
+            <a href="#" class="w-6 h-6 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+              </svg></a>
+            <a href="#" class="w-6 h-6 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/>
+              </svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h5 class="text-center font-semibold py-4">All rights reserved © Djini's Bakehouse 2024</h5>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../assets/js/utils.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/cart.js"></script>
+  
+  <!-- Order Tracking JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // FAQ Functionality
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+          const answer = this.nextElementSibling;
+          const icon = this.querySelector('.fa-chevron-down');
+          
+          // Toggle answer visibility
+          answer.classList.toggle('hidden');
+          
+          // Rotate icon
+          if (icon) {
+            icon.style.transform = answer.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+          }
+          
+          // Close other answers
+          faqQuestions.forEach(otherQuestion => {
+            if (otherQuestion !== question) {
+              const otherAnswer = otherQuestion.nextElementSibling;
+              const otherIcon = otherQuestion.querySelector('.fa-chevron-down');
+              
+              otherAnswer.classList.add('hidden');
+              if (otherIcon) {
+                otherIcon.style.transform = 'rotate(0deg)';
+              }
+            }
+          });
+        });
+      });
+      
+      // Order Tracking Form
+      const trackingForm = document.getElementById('tracking-form');
+      const orderStatus = document.getElementById('order-status');
+      const errorMessage = document.getElementById('error-message');
+      
+      if (trackingForm) {
+        trackingForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Get form values
+          const orderId = document.getElementById('order-id').value;
+          const email = document.getElementById('email').value;
+          
+          // Hide any existing messages
+          orderStatus.classList.add('hidden');
+          errorMessage.classList.add('hidden');
+          
+          // Validate input
+          if (!orderId || !email) {
+            showError('Please enter both Order ID and email address.');
+            return;
+          }
+          
+          // Validate email format
+          if (!DjinisUtils.isValidEmail(email)) {
+            showError('Please enter a valid email address.');
+            return;
+          }
+          
+          // Simulate API call to check order
+          findOrder(orderId, email)
+            .then(order => {
+              if (order) {
+                displayOrderDetails(order);
+              } else {
+                showError('We couldn\'t find an order with that information. Please check your Order ID and email address and try again.');
+              }
+            })
+            .catch(error => {
+              showError('An error occurred while fetching your order. Please try again later.');
+              console.error('Error fetching order:', error);
+            });
+        });
+      }
+      
+      /**
+       * Find order by ID and email
+       * @param {string} orderId - Order ID
+       * @param {string} email - Email address
+       * @returns {Promise} Promise that resolves with order or null
+       */
+      function findOrder(orderId, email) {
+        return new Promise((resolve, reject) => {
+          // In a real app, this would be an API call
+          setTimeout(() => {
+            try {
+              // Get orders from localStorage
+              const orders = JSON.parse(localStorage.getItem('djinisOrders')) || [];
+              
+              // Find matching order
+              const order = orders.find(o => o.orderId === orderId && o.email === email);
+              
+              // If no order found, check demo orders
+              if (!order) {
+                const demoOrders = getDemoOrders();
+                const demoOrder = demoOrders.find(o => o.orderId === orderId && o.email === email);
+                resolve(demoOrder || null);
+              } else {
+                resolve(order);
+              }
+            } catch (error) {
+              reject(error);
+            }
+          }, 1000); // Simulate network delay
+        });
+      }
+      
+      /**
+       * Display order details
+       * @param {Object} order - Order data
+       */
+      function displayOrderDetails(order) {
+        // Update order ID and date
+        document.getElementById('status-order-id').textContent = order.orderId;
+        
+        const orderDate = new Date(order.orderDate);
+        document.getElementById('order-date').textContent = `Placed on ${DjinisUtils.formatDate(orderDate)}`;
+        
+        // Update status badge
+        const statusBadge = document.getElementById('status-badge');
+        statusBadge.textContent = order.status;
+        
+        // Set badge color based on status
+        statusBadge.className = 'text-white text-sm font-medium px-3 py-1 rounded-full';
+        
+        switch(order.status) {
+          case 'Placed':
+            statusBadge.classList.add('bg-blue-500');
+            break;
+          case 'Preparing':
+            statusBadge.classList.add('bg-yellow-500');
+            break;
+          case 'Ready':
+            statusBadge.classList.add('bg-indigo-500');
+            break;
+          case 'On the Way':
+            statusBadge.classList.add('bg-purple-500');
+            break;
+          case 'Delivered':
+            statusBadge.classList.add('bg-green-500');
+            break;
+          case 'Canceled':
+            statusBadge.classList.add('bg-red-500');
+            break;
+          default:
+            statusBadge.classList.add('bg-gray-500');
+        }
+        
+        // Update progress steps
+        updateProgressSteps(order.status);
+        
+        // Update estimated delivery
+        document.getElementById('estimated-delivery').textContent = order.estimatedDelivery || 'Not available';
+        
+        // Populate order items
+        const orderItemsContainer = document.getElementById('order-items');
+        orderItemsContainer.innerHTML = '';
+        
+        order.items.forEach(item => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td class="px-6 py-4 whitespace-nowrap">
+              <div class="flex items-center">
+                ${item.image ? `<img src="${item.image}" alt="${item.name}" class="w-10 h-10 object-cover rounded mr-3">` : ''}
+                <div>
+                  <p class="font-medium">${item.name}</p>
+                </div>
+              </div>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap">
+              ${item.quantity}
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap">
+              ${(item.price * item.quantity).toFixed(2)}
+            </td>
+          `;
+          
+          orderItemsContainer.appendChild(row);
+        });
+        
+        // Update order summary
+        document.getElementById('order-subtotal').textContent = '<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Track Your Order - Djini's Bakehouse</title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="../images/Djini_s_Bakehouse_1_-removebg-preview.png" type="image/x-icon">
+  <!-- tailwind cdn -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body class="text-[#777777] bg-gray-50">
+  <!-- Mobile menu JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      menuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    });
+  </script>
+
+  <nav class="fixed inset-x-0 top-0 z-30 w-full border border-gray-100 bg-white/80 py-2 px-4 shadow backdrop-blur-lg">
+    <div class="flex items-center justify-between">
+      <a class="flex items-center" href="../index.html">
+        <img class="h-16 w-auto" src="../images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="Djini's Bakehouse">
+        <span class="sr-only">Djini's Bakehouse</span>
+      </a>
+      <button id="menu-btn" class="block md:hidden focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+      <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-white shadow-md md:hidden z-40 p-4">
+        <a href="../index.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Home</a>
+        <a href="products.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
+        <a href="order.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order Online</a>
+        <a href="about.html" class="block text-gray-900 hover:bg + order.subtotal.toFixed(2);
+        
+        // Show discount if applicable
+        if (order.discount && order.discount > 0) {
+          document.getElementById('discount-row').classList.remove('hidden');
+          document.getElementById('order-discount').textContent = '-<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Track Your Order - Djini's Bakehouse</title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="../images/Djini_s_Bakehouse_1_-removebg-preview.png" type="image/x-icon">
+  <!-- tailwind cdn -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body class="text-[#777777] bg-gray-50">
+  <!-- Mobile menu JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      menuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    });
+  </script>
+
+  <nav class="fixed inset-x-0 top-0 z-30 w-full border border-gray-100 bg-white/80 py-2 px-4 shadow backdrop-blur-lg">
+    <div class="flex items-center justify-between">
+      <a class="flex items-center" href="../index.html">
+        <img class="h-16 w-auto" src="../images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="Djini's Bakehouse">
+        <span class="sr-only">Djini's Bakehouse</span>
+      </a>
+      <button id="menu-btn" class="block md:hidden focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+      <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-white shadow-md md:hidden z-40 p-4">
+        <a href="../index.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Home</a>
+        <a href="products.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
+        <a href="order.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order Online</a>
+        <a href="about.html" class="block text-gray-900 hover:bg + order.discount.toFixed(2);
+        } else {
+          document.getElementById('discount-row').classList.add('hidden');
+        }
+        
+        document.getElementById('order-shipping').textContent = order.shipping === 0 ? 'Free' : '<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Track Your Order - Djini's Bakehouse</title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="../images/Djini_s_Bakehouse_1_-removebg-preview.png" type="image/x-icon">
+  <!-- tailwind cdn -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body class="text-[#777777] bg-gray-50">
+  <!-- Mobile menu JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      menuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    });
+  </script>
+
+  <nav class="fixed inset-x-0 top-0 z-30 w-full border border-gray-100 bg-white/80 py-2 px-4 shadow backdrop-blur-lg">
+    <div class="flex items-center justify-between">
+      <a class="flex items-center" href="../index.html">
+        <img class="h-16 w-auto" src="../images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="Djini's Bakehouse">
+        <span class="sr-only">Djini's Bakehouse</span>
+      </a>
+      <button id="menu-btn" class="block md:hidden focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+      <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-white shadow-md md:hidden z-40 p-4">
+        <a href="../index.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Home</a>
+        <a href="products.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
+        <a href="order.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order Online</a>
+        <a href="about.html" class="block text-gray-900 hover:bg + order.shipping.toFixed(2);
+        document.getElementById('order-tax').textContent = '<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Track Your Order - Djini's Bakehouse</title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="../images/Djini_s_Bakehouse_1_-removebg-preview.png" type="image/x-icon">
+  <!-- tailwind cdn -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body class="text-[#777777] bg-gray-50">
+  <!-- Mobile menu JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      menuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    });
+  </script>
+
+  <nav class="fixed inset-x-0 top-0 z-30 w-full border border-gray-100 bg-white/80 py-2 px-4 shadow backdrop-blur-lg">
+    <div class="flex items-center justify-between">
+      <a class="flex items-center" href="../index.html">
+        <img class="h-16 w-auto" src="../images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="Djini's Bakehouse">
+        <span class="sr-only">Djini's Bakehouse</span>
+      </a>
+      <button id="menu-btn" class="block md:hidden focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+      <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-white shadow-md md:hidden z-40 p-4">
+        <a href="../index.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Home</a>
+        <a href="products.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
+        <a href="order.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order Online</a>
+        <a href="about.html" class="block text-gray-900 hover:bg + order.tax.toFixed(2);
+        document.getElementById('order-total').textContent = '<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Track Your Order - Djini's Bakehouse</title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="../images/Djini_s_Bakehouse_1_-removebg-preview.png" type="image/x-icon">
+  <!-- tailwind cdn -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body class="text-[#777777] bg-gray-50">
+  <!-- Mobile menu JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      menuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    });
+  </script>
+
+  <nav class="fixed inset-x-0 top-0 z-30 w-full border border-gray-100 bg-white/80 py-2 px-4 shadow backdrop-blur-lg">
+    <div class="flex items-center justify-between">
+      <a class="flex items-center" href="../index.html">
+        <img class="h-16 w-auto" src="../images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="Djini's Bakehouse">
+        <span class="sr-only">Djini's Bakehouse</span>
+      </a>
+      <button id="menu-btn" class="block md:hidden focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+      <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-white shadow-md md:hidden z-40 p-4">
+        <a href="../index.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Home</a>
+        <a href="products.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
+        <a href="order.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order Online</a>
+        <a href="about.html" class="block text-gray-900 hover:bg + order.total.toFixed(2);
+        
+        // Show order status section
+        orderStatus.classList.remove('hidden');
+        
+        // Scroll to status section
+        orderStatus.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      
+      /**
+       * Update progress steps based on order status
+       * @param {string} status - Order status
+       */
+      function updateProgressSteps(status) {
+        // Define step numbers for each status
+        const statusSteps = {
+          'Placed': 1,
+          'Preparing': 2,
+          'Ready': 3,
+          'On the Way': 4,
+          'Delivered': 5,
+          'Canceled': 0
+        };
+        
+        const currentStep = statusSteps[status] || 0;
+        const progressBar = document.getElementById('progress-bar');
+        
+        // Calculate progress percentage
+        let progressPercentage = 0;
+        if (currentStep > 0) {
+          progressPercentage = ((currentStep - 1) / 4) * 100;
+          if (currentStep === 5) progressPercentage = 100; // Delivered = 100%
+        }
+        
+        // Update progress bar
+        progressBar.style.width = `${progressPercentage}%`;
+        
+        // Update step icons
+        for (let i = 1; i <= 5; i++) {
+          const stepElement = document.getElementById(`step-${i}`);
+          const stepIcon = stepElement.querySelector('div');
+          
+          if (i < currentStep) {
+            // Completed step
+            stepIcon.className = 'w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center';
+            if (i === 1) stepIcon.innerHTML = '<i class="fas fa-check"></i>';
+            if (i === 2) stepIcon.innerHTML = '<i class="fas fa-check"></i>';
+            if (i === 3) stepIcon.innerHTML = '<i class="fas fa-check"></i>';
+            if (i === 4) stepIcon.innerHTML = '<i class="fas fa-check"></i>';
+          } else if (i === currentStep) {
+            // Current step
+            stepIcon.className = 'w-10 h-10 bg-red-500 text-white rounded-full flex items-center justify-center';
+          } else {
+            // Future step
+            stepIcon.className = 'w-10 h-10 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center';
+          }
+        }
+        
+        // Handle canceled status
+        if (status === 'Canceled') {
+          for (let i = 1; i <= 5; i++) {
+            const stepElement = document.getElementById(`step-${i}`);
+            const stepIcon = stepElement.querySelector('div');
+            stepIcon.className = 'w-10 h-10 bg-gray-300 text-gray-500 rounded-full flex items-center justify-center';
+          }
+          progressBar.style.width = '0%';
+          progressBar.classList.add('bg-red-500');
+        } else {
+          progressBar.classList.remove('bg-red-500');
+        }
+      }
+      
+      /**
+       * Show error message
+       * @param {string} message - Error message
+       */
+      function showError(message) {
+        const errorElement = document.getElementById('error-message');
+        const errorTextElement = document.getElementById('error-text');
+        
+        errorTextElement.textContent = message;
+        errorElement.classList.remove('hidden');
+        
+        // Scroll to error message
+        errorElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      
+      /**
+       * Get demo orders
+       * @returns {Array} Array of demo orders
+       */
+      function getDemoOrders() {
+        return [
+          {
+            orderId: 'DJB-12345678',
+            email: 'demo@example.com',
+            status: 'On the Way',
+            orderDate: new Date(Date.now() - 3600000).toISOString(), // 1 hour ago
+            estimatedDelivery: 'Today, within 30 minutes',
+            items: [
+              {
+                id: 'croissant-1',
+                name: 'Croissant',
+                price: 3.50,
+                quantity: 2,
+                image: '../images/Croissant.jpg'
+              },
+              {
+                id: 'triple-cheese-bread-1',
+                name: 'Triple Cheese Bread',
+                price: 6.74,
+                quantity: 1,
+                image: '../images/Triple cheese bread.jpg'
+              }
+            ],
+            subtotal: 13.74,
+            discount: 0,
+            shipping: 5.99,
+            tax: 1.37,
+            total: 21.10
+          },
+          {
+            orderId: 'DJB-87654321',
+            email: 'test@example.com',
+            status: 'Delivered',
+            orderDate: new Date(Date.now() - 86400000).toISOString(), // 1 day ago
+            estimatedDelivery: 'Delivered on March 11, 2025 at 3:45 PM',
+            items: [
+              {
+                id: 'apple-strudel-1',
+                name: 'Apple Strudel',
+                price: 6.99,
+                quantity: 1,
+                image: '../images/Apple Strudle.jpg'
+              },
+              {
+                id: 'bagelen-1',
+                name: 'Bagelen',
+                price: 4.50,
+                quantity: 2,
+                image: '../images/Bagelen.jpg'
+              },
+              {
+                id: 'beef-curry-puff-1',
+                name: 'Beef Curry Puff',
+                price: 5.25,
+                quantity: 3,
+                image: '../images/Beef Curry Puff.jpg'
+              }
+            ],
+            subtotal: 25.74,
+            discount: 2.57,
+            shipping: 0, // Free shipping
+            tax: 2.32,
+            total: 25.49
+          }
+        ];
+      }
+      
+      // Check for order ID in URL query parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const orderId = urlParams.get('order_id');
+      const email = urlParams.get('email');
+      
+      if (orderId && email) {
+        // Pre-fill form
+        document.getElementById('order-id').value = orderId;
+        document.getElementById('email').value = email;
+        
+        // Auto-submit form
+        if (trackingForm) {
+          // Trigger submit event
+          const submitEvent = new Event('submit');
+          trackingForm.dispatchEvent(submitEvent);
+        }
+      }
+    });
+  </script>
+</body>
+
+</html><!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Track Your Order - Djini's Bakehouse</title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="../images/Djini_s_Bakehouse_1_-removebg-preview.png" type="image/x-icon">
+  <!-- tailwind cdn -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body class="text-[#777777] bg-gray-50">
+  <!-- Mobile menu JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      menuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    });
+  </script>
+
+  <nav class="fixed inset-x-0 top-0 z-30 w-full border border-gray-100 bg-white/80 py-2 px-4 shadow backdrop-blur-lg">
+    <div class="flex items-center justify-between">
+      <a class="flex items-center" href="../index.html">
+        <img class="h-16 w-auto" src="../images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="Djini's Bakehouse">
+        <span class="sr-only">Djini's Bakehouse</span>
+      </a>
+      <button id="menu-btn" class="block md:hidden focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+      <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-white shadow-md md:hidden z-40 p-4">
+        <a href="../index.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Home</a>
+        <a href="products.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
+        <a href="order.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order Online</a>
+        <a href="about.html" class="block text-gray-900 hover:bg + order.total.toFixed(2);
