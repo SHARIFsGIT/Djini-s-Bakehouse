@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Djini's Bakehouse</title>
+  <meta name="description" content="Djini's Bakehouse - Fresh, handcrafted pastries, bread, and desserts made daily with premium ingredients. Order online for delivery or pickup.">
+  <title>Djini's Bakehouse - Artisan Bakery & Pastry Shop</title>
   <!-- favicon -->
   <link rel="shortcut icon" href="images/Djini_s_Bakehouse_1_-removebg-preview.png" type="image/x-icon">
   <!-- tailwind cdn -->
@@ -13,10 +14,13 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- Preload key images -->
+  <link rel="preload" as="image" href="images/Banner photo 2.png">
+  <link rel="preload" as="image" href="images/Djini_s_Bakehouse_1_-removebg-preview.png">
 </head>
 
-<body class="text-[#777777]">
+<body class="text-gray-700 bg-gray-50 font-sans">
   <!-- Mobile menu JavaScript -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -30,146 +34,181 @@
   </script>
 
   <nav class="fixed inset-x-0 top-0 z-30 w-full border border-gray-100 bg-white/80 py-2 px-4 shadow backdrop-blur-lg">
-    <div class="flex items-center justify-between">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
       <a class="flex items-center" href="index.html">
         <img class="h-16 w-auto" src="images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="Djini's Bakehouse">
         <span class="sr-only">Djini's Bakehouse</span>
       </a>
-      <button id="menu-btn" class="block md:hidden focus:outline-none">
+      <button id="menu-btn" class="block md:hidden focus:outline-none" aria-label="Toggle menu">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
         </svg>
       </button>
       <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-white shadow-md md:hidden z-40 p-4">
-        <a href="index.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Home</a>
-        <a href="products.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
-        <a href="order.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order Online</a>
-        <a href="about.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">About</a>
-        <a href="contact.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Contact</a>
+        <a href="index.html" class="block text-gray-900 bg-gray-100 px-3 py-2 font-semibold rounded-lg">Home</a>
+        <a href="pages/products.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
+        <a href="pages/order.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order Online</a>
+        <a href="pages/about.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">About</a>
+        <a href="pages/contact.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Contact</a>
         <div class="mt-3 border-t pt-3">
-          <a href="signup.html" class="block text-gray-900 bg-gray-100 px-4 py-2 rounded-xl shadow mb-2 text-center">Sign Up</a>
-          <a href="login.html" class="block text-white bg-blue-600 px-4 py-2 rounded-xl shadow text-center">Login</a>
+          <a href="pages/signup.html" class="block text-gray-900 bg-gray-100 px-4 py-2 rounded-xl shadow mb-2 text-center">Sign Up</a>
+          <a href="pages/login.html" class="block text-white bg-red-500 px-4 py-2 rounded-xl shadow text-center">Login</a>
         </div>
       </div>
       <div id="menu" class="hidden md:flex md:items-center md:gap-4">
-        <a href="index.html" class="text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Home</a>
-        <a href="products.html" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
-        <a href="order.html" class="text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order Online</a>
-        <a href="about.html" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">About</a>
-        <a href="contact.html" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Contact</a>
+        <a href="index.html" class="text-gray-900 bg-gray-100 px-3 py-2 font-semibold rounded-lg">Home</a>
+        <a href="pages/products.html" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
+        <a href="pages/order.html" class="text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order Online</a>
+        <a href="pages/about.html" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">About</a>
+        <a href="pages/contact.html" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Contact</a>
       </div>
       <div class="hidden md:flex items-center gap-3">
-        <a href="cart.html" class="text-gray-900 hover:text-red-500 relative">
-          <i class="fas fa-shopping-cart text-xl"></i>
-          <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+        <a href="pages/cart.html" class="text-gray-900 hover:text-red-500 relative transition-colors">
+          <i class="fas fa-shopping-cart text-xl cart-icon"></i>
+          <span id="cart-count" class="cart-count absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
         </a>
-        <a href="signup.html" class="text-gray-900 bg-white px-4 py-2 rounded-xl shadow">Sign Up</a>
-        <a href="login.html" class="text-white bg-blue-600 px-4 py-2 rounded-xl shadow">Login</a>
+        <a href="pages/signup.html" class="text-gray-900 bg-white hover:bg-gray-100 px-4 py-2 rounded-xl shadow transition-colors">Sign Up</a>
+        <a href="pages/login.html" class="text-white bg-red-500 hover:bg-red-600 px-4 py-2 rounded-xl shadow transition-colors">Login</a>
+        
+        <!-- Profile Menu (hidden by default, shown when logged in) -->
+        <div class="relative group profile-menu hidden">
+          <button class="flex items-center space-x-1 text-gray-900">
+            <img src="images/profile-placeholder.png" alt="Profile" class="w-8 h-8 rounded-full border-2 border-red-500">
+            <span class="font-medium" id="user-name">John Doe</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-10 hidden group-hover:block">
+            <a href="pages/profile.html" class="block px-4 py-2 text-gray-800 hover:bg-red-50">
+              <i class="fas fa-user mr-2"></i> My Profile
+            </a>
+            <a href="pages/orders.html" class="block px-4 py-2 text-gray-800 hover:bg-red-50">
+              <i class="fas fa-shopping-bag mr-2"></i> My Orders
+            </a>
+            <a href="pages/favorites.html" class="block px-4 py-2 text-gray-800 hover:bg-red-50">
+              <i class="fas fa-heart mr-2"></i> Wishlist
+            </a>
+            <div class="border-t my-2"></div>
+            <a href="#" class="logout-button block px-4 py-2 text-gray-800 hover:bg-red-50">
+              <i class="fas fa-sign-out-alt mr-2"></i> Logout
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
 
-  <header class="mt-20 container mx-auto px-4 lg:flex lg:items-center lg:gap-20">
+  <header class="pt-24 pb-8 md:py-16 container mx-auto px-4 lg:flex lg:items-center lg:gap-20 max-w-7xl">
     <div class="space-y-6 text-center lg:text-left flex-1">
-      <h1 class="text-6xl md:text-6xl font-bold text-gray-700">Enjoy your food with <br><span
-          class="text-red-500">Djini's Bakehouse</span></h1>
-      <p class="text-justify">At <span class="text-red-500 font-bold"> Djini's Bakehouse </span> every treat is made
+      <h1 class="text-5xl md:text-6xl font-bold text-gray-700 leading-tight">
+        Enjoy your food with <br><span class="text-red-500">Djini's Bakehouse</span>
+      </h1>
+      <p class="text-lg text-gray-600 mx-auto lg:mx-0 max-w-xl">
+        At <span class="text-red-500 font-bold"> Djini's Bakehouse</span>, every treat is made
         fresh with love and care. From golden crusts to soft, fluffy centers, we ensure that each creation is crafted to
         perfection. Discover the joy of freshly baked goodness that brings warmth and happiness to your day, every time.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-        <a href="order.html" class="bg-gradient-to-br from-[#ff8f45] to-[#ff5050] text-white px-6 py-3 rounded-lg hover:scale-105 transition text-center">
+        <a href="pages/order.html" class="bg-gradient-to-br from-[#ff8f45] to-[#ff5050] text-white px-6 py-3 rounded-lg hover:scale-105 transition duration-300 text-center shadow-lg">
           Order Now
         </a>
-        <a href="products.html" class="border border-[#ff5050] text-[#ff5050] px-6 py-3 rounded-lg hover:bg-red-50 transition text-center">
+        <a href="pages/products.html" class="border border-[#ff5050] text-[#ff5050] px-6 py-3 rounded-lg hover:bg-red-50 transition duration-300 text-center">
           Our Products
         </a>
       </div>
     </div>
-    <div class="flex justify-center lg:flex-1">
-      <img class="rounded-3xl mt-6 w-3/4 lg:w-full" src="images/Banner photo 2.png" alt="Djini's Bakehouse Banner">
+    <div class="flex justify-center lg:flex-1 mt-8 lg:mt-0">
+      <img class="rounded-3xl lg:w-full object-cover shadow-xl hover:shadow-2xl transition duration-500" 
+           src="images/Banner photo 2.png" 
+           alt="Assortment of fresh baked goods from Djini's Bakehouse" 
+           width="600" height="450">
     </div>
   </header>
 
-  <main class="p-5 md:p-0 lg:p-0 container mx-auto">
-    <!-- start featured products -->
-    <section class="my-6 lg:my-28">
-      <div class="text-center p-4 space-y-4">
-        <h2 class="text-5xl font-bold text-gray-700">Discover <span class="text-red-500">Djini's Bakehouse</span></h2>
-        <p>
+  <main class="p-5 md:p-0 lg:p-0 container mx-auto max-w-7xl">
+    <!-- Featured products section -->
+    <section class="my-6 lg:my-24">
+      <div class="text-center p-4 space-y-4 mb-10">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-700">Discover <span class="text-red-500">Djini's Bakehouse</span></h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
           Indulge in the magic of <span class="text-red-500 font-semibold">Djini's Bakehouse</span>, where every bite is
           a celebration of warmth, sweetness, and freshly baked perfection.
         </p>
       </div>
       <div class="space-y-8 md:space-y-0 my-6 grid md:grid-cols-2 lg:grid-cols-4 gap-8 items-center md:justify-between">
-        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-orange-50 text-center space-y-6 shadow-md">
-          <img class="rounded-lg" src="images/Apple Strudle.jpg" alt="Apple Strudle" class="mx-auto" />
-          <h3 class="font-bold text-2xl text-gray-700">Apple Strudle</h3>
-          <p>Savor the warm, flaky goodness of apple strudel</p>
+        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-orange-50 text-center space-y-4 shadow-md hover:shadow-xl transition duration-300 product-card">
+          <img class="rounded-lg w-full h-56 object-cover" src="images/Apple Strudle.jpg" alt="Apple Strudel">
+          <h3 class="font-bold text-xl text-gray-700">Apple Strudel</h3>
+          <p class="text-gray-600">Savor the warm, flaky goodness of apple strudel with cinnamon-dusted apples wrapped in delicate pastry.</p>
           <div class="flex justify-between items-center px-4">
-            <span class="font-bold text-red-500">$6.99</span>
-            <button class="add-to-cart px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600" data-id="apple-strudle" data-name="Apple Strudle" data-price="6.99">
+            <span class="font-bold text-red-500 text-lg">$6.99</span>
+            <button class="add-to-cart px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+              data-id="apple-strudel-1" data-name="Apple Strudel" data-price="6.99" data-image="images/Apple Strudle.jpg">
               Add to Cart
             </button>
           </div>
         </div>
-        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-red-50 text-center space-y-6 shadow-md">
-          <img class="rounded-lg" src="images/Bagelen.jpg" alt="Bagelen" class="mx-auto" />
-          <h3 class="font-bold text-2xl text-gray-700">Bagelen</h3>
-          <p>A crispy, sweet toasted bread often enjoyed as a snack or dessert</p>
+        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-red-50 text-center space-y-4 shadow-md hover:shadow-xl transition duration-300 product-card">
+          <img class="rounded-lg w-full h-56 object-cover" src="images/Bagelen.jpg" alt="Bagelen">
+          <h3 class="font-bold text-xl text-gray-700">Bagelen</h3>
+          <p class="text-gray-600">A crispy, sweet toasted bread often enjoyed as a snack or dessert with a sprinkle of sugar on top.</p>
           <div class="flex justify-between items-center px-4">
-            <span class="font-bold text-red-500">$4.50</span>
-            <button class="add-to-cart px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600" data-id="bagelen" data-name="Bagelen" data-price="4.50">
+            <span class="font-bold text-red-500 text-lg">$4.50</span>
+            <button class="add-to-cart px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+              data-id="bagelen-1" data-name="Bagelen" data-price="4.50" data-image="images/Bagelen.jpg">
               Add to Cart
             </button>
           </div>
         </div>
-        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-orange-50 text-center space-y-6 shadow-md">
-          <img class="rounded-lg" src="images/Baguette.jpg" alt="Baguette" class="mx-auto" />
-          <h3 class="font-bold text-2xl text-gray-700">Baguette</h3>
-          <p>A long, crusty French bread, perfect for sandwiches or with butter and jam</p>
+        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-orange-50 text-center space-y-4 shadow-md hover:shadow-xl transition duration-300 product-card">
+          <img class="rounded-lg w-full h-56 object-cover" src="images/Baguette.jpg" alt="Baguette">
+          <h3 class="font-bold text-xl text-gray-700">Baguette</h3>
+          <p class="text-gray-600">A long, crusty French bread, perfect for sandwiches or with butter and jam.</p>
           <div class="flex justify-between items-center px-4">
-            <span class="font-bold text-red-500">$3.99</span>
-            <button class="add-to-cart px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600" data-id="baguette" data-name="Baguette" data-price="3.99">
+            <span class="font-bold text-red-500 text-lg">$3.99</span>
+            <button class="add-to-cart px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+              data-id="baguette-1" data-name="Baguette" data-price="3.99" data-image="images/Baguette.jpg">
               Add to Cart
             </button>
           </div>
         </div>
-        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-red-50 text-center space-y-6 shadow-md">
-          <img class="rounded-lg" src="images/Beef Curry Puff.jpg" alt="Beef Curry Puff" class="mx-auto" />
-          <h3 class="font-bold text-2xl text-gray-700">Beef Curry Puff</h3>
-          <p>A flaky pastry filled with savory beef curry, spices, and potatoes. Perfect snack!</p>
+        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-red-50 text-center space-y-4 shadow-md hover:shadow-xl transition duration-300 product-card">
+          <img class="rounded-lg w-full h-56 object-cover" src="images/Beef Curry Puff.jpg" alt="Beef Curry Puff">
+          <h3 class="font-bold text-xl text-gray-700">Beef Curry Puff</h3>
+          <p class="text-gray-600">A flaky pastry filled with savory beef curry, spices, and potatoes. Perfect snack!</p>
           <div class="flex justify-between items-center px-4">
-            <span class="font-bold text-red-500">$5.25</span>
-            <button class="add-to-cart px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600" data-id="beef-curry-puff" data-name="Beef Curry Puff" data-price="5.25">
+            <span class="font-bold text-red-500 text-lg">$5.25</span>
+            <button class="add-to-cart px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+              data-id="beef-curry-puff-1" data-name="Beef Curry Puff" data-price="5.25" data-image="images/Beef Curry Puff.jpg">
               Add to Cart
             </button>
           </div>
         </div>
-        <!-- More products with similar structure... -->
       </div>
       <div class="text-center mt-10">
-        <a href="products.html" class="inline-block bg-gradient-to-br from-[#ff8f45] to-[#ff5050] text-white px-6 py-3 rounded-lg hover:scale-105 transition">
+        <a href="pages/products.html" class="inline-block bg-gradient-to-br from-[#ff8f45] to-[#ff5050] text-white px-6 py-3 rounded-lg hover:scale-105 transition duration-300 shadow-md">
           View All Products
         </a>
       </div>
     </section>
     <!-- end featured products -->
 
-    <!-- Start special offers section -->
-    <section class="my-16 lg:my-28 bg-red-50 p-8 rounded-xl">
+    <!-- Special offers section -->
+    <section class="my-16 lg:my-28 bg-red-50 p-8 rounded-xl shadow-sm">
       <div class="text-center p-4 space-y-4">
+        <span class="bg-red-100 text-red-500 font-semibold px-3 py-1 rounded-full text-sm inline-block mb-2">Limited Time</span>
         <h2 class="text-4xl font-bold text-gray-700">Today's <span class="text-red-500">Special Offers</span></h2>
-        <p class="max-w-2xl mx-auto">
+        <p class="max-w-2xl mx-auto text-gray-600">
           Don't miss out on our daily special offers! Limited-time deals on your favorite baked treats.
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-        <div class="bg-white p-6 rounded-lg shadow-lg relative overflow-hidden">
+        <div class="bg-white p-6 rounded-lg shadow-lg relative overflow-hidden hover:shadow-xl transition duration-300">
           <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
             20% OFF
           </div>
-          <img src="images/Croissant.jpg" alt="Special Croissant" class="w-full h-48 object-cover rounded-lg mb-4">
+          <img src="images/Croissant.jpg" alt="Weekend Croissant Bundle" class="w-full h-48 object-cover rounded-lg mb-4">
           <h3 class="text-xl font-bold text-gray-700">Weekend Croissant Bundle</h3>
           <p class="text-gray-600 mb-4">Buy 5 croissants, get 1 free! Perfect for your weekend breakfast.</p>
           <div class="flex justify-between items-center">
@@ -177,16 +216,17 @@
               <span class="line-through text-gray-400">$22.50</span>
               <span class="font-bold text-red-500 ml-2">$18.00</span>
             </div>
-            <button class="add-to-cart px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600" data-id="croissant-bundle" data-name="Weekend Croissant Bundle" data-price="18.00">
+            <button class="add-to-cart px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+              data-id="croissant-bundle" data-name="Weekend Croissant Bundle" data-price="18.00" data-image="images/Croissant.jpg">
               Add to Cart
             </button>
           </div>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-lg relative overflow-hidden">
+        <div class="bg-white p-6 rounded-lg shadow-lg relative overflow-hidden hover:shadow-xl transition duration-300">
           <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
             15% OFF
           </div>
-          <img src="images/Christmas stollen.jpg" alt="Stollen" class="w-full h-48 object-cover rounded-lg mb-4">
+          <img src="images/Christmas stollen.jpg" alt="Festive Stollen" class="w-full h-48 object-cover rounded-lg mb-4">
           <h3 class="text-xl font-bold text-gray-700">Special Festive Stollen</h3>
           <p class="text-gray-600 mb-4">Our traditional fruit-filled bread with a special seasonal discount.</p>
           <div class="flex justify-between items-center">
@@ -194,16 +234,17 @@
               <span class="line-through text-gray-400">$12.99</span>
               <span class="font-bold text-red-500 ml-2">$11.04</span>
             </div>
-            <button class="add-to-cart px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600" data-id="festive-stollen" data-name="Special Festive Stollen" data-price="11.04">
+            <button class="add-to-cart px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+              data-id="christmas-stollen-1" data-name="Festive Stollen" data-price="11.04" data-image="images/Christmas stollen.jpg">
               Add to Cart
             </button>
           </div>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-lg relative overflow-hidden">
+        <div class="bg-white p-6 rounded-lg shadow-lg relative overflow-hidden hover:shadow-xl transition duration-300">
           <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
             25% OFF
           </div>
-          <img src="images/Triple cheese bread.jpg" alt="Cheese Bread" class="w-full h-48 object-cover rounded-lg mb-4">
+          <img src="images/Triple cheese bread.jpg" alt="Triple Cheese Bread" class="w-full h-48 object-cover rounded-lg mb-4">
           <h3 class="text-xl font-bold text-gray-700">Triple Cheese Bread</h3>
           <p class="text-gray-600 mb-4">Our bestselling savory bread with a limited-time discount.</p>
           <div class="flex justify-between items-center">
@@ -211,7 +252,8 @@
               <span class="line-through text-gray-400">$8.99</span>
               <span class="font-bold text-red-500 ml-2">$6.74</span>
             </div>
-            <button class="add-to-cart px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600" data-id="triple-cheese-bread" data-name="Triple Cheese Bread" data-price="6.74">
+            <button class="add-to-cart px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+              data-id="triple-cheese-bread-1" data-name="Triple Cheese Bread" data-price="6.74" data-image="images/Triple cheese bread.jpg">
               Add to Cart
             </button>
           </div>
@@ -220,122 +262,125 @@
     </section>
     <!-- End special offers section -->
 
-    <!-- start news -->
+    <!-- Freshly Baked Items -->
     <section class="my-16 lg:my-28">
       <div class="text-center p-4 space-y-4">
-        <h2 class="text-5xl font-bold text-gray-700">Freshly Baked Items at <span class="text-red-500">Djini's
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-700">Freshly Baked Items at <span class="text-red-500">Djini's
             Bakehouse</span></h2>
-        <p class="text-center lg:mx-56">
+        <p class="text-center max-w-3xl mx-auto text-gray-600">
           At Djini's Bakehouse, every day begins with the aroma of freshly baked goodness. From crusty artisan breads to
           buttery pastries and decadent sweets, our baked delights are crafted with the finest ingredients for
           unbeatable flavor and freshness. Stop by and treat yourself to a taste of perfection!
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:items-center md:justify-center gap-6 md:space-y-0">
-        <div class="border rounded-lg p-5 space-y-4 shadow-2xl hover:scale-105 duration-700">
-          <img src="images/Maritozzo.jpg" alt="" class="w-full h-56 object-cover" />
-          <p class="text-sm">Feb 05, 2024</p>
+        <div class="border rounded-lg p-5 space-y-4 shadow-lg hover:scale-105 duration-500 transition bg-white">
+          <img src="images/Maritozzo.jpg" alt="Maritozzo" class="w-full h-56 object-cover rounded-lg" />
+          <div class="flex items-center">
+            <span class="text-sm text-gray-500">Feb 05, 2024</span>
+            <span class="mx-2 text-gray-300">•</span>
+            <span class="text-sm bg-red-100 text-red-500 rounded-full px-2 py-0.5">New</span>
+          </div>
           <h3 class="text-xl font-bold text-gray-700">
             Maritozzo
           </h3>
-          <p>
+          <p class="text-gray-600">
             Experience the rich, creamy delight of our Maritozzo, a classic Italian treat at its finest!
           </p>
           <div class="flex justify-between items-center mt-4">
-            <span class="font-bold text-red-500">$7.50</span>
-            <button class="add-to-cart px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600" data-id="maritozzo" data-name="Maritozzo" data-price="7.50">
+            <span class="font-bold text-red-500 text-lg">$7.50</span>
+            <button class="add-to-cart px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+              data-id="maritozzo-1" data-name="Maritozzo" data-price="7.50" data-image="images/Maritozzo.jpg">
               Add to Cart
             </button>
           </div>
         </div>
-        <!-- More items with similar structure... -->
+        <!-- Add more freshly baked items here as needed -->
       </div>
     </section>
-    <!-- end news -->
+    <!-- end freshly baked section -->
 
-    <!-- start meet super -->
-    <section
-      class="my-16 lg:my-28 px-16 py-20 grid grid-cols-1 lg:grid-cols-2 items-center gap-8 bg-gradient-to-r from-[#FF8938] to-[#FF0000] rounded-lg">
+    <!-- Customer testimonials -->
+    <section class="my-16 lg:my-28 px-6 md:px-16 py-16 md:py-20 grid grid-cols-1 lg:grid-cols-2 items-center gap-8 bg-gradient-to-r from-[#FF8938] to-[#FF0000] rounded-lg shadow-xl">
       <div class="space-y-6 text-white">
-        <h2 class="text-5xl font-bold">Meet Our Loyal Customers
+        <h2 class="text-4xl md:text-5xl font-bold">Meet Our Loyal Customers
         </h2>
-        <p class="text-justify pr-8">
+        <p class="text-justify pr-0 md:pr-8 text-white/90">
           At Djini's Bakehouse, we take pride in serving our amazing clients. While there are countless stories behind
           each bite, most share a common love for our handcrafted pastries and baked delights. Each moment spent here is
           a blend of authentic flavors and heartfelt connections. Join the family today!
         </p>
         <button type="button"
-          class="text-red-500 bg-white focus:ring-4 focus:outline-none focus:ring-pink-500 dark:focus:ring-pink-100 hover:scale-105 transition duration-700 font-bold rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2">
+          class="text-red-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-pink-500 dark:focus:ring-pink-100 hover:scale-105 transition duration-300 font-bold rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2 shadow-md">
           Show All
         </button>
       </div>
       <div class="space-y-12 relative">
-        <div class="relative rounded-lg bg-white p-10 space-y-4 w-10/12 ml-auto opacity-80 shadow-2xl">
-          <img src="images/client.png" alt="client"
-            class="absolute -left-6 -top-6 border-4 bg-white rounded-full w-16 h-16" />
-          <p>
+        <div class="relative rounded-lg bg-white p-8 space-y-4 w-11/12 ml-auto opacity-80 shadow-2xl">
+          <img src="images/client.png" alt="Testimonial by Shariful Islam"
+            class="absolute -left-6 -top-6 border-4 bg-white rounded-full w-16 h-16 shadow-md" />
+          <p class="text-gray-700">
             Djini's Bakehouse is amazing! Their pastries are fresh, flavorful & perfect. The friendly staff and cozy
             atmosphere make every visit special. Highly recommend! 🌟🌟🌟🌟🌟
           </p>
           <h3 class="font-bold text-gray-700">Shariful Islam</h3>
-          <p>Engineer</p>
+          <p class="text-gray-500">Engineer</p>
         </div>
-        <div class="absolute left-0 top-2/4 bottom-0 -translate-y-2/4 m-auto w-10/12 z-10 shadow-2xl">
-          <div class="relative rounded-lg bg-white p-10 space-y-4">
-            <img src="images/client2.png" alt="client"
-              class="absolute -left-6 -top-6 w-16 h-16 border-4 bg-white rounded-full" />
-            <p>
+        <div class="absolute left-0 top-2/4 bottom-0 -translate-y-2/4 m-auto w-11/12 z-10 shadow-2xl">
+          <div class="relative rounded-lg bg-white p-8 space-y-4">
+            <img src="images/client2.png" alt="Testimonial by Budiman"
+              class="absolute -left-6 -top-6 w-16 h-16 border-4 bg-white rounded-full shadow-md" />
+            <p class="text-gray-700">
               Absolutely love Djini's Bakehouse! Their baked goods are delicious, fresh, and full of flavor. The
               blueberry cheesebread is a must-try. Great service and cozy vibes! 🌟🌟🌟🌟
             </p>
             <h3 class="font-bold text-gray-700">Budiman</h3>
             <div class="flex justify-between">
-              <p>Chef</p>
-              <img src="images/circles.png" alt="">
+              <p class="text-gray-500">Chef</p>
+              <img src="images/circles.png" alt="Decorative element">
             </div>
           </div>
         </div>
-        <div class="relative rounded-lg bg-white p-10 space-y-4 w-10/12 ml-auto opacity-50 shadow-2xl">
-          <img src="images/client.png" alt="client"
-            class="absolute -left-6 -top-6 w-16 h-16 border-4 bg-white rounded-full" />
-          <p>
-            We are providing the best and suitable home insurance services for
-            the people who are interested to treatment
+        <div class="relative rounded-lg bg-white p-8 space-y-4 w-11/12 ml-auto opacity-50 shadow-2xl">
+          <img src="images/client.png" alt="Testimonial by Ilham Yuda"
+            class="absolute -left-6 -top-6 w-16 h-16 border-4 bg-white rounded-full shadow-md" />
+          <p class="text-gray-700">
+            The pastries at Djini's Bakehouse are exceptional - always fresh and bursting with flavor. Their apple strudel is simply phenomenal!
           </p>
           <h3 class="font-bold text-gray-700">Ilham Yuda</h3>
-          <p>Businessman</p>
+          <p class="text-gray-500">Businessman</p>
         </div>
       </div>
     </section>
-    <!-- end meet super -->
+    <!-- end testimonials -->
 
-    <!-- Start order steps section -->
+    <!-- Order steps section -->
     <section class="my-16 lg:my-28">
       <div class="text-center p-4 space-y-4">
         <h2 class="text-4xl font-bold text-gray-700">How to <span class="text-red-500">Order</span></h2>
-        <p class="max-w-2xl mx-auto">
+        <p class="max-w-2xl mx-auto text-gray-600">
           Ordering from Djini's Bakehouse is quick and easy. Follow these simple steps to get fresh baked goods delivered to your doorstep.
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-        <div class="bg-orange-50 p-6 rounded-lg text-center">
-          <div class="w-20 h-20 bg-gradient-to-br from-[#ff8f45] to-[#ff5050] text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">1</div>
+        <div class="bg-orange-50 p-6 rounded-lg text-center shadow-md hover:shadow-lg transition duration-300">
+          <div class="w-20 h-20 bg-gradient-to-br from-[#ff8f45] to-[#ff5050] text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4 shadow-md">1</div>
           <h3 class="text-xl font-bold text-gray-700 mb-2">Choose Your Treats</h3>
-          <p>Browse our selection and add your favorite baked goods to your cart.</p>
+          <p class="text-gray-600">Browse our selection and add your favorite baked goods to your cart.</p>
         </div>
-        <div class="bg-orange-50 p-6 rounded-lg text-center">
-          <div class="w-20 h-20 bg-gradient-to-br from-[#ff8f45] to-[#ff5050] text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">2</div>
+        <div class="bg-orange-50 p-6 rounded-lg text-center shadow-md hover:shadow-lg transition duration-300">
+          <div class="w-20 h-20 bg-gradient-to-br from-[#ff8f45] to-[#ff5050] text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4 shadow-md">2</div>
           <h3 class="text-xl font-bold text-gray-700 mb-2">Place Your Order</h3>
-          <p>Complete checkout with your delivery details and preferred payment method.</p>
+          <p class="text-gray-600">Complete checkout with your delivery details and preferred payment method.</p>
         </div>
-        <div class="bg-orange-50 p-6 rounded-lg text-center">
-          <div class="w-20 h-20 bg-gradient-to-br from-[#ff8f45] to-[#ff5050] text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">3</div>
+        <div class="bg-orange-50 p-6 rounded-lg text-center shadow-md hover:shadow-lg transition duration-300">
+          <div class="w-20 h-20 bg-gradient-to-br from-[#ff8f45] to-[#ff5050] text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4 shadow-md">3</div>
           <h3 class="text-xl font-bold text-gray-700 mb-2">Enjoy Fresh Delivery</h3>
-          <p>We'll deliver your freshly baked goods right to your doorstep at your chosen time.</p>
+          <p class="text-gray-600">We'll deliver your freshly baked goods right to your doorstep at your chosen time.</p>
         </div>
       </div>
       <div class="text-center mt-8">
-        <a href="order.html" class="inline-block bg-gradient-to-br from-[#ff8f45] to-[#ff5050] text-white px-6 py-3 rounded-lg hover:scale-105 transition">
+        <a href="pages/order.html" class="inline-block bg-gradient-to-br from-[#ff8f45] to-[#ff5050] text-white px-6 py-3 rounded-lg hover:scale-105 transition duration-300 shadow-md">
           Order Now
         </a>
       </div>
@@ -343,18 +388,18 @@
     <!-- End order steps section -->
   </main>
 
-  <footer class="bg-red-50">
-    <div class="container mx-auto py-4 px-4">
-      <div class="flex flex-col md:flex-row gap-6 items-center justify-between mb-2">
+  <footer class="bg-red-50 mt-24">
+    <div class="container mx-auto py-8 px-4 max-w-7xl">
+      <div class="flex flex-col md:flex-row gap-6 items-center justify-between mb-8">
         <div>
-          <img class="h-72" src="images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="" />
+          <img class="h-72" src="images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="Djini's Bakehouse Logo" />
         </div>
         <div class="flex flex-col md:flex-row items-center gap-4">
-          <h3 class="text-xl me-10">
+          <h3 class="text-xl me-10 text-gray-700">
             Become a part of us?
           </h3>
-          <a href="contact.html" type="button"
-            class="text-white bg-gradient-to-br from-[#FF8938] to-[#FF0000] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 hover:scale-105 duration-500 transition font-bold rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2">
+          <a href="pages/contact.html" 
+             class="text-white bg-gradient-to-br from-[#FF8938] to-[#FF0000] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 hover:scale-105 duration-500 transition font-bold rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2 shadow-md">
             Contact
           </a>
         </div>
@@ -362,25 +407,25 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-center md:text-start">
         <div class="my-8 space-y-4">
           <h3 class="text-xl text-gray-700 font-bold">Quick Links</h3>
-          <a href="index.html" class="block">Home</a>
-          <a href="products.html" class="block">Products</a>
-          <a href="about.html" class="block">About Us</a>
-          <a href="privacy.html" class="block">Privacy Policy</a>
-          <a href="terms.html" class="block">Terms & Conditions</a>
+          <a href="index.html" class="block text-gray-600 hover:text-red-500 transition-colors">Home</a>
+          <a href="pages/products.html" class="block text-gray-600 hover:text-red-500 transition-colors">Products</a>
+          <a href="pages/about.html" class="block text-gray-600 hover:text-red-500 transition-colors">About Us</a>
+          <a href="pages/privacy.html" class="block text-gray-600 hover:text-red-500 transition-colors">Privacy Policy</a>
+          <a href="pages/terms.html" class="block text-gray-600 hover:text-red-500 transition-colors">Terms & Conditions</a>
         </div>
         <div class="my-8 space-y-4">
           <h3 class="text-xl text-gray-700 font-bold">Our Service</h3>
-          <a href="custom-orders.html" class="block">Custom Orders</a>
-          <a href="order.html" class="block">Online Ordering</a>
-          <a href="products.html?filter=special" class="block">Seasonal Specials</a>
-          <a href="gift-packaging.html" class="block">Gift Packaging</a>
+          <a href="pages/custom-orders.html" class="block text-gray-600 hover:text-red-500 transition-colors">Custom Orders</a>
+          <a href="pages/order.html" class="block text-gray-600 hover:text-red-500 transition-colors">Online Ordering</a>
+          <a href="pages/products.html?filter=special" class="block text-gray-600 hover:text-red-500 transition-colors">Seasonal Specials</a>
+          <a href="pages/gift-packaging.html" class="block text-gray-600 hover:text-red-500 transition-colors">Gift Packaging</a>
         </div>
         <div class="my-8 space-y-4">
           <h3 class="text-xl text-gray-700 font-bold">Help</h3>
-          <a href="faq.html" class="block">FAQs</a>
-          <a href="contact.html" class="block">Contact Us</a>
-          <a href="order-tracking.html" class="block">Track Order</a>
-          <a href="shipping.html" class="block">Shipping Information</a>
+          <a href="pages/faq.html" class="block text-gray-600 hover:text-red-500 transition-colors">FAQs</a>
+          <a href="pages/contact.html" class="block text-gray-600 hover:text-red-500 transition-colors">Contact Us</a>
+          <a href="pages/order-tracking.html" class="block text-gray-600 hover:text-red-500 transition-colors">Track Order</a>
+          <a href="pages/shipping.html" class="block text-gray-600 hover:text-red-500 transition-colors">Shipping Information</a>
         </div>
         <div class="my-8 space-y-4">
           <h3 class="text-xl text-gray-700 font-bold">
@@ -388,8 +433,8 @@
           </h3>
           <!-- subscribe -->
           <div class="flex items-center justify-center md:justify-start">
-            <input type="email" placeholder="Email address" class="bg-transparent border-b-2 py-2 focus:outline-none" />
-            <button type="button"
+            <input type="email" placeholder="Email address" class="bg-transparent border-b-2 py-2 focus:outline-none" aria-label="Email address" />
+            <button type="button" aria-label="Subscribe"
               class="text-white bg-gradient-to-br from-[#FF8938] to-[#FF0000] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 hover:scale-105 transition font-bold rounded-full text-xl p-2 text-center -ml-4 mb-2">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
                 stroke="currentColor" class="w-6 h-6">
@@ -399,37 +444,41 @@
           </div>
           <!-- social links -->
           <div class="space-x-4">
-            <a href="#" class="w-6 h-6 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                <path
-                  d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
-              </svg></a>
-            <a href="#" class="w-6 h-6 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                <path
-                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
-              </svg></a>
-            <a href="#" class="w-6 h-6 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <a href="#" class="w-6 h-6 inline-block text-gray-600 hover:text-red-500 transition-colors" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
+                <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+              </svg>
+            </a>
+            <a href="#" class="w-6 h-6 inline-block text-gray-600 hover:text-red-500 transition-colors" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+                <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+              </svg>
+            </a>
+            <a href="#" class="w-6 h-6 inline-block text-gray-600 hover:text-red-500 transition-colors" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
                 <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/>
-              </svg></a>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
     </div>
-    <h5 class="text-center font-semibold py-4">All rights reserved © Djini's Bakehouse 2024</h5>
+    <div class="py-4 border-t border-red-100">
+      <h5 class="text-center font-semibold py-2 text-gray-600">All rights reserved © Djini's Bakehouse 2024</h5>
+    </div>
   </footer>
 
   <!-- Cart Notification Toast -->
-  <div id="cart-toast" class="fixed bottom-4 right-4 bg-white shadow-lg rounded-lg p-4 hidden transform transition-transform duration-300 z-50">
+  <div id="cart-toast" class="fixed bottom-4 right-4 bg-white shadow-lg rounded-lg p-4 hidden transform transition-transform duration-300 z-50 max-w-xs">
     <div class="flex items-center">
-      <div class="bg-green-100 p-2 rounded-full mr-3">
+      <div id="toast-icon" class="bg-green-100 p-2 rounded-full mr-3">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
         </svg>
       </div>
-      <div>
-        <p class="font-medium">Item added to cart!</p>
-        <a href="cart.html" class="text-sm text-blue-600 hover:underline">View Cart</a>
+      <div class="flex-1">
+        <p id="toast-message" class="font-medium"></p>
+        <a href="pages/cart.html" class="text-sm text-blue-600 hover:underline">View Cart</a>
       </div>
       <button id="close-toast" class="ml-4 text-gray-400 hover:text-gray-500">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -440,7 +489,71 @@
   </div>
 
   <!-- Cart functionality -->
-  <script src="js/cart.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/auth.js"></script>
+
+  <!-- Lazy loading for images -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Update cart count
+      function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem('djinisCart')) || [];
+        const cartCountElement = document.getElementById('cart-count');
+        
+        if (cartCountElement) {
+          const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+          cartCountElement.textContent = totalItems;
+          
+          // Make count invisible if 0
+          if (totalItems === 0) {
+            cartCountElement.classList.add('invisible');
+          } else {
+            cartCountElement.classList.remove('invisible');
+          }
+        }
+      }
+      
+      // Check login status
+      function checkLoginStatus() {
+        const userAuth = JSON.parse(localStorage.getItem('djinisUserAuth'));
+        const profileMenu = document.querySelector('.profile-menu');
+        const loginBtn = document.querySelector('a[href="pages/login.html"]');
+        const signupBtn = document.querySelector('a[href="pages/signup.html"]');
+        
+        if (userAuth && userAuth.isLoggedIn && profileMenu && loginBtn && signupBtn) {
+          // Show profile menu, hide login/signup buttons
+          profileMenu.classList.remove('hidden');
+          loginBtn.classList.add('hidden');
+          signupBtn.classList.add('hidden');
+          
+          // Update user name
+          const userName = document.getElementById('user-name');
+          if (userName) {
+            userName.textContent = `${userAuth.firstName} ${userAuth.lastName}`;
+          }
+        }
+      }
+      
+      // Initialize
+      updateCartCount();
+      checkLoginStatus();
+      
+      // Handle logout
+      const logoutButtons = document.querySelectorAll('.logout-button');
+      logoutButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          // Clear user auth
+          localStorage.removeItem('djinisUserAuth');
+          
+          // Redirect to home page
+          window.location.href = 'index.html';
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
