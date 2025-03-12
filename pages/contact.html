@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Get in touch with Djini's Bakehouse. Contact us for inquiries, custom orders, or feedback. We'd love to hear from you!">
   <title>Contact Us - Djini's Bakehouse</title>
   <!-- favicon -->
   <link rel="shortcut icon" href="images/Djini_s_Bakehouse_1_-removebg-preview.png" type="image/x-icon">
@@ -14,17 +16,31 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/styles.css">
+  <!-- Leaflet for Better Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 
-<body class="text-[#777777]">
+<body class="text-[#777777] flex flex-col min-h-screen">
+  <!-- Skip to main content link for accessibility -->
+  <a href="#main-content"
+    class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-red-500">Skip
+    to main content</a>
+
   <!-- Mobile menu JavaScript -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const menuBtn = document.getElementById('menu-btn');
       const mobileMenu = document.getElementById('mobile-menu');
-      
-      menuBtn.addEventListener('click', function() {
+
+      menuBtn.addEventListener('click', function () {
         mobileMenu.classList.toggle('hidden');
+        // ARIA attributes for accessibility
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true' || false;
+        menuBtn.setAttribute('aria-expanded', !expanded);
+        mobileMenu.setAttribute('aria-hidden', expanded);
       });
     });
   </script>
@@ -35,19 +51,24 @@
         <img class="h-16 w-auto" src="images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="Djini's Bakehouse">
         <span class="sr-only">Djini's Bakehouse</span>
       </a>
-      <button id="menu-btn" class="block md:hidden focus:outline-none">
+      <button id="menu-btn" class="block md:hidden focus:outline-none" aria-expanded="false" aria-label="Toggle menu">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
         </svg>
       </button>
-      <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-white shadow-md md:hidden z-40 p-4">
+      <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-white shadow-md md:hidden z-40 p-4"
+        aria-hidden="true">
         <a href="index.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Home</a>
-        <a href="products.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
-        <a href="order.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order Online</a>
+        <a href="products.html"
+          class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
+        <a href="order.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order
+          Online</a>
         <a href="about.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">About</a>
-        <a href="contact.html" class="block text-gray-900 bg-gray-100 px-3 py-2 font-semibold rounded-lg">Contact</a>
+        <a href="contact.html" class="block text-gray-900 bg-gray-100 px-3 py-2 font-semibold rounded-lg"
+          aria-current="page">Contact</a>
         <div class="mt-3 border-t pt-3">
-          <a href="signup.html" class="block text-gray-900 bg-gray-100 px-4 py-2 rounded-xl shadow mb-2 text-center">Sign Up</a>
+          <a href="signup.html"
+            class="block text-gray-900 bg-gray-100 px-4 py-2 rounded-xl shadow mb-2 text-center">Sign Up</a>
           <a href="login.html" class="block text-white bg-blue-600 px-4 py-2 rounded-xl shadow text-center">Login</a>
         </div>
       </div>
@@ -56,12 +77,14 @@
         <a href="products.html" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
         <a href="order.html" class="text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order Online</a>
         <a href="about.html" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">About</a>
-        <a href="contact.html" class="text-gray-900 bg-gray-100 px-3 py-2 font-semibold rounded-lg">Contact</a>
+        <a href="contact.html" class="text-gray-900 bg-gray-100 px-3 py-2 font-semibold rounded-lg"
+          aria-current="page">Contact</a>
       </div>
       <div class="hidden md:flex items-center gap-3">
-        <a href="cart.html" class="text-gray-900 hover:text-red-500 relative">
+        <a href="cart.html" class="text-gray-900 hover:text-red-500 relative" aria-label="Shopping cart">
           <i class="fas fa-shopping-cart text-xl"></i>
-          <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+          <span id="cart-count"
+            class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
         </a>
         <a href="signup.html" class="text-gray-900 bg-white px-4 py-2 rounded-xl shadow">Sign Up</a>
         <a href="login.html" class="text-white bg-blue-600 px-4 py-2 rounded-xl shadow">Login</a>
@@ -71,34 +94,59 @@
 
   <!-- Page Header -->
   <header class="mt-24 container mx-auto px-4 py-8">
-    <h1 class="text-4xl md:text-5xl font-bold text-center text-gray-700">Contact <span class="text-red-500">Us</span></h1>
-    <p class="text-center mt-4 max-w-2xl mx-auto">Have questions, feedback, or special order requests? We'd love to hear from you! Fill out the form below, and our team will get back to you as soon as possible.</p>
+    <h1 class="text-4xl md:text-5xl font-bold text-center text-gray-700">Contact <span class="text-red-500">Us</span>
+    </h1>
+    <p class="text-center mt-4 max-w-2xl mx-auto">Have questions, feedback, or special order requests? We'd love to hear
+      from you! Fill out the form below, and our team will get back to you as soon as possible.</p>
+
+    <!-- Breadcrumbs for better navigation -->
+    <nav class="flex justify-center mt-4" aria-label="Breadcrumb">
+      <ol class="flex items-center space-x-2 text-sm text-gray-500">
+        <li><a href="index.html" class="hover:text-red-500">Home</a></li>
+        <li><span class="mx-2">/</span></li>
+        <li class="text-red-500" aria-current="page">Contact Us</li>
+      </ol>
+    </nav>
   </header>
 
-  <main class="container mx-auto px-4 py-8">
+  <main id="main-content" class="container mx-auto px-4 py-8 flex-grow">
     <div class="max-w-6xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <!-- Contact Form -->
         <div class="bg-white shadow-lg rounded-lg p-8">
           <h2 class="text-2xl font-bold text-gray-700 mb-6">Send Us a Message</h2>
-          
-          <form id="contact-form">
+
+          <form id="contact-form" class="needs-validation">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
-                <input type="text" id="name" name="name" required class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name <span
+                    class="text-red-500">*</span></label>
+                <input type="text" id="name" name="name" required
+                  class="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors"
+                  aria-describedby="name-error">
+                <div id="name-error" class="text-red-500 text-sm mt-1 hidden"></div>
               </div>
               <div>
-                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
-                <input type="email" id="email" name="email" required class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address <span
+                    class="text-red-500">*</span></label>
+                <input type="email" id="email" name="email" required
+                  class="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors"
+                  aria-describedby="email-error">
+                <div id="email-error" class="text-red-500 text-sm mt-1 hidden"></div>
               </div>
               <div>
                 <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                <input type="tel" id="phone" name="phone" class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
+                <input type="tel" id="phone" name="phone"
+                  class="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors"
+                  aria-describedby="phone-error">
+                <div id="phone-error" class="text-red-500 text-sm mt-1 hidden"></div>
               </div>
               <div>
-                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject *</label>
-                <select id="subject" name="subject" required class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
+                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject <span
+                    class="text-red-500">*</span></label>
+                <select id="subject" name="subject" required
+                  class="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors"
+                  aria-describedby="subject-error">
                   <option value="">Select a subject</option>
                   <option value="Order Inquiry">Order Inquiry</option>
                   <option value="Product Information">Product Information</option>
@@ -107,42 +155,68 @@
                   <option value="Career Information">Career Information</option>
                   <option value="Other">Other</option>
                 </select>
+                <div id="subject-error" class="text-red-500 text-sm mt-1 hidden"></div>
               </div>
               <div class="md:col-span-2">
-                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message *</label>
-                <textarea id="message" name="message" rows="6" required class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none"></textarea>
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message <span
+                    class="text-red-500">*</span></label>
+                <textarea id="message" name="message" rows="6" required
+                  class="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors"
+                  aria-describedby="message-error"></textarea>
+                <div id="message-error" class="text-red-500 text-sm mt-1 hidden"></div>
               </div>
             </div>
-            
+
             <div class="mb-6">
-              <label class="custom-checkbox">
-                <input type="checkbox" required>
-                <span class="checkmark"></span>
-                <span>I agree to the <a href="privacy.html" class="text-red-500 hover:underline">Privacy Policy</a></span>
+              <label class="flex items-center">
+                <input type="checkbox" id="privacy-policy" name="privacy-policy" required
+                  class="form-checkbox h-4 w-4 text-red-500 focus:ring-red-400">
+                <span class="ml-2 text-sm text-gray-600">I agree to the <a href="privacy.html"
+                    class="text-red-500 hover:underline">Privacy Policy</a> <span class="text-red-500">*</span></span>
+              </label>
+              <div id="privacy-policy-error" class="text-red-500 text-sm mt-1 hidden"></div>
+            </div>
+
+            <!-- Newsletter opt-in -->
+            <div class="mb-6">
+              <label class="flex items-center">
+                <input type="checkbox" id="newsletter" name="newsletter"
+                  class="form-checkbox h-4 w-4 text-red-500 focus:ring-red-400">
+                <span class="ml-2 text-sm text-gray-600">Subscribe to our newsletter for updates and special
+                  offers</span>
               </label>
             </div>
-            
-            <div id="submit-error" class="hidden bg-red-100 text-red-700 p-4 rounded-lg mb-4">
+
+            <div id="submit-error" class="hidden bg-red-100 text-red-700 p-4 rounded-lg mb-4" role="alert">
               <i class="fas fa-exclamation-circle mr-2"></i>
               <span id="error-message">There was an error sending your message. Please try again.</span>
             </div>
-            
-            <div id="submit-success" class="hidden bg-green-100 text-green-700 p-4 rounded-lg mb-4">
+
+            <div id="submit-success" class="hidden bg-green-100 text-green-700 p-4 rounded-lg mb-4" role="alert">
               <i class="fas fa-check-circle mr-2"></i>
-              <span>Thank you for reaching out! Your message has been sent successfully. We'll get back to you as soon as possible.</span>
+              <span>Thank you for reaching out! Your message has been sent successfully. We'll get back to you as soon
+                as possible.</span>
             </div>
-            
-            <button type="submit" class="bg-red-500 text-white px-6 py-3 rounded-lg hover:bg-red-600 transition">
-              Send Message
+
+            <button type="submit"
+              class="bg-red-500 text-white px-6 py-3 rounded-lg hover:bg-red-600 transition flex items-center justify-center">
+              <span id="submit-text">Send Message</span>
+              <svg id="submit-loader" class="animate-spin ml-2 h-5 w-5 text-white hidden"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                </path>
+              </svg>
             </button>
           </form>
         </div>
-        
+
         <!-- Contact Information -->
         <div>
           <div class="bg-white shadow-lg rounded-lg p-8 mb-8">
             <h2 class="text-2xl font-bold text-gray-700 mb-6">Contact Information</h2>
-            
+
             <div class="space-y-6">
               <div class="flex items-start">
                 <div class="flex-shrink-0 bg-red-100 p-3 rounded-full mr-4">
@@ -151,138 +225,218 @@
                 <div>
                   <h3 class="font-semibold text-gray-700 mb-1">Main Bakery Location</h3>
                   <p>123 Bakery Lane, Sweetville, CA 94123</p>
+                  <a href="https://maps.google.com/?q=123+Bakery+Lane+Sweetville+CA+94123" target="_blank"
+                    rel="noopener noreferrer" class="text-red-500 hover:underline text-sm mt-1 inline-block">Get
+                    Directions <i class="fas fa-external-link-alt text-xs ml-1"></i></a>
                 </div>
               </div>
-              
+
               <div class="flex items-start">
                 <div class="flex-shrink-0 bg-red-100 p-3 rounded-full mr-4">
                   <i class="fas fa-phone-alt text-red-500"></i>
                 </div>
                 <div>
                   <h3 class="font-semibold text-gray-700 mb-1">Phone</h3>
-                  <p>(555) 123-4567</p>
+                  <p><a href="tel:+15551234567" class="hover:text-red-500">(555) 123-4567</a></p>
                   <p class="text-sm text-gray-500 mt-1">Mon-Fri: 8am - 6pm</p>
                   <p class="text-sm text-gray-500">Sat-Sun: 9am - 5pm</p>
                 </div>
               </div>
-              
+
               <div class="flex items-start">
                 <div class="flex-shrink-0 bg-red-100 p-3 rounded-full mr-4">
                   <i class="fas fa-envelope text-red-500"></i>
                 </div>
                 <div>
                   <h3 class="font-semibold text-gray-700 mb-1">Email</h3>
-                  <p>info@djinisbakehouse.com</p>
+                  <p><a href="mailto:info@djinisbakehouse.com" class="hover:text-red-500">info@djinisbakehouse.com</a>
+                  </p>
                   <p class="text-sm text-gray-500 mt-1">For general inquiries</p>
-                  <p>orders@djinisbakehouse.com</p>
+                  <p><a href="mailto:orders@djinisbakehouse.com"
+                      class="hover:text-red-500">orders@djinisbakehouse.com</a></p>
                   <p class="text-sm text-gray-500 mt-1">For order-related questions</p>
                 </div>
               </div>
-              
+
               <div class="flex items-start">
                 <div class="flex-shrink-0 bg-red-100 p-3 rounded-full mr-4">
                   <i class="fas fa-clock text-red-500"></i>
                 </div>
                 <div>
                   <h3 class="font-semibold text-gray-700 mb-1">Business Hours</h3>
-                  <p>Monday - Friday: 7:00 AM - 6:00 PM</p>
-                  <p>Saturday - Sunday: 8:00 AM - 5:00 PM</p>
+                  <table class="text-sm">
+                    <tbody>
+                      <tr>
+                        <td class="pr-4 py-1">Monday - Friday:</td>
+                        <td>7:00 AM - 6:00 PM</td>
+                      </tr>
+                      <tr>
+                        <td class="pr-4 py-1">Saturday - Sunday:</td>
+                        <td>8:00 AM - 5:00 PM</td>
+                      </tr>
+                      <tr>
+                        <td class="pr-4 py-1 text-red-500">Holiday Hours:</td>
+                        <td class="text-red-500">May vary</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
           </div>
-          
+
           <!-- Social Media Links -->
           <div class="bg-white shadow-lg rounded-lg p-8">
-            <h2 class="text-2xl font-bold text-gray-700 mb-6">Follow Us</h2>
-            
+            <h2 class="text-2xl font-bold text-gray-700 mb-6">Connect With Us</h2>
+
             <div class="grid grid-cols-2 gap-4">
-              <a href="#" class="flex items-center p-4 border rounded-lg hover:bg-gray-50 transition">
-                <i class="fab fa-facebook-f text-blue-600 text-xl mr-3"></i>
+              <a href="#" class="flex items-center p-4 border rounded-lg hover:bg-gray-50 transition group">
+                <i class="fab fa-facebook-f text-blue-600 text-xl mr-3 group-hover:scale-110 transition"></i>
                 <span>Facebook</span>
               </a>
-              <a href="#" class="flex items-center p-4 border rounded-lg hover:bg-gray-50 transition">
-                <i class="fab fa-instagram text-pink-600 text-xl mr-3"></i>
+              <a href="#" class="flex items-center p-4 border rounded-lg hover:bg-gray-50 transition group">
+                <i class="fab fa-instagram text-pink-600 text-xl mr-3 group-hover:scale-110 transition"></i>
                 <span>Instagram</span>
               </a>
-              <a href="#" class="flex items-center p-4 border rounded-lg hover:bg-gray-50 transition">
-                <i class="fab fa-twitter text-blue-400 text-xl mr-3"></i>
+              <a href="#" class="flex items-center p-4 border rounded-lg hover:bg-gray-50 transition group">
+                <i class="fab fa-twitter text-blue-400 text-xl mr-3 group-hover:scale-110 transition"></i>
                 <span>Twitter</span>
               </a>
-              <a href="#" class="flex items-center p-4 border rounded-lg hover:bg-gray-50 transition">
-                <i class="fab fa-pinterest text-red-600 text-xl mr-3"></i>
+              <a href="#" class="flex items-center p-4 border rounded-lg hover:bg-gray-50 transition group">
+                <i class="fab fa-pinterest text-red-600 text-xl mr-3 group-hover:scale-110 transition"></i>
                 <span>Pinterest</span>
               </a>
             </div>
+
+            <div class="mt-6 pt-4 border-t">
+              <h3 class="text-lg font-medium text-gray-700 mb-3">Follow #DjinisBakehouse</h3>
+              <div class="grid grid-cols-4 gap-2">
+                <!-- Instagram feed preview (placeholders) -->
+                <a href="#" class="block overflow-hidden rounded-lg hover:opacity-90 transition">
+                  <img src="https://source.unsplash.com/random/150x150/?bakery,1" alt="Instagram Post"
+                    class="w-full h-full object-cover aspect-square">
+                </a>
+                <a href="#" class="block overflow-hidden rounded-lg hover:opacity-90 transition">
+                  <img src="https://source.unsplash.com/random/150x150/?cake,1" alt="Instagram Post"
+                    class="w-full h-full object-cover aspect-square">
+                </a>
+                <a href="#" class="block overflow-hidden rounded-lg hover:opacity-90 transition">
+                  <img src="https://source.unsplash.com/random/150x150/?pastry,1" alt="Instagram Post"
+                    class="w-full h-full object-cover aspect-square">
+                </a>
+                <a href="#" class="block overflow-hidden rounded-lg hover:opacity-90 transition">
+                  <img src="https://source.unsplash.com/random/150x150/?bread,1" alt="Instagram Post"
+                    class="w-full h-full object-cover aspect-square">
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      
-      <!-- Map Section -->
+
+      <!-- Map Section with improved map using Leaflet -->
       <div class="mt-16">
         <h2 class="text-2xl font-bold text-gray-700 mb-6 text-center">Visit Us</h2>
         <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0625364133704!2d-122.41941548493247!3d37.77492977975919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580a97cae20eb%3A0x5cbaee91b2b5b38e!2sBakery%20St%2C%20San%20Francisco%2C%20CA%2094110%2C%20USA!5e0!3m2!1sen!2s!4v1710281528615!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div id="bakery-map" class="w-full h-96"></div>
         </div>
       </div>
-      
-      <!-- FAQ Section -->
+
+      <!-- FAQ Section with improved accessibility -->
       <div class="mt-16">
         <h2 class="text-2xl font-bold text-gray-700 mb-6 text-center">Frequently Asked Questions</h2>
-        
+
         <div class="max-w-3xl mx-auto">
           <div class="bg-white shadow-lg rounded-lg overflow-hidden">
             <div class="divide-y">
+              <!-- FAQ Item 1 -->
               <div class="p-6">
-                <button class="faq-question flex justify-between items-center w-full text-left font-semibold">
+                <button class="faq-question flex justify-between items-center w-full text-left font-semibold"
+                  aria-expanded="false" aria-controls="faq-answer-1">
                   <span>How far in advance should I place a custom order?</span>
                   <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
                 </button>
-                <div class="faq-answer hidden mt-4 text-gray-600">
-                  <p>For custom orders, we recommend placing your order at least 48 hours in advance. For larger orders or special occasion cakes, we suggest 3-7 days notice to ensure we can accommodate your request and have adequate time for preparation.</p>
+                <div id="faq-answer-1" class="faq-answer hidden mt-4 text-gray-600" aria-hidden="true">
+                  <p>For custom orders, we recommend placing your order at least 48 hours in advance. For larger orders
+                    or special occasion cakes, we suggest 3-7 days notice to ensure we can accommodate your request and
+                    have adequate time for preparation.</p>
                 </div>
               </div>
-              
+
+              <!-- FAQ Item 2 -->
               <div class="p-6">
-                <button class="faq-question flex justify-between items-center w-full text-left font-semibold">
+                <button class="faq-question flex justify-between items-center w-full text-left font-semibold"
+                  aria-expanded="false" aria-controls="faq-answer-2">
                   <span>Do you offer delivery services?</span>
                   <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
                 </button>
-                <div class="faq-answer hidden mt-4 text-gray-600">
-                  <p>Yes, we offer delivery within a 15-mile radius of our bakery. Delivery fees start at $5.99 and may vary based on distance and order size. We also offer express delivery options for an additional fee.</p>
+                <div id="faq-answer-2" class="faq-answer hidden mt-4 text-gray-600" aria-hidden="true">
+                  <p>Yes, we offer delivery within a 15-mile radius of our bakery. Delivery fees start at $5.99 and may
+                    vary based on distance and order size. We also offer express delivery options for an additional fee.
+                  </p>
+                  <p class="mt-2">For orders outside our delivery range, we partner with third-party delivery services
+                    that can bring our products to your doorstep.</p>
                 </div>
               </div>
-              
+
+              <!-- FAQ Item 3 -->
               <div class="p-6">
-                <button class="faq-question flex justify-between items-center w-full text-left font-semibold">
+                <button class="faq-question flex justify-between items-center w-full text-left font-semibold"
+                  aria-expanded="false" aria-controls="faq-answer-3">
                   <span>Are your products suitable for people with allergies?</span>
                   <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
                 </button>
-                <div class="faq-answer hidden mt-4 text-gray-600">
-                  <p>We offer some gluten-free and nut-free options, which are prepared in a separate area of our kitchen. However, our facility does process products containing common allergens such as wheat, dairy, eggs, soy, and nuts. Please inform us of any allergies when placing your order, and we'll do our best to accommodate your needs.</p>
+                <div id="faq-answer-3" class="faq-answer hidden mt-4 text-gray-600" aria-hidden="true">
+                  <p>We offer some gluten-free and nut-free options, which are prepared in a separate area of our
+                    kitchen. However, our facility does process products containing common allergens such as wheat,
+                    dairy, eggs, soy, and nuts. Please inform us of any allergies when placing your order, and we'll do
+                    our best to accommodate your needs.</p>
+                  <p class="mt-2">For detailed allergen information about specific products, please contact us directly.
+                  </p>
                 </div>
               </div>
-              
+
+              <!-- FAQ Item 4 -->
               <div class="p-6">
-                <button class="faq-question flex justify-between items-center w-full text-left font-semibold">
+                <button class="faq-question flex justify-between items-center w-full text-left font-semibold"
+                  aria-expanded="false" aria-controls="faq-answer-4">
                   <span>Can I cancel or modify my order?</span>
                   <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
                 </button>
-                <div class="faq-answer hidden mt-4 text-gray-600">
-                  <p>Orders can be modified or canceled up to 24 hours before the scheduled pickup or delivery time. For custom orders, cancellations made less than 48 hours in advance may be subject to a cancellation fee. Please contact our customer service team as soon as possible if you need to make changes to your order.</p>
+                <div id="faq-answer-4" class="faq-answer hidden mt-4 text-gray-600" aria-hidden="true">
+                  <p>Orders can be modified or canceled up to 24 hours before the scheduled pickup or delivery time. For
+                    custom orders, cancellations made less than 48 hours in advance may be subject to a cancellation
+                    fee. Please contact our customer service team as soon as possible if you need to make changes to
+                    your order.</p>
                 </div>
               </div>
-              
+
+              <!-- FAQ Item 5 -->
               <div class="p-6">
-                <button class="faq-question flex justify-between items-center w-full text-left font-semibold">
+                <button class="faq-question flex justify-between items-center w-full text-left font-semibold"
+                  aria-expanded="false" aria-controls="faq-answer-5">
                   <span>Do you cater for events?</span>
                   <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
                 </button>
-                <div class="faq-answer hidden mt-4 text-gray-600">
-                  <p>Yes, we offer catering services for various events, including corporate functions, weddings, birthday parties, and other special occasions. Our catering menu features a selection of our most popular items, and we can also create custom menus based on your preferences and dietary requirements. Please contact us at least two weeks in advance for catering requests.</p>
+                <div id="faq-answer-5" class="faq-answer hidden mt-4 text-gray-600" aria-hidden="true">
+                  <p>Yes, we offer catering services for various events, including corporate functions, weddings,
+                    birthday parties, and other special occasions. Our catering menu features a selection of our most
+                    popular items, and we can also create custom menus based on your preferences and dietary
+                    requirements.</p>
+                  <p class="mt-2">Please contact us at least two weeks in advance for catering requests, and we'll work
+                    with you to create the perfect menu for your event.</p>
                 </div>
               </div>
             </div>
+          </div>
+
+          <!-- CTA for Additional Help -->
+          <div class="mt-8 text-center">
+            <p class="mb-4">Didn't find what you were looking for?</p>
+            <a href="#contact-form"
+              class="inline-block bg-red-500 text-white px-6 py-3 rounded-lg hover:bg-red-600 transition">
+              Contact Our Support Team
+            </a>
           </div>
         </div>
       </div>
@@ -290,98 +444,215 @@
   </main>
 
   <footer class="bg-red-50 mt-24">
-    <div class="container mx-auto py-4 px-4">
-      <div class="flex flex-col md:flex-row gap-6 items-center justify-between mb-2">
-        <div>
-          <img class="h-72" src="images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="" />
-        </div>
-        <div class="flex flex-col md:flex-row items-center gap-4">
-          <h3 class="text-xl me-10">
-            Become a part of us?
-          </h3>
-          <a href="contact.html" type="button"
-            class="text-white bg-gradient-to-br from-[#FF8938] to-[#FF0000] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 hover:scale-105 duration-500 transition font-bold rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2">
-            Contact
-          </a>
+    <div class="container mx-auto py-8 px-4">
+      <!-- Newsletter Signup -->
+      <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <div class="mb-4 md:mb-0 md:mr-6">
+            <h3 class="text-lg font-bold text-gray-800 mb-1">Join Our Newsletter</h3>
+            <p class="text-sm text-gray-600">Get special offers, recipes and more delivered to your inbox</p>
+          </div>
+          <div class="w-full md:w-1/2">
+            <form class="flex">
+              <input type="email" placeholder="Your email address" aria-label="Email address"
+                class="flex-1 form-input px-4 py-2 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+              <button type="submit"
+                class="bg-red-500 text-white px-4 py-2 rounded-r-lg hover:bg-red-600 transition-colors">
+                Subscribe
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-center md:text-start">
-        <div class="my-8 space-y-4">
-          <h3 class="text-xl text-gray-700 font-bold">Quick Links</h3>
-          <a href="index.html" class="block">Home</a>
-          <a href="products.html" class="block">Products</a>
-          <a href="about.html" class="block">About Us</a>
-          <a href="privacy.html" class="block">Privacy Policy</a>
-          <a href="terms.html" class="block">Terms & Conditions</a>
+
+      <div class="flex flex-col md:flex-row gap-6 items-center justify-between mb-8">
+        <div>
+          <img class="h-52" src="images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="Djini's Bakehouse Logo" />
         </div>
-        <div class="my-8 space-y-4">
-          <h3 class="text-xl text-gray-700 font-bold">Our Service</h3>
-          <a href="custom-orders.html" class="block">Custom Orders</a>
-          <a href="order.html" class="block">Online Ordering</a>
-          <a href="products.html?filter=special" class="block">Seasonal Specials</a>
-          <a href="gift-packaging.html" class="block">Gift Packaging</a>
-        </div>
-        <div class="my-8 space-y-4">
-          <h3 class="text-xl text-gray-700 font-bold">Help</h3>
-          <a href="faq.html" class="block">FAQs</a>
-          <a href="contact.html" class="block">Contact Us</a>
-          <a href="order-tracking.html" class="block">Track Order</a>
-          <a href="shipping.html" class="block">Shipping Information</a>
-        </div>
-        <div class="my-8 space-y-4">
-          <h3 class="text-xl text-gray-700 font-bold">
-            Be a part of our team
-          </h3>
-          <!-- subscribe -->
-          <div class="flex items-center justify-center md:justify-start">
-            <input type="email" placeholder="Email address" class="bg-transparent border-b-2 py-2 focus:outline-none" />
-            <button type="button"
-              class="text-white bg-gradient-to-br from-[#FF8938] to-[#FF0000] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 hover:scale-105 transition font-bold rounded-full text-xl p-2 text-center -ml-4 mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
-                stroke="currentColor" class="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-              </svg>
-            </button>
+        <div class="text-center md:text-right">
+          <p class="text-gray-600 mb-2">Customer Service: <a href="tel:+15551234567"
+              class="text-red-500 hover:underline">(555) 123-4567</a></p>
+          <p class="text-gray-600 mb-4">Email: <a href="mailto:info@djinisbakehouse.com"
+              class="text-red-500 hover:underline">info@djinisbakehouse.com</a></p>
+          <div class="flex justify-center md:justify-end space-x-4">
+            <a href="#" class="text-gray-600 hover:text-red-500 transition-colors" aria-label="Facebook"><i
+                class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-600 hover:text-red-500 transition-colors" aria-label="Instagram"><i
+                class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-600 hover:text-red-500 transition-colors" aria-label="Twitter"><i
+                class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-600 hover:text-red-500 transition-colors" aria-label="Pinterest"><i
+                class="fab fa-pinterest"></i></a>
+            <a href="#" class="text-gray-600 hover:text-red-500 transition-colors" aria-label="YouTube"><i
+                class="fab fa-youtube"></i></a>
           </div>
-          <!-- social links -->
-          <div class="space-x-4">
-            <a href="#" class="w-6 h-6 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path
-                  d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
-              </svg></a>
-            <a href="#" class="w-6 h-6 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                <path
-                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
-              </svg></a>
-            <a href="#" class="w-6 h-6 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/>
-              </svg></a>
+        </div>
+      </div>
+
+      <!-- Footer Links -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h3 class="text-lg font-medium text-gray-800 mb-3">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-600 hover:text-red-500 transition-colors">Home</a></li>
+            <li><a href="products.html" class="text-gray-600 hover:text-red-500 transition-colors">Products</a></li>
+            <li><a href="about.html" class="text-gray-600 hover:text-red-500 transition-colors">About Us</a></li>
+            <li><a href="privacy.html" class="text-gray-600 hover:text-red-500 transition-colors">Privacy Policy</a>
+            </li>
+            <li><a href="terms.html" class="text-gray-600 hover:text-red-500 transition-colors">Terms & Conditions</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-medium text-gray-800 mb-3">Our Services</h3>
+          <ul class="space-y-2">
+            <li><a href="custom-orders.html" class="text-gray-600 hover:text-red-500 transition-colors">Custom
+                Orders</a></li>
+            <li><a href="order.html" class="text-gray-600 hover:text-red-500 transition-colors">Online Ordering</a></li>
+            <li><a href="products.html?filter=special"
+                class="text-gray-600 hover:text-red-500 transition-colors">Seasonal Specials</a></li>
+            <li><a href="gift-packaging.html" class="text-gray-600 hover:text-red-500 transition-colors">Gift
+                Packaging</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-medium text-gray-800 mb-3">Help</h3>
+          <ul class="space-y-2">
+            <li><a href="faq.html" class="text-gray-600 hover:text-red-500 transition-colors">FAQs</a></li>
+            <li><a href="contact.html" class="text-gray-600 hover:text-red-500 transition-colors">Contact Us</a></li>
+            <li><a href="order-tracking.html" class="text-gray-600 hover:text-red-500 transition-colors">Track Order</a>
+            </li>
+            <li><a href="shipping.html" class="text-gray-600 hover:text-red-500 transition-colors">Shipping
+                Information</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-medium text-gray-800 mb-3">Download Our App</h3>
+          <p class="text-sm text-gray-600 mb-3">Order on the go, track deliveries, and earn rewards</p>
+          <div class="flex flex-col space-y-2">
+            <a href="#" class="block">
+              <img src="images/app-store-badge.png" alt="Download on App Store" class="h-10">
+            </a>
+            <a href="#" class="block">
+              <img src="images/google-play-badge.png" alt="Get it on Google Play" class="h-10">
+            </a>
           </div>
+        </div>
+      </div>
+
+      <div class="border-t border-red-100 pt-6">
+        <div class="text-center space-y-4">
+          <p class="text-sm text-gray-600">Payment methods: Visa, Mastercard, American Express, Discover, PayPal, Apple
+            Pay, Google Pay</p>
+          <div class="flex flex-wrap justify-center gap-4 text-sm">
+            <a href="privacy.html" class="hover:text-red-500 transition-colors">Privacy Policy</a>
+            <a href="terms.html" class="hover:text-red-500 transition-colors">Terms of Service</a>
+            <a href="refund.html" class="hover:text-red-500 transition-colors">Refund Policy</a>
+            <a href="accessibility.html" class="hover:text-red-500 transition-colors">Accessibility</a>
+            <a href="sitemap.html" class="hover:text-red-500 transition-colors">Sitemap</a>
+          </div>
+          <p class="text-sm text-gray-600">© 2024 Djini's Bakehouse. All rights reserved.</p>
         </div>
       </div>
     </div>
-    <h5 class="text-center font-semibold py-4">All rights reserved © Djini's Bakehouse 2024</h5>
   </footer>
 
   <!-- Contact page JavaScript -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Contact form submission
+    document.addEventListener('DOMContentLoaded', function () {
+      // Initialize the map
+      const bakeryMap = L.map('bakery-map').setView([37.7749, -122.4194], 13);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(bakeryMap);
+
+      // Add marker for bakery location
+      const bakeryLocation = L.marker([37.7749, -122.4194]).addTo(bakeryMap);
+      bakeryLocation.bindPopup("<strong>Djini's Bakehouse</strong><br>123 Bakery Lane<br>Sweetville, CA 94123").openPopup();
+
+      // Contact form validation
       const contactForm = document.getElementById('contact-form');
       const submitError = document.getElementById('submit-error');
       const submitSuccess = document.getElementById('submit-success');
-      
+      const submitText = document.getElementById('submit-text');
+      const submitLoader = document.getElementById('submit-loader');
+
+      // Form validation
+      function validateField(field) {
+        const errorElement = document.getElementById(`${field.id}-error`);
+        if (!errorElement) return true;
+
+        errorElement.classList.add('hidden');
+        field.classList.remove('border-red-500');
+
+        if (field.required && !field.value.trim()) {
+          errorElement.textContent = `${field.previousElementSibling.textContent.replace('*', '')} is required`;
+          errorElement.classList.remove('hidden');
+          field.classList.add('border-red-500');
+          return false;
+        }
+
+        // Email validation
+        if (field.type === 'email' && field.value.trim()) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(field.value)) {
+            errorElement.textContent = 'Please enter a valid email address';
+            errorElement.classList.remove('hidden');
+            field.classList.add('border-red-500');
+            return false;
+          }
+        }
+
+        // Phone validation (optional, only if provided)
+        if (field.id === 'phone' && field.value.trim()) {
+          const phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+          if (!phoneRegex.test(field.value)) {
+            errorElement.textContent = 'Please enter a valid phone number';
+            errorElement.classList.remove('hidden');
+            field.classList.add('border-red-500');
+            return false;
+          }
+        }
+
+        return true;
+      }
+
       if (contactForm) {
-        contactForm.addEventListener('submit', function(event) {
+        // Add blur event listeners for real-time validation
+        const formInputs = contactForm.querySelectorAll('input, select, textarea');
+        formInputs.forEach(input => {
+          input.addEventListener('blur', () => validateField(input));
+        });
+
+        contactForm.addEventListener('submit', function (event) {
           event.preventDefault();
-          
+
+          // Validate all fields
+          let isFormValid = true;
+          formInputs.forEach(input => {
+            if (!validateField(input)) {
+              isFormValid = false;
+            }
+          });
+
+          if (!isFormValid) {
+            // Scroll to first error
+            const firstError = contactForm.querySelector('.border-red-500');
+            if (firstError) {
+              firstError.focus();
+            }
+            return;
+          }
+
           // Get form values
           const name = document.getElementById('name').value;
           const email = document.getElementById('email').value;
           const phone = document.getElementById('phone').value;
           const subject = document.getElementById('subject').value;
           const message = document.getElementById('message').value;
-          
+          const newsletter = document.getElementById('newsletter').checked;
+
           // Create contact message object
           const contactData = {
             name,
@@ -389,115 +660,132 @@
             phone,
             subject,
             message,
+            newsletter,
             timestamp: new Date().toISOString(),
             status: 'unread'
           };
-          
+
+          // Show loading state
+          submitText.innerText = 'Sending...';
+          submitLoader.classList.remove('hidden');
+
+          // Hide any previous messages
+          submitError.classList.add('hidden');
+          submitSuccess.classList.add('hidden');
+
           // Simulate form submission with delay
-          const submitButton = this.querySelector('button[type="submit"]');
-          const originalButtonText = submitButton.innerHTML;
-          
-          submitButton.disabled = true;
-          submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
-          
           setTimeout(() => {
-            // Save to localStorage (in a real scenario, this would be sent to a server)
-            const contactMessages = JSON.parse(localStorage.getItem('djinisContactMessages')) || [];
-            contactMessages.push(contactData);
-            localStorage.setItem('djinisContactMessages', JSON.stringify(contactMessages));
-            
-            // Hide error if shown
-            submitError.classList.add('hidden');
-            
-            // Show success message
-            submitSuccess.classList.remove('hidden');
-            
-            // Reset form
-            contactForm.reset();
-            
-            // Reset button
-            submitButton.disabled = false;
-            submitButton.innerHTML = originalButtonText;
-            
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-              submitSuccess.classList.add('hidden');
-            }, 5000);
+            try {
+              // Save to localStorage (in a real scenario, this would be sent to a server)
+              const contactMessages = JSON.parse(localStorage.getItem('djinisContactMessages')) || [];
+              contactMessages.push(contactData);
+              localStorage.setItem('djinisContactMessages', JSON.stringify(contactMessages));
+
+              // Show success message
+              submitSuccess.classList.remove('hidden');
+
+              // Reset form
+              contactForm.reset();
+
+              // Scroll to success message
+              submitSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+              // Reset button state
+              submitText.innerText = 'Send Message';
+              submitLoader.classList.add('hidden');
+
+              // Hide success message after 6 seconds
+              setTimeout(() => {
+                submitSuccess.classList.add('hidden');
+              }, 6000);
+            } catch (error) {
+              // Show error message
+              submitError.classList.remove('hidden');
+              document.getElementById('error-message').textContent = 'There was an error sending your message. Please try again.';
+
+              // Reset button state
+              submitText.innerText = 'Send Message';
+              submitLoader.classList.add('hidden');
+            }
           }, 1500); // Simulate network delay
         });
       }
-      
+
       // FAQ accordion functionality
       const faqQuestions = document.querySelectorAll('.faq-question');
-      
+
       faqQuestions.forEach(question => {
-        question.addEventListener('click', function() {
-          const answer = this.nextElementSibling;
+        question.addEventListener('click', function () {
+          const answerId = this.getAttribute('aria-controls');
+          const answer = document.getElementById(answerId);
           const chevron = this.querySelector('.fa-chevron-down');
-          
-          // Toggle answer visibility
-          answer.classList.toggle('hidden');
-          
-          // Rotate chevron icon
-          if (chevron) {
-            chevron.style.transform = answer.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
-          }
-          
-          // Close other answers
-          faqQuestions.forEach(otherQuestion => {
-            if (otherQuestion !== question) {
-              const otherAnswer = otherQuestion.nextElementSibling;
-              const otherChevron = otherQuestion.querySelector('.fa-chevron-down');
-              
-              otherAnswer.classList.add('hidden');
-              if (otherChevron) {
-                otherChevron.style.transform = 'rotate(0deg)';
-              }
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+          // Close all other FAQs
+          faqQuestions.forEach(q => {
+            if (q !== question) {
+              const qAnswerId = q.getAttribute('aria-controls');
+              const qAnswer = document.getElementById(qAnswerId);
+              const qChevron = q.querySelector('.fa-chevron-down');
+
+              q.setAttribute('aria-expanded', 'false');
+              qAnswer.classList.add('hidden');
+              qAnswer.setAttribute('aria-hidden', 'true');
+              qChevron.style.transform = 'rotate(0deg)';
             }
           });
+
+          // Toggle current FAQ
+          this.setAttribute('aria-expanded', !isExpanded);
+          answer.classList.toggle('hidden');
+          answer.setAttribute('aria-hidden', isExpanded);
+
+          if (chevron) {
+            chevron.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(180deg)';
+          }
         });
       });
-      
+
       // Update cart count in header
       function updateCartCount() {
         const cart = JSON.parse(localStorage.getItem('djinisCart')) || [];
         const cartCountElement = document.getElementById('cart-count');
-        
+
         if (cartCountElement) {
           const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
           cartCountElement.textContent = totalItems;
         }
       }
-      
+
       // Update cart count on page load
       updateCartCount();
-      
+
       // Check if user is logged in and update UI
       function checkLoginStatus() {
         const userAuth = JSON.parse(localStorage.getItem('djinisUserAuth'));
-        
+
         if (userAuth && userAuth.isLoggedIn) {
           // Update user name
           document.querySelectorAll('#user-name').forEach(element => {
             element.textContent = `${userAuth.firstName} ${userAuth.lastName}`;
           });
-          
+
           // Show logged in menu
           const loginLinks = document.querySelectorAll('a[href="login.html"]');
           const signupLinks = document.querySelectorAll('a[href="signup.html"]');
-          
+
           loginLinks.forEach(link => {
             link.href = 'profile.html';
             link.textContent = 'My Account';
           });
-          
+
           signupLinks.forEach(link => {
             link.href = 'logout.html';
             link.textContent = 'Logout';
           });
         }
       }
-      
+
       // Check login status on page load
       checkLoginStatus();
     });

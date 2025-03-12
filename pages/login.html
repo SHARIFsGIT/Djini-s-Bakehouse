@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Sign in to your Djini's Bakehouse account. Access your order history, saved addresses, and make ordering your favorite baked goods even easier." />
   <title>Login - Djini's Bakehouse</title>
   <!-- favicon -->
   <link rel="shortcut icon" href="images/Djini_s_Bakehouse_1_-removebg-preview.png" type="image/x-icon">
@@ -16,78 +18,160 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body class="text-[#777777] bg-gray-50">
+<body class="text-[#777777] bg-gray-50 flex flex-col min-h-screen">
+  <!-- Skip to main content link for accessibility -->
+  <a href="#main-content"
+    class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-red-500">Skip
+    to main content</a>
+
+  <!-- Mobile menu JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      menuBtn.addEventListener('click', function () {
+        mobileMenu.classList.toggle('hidden');
+        // ARIA attributes for accessibility
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true' || false;
+        menuBtn.setAttribute('aria-expanded', !expanded);
+        mobileMenu.setAttribute('aria-hidden', expanded);
+      });
+    });
+  </script>
+
   <nav class="fixed inset-x-0 top-0 z-30 w-full border border-gray-100 bg-white/80 py-2 px-4 shadow backdrop-blur-lg">
     <div class="flex items-center justify-between">
       <a class="flex items-center" href="index.html">
         <img class="h-16 w-auto" src="images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="Djini's Bakehouse">
         <span class="sr-only">Djini's Bakehouse</span>
       </a>
-      <div class="flex items-center gap-3">
-        <a href="cart.html" class="text-gray-900 hover:text-red-500 relative">
+      <button id="menu-btn" class="block md:hidden focus:outline-none" aria-expanded="false" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+      <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-white shadow-md md:hidden z-40 p-4"
+        aria-hidden="true">
+        <a href="index.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Home</a>
+        <a href="products.html"
+          class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
+        <a href="order.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order
+          Online</a>
+        <a href="about.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">About</a>
+        <a href="contact.html"
+          class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Contact</a>
+        <a href="faq.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">FAQs</a>
+        <div class="mt-3 border-t pt-3">
+          <a href="signup.html"
+            class="block text-gray-900 bg-gray-100 px-4 py-2 rounded-xl shadow mb-2 text-center">Sign Up</a>
+          <a href="login.html" class="block text-white bg-blue-600 px-4 py-2 rounded-xl shadow text-center"
+            aria-current="page">Login</a>
+        </div>
+      </div>
+      <div id="menu" class="hidden md:flex md:items-center md:gap-4">
+        <a href="index.html" class="text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Home</a>
+        <a href="products.html" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
+        <a href="order.html" class="text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order Online</a>
+        <a href="about.html" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">About</a>
+        <a href="contact.html" class="text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Contact</a>
+        <a href="faq.html" class="text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">FAQs</a>
+      </div>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="cart.html" class="text-gray-900 hover:text-red-500 relative" aria-label="Shopping cart">
           <i class="fas fa-shopping-cart text-xl"></i>
-          <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+          <span id="cart-count"
+            class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
         </a>
+        <a href="signup.html" class="text-gray-900 bg-white px-4 py-2 rounded-xl shadow">Sign Up</a>
+        <a href="login.html" class="text-white bg-blue-600 px-4 py-2 rounded-xl shadow" aria-current="page">Login</a>
       </div>
     </div>
   </nav>
 
-  <main class="container mx-auto px-4 py-8 mt-24 flex flex-col items-center">
+  <!-- Page Header -->
+  <header class="mt-24 container mx-auto px-4 py-4">
+    <!-- Breadcrumbs for better navigation -->
+    <nav class="flex justify-center mt-2" aria-label="Breadcrumb">
+      <ol class="flex items-center space-x-2 text-sm text-gray-500">
+        <li><a href="index.html" class="hover:text-red-500">Home</a></li>
+        <li><span class="mx-2">/</span></li>
+        <li class="text-red-500" aria-current="page">Login</li>
+      </ol>
+    </nav>
+  </header>
+
+  <main id="main-content" class="container mx-auto px-4 py-4 flex-grow flex flex-col items-center">
     <div class="max-w-md w-full bg-white rounded-lg shadow-lg overflow-hidden">
       <div class="bg-gradient-to-r from-red-500 to-orange-500 p-6 text-white text-center">
         <h1 class="text-3xl font-bold">Welcome Back</h1>
         <p class="mt-2 opacity-90">Sign in to your Djini's Bakehouse account</p>
       </div>
-      
+
       <div class="p-6">
         <!-- Login Form -->
-        <form id="login-form">
+        <form id="login-form" class="needs-validation">
           <div class="space-y-4">
             <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address <span
+                  class="text-red-500">*</span></label>
               <div class="relative">
                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <i class="fas fa-envelope text-gray-400"></i>
                 </div>
-                <input type="email" id="email" required class="form-input w-full pl-10 px-4 py-2 border rounded-lg focus:outline-none" placeholder="your@email.com">
+                <input type="email" id="email" name="email" required
+                  class="form-input w-full pl-10 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors"
+                  placeholder="your@email.com" aria-describedby="email-error">
               </div>
+              <div id="email-error" class="text-red-500 text-sm mt-1 hidden"></div>
             </div>
-            
+
             <div>
               <div class="flex justify-between items-center">
-                <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password <span
+                    class="text-red-500">*</span></label>
                 <a href="forgot-password.html" class="text-sm text-red-600 hover:underline">Forgot Password?</a>
               </div>
               <div class="relative">
                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <i class="fas fa-lock text-gray-400"></i>
                 </div>
-                <input type="password" id="password" required class="form-input w-full pl-10 px-4 py-2 border rounded-lg focus:outline-none" placeholder="••••••••">
-                <button type="button" id="toggle-password" class="absolute inset-y-0 right-0 pr-3 flex items-center">
+                <input type="password" id="password" name="password" required
+                  class="form-input w-full pl-10 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors"
+                  placeholder="••••••••" aria-describedby="password-error">
+                <button type="button" id="toggle-password" class="absolute inset-y-0 right-0 pr-3 flex items-center"
+                  aria-label="Toggle password visibility">
                   <i class="fas fa-eye text-gray-400"></i>
                 </button>
               </div>
+              <div id="password-error" class="text-red-500 text-sm mt-1 hidden"></div>
             </div>
-            
+
             <div class="flex items-center">
-              <label class="custom-checkbox">
-                <input type="checkbox" id="remember-me">
-                <span class="checkmark"></span>
-                <span class="ml-2">Remember me</span>
-              </label>
+              <input type="checkbox" id="remember-me" name="remember-me"
+                class="form-checkbox h-4 w-4 text-red-500 focus:ring-red-400 rounded transition-colors">
+              <label for="remember-me" class="ml-2 text-sm text-gray-600">Remember me for 30 days</label>
             </div>
-            
-            <div id="login-error" class="hidden bg-red-100 text-red-700 p-3 rounded-lg">
+
+            <div id="login-error" class="hidden bg-red-100 text-red-700 p-3 rounded-lg" role="alert">
               <i class="fas fa-exclamation-circle mr-2"></i>
               <span id="error-message">Invalid email or password. Please try again.</span>
             </div>
-            
-            <button type="submit" class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition">
-              Sign In
+
+            <button type="submit"
+              class="w-full bg-red-500 text-white py-3 rounded-lg hover:bg-red-600 transition flex items-center justify-center">
+              <span id="login-text">Sign In</span>
+              <svg id="login-loader" class="animate-spin ml-2 h-5 w-5 text-white hidden"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                </path>
+              </svg>
             </button>
           </div>
         </form>
-        
+
         <!-- Social Login Options -->
         <div class="mt-6">
           <div class="relative">
@@ -98,171 +182,304 @@
               <span class="px-2 bg-white text-gray-500">Or continue with</span>
             </div>
           </div>
-          
+
           <div class="mt-6 grid grid-cols-2 gap-3">
-            <button type="button" class="flex justify-center items-center px-4 py-2 border rounded-lg hover:bg-gray-50 transition">
+            <button type="button"
+              class="flex justify-center items-center px-4 py-2 border rounded-lg hover:bg-gray-50 transition">
               <img src="images/google-icon.png" alt="Google" class="h-5 w-5 mr-2">
               <span>Google</span>
             </button>
-            <button type="button" class="flex justify-center items-center px-4 py-2 border rounded-lg hover:bg-gray-50 transition">
+            <button type="button"
+              class="flex justify-center items-center px-4 py-2 border rounded-lg hover:bg-gray-50 transition">
               <img src="images/facebook-icon.png" alt="Facebook" class="h-5 w-5 mr-2">
               <span>Facebook</span>
             </button>
           </div>
         </div>
-        
+
+        <!-- Security Message -->
+        <div class="mt-6 text-center text-sm text-gray-500 flex items-center justify-center">
+          <i class="fas fa-lock text-green-500 mr-2"></i>
+          <span>Secure login with 256-bit encryption</span>
+        </div>
+
         <!-- Sign Up Link -->
         <div class="mt-6 text-center">
           <p>
-            Don't have an account? 
+            Don't have an account?
             <a href="signup.html" class="text-red-600 hover:underline font-semibold">Sign up</a>
           </p>
+        </div>
+
+        <!-- Demo Credentials for Development Only -->
+        <div class="mt-6 p-3 bg-gray-100 rounded-lg text-sm text-gray-600">
+          <p class="font-medium text-center mb-1">Demo Credentials (For Testing Only)</p>
+          <p><strong>Email:</strong> demo@djinisbakehouse.com</p>
+          <p><strong>Password:</strong> demo1234</p>
         </div>
       </div>
     </div>
   </main>
 
   <footer class="bg-red-50 mt-24">
-    <div class="container mx-auto py-4 px-4">
-      <div class="grid grid-cols-1 md:grid-cols-4 text-center md:text-start">
-        <div class="my-8 space-y-4">
-          <h3 class="text-xl text-gray-700 font-bold">Quick Links</h3>
-          <a href="index.html" class="block">Home</a>
-          <a href="products.html" class="block">Products</a>
-          <a href="about.html" class="block">About Us</a>
-          <a href="privacy.html" class="block">Privacy Policy</a>
-          <a href="terms.html" class="block">Terms & Conditions</a>
-        </div>
-        <div class="my-8 space-y-4">
-          <h3 class="text-xl text-gray-700 font-bold">Our Service</h3>
-          <a href="custom-orders.html" class="block">Custom Orders</a>
-          <a href="order.html" class="block">Online Ordering</a>
-          <a href="products.html?filter=special" class="block">Seasonal Specials</a>
-          <a href="gift-packaging.html" class="block">Gift Packaging</a>
-        </div>
-        <div class="my-8 space-y-4">
-          <h3 class="text-xl text-gray-700 font-bold">Help</h3>
-          <a href="faq.html" class="block">FAQs</a>
-          <a href="contact.html" class="block">Contact Us</a>
-          <a href="order-tracking.html" class="block">Track Order</a>
-          <a href="shipping.html" class="block">Shipping Information</a>
-        </div>
-        <div class="my-8 space-y-4">
-          <h3 class="text-xl text-gray-700 font-bold">
-            Be a part of our team
-          </h3>
-          <!-- subscribe -->
-          <div class="flex items-center justify-center md:justify-start">
-            <input type="email" placeholder="Email address" class="bg-transparent border-b-2 py-2 focus:outline-none" />
-            <button type="button"
-              class="text-white bg-gradient-to-br from-[#FF8938] to-[#FF0000] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 hover:scale-105 transition font-bold rounded-full text-xl p-2 text-center -ml-4 mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
-                stroke="currentColor" class="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-              </svg>
-            </button>
+    <div class="container mx-auto py-8 px-4">
+      <!-- Newsletter Signup -->
+      <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <div class="mb-4 md:mb-0 md:mr-6">
+            <h3 class="text-lg font-bold text-gray-800 mb-1">Join Our Newsletter</h3>
+            <p class="text-sm text-gray-600">Get special offers, recipes and more delivered to your inbox</p>
           </div>
-          <!-- social links -->
-          <div class="space-x-4">
-            <a href="#" class="w-6 h-6 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path
-                  d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
-              </svg></a>
-            <a href="#" class="w-6 h-6 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                <path
-                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
-              </svg></a>
-            <a href="#" class="w-6 h-6 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/>
-              </svg></a>
+          <div class="w-full md:w-1/2">
+            <form class="flex">
+              <input type="email" placeholder="Your email address" aria-label="Email address"
+                class="flex-1 form-input px-4 py-2 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+              <button type="submit"
+                class="bg-red-500 text-white px-4 py-2 rounded-r-lg hover:bg-red-600 transition-colors">
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
       </div>
+
+      <div class="flex flex-col md:flex-row gap-6 items-center justify-between mb-8">
+        <div>
+          <img class="h-52" src="images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="Djini's Bakehouse Logo" />
+        </div>
+        <div class="text-center md:text-right">
+          <p class="text-gray-600 mb-2">Customer Service: <a href="tel:+15551234567"
+              class="text-red-500 hover:underline">(555) 123-4567</a></p>
+          <p class="text-gray-600 mb-4">Email: <a href="mailto:info@djinisbakehouse.com"
+              class="text-red-500 hover:underline">info@djinisbakehouse.com</a></p>
+          <div class="flex justify-center md:justify-end space-x-4">
+            <a href="#" class="text-gray-600 hover:text-red-500 transition-colors" aria-label="Facebook"><i
+                class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-600 hover:text-red-500 transition-colors" aria-label="Instagram"><i
+                class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-600 hover:text-red-500 transition-colors" aria-label="Twitter"><i
+                class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-600 hover:text-red-500 transition-colors" aria-label="Pinterest"><i
+                class="fab fa-pinterest"></i></a>
+            <a href="#" class="text-gray-600 hover:text-red-500 transition-colors" aria-label="YouTube"><i
+                class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Links -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h3 class="text-lg font-medium text-gray-800 mb-3">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-600 hover:text-red-500 transition-colors">Home</a></li>
+            <li><a href="products.html" class="text-gray-600 hover:text-red-500 transition-colors">Products</a></li>
+            <li><a href="about.html" class="text-gray-600 hover:text-red-500 transition-colors">About Us</a></li>
+            <li><a href="privacy.html" class="text-gray-600 hover:text-red-500 transition-colors">Privacy Policy</a>
+            </li>
+            <li><a href="terms.html" class="text-gray-600 hover:text-red-500 transition-colors">Terms & Conditions</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-medium text-gray-800 mb-3">Our Services</h3>
+          <ul class="space-y-2">
+            <li><a href="custom-orders.html" class="text-gray-600 hover:text-red-500 transition-colors">Custom
+                Orders</a></li>
+            <li><a href="order.html" class="text-gray-600 hover:text-red-500 transition-colors">Online Ordering</a></li>
+            <li><a href="products.html?filter=special"
+                class="text-gray-600 hover:text-red-500 transition-colors">Seasonal Specials</a></li>
+            <li><a href="gift-packaging.html" class="text-gray-600 hover:text-red-500 transition-colors">Gift
+                Packaging</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-medium text-gray-800 mb-3">Help</h3>
+          <ul class="space-y-2">
+            <li><a href="faq.html" class="text-gray-600 hover:text-red-500 transition-colors">FAQs</a></li>
+            <li><a href="contact.html" class="text-gray-600 hover:text-red-500 transition-colors">Contact Us</a></li>
+            <li><a href="order-tracking.html" class="text-gray-600 hover:text-red-500 transition-colors">Track Order</a>
+            </li>
+            <li><a href="shipping.html" class="text-gray-600 hover:text-red-500 transition-colors">Shipping
+                Information</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-medium text-gray-800 mb-3">Download Our App</h3>
+          <p class="text-sm text-gray-600 mb-3">Order on the go, track deliveries, and earn rewards</p>
+          <div class="flex flex-col space-y-2">
+            <a href="#" class="block">
+              <img src="images/app-store-badge.png" alt="Download on App Store" class="h-10">
+            </a>
+            <a href="#" class="block">
+              <img src="images/google-play-badge.png" alt="Get it on Google Play" class="h-10">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-red-100 pt-6">
+        <div class="text-center space-y-4">
+          <p class="text-sm text-gray-600">Payment methods: Visa, Mastercard, American Express, Discover, PayPal, Apple
+            Pay, Google Pay</p>
+          <div class="flex flex-wrap justify-center gap-4 text-sm">
+            <a href="privacy.html" class="hover:text-red-500 transition-colors">Privacy Policy</a>
+            <a href="terms.html" class="hover:text-red-500 transition-colors">Terms of Service</a>
+            <a href="refund.html" class="hover:text-red-500 transition-colors">Refund Policy</a>
+            <a href="accessibility.html" class="hover:text-red-500 transition-colors">Accessibility</a>
+            <a href="sitemap.html" class="hover:text-red-500 transition-colors">Sitemap</a>
+          </div>
+          <p class="text-sm text-gray-600">© 2024 Djini's Bakehouse. All rights reserved.</p>
+        </div>
+      </div>
     </div>
-    <h5 class="text-center font-semibold py-4">All rights reserved © Djini's Bakehouse 2024</h5>
   </footer>
 
   <!-- Login page JavaScript -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Toggle password visibility
       const togglePassword = document.getElementById('toggle-password');
       const passwordInput = document.getElementById('password');
-      
+
       if (togglePassword && passwordInput) {
-        togglePassword.addEventListener('click', function() {
+        togglePassword.addEventListener('click', function () {
           const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
           passwordInput.setAttribute('type', type);
-          
+
           // Toggle eye icon
           const eyeIcon = this.querySelector('i');
           eyeIcon.classList.toggle('fa-eye');
           eyeIcon.classList.toggle('fa-eye-slash');
         });
       }
-      
+
+      // Form validation
+      function validateField(field) {
+        const errorElement = document.getElementById(`${field.id}-error`);
+        if (!errorElement) return true;
+
+        // Reset validation state
+        errorElement.classList.add('hidden');
+        field.classList.remove('border-red-500');
+
+        let isValid = true;
+
+        if (field.required && !field.value.trim()) {
+          errorElement.textContent = `${field.name.charAt(0).toUpperCase() + field.name.slice(1)} is required`;
+          errorElement.classList.remove('hidden');
+          field.classList.add('border-red-500');
+          isValid = false;
+        } else if (field.type === 'email' && field.value.trim()) {
+          // Validate email format
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(field.value)) {
+            errorElement.textContent = 'Please enter a valid email address';
+            errorElement.classList.remove('hidden');
+            field.classList.add('border-red-500');
+            isValid = false;
+          }
+        }
+
+        return isValid;
+      }
+
       // Login form submission
       const loginForm = document.getElementById('login-form');
       const loginError = document.getElementById('login-error');
-      
+      const loginText = document.getElementById('login-text');
+      const loginLoader = document.getElementById('login-loader');
+
       if (loginForm) {
-        loginForm.addEventListener('submit', function(event) {
+        // Real-time validation
+        const formFields = loginForm.querySelectorAll('input[required]');
+        formFields.forEach(field => {
+          field.addEventListener('blur', () => validateField(field));
+        });
+
+        loginForm.addEventListener('submit', function (event) {
           event.preventDefault();
-          
+
+          // Validate all fields
+          let isFormValid = true;
+          formFields.forEach(field => {
+            if (!validateField(field)) {
+              isFormValid = false;
+            }
+          });
+
+          if (!isFormValid) {
+            // Focus on the first invalid field
+            const firstInvalidField = loginForm.querySelector('.border-red-500');
+            if (firstInvalidField) {
+              firstInvalidField.focus();
+            }
+            return;
+          }
+
+          // Show loading state
+          loginText.innerText = 'Signing in...';
+          loginLoader.classList.remove('hidden');
+
+          // Hide any previous error messages
+          loginError.classList.add('hidden');
+
           // Get form values
           const email = document.getElementById('email').value;
           const password = document.getElementById('password').value;
           const rememberMe = document.getElementById('remember-me').checked;
-          
+
           // Demo credentials for testing
           const demoUsers = [
-            { email: 'john.doe@example.com', password: 'password123' },
-            { email: 'demo@djinisbakehouse.com', password: 'demo1234' }
+            { email: 'john.doe@example.com', password: 'password123', firstName: 'John', lastName: 'Doe' },
+            { email: 'demo@djinisbakehouse.com', password: 'demo1234', firstName: 'Demo', lastName: 'User' }
           ];
-          
-          // Check credentials
-          const user = demoUsers.find(user => user.email === email && user.password === password);
-          
-          if (user) {
-            // Set user as logged in
-            const userData = {
-              email: user.email,
-              firstName: 'John',
-              lastName: 'Doe',
-              isLoggedIn: true,
-              loginTime: new Date().toISOString()
-            };
-            
-            // Save to localStorage
-            localStorage.setItem('djinisUserAuth', JSON.stringify(userData));
-            
-            // If remember me is checked, set a longer expiry
-            if (rememberMe) {
-              const extendedUserData = {...userData, rememberMe: true};
-              localStorage.setItem('djinisUserAuthRemember', JSON.stringify(extendedUserData));
+
+          // Simulate server latency
+          setTimeout(() => {
+            // Check credentials
+            const user = demoUsers.find(user => user.email === email && user.password === password);
+
+            if (user) {
+              // Set user as logged in
+              const userData = {
+                email: user.email,
+                firstName: user.firstName,
+                lastName: user.lastName,
+                isLoggedIn: true,
+                loginTime: new Date().toISOString()
+              };
+
+              // Save to localStorage
+              localStorage.setItem('djinisUserAuth', JSON.stringify(userData));
+
+              // If remember me is checked, set a longer expiry
+              if (rememberMe) {
+                const extendedUserData = { ...userData, rememberMe: true };
+                localStorage.setItem('djinisUserAuthRemember', JSON.stringify(extendedUserData));
+              }
+
+              // Redirect to home page or previous page
+              const redirectTo = new URLSearchParams(window.location.search).get('redirect') || 'index.html';
+              window.location.href = redirectTo;
+            } else {
+              // Show error message
+              loginError.classList.remove('hidden');
+              document.getElementById('error-message').textContent = 'Invalid email or password. Please try again.';
+
+              // Reset login button
+              loginText.innerText = 'Sign In';
+              loginLoader.classList.add('hidden');
             }
-            
-            // Redirect to home page or previous page
-            const redirectTo = new URLSearchParams(window.location.search).get('redirect') || 'index.html';
-            window.location.href = redirectTo;
-          } else {
-            // Show error message
-            loginError.classList.remove('hidden');
-            document.getElementById('error-message').textContent = 'Invalid email or password. Please try again.';
-            
-            // Hide error after 5 seconds
-            setTimeout(() => {
-              loginError.classList.add('hidden');
-            }, 5000);
-          }
+          }, 1000);
         });
       }
-      
+
       // Check if user is already logged in
       function checkLoginStatus() {
         const userAuth = JSON.parse(localStorage.getItem('djinisUserAuth'));
         const userAuthRemember = JSON.parse(localStorage.getItem('djinisUserAuthRemember'));
-        
+
         if (userAuth && userAuth.isLoggedIn) {
           // User is logged in, redirect to home page or previous page
           const redirectTo = new URLSearchParams(window.location.search).get('redirect') || 'index.html';
@@ -270,26 +487,26 @@
         } else if (userAuthRemember && userAuthRemember.isLoggedIn) {
           // User had "remember me" checked, restore login session
           localStorage.setItem('djinisUserAuth', JSON.stringify(userAuthRemember));
-          
+
           const redirectTo = new URLSearchParams(window.location.search).get('redirect') || 'index.html';
           window.location.href = redirectTo;
         }
       }
-      
+
       // Check login status on page load
       checkLoginStatus();
-      
+
       // Update cart count in header
       function updateCartCount() {
         const cart = JSON.parse(localStorage.getItem('djinisCart')) || [];
         const cartCountElement = document.getElementById('cart-count');
-        
+
         if (cartCountElement) {
           const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
           cartCountElement.textContent = totalItems;
         }
       }
-      
+
       // Update cart count on page load
       updateCartCount();
     });

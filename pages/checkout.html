@@ -5,273 +5,1200 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Complete your order at Djini's Bakehouse. Safe and secure checkout with multiple payment and delivery options.">
   <title>Checkout - Djini's Bakehouse</title>
   <!-- favicon -->
-  <link rel="shortcut icon" href="images/Djini_s_Bakehouse_1_-removebg-preview.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../images/Djini_s_Bakehouse_1_-removebg-preview.png" type="image/x-icon">
   <!-- tailwind cdn -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Toastify JS for notifications -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.12.0/toastify.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.12.0/toastify.min.js"></script>
 </head>
 
-<body class="text-[#777777] bg-gray-50">
-  <nav class="fixed inset-x-0 top-0 z-30 w-full border border-gray-100 bg-white/80 py-2 px-4 shadow backdrop-blur-lg">
-    <div class="flex items-center justify-between">
-      <a class="flex items-center" href="index.html">
-        <img class="h-16 w-auto" src="images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="Djini's Bakehouse">
+<body class="text-gray-700 bg-gray-50 font-sans">
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner"
+    class="fixed bottom-0 left-0 right-0 bg-white p-4 shadow-lg z-50 border-t border-gray-200 transform transition-transform duration-300">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+      <div class="mb-4 md:mb-0 md:mr-8">
+        <p class="text-sm text-gray-700">We use cookies to enhance your browsing experience, analyze site traffic, and
+          personalize content. By clicking "Accept", you consent to our use of cookies.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
+        <button id="cookie-settings"
+          class="px-4 py-2 text-sm bg-gray-200 hover:bg-gray-300 text-gray-800 rounded transition-colors whitespace-nowrap">Cookie
+          Settings</button>
+        <button id="accept-cookies"
+          class="px-4 py-2 text-sm bg-red-500 hover:bg-red-600 text-white rounded transition-colors whitespace-nowrap">Accept
+          Cookies</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skip to content link for accessibility -->
+  <a href="#checkout-main" class="skip-to-content">Skip to content</a>
+
+  <nav
+    class="fixed inset-x-0 top-0 z-30 w-full border border-gray-100 bg-white/90 py-2 px-4 shadow backdrop-blur-lg transition-all duration-300">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a class="flex items-center hover-scale transition-transform duration-300" href="../index.html">
+        <img class="h-16 w-auto" src="../images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="Djini's Bakehouse">
         <span class="sr-only">Djini's Bakehouse</span>
       </a>
-      <div class="hidden md:flex items-center gap-3">
-        <a href="cart.html" class="text-gray-900 hover:text-red-500 relative">
-          <i class="fas fa-shopping-cart text-xl"></i>
-          <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+      <!-- Mobile back button -->
+      <a href="cart.html" class="md:hidden flex items-center text-gray-700 hover:text-red-500 transition-colors">
+        <i class="fas fa-chevron-left mr-2"></i>
+        <span>Back to cart</span>
+      </a>
+      <div class="hidden md:flex items-center space-x-6">
+        <!-- Language Selector -->
+        <div class="relative group">
+          <button class="flex items-center text-sm text-gray-700 hover:text-red-500 transition-colors">
+            <i class="fas fa-globe mr-2"></i>
+            <span>English</span>
+            <i class="fas fa-chevron-down ml-1 text-xs"></i>
+          </button>
+          <div
+            class="absolute right-0 mt-2 w-36 bg-white rounded-lg shadow-lg overflow-hidden z-20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-500">English</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-500">Español</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-500">Français</a>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-1 text-sm text-gray-500">
+          <i class="fas fa-shield-alt text-green-500"></i>
+          <span>Secure Checkout</span>
+        </div>
+        <a href="cart.html" class="text-gray-900 hover:text-red-500 relative transition-colors"
+          aria-label="Shopping cart">
+          <i class="fas fa-shopping-cart text-xl cart-icon"></i>
+          <span id="cart-count"
+            class="cart-count absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
         </a>
+
+        <!-- User account dropdown -->
+        <div class="relative group">
+          <button class="flex items-center text-gray-700 hover:text-red-500 transition-colors">
+            <i class="fas fa-user-circle text-xl"></i>
+            <i class="fas fa-chevron-down ml-1 text-xs"></i>
+          </button>
+          <div
+            class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg overflow-hidden z-20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+            <a href="account.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-500">
+              <i class="fas fa-user mr-2"></i> My Account
+            </a>
+            <a href="orders.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-500">
+              <i class="fas fa-box mr-2"></i> My Orders
+            </a>
+            <a href="wishlist.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-500">
+              <i class="fas fa-heart mr-2"></i> Wishlist
+            </a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-500">
+              <i class="fas fa-sign-out-alt mr-2"></i> Logout
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
 
-  <main class="container mx-auto px-4 py-8 mt-24">
+  <main id="checkout-main" class="container mx-auto px-4 py-8 mt-24">
     <div class="max-w-6xl mx-auto">
       <!-- Checkout Progress Steps -->
       <div class="mb-10">
         <div class="flex items-center justify-between">
           <div class="flex flex-col items-center">
-            <div class="w-10 h-10 bg-red-500 text-white rounded-full flex items-center justify-center">
-              <i class="fas fa-shopping-cart"></i>
+            <div class="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center">
+              <i class="fas fa-check"></i>
             </div>
-            <span class="text-sm mt-1">Cart</span>
+            <span class="text-sm mt-1 font-medium">Cart</span>
           </div>
-          <div class="flex-1 h-1 bg-red-500 mx-2"></div>
+          <div class="flex-1 h-1 bg-gray-500 mx-2"></div>
           <div class="flex flex-col items-center">
             <div class="w-10 h-10 bg-red-500 text-white rounded-full flex items-center justify-center">
               <i class="fas fa-credit-card"></i>
             </div>
-            <span class="text-sm mt-1">Payment</span>
+            <span class="text-sm mt-1 font-medium">Payment</span>
           </div>
           <div class="flex-1 h-1 bg-gray-300 mx-2"></div>
           <div class="flex flex-col items-center">
             <div class="w-10 h-10 bg-gray-300 text-gray-500 rounded-full flex items-center justify-center">
               <i class="fas fa-check"></i>
             </div>
-            <span class="text-sm mt-1">Confirmation</span>
+            <span class="text-sm mt-1 font-medium">Confirmation</span>
           </div>
+        </div>
+      </div>
+
+      <!-- Express Checkout Option -->
+      <div class="mb-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg shadow-md p-6">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <div class="mb-4 md:mb-0">
+            <h2 class="text-lg font-bold text-gray-800">Express Checkout</h2>
+            <p class="text-sm text-gray-600">Complete your purchase faster with one of these options</p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <button
+              class="bg-[#FFB800] text-gray-800 px-6 py-2 rounded-lg flex items-center justify-center hover:bg-yellow-500 transition-colors">
+              <img src="../images/amazon-pay.png" alt="Amazon Pay" class="h-6">
+            </button>
+            <button
+              class="bg-[#003087] text-white px-6 py-2 rounded-lg flex items-center justify-center hover:bg-blue-800 transition-colors">
+              <img src="../images/paypal-white.png" alt="PayPal" class="h-6">
+            </button>
+            <button
+              class="bg-black text-white px-6 py-2 rounded-lg flex items-center justify-center hover:bg-gray-800 transition-colors">
+              <i class="fab fa-apple mr-2 text-lg"></i>
+              <span>Pay</span>
+            </button>
+            <button
+              class="bg-white text-gray-800 border border-gray-300 px-6 py-2 rounded-lg flex items-center justify-center hover:bg-gray-50 transition-colors">
+              <img src="../images/google-pay.png" alt="Google Pay" class="h-6">
+            </button>
+          </div>
+        </div>
+        <div class="flex items-center mt-4">
+          <div class="flex-1 h-px bg-gray-200"></div>
+          <span class="px-4 text-sm text-gray-500">or continue with card</span>
+          <div class="flex-1 h-px bg-gray-200"></div>
         </div>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <!-- Checkout Form -->
-        <div class="lg:col-span-2">
-          <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
-            <h2 class="text-2xl font-bold text-gray-700 mb-6">Customer Information</h2>
-            
-            <!-- Customer Information Form -->
-            <form id="checkout-form">
+        <div class="lg:col-span-2 space-y-6">
+          <!-- Account Creation Option -->
+          <div
+            class="bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg border-l-4 border-blue-500">
+            <div class="flex items-center">
+              <div class="mr-4 text-blue-500">
+                <i class="fas fa-user-plus text-2xl"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-medium text-gray-800">Create an account for faster checkout</h3>
+                <p class="text-sm text-gray-600">Save your information for future orders and track your order history
+                </p>
+              </div>
+              <div>
+                <button id="create-account-toggle"
+                  class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">
+                  Create Account
+                </button>
+              </div>
+            </div>
+
+            <!-- Account Creation Form (Hidden by default) -->
+            <div id="create-account-form" class="hidden mt-4 pt-4 border-t border-gray-200">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label for="account-email" class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                  <input type="email" id="account-email" name="account-email"
+                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-colors">
+                </div>
+                <div>
+                  <label for="account-password" class="block text-sm font-medium text-gray-700 mb-1">Password *</label>
+                  <div class="relative">
+                    <input type="password" id="account-password" name="account-password"
+                      class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-colors">
+                    <button type="button"
+                      class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-500">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-3">
+                <label class="flex items-center">
+                  <input type="checkbox" name="accept-marketing"
+                    class="form-checkbox h-4 w-4 text-blue-500 focus:ring-blue-400 rounded transition-colors">
+                  <span class="ml-2 text-sm text-gray-600">Sign up for exclusive offers and updates</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Saved information notice for returning customers -->
+          <div id="returning-customer-notice" class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg hidden">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <i class="fas fa-info-circle text-blue-500"></i>
+              </div>
+              <div class="ml-3">
+                <p class="text-sm text-blue-700">
+                  Welcome back! We've pre-filled some information for you. Please review and update if needed.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Customer Information Form -->
+          <div class="bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg">
+            <div class="flex items-center justify-between mb-6">
+              <h2 class="text-xl font-bold text-gray-800">Customer Information</h2>
+              <span class="text-sm text-gray-500">* Required fields</span>
+            </div>
+
+            <form id="checkout-form" novalidate>
+              <!-- Saved Addresses Section (Hidden by default, shown for logged-in users) -->
+              <div id="saved-addresses" class="mb-6 hidden">
+                <h3 class="text-lg font-medium text-gray-700 mb-2">Your Addresses</h3>
+                <div class="saved-addresses-container grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <!-- Example saved address card -->
+                  <div
+                    class="border border-gray-200 rounded-lg p-4 relative hover:border-red-500 transition-colors cursor-pointer">
+                    <input type="radio" name="saved-address" id="address-1" class="absolute top-4 right-4">
+                    <label for="address-1" class="block cursor-pointer">
+                      <span class="font-medium">Home</span>
+                      <p class="text-sm text-gray-600 mt-1">
+                        John Doe<br>
+                        123 Main Street<br>
+                        Apt 4B<br>
+                        New York, NY 10001<br>
+                        (555) 123-4567
+                      </p>
+                    </label>
+                  </div>
+                  <!-- Example saved address card -->
+                  <div
+                    class="border border-gray-200 rounded-lg p-4 relative hover:border-red-500 transition-colors cursor-pointer">
+                    <input type="radio" name="saved-address" id="address-2" class="absolute top-4 right-4">
+                    <label for="address-2" class="block cursor-pointer">
+                      <span class="font-medium">Work</span>
+                      <p class="text-sm text-gray-600 mt-1">
+                        John Doe<br>
+                        456 Office Blvd<br>
+                        Suite 100<br>
+                        New York, NY 10002<br>
+                        (555) 987-6543
+                      </p>
+                    </label>
+                  </div>
+                </div>
+                <button type="button" id="add-new-address"
+                  class="text-red-500 hover:text-red-600 text-sm flex items-center">
+                  <i class="fas fa-plus mr-2"></i> Add New Address
+                </button>
+              </div>
+
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div>
                   <label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">First Name *</label>
-                  <input type="text" id="first-name" required class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
+                  <input type="text" id="first-name" name="first-name" required
+                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+                  <div class="hidden error-message text-red-500 text-xs mt-1">Please enter your first name</div>
                 </div>
                 <div>
                   <label for="last-name" class="block text-sm font-medium text-gray-700 mb-1">Last Name *</label>
-                  <input type="text" id="last-name" required class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
+                  <input type="text" id="last-name" name="last-name" required
+                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+                  <div class="hidden error-message text-red-500 text-xs mt-1">Please enter your last name</div>
                 </div>
                 <div>
                   <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
-                  <input type="email" id="email" required class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
+                  <input type="email" id="email" name="email" required
+                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+                  <div class="hidden error-message text-red-500 text-xs mt-1">Please enter a valid email address</div>
                 </div>
                 <div>
                   <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
-                  <input type="tel" id="phone" required class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
+                  <div class="relative">
+                    <input type="tel" id="phone" name="phone" required
+                      class="form-input w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <i class="fas fa-phone text-gray-400"></i>
+                    </div>
+                  </div>
+                  <div class="hidden error-message text-red-500 text-xs mt-1">Please enter a valid phone number</div>
+                  <p class="text-xs text-gray-500 mt-1">We'll only call you if there's an issue with your order</p>
                 </div>
               </div>
-              
-              <!-- Delivery Information -->
-              <div id="delivery-info" class="mb-6">
-                <h3 class="text-xl font-bold text-gray-700 mb-4">Delivery Information</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div class="md:col-span-2">
-                    <label for="address" class="block text-sm font-medium text-gray-700 mb-1">Street Address *</label>
-                    <input type="text" id="address" required class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
-                  </div>
-                  <div>
-                    <label for="apartment" class="block text-sm font-medium text-gray-700 mb-1">Apartment/Suite (optional)</label>
-                    <input type="text" id="apartment" class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
-                  </div>
-                  <div>
-                    <label for="city" class="block text-sm font-medium text-gray-700 mb-1">City *</label>
-                    <input type="text" id="city" required class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
-                  </div>
-                  <div>
-                    <label for="state" class="block text-sm font-medium text-gray-700 mb-1">State/Province *</label>
-                    <input type="text" id="state" required class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
-                  </div>
-                  <div>
-                    <label for="zipcode" class="block text-sm font-medium text-gray-700 mb-1">ZIP/Postal Code *</label>
-                    <input type="text" id="zipcode" required class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Delivery Options -->
-              <div id="delivery-options" class="mb-6">
-                <h3 class="text-xl font-bold text-gray-700 mb-4">Delivery Options</h3>
-                <div class="space-y-4">
-                  <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50 payment-method-option selected">
-                    <input type="radio" name="delivery-method" id="standard-delivery" checked class="mr-3">
-                    <div class="flex-1">
-                      <div class="font-medium">Standard Delivery</div>
-                      <p class="text-sm text-gray-500">Delivery within 2-3 hours</p>
-                    </div>
-                    <div class="font-medium">$5.99</div>
-                  </label>
-                  
-                  <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50 payment-method-option">
-                    <input type="radio" name="delivery-method" id="express-delivery" class="mr-3">
-                    <div class="flex-1">
-                      <div class="font-medium">Express Delivery</div>
-                      <p class="text-sm text-gray-500">Delivery within 1 hour</p>
-                    </div>
-                    <div class="font-medium">$9.99</div>
-                  </label>
-                  
-                  <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50 payment-method-option">
-                    <input type="radio" name="delivery-method" id="pickup" class="mr-3">
-                    <div class="flex-1">
-                      <div class="font-medium">Store Pickup</div>
-                      <p class="text-sm text-gray-500">Ready in 30 minutes at our store</p>
-                    </div>
-                    <div class="font-medium">Free</div>
-                  </label>
-                </div>
-              </div>
-              
-              <!-- Payment Method -->
+
+              <!-- Notification Preferences -->
               <div class="mb-6">
-                <h3 class="text-xl font-bold text-gray-700 mb-4">Payment Method</h3>
-                <div class="space-y-4">
-                  <!-- Credit Card Payment Option -->
-                  <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50 payment-method-option selected">
-                    <input type="radio" name="payment-method" id="credit-card" checked class="mr-3">
-                    <div class="flex-1">
-                      <div class="font-medium">Credit/Debit Card</div>
-                      <div class="flex space-x-2 mt-1">
-                        <img src="images/visa.png" alt="Visa" class="h-6">
-                        <img src="images/mastercard.png" alt="Mastercard" class="h-6">
-                        <img src="images/amex.png" alt="American Express" class="h-6">
-                      </div>
-                    </div>
+                <h3 class="text-sm font-medium text-gray-700 mb-2">Order Notifications</h3>
+                <div class="flex flex-wrap gap-4">
+                  <label class="flex items-center">
+                    <input type="checkbox" name="notifications" value="email" checked
+                      class="form-checkbox h-4 w-4 text-red-500 focus:ring-red-400 rounded transition-colors">
+                    <span class="ml-2 text-sm text-gray-600">Email</span>
                   </label>
-                  
-                  <!-- Credit Card Details Form -->
-                  <div id="credit-card-details" class="payment-details p-4 border rounded-lg bg-gray-50">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                      <div class="md:col-span-2">
-                        <label for="card-number" class="block text-sm font-medium text-gray-700 mb-1">Card Number *</label>
-                        <input type="text" id="card-number" required placeholder="1234 5678 9012 3456" class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
-                      </div>
-                      <div>
-                        <label for="card-name" class="block text-sm font-medium text-gray-700 mb-1">Name on Card *</label>
-                        <input type="text" id="card-name" required class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
-                      </div>
-                      <div class="grid grid-cols-2 gap-4">
-                        <div>
-                          <label for="expiry-date" class="block text-sm font-medium text-gray-700 mb-1">Expiry Date *</label>
-                          <input type="text" id="expiry-date" required placeholder="MM/YY" class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
-                        </div>
-                        <div>
-                          <label for="cvv" class="block text-sm font-medium text-gray-700 mb-1">CVV *</label>
-                          <input type="password" id="cvv" required placeholder="***" class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="flex items-center">
-                      <i class="fas fa-lock text-green-500 mr-2"></i>
-                      <span class="text-sm text-gray-600">Your payment information is secure and encrypted</span>
-                    </div>
+                  <label class="flex items-center">
+                    <input type="checkbox" name="notifications" value="sms" checked
+                      class="form-checkbox h-4 w-4 text-red-500 focus:ring-red-400 rounded transition-colors">
+                    <span class="ml-2 text-sm text-gray-600">SMS</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" name="notifications" value="push"
+                      class="form-checkbox h-4 w-4 text-red-500 focus:ring-red-400 rounded transition-colors">
+                    <span class="ml-2 text-sm text-gray-600">Push Notifications</span>
+                  </label>
+                  <!-- New notification option -->
+                  <label class="flex items-center">
+                    <input type="checkbox" name="notifications" value="whatsapp"
+                      class="form-checkbox h-4 w-4 text-red-500 focus:ring-red-400 rounded transition-colors">
+                    <span class="ml-2 text-sm text-gray-600">WhatsApp</span>
+                  </label>
+                </div>
+              </div>
+          </div>
+
+          <!-- Delivery Information -->
+          <div class="bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg">
+            <h2 class="text-xl font-bold text-gray-800 mb-6">Delivery Information</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <div class="md:col-span-2">
+                <label for="address" class="block text-sm font-medium text-gray-700 mb-1">Street Address *</label>
+                <div class="relative">
+                  <input type="text" id="address" name="address" required
+                    class="form-input w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <i class="fas fa-map-marker-alt text-gray-400"></i>
                   </div>
-                  
-                  <!-- PayPal Payment Option -->
-                  <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50 payment-method-option">
-                    <input type="radio" name="payment-method" id="paypal" class="mr-3">
-                    <div class="flex-1">
-                      <div class="font-medium">PayPal</div>
-                      <p class="text-sm text-gray-500">Pay using your PayPal account</p>
-                    </div>
-                    <img src="images/paypal.png" alt="PayPal" class="h-8">
-                  </label>
-                  
-                  <!-- PayPal Form (Hidden by default) -->
-                  <div id="paypal-details" class="payment-details hidden p-4 border rounded-lg bg-gray-50">
-                    <p class="mb-4">You will be redirected to PayPal to complete your payment.</p>
-                    <div class="flex items-center">
-                      <i class="fas fa-lock text-green-500 mr-2"></i>
-                      <span class="text-sm text-gray-600">Your payment information is secure and encrypted</span>
-                    </div>
+                  <!-- Address autocomplete dropdown -->
+                  <div id="address-suggestions"
+                    class="absolute z-10 w-full mt-1 bg-white shadow-lg rounded-lg border border-gray-200 hidden">
+                    <ul class="py-1">
+                      <li class="px-3 py-2 hover:bg-gray-100 cursor-pointer text-sm">123 Main St, New York, NY 10001
+                      </li>
+                      <li class="px-3 py-2 hover:bg-gray-100 cursor-pointer text-sm">123 Main St, Brooklyn, NY 11201
+                      </li>
+                      <li class="px-3 py-2 hover:bg-gray-100 cursor-pointer text-sm">123 Main St, Queens, NY 11101</li>
+                    </ul>
                   </div>
-                  
-                  <!-- Cash Payment Option -->
-                  <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50 payment-method-option">
-                    <input type="radio" name="payment-method" id="cash" class="mr-3">
-                    <div class="flex-1">
-                      <div class="font-medium">Cash on Delivery</div>
-                      <p class="text-sm text-gray-500">Pay with cash when your order arrives</p>
+                </div>
+                <div class="hidden error-message text-red-500 text-xs mt-1">Please enter your street address</div>
+              </div>
+              <div>
+                <label for="apartment" class="block text-sm font-medium text-gray-700 mb-1">Apartment/Suite
+                  (optional)</label>
+                <input type="text" id="apartment" name="apartment"
+                  class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+              </div>
+              <div>
+                <label for="city" class="block text-sm font-medium text-gray-700 mb-1">City *</label>
+                <input type="text" id="city" name="city" required
+                  class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+                <div class="hidden error-message text-red-500 text-xs mt-1">Please enter your city</div>
+              </div>
+              <div>
+                <label for="state" class="block text-sm font-medium text-gray-700 mb-1">State/Province *</label>
+                <select id="state" name="state" required
+                  class="form-select w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+                  <option value="">Select State</option>
+                  <option value="AL">Alabama</option>
+                  <option value="AK">Alaska</option>
+                  <option value="AZ">Arizona</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="CA">California</option>
+                  <option value="CO">Colorado</option>
+                  <option value="CT">Connecticut</option>
+                  <!-- More states would be added here -->
+                  <option value="NY">New York</option>
+                  <option value="WY">Wyoming</option>
+                </select>
+                <div class="hidden error-message text-red-500 text-xs mt-1">Please select your state</div>
+              </div>
+              <div>
+                <label for="zipcode" class="block text-sm font-medium text-gray-700 mb-1">ZIP/Postal Code *</label>
+                <input type="text" id="zipcode" name="zipcode" required
+                  class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+                <div class="hidden error-message text-red-500 text-xs mt-1">Please enter a valid ZIP code</div>
+              </div>
+
+              <!-- Add country selector for international shipping -->
+              <div>
+                <label for="country" class="block text-sm font-medium text-gray-700 mb-1">Country *</label>
+                <select id="country" name="country" required
+                  class="form-select w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+                  <option value="US" selected>United States</option>
+                  <option value="CA">Canada</option>
+                  <option value="MX">Mexico</option>
+                  <!-- More countries would be added here -->
+                </select>
+              </div>
+            </div>
+
+            <!-- Save address for future orders -->
+            <div id="save-address-option" class="mb-6">
+              <label class="flex items-center">
+                <input type="checkbox" id="save-address" name="save-address"
+                  class="form-checkbox h-4 w-4 text-red-500 focus:ring-red-400 rounded transition-colors">
+                <span class="ml-2 text-sm text-gray-600">Save this address for future orders</span>
+              </label>
+            </div>
+
+            <!-- Delivery estimate based on entered address -->
+            <div class="bg-gray-50 p-4 rounded-lg mb-6" id="estimated-delivery-time">
+              <div class="flex items-center">
+                <i class="fas fa-truck text-red-500 mr-3 text-xl"></i>
+                <div>
+                  <p class="font-medium text-gray-800">Estimated Delivery</p>
+                  <p class="text-sm text-gray-600">Based on your location, we can deliver to you:</p>
+                  <div class="mt-2 grid grid-cols-1 md:grid-cols-3 gap-2">
+                    <div class="bg-white p-2 rounded border border-gray-200 text-center">
+                      <p class="text-xs text-gray-500">Standard</p>
+                      <p class="font-medium">Today, 2-5 PM</p>
                     </div>
-                    <i class="fas fa-money-bill-wave text-green-500 text-2xl"></i>
-                  </label>
-                  
-                  <!-- Cash Form (Hidden by default) -->
-                  <div id="cash-details" class="payment-details hidden p-4 border rounded-lg bg-gray-50">
-                    <p>Please have the exact amount ready at the time of delivery.</p>
+                    <div class="bg-white p-2 rounded border border-gray-200 text-center">
+                      <p class="text-xs text-gray-500">Express</p>
+                      <p class="font-medium">Today, 12-2 PM</p>
+                    </div>
+                    <div class="bg-white p-2 rounded border border-gray-200 text-center">
+                      <p class="text-xs text-gray-500">Pickup</p>
+                      <p class="font-medium">Ready in 30 min</p>
+                    </div>
                   </div>
                 </div>
               </div>
-              
-              <!-- Order Notes -->
-              <div class="mb-6">
-                <label for="order-notes" class="block text-sm font-medium text-gray-700 mb-1">Order Notes (Optional)</label>
-                <textarea id="order-notes" rows="3" class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none" placeholder="Special instructions for your order or delivery"></textarea>
-              </div>
-              
-              <!-- Terms & Conditions -->
-              <div class="mb-6">
-                <label class="custom-checkbox">
-                  <input type="checkbox" required>
-                  <span class="checkmark"></span>
-                  <span>I agree to the <a href="terms.html" class="text-red-500 hover:underline">Terms & Conditions</a> and <a href="privacy.html" class="text-red-500 hover:underline">Privacy Policy</a></span>
+            </div>
+
+            <!-- Delivery Options -->
+            <div id="delivery-options" class="mb-6">
+              <h3 class="text-lg font-medium text-gray-700 mb-4">Delivery Options</h3>
+              <div class="space-y-4">
+                <label
+                  class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition payment-method-option selected">
+                  <input type="radio" name="delivery-method" id="standard-delivery" value="standard" checked
+                    class="form-radio h-4 w-4 text-red-500 focus:ring-red-400 transition-colors">
+                  <div class="flex-1 ml-3">
+                    <div class="font-medium text-gray-800">Standard Delivery</div>
+                    <p class="text-sm text-gray-600">Delivery within 2-3 hours</p>
+                  </div>
+                  <div class="font-medium text-gray-800">$5.99</div>
+                </label>
+
+                <label
+                  class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition payment-method-option">
+                  <input type="radio" name="delivery-method" id="express-delivery" value="express"
+                    class="form-radio h-4 w-4 text-red-500 focus:ring-red-400 transition-colors">
+                  <div class="flex-1 ml-3">
+                    <div class="font-medium text-gray-800">Express Delivery</div>
+                    <p class="text-sm text-gray-600">Delivery within 1 hour</p>
+                  </div>
+                  <div class="font-medium text-gray-800">$9.99</div>
+                </label>
+
+                <label
+                  class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition payment-method-option">
+                  <input type="radio" name="delivery-method" id="pickup" value="pickup"
+                    class="form-radio h-4 w-4 text-red-500 focus:ring-red-400 transition-colors">
+                  <div class="flex-1 ml-3">
+                    <div class="font-medium text-gray-800">Store Pickup</div>
+                    <p class="text-sm text-gray-600">Ready in 30 minutes at our store</p>
+                  </div>
+                  <div class="font-medium text-green-600">Free</div>
+                </label>
+
+                <!-- New contactless delivery option -->
+                <label
+                  class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition payment-method-option">
+                  <input type="radio" name="delivery-method" id="contactless" value="contactless"
+                    class="form-radio h-4 w-4 text-red-500 focus:ring-red-400 transition-colors">
+                  <div class="flex-1 ml-3">
+                    <div class="font-medium text-gray-800">Contactless Delivery</div>
+                    <p class="text-sm text-gray-600">Left at your door, no contact required</p>
+                  </div>
+                  <div class="font-medium text-gray-800">$5.99</div>
                 </label>
               </div>
+            </div>
+
+            <!-- Schedule Delivery Option -->
+            <div class="mb-6">
+              <label class="flex items-center mb-3">
+                <input type="checkbox" id="schedule-delivery" name="schedule-delivery"
+                  class="form-checkbox h-4 w-4 text-red-500 focus:ring-red-400 rounded transition-colors">
+                <span class="ml-2 text-sm font-medium text-gray-800">Schedule for later</span>
+              </label>
+
+              <div id="delivery-date-container" class="hidden"
+                data-display-class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
+                <div>
+                  <label for="delivery-date" class="block text-sm font-medium text-gray-700 mb-1">Delivery Date</label>
+                  <input type="date" id="delivery-date" name="delivery-date"
+                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+                </div>
+                <div>
+                  <label for="delivery-time" class="block text-sm font-medium text-gray-700 mb-1">Delivery Time</label>
+                  <select id="delivery-time" name="delivery-time"
+                    class="form-select w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+                    <option value="">Select a time</option>
+                    <option value="8:00 AM - 10:00 AM">8:00 AM - 10:00 AM</option>
+                    <option value="10:00 AM - 12:00 PM">10:00 AM - 12:00 PM</option>
+                    <option value="12:00 PM - 2:00 PM">12:00 PM - 2:00 PM</option>
+                    <option value="2:00 PM - 4:00 PM">2:00 PM - 4:00 PM</option>
+                    <option value="4:00 PM - 6:00 PM">4:00 PM - 6:00 PM</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Delivery Instructions -->
+            <div class="mb-6">
+              <label for="delivery-instructions" class="block text-sm font-medium text-gray-700 mb-1">Delivery
+                Instructions (optional)</label>
+              <textarea id="delivery-instructions" name="delivery-instructions" rows="2"
+                class="form-textarea w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors"
+                placeholder="E.g., Leave at the front door, gate code, building access instructions"></textarea>
+            </div>
+
+            <!-- Packaging Options -->
+            <div class="mb-6">
+              <h3 class="text-lg font-medium text-gray-700 mb-3">Packaging Options</h3>
+              <div class="space-y-3">
+                <label
+                  class="flex items-center p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                  <input type="radio" name="packaging" value="standard" checked
+                    class="form-radio h-4 w-4 text-red-500 focus:ring-red-400 transition-colors">
+                  <div class="ml-3">
+                    <div class="font-medium text-gray-800">Standard Packaging</div>
+                    <p class="text-xs text-gray-600">Our regular bakery packaging</p>
+                  </div>
+                </label>
+
+                <label
+                  class="flex items-center p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                  <input type="radio" name="packaging" value="eco"
+                    class="form-radio h-4 w-4 text-green-600 focus:ring-green-400 transition-colors">
+                  <div class="ml-3">
+                    <div class="font-medium text-gray-800">Eco-Friendly Packaging</div>
+                    <p class="text-xs text-gray-600">100% biodegradable and compostable packaging (+$1.50)</p>
+                  </div>
+                </label>
+
+                <label
+                  class="flex items-center p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                  <input type="radio" name="packaging" value="minimal"
+                    class="form-radio h-4 w-4 text-green-600 focus:ring-green-400 transition-colors">
+                  <div class="ml-3">
+                    <div class="font-medium text-gray-800">Minimal Packaging</div>
+                    <p class="text-xs text-gray-600">Reduced packaging for less waste</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Gift Options -->
+            <div class="mb-6">
+              <label class="flex items-center mb-3">
+                <input type="checkbox" id="gift-options-toggle" name="gift-options-toggle"
+                  class="form-checkbox h-4 w-4 text-red-500 focus:ring-red-400 rounded transition-colors">
+                <span class="ml-2 text-sm font-medium text-gray-800">This is a gift</span>
+              </label>
+
+              <div id="gift-options-section" class="hidden" data-display-class="mt-3">
+                <div class="space-y-4">
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <label
+                      class="border border-gray-200 rounded-lg p-3 cursor-pointer hover:border-red-500 transition-colors text-center">
+                      <input type="radio" name="gift-wrap-type" value="standard" class="sr-only">
+                      <img src="../images/gift-wrap-standard.jpg" alt="Standard Gift Wrap"
+                        class="w-full h-24 object-cover rounded mb-2">
+                      <span class="block text-sm font-medium">Standard<br>($3.99)</span>
+                    </label>
+
+                    <label
+                      class="border border-gray-200 rounded-lg p-3 cursor-pointer hover:border-red-500 transition-colors text-center">
+                      <input type="radio" name="gift-wrap-type" value="premium" class="sr-only">
+                      <img src="../images/gift-wrap-premium.jpg" alt="Premium Gift Wrap"
+                        class="w-full h-24 object-cover rounded mb-2">
+                      <span class="block text-sm font-medium">Premium<br>($5.99)</span>
+                    </label>
+
+                    <label
+                      class="border border-gray-200 rounded-lg p-3 cursor-pointer hover:border-red-500 transition-colors text-center">
+                      <input type="radio" name="gift-wrap-type" value="luxury" class="sr-only">
+                      <img src="../images/gift-wrap-luxury.jpg" alt="Luxury Gift Wrap"
+                        class="w-full h-24 object-cover rounded mb-2">
+                      <span class="block text-sm font-medium">Luxury<br>($7.99)</span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <label for="gift-message" class="block text-sm font-medium text-gray-700 mb-1">Gift Message
+                      (optional)</label>
+                    <textarea id="gift-message" name="gift-message" rows="3"
+                      class="form-textarea w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors"
+                      placeholder="Add a personal message to your gift..."></textarea>
+                    <p class="text-xs text-gray-500 mt-1">Maximum 200 characters</p>
+                  </div>
+
+                  <div>
+                    <label for="gift-from" class="block text-sm font-medium text-gray-700 mb-1">From</label>
+                    <input type="text" id="gift-from" name="gift-from"
+                      class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+                  </div>
+
+                  <div>
+                    <label for="gift-to" class="block text-sm font-medium text-gray-700 mb-1">To</label>
+                    <input type="text" id="gift-to" name="gift-to"
+                      class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Method -->
+          <div class="bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg">
+            <h2 class="text-xl font-bold text-gray-800 mb-6">Payment Method</h2>
+
+            <!-- Saved Payment Methods Section -->
+            <div id="saved-payment-methods" class="mb-6 hidden">
+              <h3 class="text-lg font-medium text-gray-700 mb-2">Your Payment Methods</h3>
+              <div class="saved-payment-container grid grid-cols-1 gap-4 mb-4">
+                <!-- Example saved payment method -->
+                <label
+                  class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                  <input type="radio" name="saved-payment" value="card1"
+                    class="form-radio h-4 w-4 text-red-500 focus:ring-red-400 transition-colors">
+                  <div class="flex-1 ml-3">
+                    <div class="font-medium text-gray-800">•••• •••• •••• 4242</div>
+                    <p class="text-sm text-gray-600">Visa - Expires 05/2025</p>
+                  </div>
+                  <div class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-ellipsis-v"></i>
+                  </div>
+                </label>
+
+                <!-- Example saved payment method -->
+                <label
+                  class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                  <input type="radio" name="saved-payment" value="card2"
+                    class="form-radio h-4 w-4 text-red-500 focus:ring-red-400 transition-colors">
+                  <div class="flex-1 ml-3">
+                    <div class="font-medium text-gray-800">•••• •••• •••• 5678</div>
+                    <p class="text-sm text-gray-600">Mastercard - Expires 10/2024</p>
+                  </div>
+                  <div class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-ellipsis-v"></i>
+                  </div>
+                </label>
+              </div>
+              <button type="button" id="add-new-payment"
+                class="text-red-500 hover:text-red-600 text-sm flex items-center">
+                <i class="fas fa-plus mr-2"></i> Add New Payment Method
+              </button>
+            </div>
+
+            <div class="space-y-4">
+              <!-- Credit Card Payment Option -->
+              <label
+                class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition payment-method-option selected">
+                <input type="radio" name="payment-method" id="credit-card" value="credit-card" checked
+                  class="form-radio h-4 w-4 text-red-500 focus:ring-red-400 transition-colors">
+                <div class="flex-1 ml-3">
+                  <div class="font-medium text-gray-800">Credit/Debit Card</div>
+                  <div class="flex space-x-2 mt-1">
+                    <img src="../images/visa.png" alt="Visa" class="h-6">
+                    <img src="../images/mastercard.png" alt="Mastercard" class="h-6">
+                    <img src="../images/amex.png" alt="American Express" class="h-6">
+                    <img src="../images/discover.png" alt="Discover" class="h-6">
+                  </div>
+                </div>
+              </label>
+
+              <!-- Credit Card Details Form -->
+              <div id="credit-card-details" class="payment-details p-4 border border-gray-200 rounded-lg bg-gray-50">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div class="md:col-span-2">
+                    <label for="card-number" class="block text-sm font-medium text-gray-700 mb-1">Card Number *</label>
+                    <div class="relative">
+                      <input type="text" id="card-number" name="card-number" required placeholder="1234 5678 9012 3456"
+                        class="form-input w-full pl-10 pr-12 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+                      <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fas fa-credit-card text-gray-400"></i>
+                      </div>
+                      <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none"
+                        id="card-type-display">
+                        <!-- Card type icon will be inserted here by JS -->
+                      </div>
+                    </div>
+                    <div class="hidden error-message text-red-500 text-xs mt-1">Please enter a valid card number</div>
+                  </div>
+                  <div>
+                    <label for="card-name" class="block text-sm font-medium text-gray-700 mb-1">Name on Card *</label>
+                    <input type="text" id="card-name" name="card-name" required
+                      class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+                    <div class="hidden error-message text-red-500 text-xs mt-1">Please enter the name on your card</div>
+                  </div>
+                  <div class="grid grid-cols-2 gap-4">
+                    <div>
+                      <label for="expiry-date" class="block text-sm font-medium text-gray-700 mb-1">Expiry Date
+                        *</label>
+                      <input type="text" id="expiry-date" name="expiry-date" required placeholder="MM/YY"
+                        class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+                      <div class="hidden error-message text-red-500 text-xs mt-1">Please enter a valid expiry date</div>
+                    </div>
+                    <div>
+                      <label for="cvv" class="block text-sm font-medium text-gray-700 mb-1">
+                        CVV *
+                        <span class="tooltip ml-1 text-gray-400 cursor-help"
+                          data-tooltip="The 3 or 4 digit security code on your card">
+                          <i class="fas fa-question-circle"></i>
+                        </span>
+                      </label>
+                      <input type="password" id="cvv" name="cvv" required placeholder="***"
+                        class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+                      <div class="hidden error-message text-red-500 text-xs mt-1">Please enter your CVV</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center">
+                    <i class="fas fa-lock text-green-500 mr-2"></i>
+                    <span class="text-sm text-gray-600">Your payment information is secure and encrypted</span>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <img src="../images/security-badges.png" alt="Security Badges" class="h-6">
+                    <img src="../images/pci-badge.png" alt="PCI Compliant" class="h-6">
+                  </div>
+                </div>
+
+                <!-- Save payment method option -->
+                <div class="mt-4 border-t pt-4">
+                  <label class="flex items-center">
+                    <input type="checkbox" id="save-payment-method" name="save-payment-method"
+                      class="form-checkbox h-4 w-4 text-red-500 focus:ring-red-400 rounded transition-colors">
+                    <span class="ml-2 text-sm text-gray-600">Save this card for future purchases</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- PayPal Payment Option -->
+              <label
+                class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition payment-method-option">
+                <input type="radio" name="payment-method" id="paypal" value="paypal"
+                  class="form-radio h-4 w-4 text-red-500 focus:ring-red-400 transition-colors">
+                <div class="flex-1 ml-3">
+                  <div class="font-medium text-gray-800">PayPal</div>
+                  <p class="text-sm text-gray-600">Pay using your PayPal account</p>
+                </div>
+                <img src="../images/paypal.png" alt="PayPal" class="h-8">
+              </label>
+
+              <!-- PayPal Form (Hidden by default) -->
+              <div id="paypal-details" class="payment-details hidden"
+                data-display-class="p-4 border border-gray-200 rounded-lg bg-gray-50">
+                <p class="mb-4 text-gray-700">You will be redirected to PayPal to complete your payment.</p>
+                <div class="flex items-center">
+                  <i class="fas fa-lock text-green-500 mr-2"></i>
+                  <span class="text-sm text-gray-600">Your payment information is secure and encrypted</span>
+                </div>
+              </div>
+
+              <!-- New payment option: Apple Pay -->
+              <label
+                class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition payment-method-option">
+                <input type="radio" name="payment-method" id="apple-pay" value="apple-pay"
+                  class="form-radio h-4 w-4 text-red-500 focus:ring-red-400 transition-colors">
+                <div class="flex-1 ml-3">
+                  <div class="font-medium text-gray-800">Apple Pay</div>
+                  <p class="text-sm text-gray-600">Fast and secure payment with Apple Pay</p>
+                </div>
+                <div class="bg-black text-white rounded py-1 px-3 flex items-center">
+                  <i class="fab fa-apple mr-1"></i>
+                  <span>Pay</span>
+                </div>
+              </label>
+
+              <!-- New payment option: Google Pay -->
+              <label
+                class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition payment-method-option">
+                <input type="radio" name="payment-method" id="google-pay" value="google-pay"
+                  class="form-radio h-4 w-4 text-red-500 focus:ring-red-400 transition-colors">
+                <div class="flex-1 ml-3">
+                  <div class="font-medium text-gray-800">Google Pay</div>
+                  <p class="text-sm text-gray-600">Simple, fast checkout with Google Pay</p>
+                </div>
+                <img src="../images/google-pay.png" alt="Google Pay" class="h-8">
+              </label>
+
+              <!-- Cash Payment Option -->
+              <label
+                class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition payment-method-option">
+                <input type="radio" name="payment-method" id="cash" value="cash"
+                  class="form-radio h-4 w-4 text-red-500 focus:ring-red-400 transition-colors">
+                <div class="flex-1 ml-3">
+                  <div class="font-medium text-gray-800">Cash on Delivery</div>
+                  <p class="text-sm text-gray-600">Pay with cash when your order arrives</p>
+                </div>
+                <i class="fas fa-money-bill-wave text-green-500 text-2xl"></i>
+              </label>
+
+              <!-- Cash Form (Hidden by default) -->
+              <div id="cash-details" class="payment-details hidden"
+                data-display-class="p-4 border border-gray-200 rounded-lg bg-gray-50">
+                <p class="text-gray-700">Please have the exact amount ready at the time of delivery.</p>
+                <p class="text-sm text-gray-600 mt-2">Note: Our delivery personnel can't provide change for large bills.
+                </p>
+              </div>
+            </div>
+
+            <!-- Billing Address Section -->
+            <div class="mt-6 pt-6 border-t border-gray-200">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-medium text-gray-700">Billing Address</h3>
+                <label class="flex items-center">
+                  <input type="checkbox" id="same-as-shipping" checked
+                    class="form-checkbox h-4 w-4 text-red-500 focus:ring-red-400 rounded transition-colors">
+                  <span class="ml-2 text-sm text-gray-600">Same as shipping address</span>
+                </label>
+              </div>
+
+              <div id="billing-address-container" class="hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="md:col-span-2">
+                    <label for="billing-address" class="block text-sm font-medium text-gray-700 mb-1">Street Address
+                      *</label>
+                    <input type="text" id="billing-address"
+                      class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+                  </div>
+                  <div>
+                    <label for="billing-city" class="block text-sm font-medium text-gray-700 mb-1">City *</label>
+                    <input type="text" id="billing-city"
+                      class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+                  </div>
+                  <div>
+                    <label for="billing-state" class="block text-sm font-medium text-gray-700 mb-1">State/Province
+                      *</label>
+                    <input type="text" id="billing-state"
+                      class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+                  </div>
+                  <div>
+                    <label for="billing-zipcode" class="block text-sm font-medium text-gray-700 mb-1">ZIP/Postal Code
+                      *</label>
+                    <input type="text" id="billing-zipcode"
+                      class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Notes -->
+            <div class="mt-6 pt-6 border-t border-gray-200">
+              <label for="order-notes" class="block text-sm font-medium text-gray-700 mb-1">Order Notes
+                (Optional)</label>
+              <textarea id="order-notes" rows="3"
+                class="form-textarea w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors"
+                placeholder="Special instructions for your order or delivery"></textarea>
+            </div>
+
+            <!-- Terms & Conditions -->
+            <div class="mt-6 pt-6 border-t border-gray-200">
+              <label class="flex items-center">
+                <input type="checkbox" id="terms-checkbox" required
+                  class="form-checkbox h-4 w-4 text-red-500 focus:ring-red-400 rounded transition-colors">
+                <span class="ml-2 text-sm text-gray-600">I agree to the <a href="terms.html"
+                    class="text-red-500 hover:underline">Terms & Conditions</a> and <a href="privacy.html"
+                    class="text-red-500 hover:underline">Privacy Policy</a></span>
+              </label>
+              <div class="hidden error-message text-red-500 text-xs mt-1">You must agree to the terms and conditions
+              </div>
+            </div>
+
+            <!-- Marketing consent -->
+            <div class="mt-3">
+              <label class="flex items-center">
+                <input type="checkbox" id="marketing-consent"
+                  class="form-checkbox h-4 w-4 text-red-500 focus:ring-red-400 rounded transition-colors">
+                <span class="ml-2 text-sm text-gray-600">I'd like to receive special offers, recipes, and updates from
+                  Djini's Bakehouse</span>
+              </label>
+            </div>
             </form>
           </div>
+
+          <!-- Order Protection -->
+          <div
+            class="bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg border-l-4 border-green-500">
+            <div class="flex items-start">
+              <div class="flex-shrink-0 mr-3">
+                <i class="fas fa-shield-alt text-green-500 text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-medium text-gray-800">Order Protection Plan</h3>
+                <p class="text-sm text-gray-600 mb-2">Add protection to your order for just $1.99</p>
+                <ul class="text-sm text-gray-600 space-y-1 mb-3">
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                    <span>Guaranteed refund if delivery is more than 15 minutes late</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                    <span>Full replacement for any damaged items</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                    <span>Priority customer service</span>
+                  </li>
+                </ul>
+                <label class="flex items-center">
+                  <input type="checkbox" id="add-protection" name="add-protection"
+                    class="form-checkbox h-4 w-4 text-green-500 focus:ring-green-400 rounded transition-colors">
+                  <span class="ml-2 text-sm font-medium text-gray-700">Add Order Protection ($1.99)</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recently Viewed Items -->
+          <div class="bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">Recently Viewed</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div class="border border-gray-200 rounded-lg p-2 hover:border-red-500 transition-colors">
+                <img src="../images/croissant.jpg" alt="Butter Croissant"
+                  class="w-full h-20 object-cover rounded-lg mb-2">
+                <h3 class="text-sm font-medium text-gray-800 truncate">Butter Croissant</h3>
+                <div class="flex justify-between items-center mt-1">
+                  <span class="text-sm text-gray-600">$3.49</span>
+                  <button class="text-xs bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 transition-colors">
+                    Add
+                  </button>
+                </div>
+              </div>
+
+              <div class="border border-gray-200 rounded-lg p-2 hover:border-red-500 transition-colors">
+                <img src="../images/chocolate-cake.jpg" alt="Chocolate Cake"
+                  class="w-full h-20 object-cover rounded-lg mb-2">
+                <h3 class="text-sm font-medium text-gray-800 truncate">Chocolate Cake</h3>
+                <div class="flex justify-between items-center mt-1">
+                  <span class="text-sm text-gray-600">$32.99</span>
+                  <button class="text-xs bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 transition-colors">
+                    Add
+                  </button>
+                </div>
+              </div>
+
+              <div class="border border-gray-200 rounded-lg p-2 hover:border-red-500 transition-colors">
+                <img src="../images/sourdough-bread.jpg" alt="Sourdough Bread"
+                  class="w-full h-20 object-cover rounded-lg mb-2">
+                <h3 class="text-sm font-medium text-gray-800 truncate">Sourdough Bread</h3>
+                <div class="flex justify-between items-center mt-1">
+                  <span class="text-sm text-gray-600">$5.99</span>
+                  <button class="text-xs bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 transition-colors">
+                    Add
+                  </button>
+                </div>
+              </div>
+
+              <div class="border border-gray-200 rounded-lg p-2 hover:border-red-500 transition-colors">
+                <img src="../images/macarons.jpg" alt="Macarons (6 pack)"
+                  class="w-full h-20 object-cover rounded-lg mb-2">
+                <h3 class="text-sm font-medium text-gray-800 truncate">Macarons (6 pack)</h3>
+                <div class="flex justify-between items-center mt-1">
+                  <span class="text-sm text-gray-600">$12.99</span>
+                  <button class="text-xs bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 transition-colors">
+                    Add
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        
+
         <!-- Order Summary -->
         <div class="lg:col-span-1">
-          <div class="bg-white rounded-lg shadow-lg p-6 sticky top-24">
-            <h2 class="text-2xl font-bold text-gray-700 mb-6">Order Summary</h2>
-            
-            <div id="checkout-summary" class="mb-6">
+          <div class="bg-white rounded-lg shadow-md p-6 sticky top-24 transition-all duration-300 hover:shadow-lg">
+            <div class="flex items-center justify-between mb-6">
+              <h2 class="text-xl font-bold text-gray-800">Order Summary</h2>
+              <span class="text-sm text-gray-500 underline cursor-pointer hover:text-red-500" id="edit-cart-btn">Edit
+                Cart</span>
+            </div>
+
+            <div id="checkout-summary" class="mb-6 space-y-4 max-h-72 overflow-y-auto pr-2">
               <!-- Order items will be dynamically inserted here by JS -->
               <div class="text-center py-8">
                 <div class="loading-spinner mx-auto"></div>
-                <p class="mt-2">Loading order details...</p>
+                <p class="mt-2 text-gray-600">Loading order details...</p>
               </div>
             </div>
-            
-            <div class="border-t pt-4">
-              <div class="flex justify-between py-2">
-                <span class="font-bold">Total:</span>
-                <span class="font-bold text-red-500 text-xl">$<span id="checkout-total">0.00</span></span>
+
+            <!-- Estimated Delivery Time -->
+            <div class="mb-6 bg-gray-50 p-3 rounded-lg">
+              <div class="flex items-center">
+                <i class="fas fa-truck text-red-500 mr-2"></i>
+                <div>
+                  <p class="font-medium text-gray-800">Estimated Delivery:</p>
+                  <p class="text-sm text-gray-600">Today, 2:00PM - 3:00PM</p>
+                </div>
               </div>
             </div>
-            
-            <button type="submit" form="checkout-form" class="w-full bg-red-500 text-white py-3 rounded-lg hover:bg-red-600 transition mt-4">
-              Complete Order
+
+            <!-- Promo Code Section -->
+            <div class="mb-6 pt-4 border-t border-gray-200">
+              <div class="flex items-center mb-2">
+                <h3 class="text-sm font-medium text-gray-700">Have a promo code?</h3>
+              </div>
+              <div class="flex">
+                <input type="text" id="promo-code" placeholder="Enter code"
+                  class="form-input flex-1 px-4 py-2 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+                <button type="button" id="apply-promo"
+                  class="bg-red-500 text-white px-4 py-2 rounded-r-lg hover:bg-red-600 transition-colors">Apply</button>
+              </div>
+              <p id="promo-message" class="text-sm text-green-600 mt-1 hidden">Promo code applied successfully!</p>
+
+              <!-- Available promo codes -->
+              <div class="mt-3">
+                <button type="button" id="show-promos"
+                  class="text-sm text-red-500 hover:text-red-600 flex items-center">
+                  <i class="fas fa-tag mr-1"></i>
+                  Available promo codes
+                  <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                </button>
+                <div id="promo-codes-list" class="hidden mt-2 text-sm space-y-1 bg-gray-50 p-2 rounded-lg">
+                  <div class="flex justify-between items-center">
+                    <span class="font-medium">WELCOME10</span>
+                    <span>10% off first order</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="font-medium">FREESHIP</span>
+                    <span>Free standard delivery</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="font-medium">BUNDLE15</span>
+                    <span>15% off $50+ orders</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Loyalty Points Section -->
+            <div id="loyalty-points-container" class="mb-6 pt-4 border-t border-gray-200">
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h3 class="text-sm font-medium text-gray-700 mb-2">Your Loyalty Points</h3>
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-gray-600">Available points:</span>
+                  <span class="font-medium text-red-500">1,250 points</span>
+                </div>
+                <div class="flex justify-between items-center mb-3">
+                  <span class="text-gray-600">Value:</span>
+                  <span class="font-medium">$12.50</span>
+                </div>
+                <div class="flex justify-between items-center mb-3">
+                  <label class="flex items-center">
+                    <input type="checkbox" id="use-loyalty-points"
+                      class="form-checkbox h-4 w-4 text-red-500 focus:ring-red-400 rounded transition-colors">
+                    <span class="ml-2 text-sm text-gray-600">Use points for this order</span>
+                  </label>
+                  <span class="text-sm text-blue-500 hover:text-blue-600 cursor-pointer">Details</span>
+                </div>
+
+                <!-- Loyalty program status -->
+                <div class="mt-3 pt-3 border-t border-gray-200">
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="text-sm text-gray-600">Current Tier:</span>
+                    <span class="text-sm font-medium text-pink-600">Gold Member</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2.5 mb-1">
+                    <div class="bg-pink-600 h-2.5 rounded-full" style="width: 75%"></div>
+                  </div>
+                  <p class="text-xs text-gray-500">750 more points until Platinum</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Total -->
+            <div class="border-t border-gray-200 pt-4 space-y-2">
+              <div class="flex justify-between">
+                <span class="text-gray-600">Subtotal</span>
+                <span class="font-medium" id="cart-subtotal">$45.98</span>
+              </div>
+
+              <div id="discount-row" class="flex justify-between">
+                <span class="text-green-600">Discount</span>
+                <span class="text-green-600">-$<span id="cart-discount">4.60</span></span>
+              </div>
+
+              <div id="loyalty-discount-row" class="hidden" data-display-class="flex justify-between">
+                <span class="text-green-600">Loyalty Points</span>
+                <span class="text-green-600">-$<span id="loyalty-discount">0.00</span></span>
+              </div>
+
+              <div class="flex justify-between">
+                <span class="text-gray-600">Shipping</span>
+                <span class="font-medium" id="cart-shipping">$5.99</span>
+              </div>
+
+              <div id="gift-wrap-row" class="hidden" data-display-class="flex justify-between">
+                <span class="text-gray-600">Gift Wrap</span>
+                <span class="font-medium" id="gift-wrap-fee">$3.99</span>
+              </div>
+
+              <div id="order-protection-row" class="hidden" data-display-class="flex justify-between">
+                <span class="text-gray-600">Order Protection</span>
+                <span class="font-medium" id="order-protection-fee">$1.99</span>
+              </div>
+
+              <div class="flex justify-between">
+                <span class="text-gray-600">Tax (8%)</span>
+                <span class="font-medium" id="cart-tax">$3.68</span>
+              </div>
+
+              <div class="flex justify-between items-center pt-4 mt-2 border-t border-gray-200">
+                <span class="text-lg font-bold text-gray-800">Total</span>
+                <span class="text-2xl font-bold text-red-500">$<span id="checkout-total">51.05</span></span>
+              </div>
+            </div>
+
+            <!-- Order Summary Badge -->
+            <div class="mt-4 bg-green-50 p-3 rounded-lg flex items-start">
+              <i class="fas fa-truck text-green-500 mt-1 mr-3"></i>
+              <div>
+                <p class="text-sm font-medium text-gray-800">Free shipping on orders over $50!</p>
+                <p class="text-xs text-gray-600">Add $4.02 more to qualify</p>
+              </div>
+            </div>
+
+            <button type="submit" form="checkout-form"
+              class="w-full bg-red-500 text-white py-3 rounded-lg hover:bg-red-600 transition-colors mt-6 font-bold flex items-center justify-center">
+              <i class="fas fa-lock mr-2"></i> Complete Order
             </button>
-            
+
+            <!-- Buy now, pay later option -->
+            <div class="mt-3 text-center">
+              <button class="text-sm text-gray-600 hover:text-gray-800">
+                <i class="fas fa-credit-card mr-1"></i>
+                Or pay $17.02/month with <span class="font-medium">Afterpay</span>
+              </button>
+            </div>
+
+            <div class="mt-6 text-center">
+              <div class="flex items-center justify-center mb-3">
+                <i class="fas fa-shield-alt text-green-500 mr-2"></i>
+                <span class="text-sm font-medium text-gray-700">Secure Checkout</span>
+              </div>
+              <div class="flex justify-center space-x-3">
+                <img src="../images/visa.png" alt="Visa" class="h-6">
+                <img src="../images/mastercard.png" alt="Mastercard" class="h-6">
+                <img src="../images/amex.png" alt="American Express" class="h-6">
+                <img src="../images/discover.png" alt="Discover" class="h-6">
+                <img src="../images/paypal.png" alt="PayPal" class="h-6">
+              </div>
+            </div>
+
             <div class="mt-6 text-center text-sm text-gray-500">
               <p>Need help? <a href="contact.html" class="text-red-500 hover:underline">Contact Us</a></p>
+            </div>
+
+            <!-- Satisfaction guarantee -->
+            <div class="mt-4 pt-4 border-t border-gray-200">
+              <div class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2 text-lg"></i>
+                <p class="text-sm text-gray-700">100% Satisfaction Guarantee</p>
+              </div>
+              <p class="text-xs text-gray-500 mt-1">If you're not completely satisfied with your order, let us know and
+                we'll make it right.</p>
             </div>
           </div>
         </div>
@@ -279,85 +1206,170 @@
     </div>
   </main>
 
-  <footer class="bg-red-50 mt-24">
-    <div class="container mx-auto py-4 px-4">
-      <div class="flex flex-col md:flex-row gap-6 items-center justify-between mb-2">
-        <div>
-          <img class="h-72" src="images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="" />
+  <!-- Live Chat Button -->
+  <button id="chat-toggle"
+    class="fixed bottom-6 right-6 bg-red-500 text-white rounded-full p-4 shadow-lg hover:bg-red-600 transition-colors z-40">
+    <i class="fas fa-comments text-xl"></i>
+  </button>
+
+  <!-- Chat Window (Hidden by default) -->
+  <div id="chat-window" class="fixed bottom-24 right-6 w-80 bg-white rounded-lg shadow-xl z-40 hidden">
+    <div class="bg-red-500 text-white p-4 rounded-t-lg flex justify-between items-center">
+      <h3 class="font-bold">Djini's Bakehouse Support</h3>
+      <button id="close-chat" class="text-white hover:text-gray-200">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="p-4 h-80 overflow-y-auto bg-gray-50" id="chat-messages">
+      <div class="flex items-start mb-3">
+        <div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mr-2 flex-shrink-0">
+          <i class="fas fa-user text-red-500"></i>
         </div>
-        <div class="flex flex-col md:flex-row items-center gap-4">
-          <h3 class="text-xl me-10">
-            Become a part of us?
-          </h3>
-          <a href="contact.html" type="button"
-            class="text-white bg-gradient-to-br from-[#FF8938] to-[#FF0000] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 hover:scale-105 duration-500 transition font-bold rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2">
-            Contact
-          </a>
-        </div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-center md:text-start">
-        <div class="my-8 space-y-4">
-          <h3 class="text-xl text-gray-700 font-bold">Quick Links</h3>
-          <a href="index.html" class="block">Home</a>
-          <a href="products.html" class="block">Products</a>
-          <a href="about.html" class="block">About Us</a>
-          <a href="privacy.html" class="block">Privacy Policy</a>
-          <a href="terms.html" class="block">Terms & Conditions</a>
-        </div>
-        <div class="my-8 space-y-4">
-          <h3 class="text-xl text-gray-700 font-bold">Our Service</h3>
-          <a href="custom-orders.html" class="block">Custom Orders</a>
-          <a href="order.html" class="block">Online Ordering</a>
-          <a href="products.html?filter=special" class="block">Seasonal Specials</a>
-          <a href="gift-packaging.html" class="block">Gift Packaging</a>
-        </div>
-        <div class="my-8 space-y-4">
-          <h3 class="text-xl text-gray-700 font-bold">Help</h3>
-          <a href="faq.html" class="block">FAQs</a>
-          <a href="contact.html" class="block">Contact Us</a>
-          <a href="order-tracking.html" class="block">Track Order</a>
-          <a href="shipping.html" class="block">Shipping Information</a>
-        </div>
-        <div class="my-8 space-y-4">
-          <h3 class="text-xl text-gray-700 font-bold">
-            Be a part of our team
-          </h3>
-          <!-- subscribe -->
-          <div class="flex items-center justify-center md:justify-start">
-            <input type="email" placeholder="Email address" class="bg-transparent border-b-2 py-2 focus:outline-none" />
-            <button type="button"
-              class="text-white bg-gradient-to-br from-[#FF8938] to-[#FF0000] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 hover:scale-105 transition font-bold rounded-full text-xl p-2 text-center -ml-4 mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
-                stroke="currentColor" class="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-              </svg>
-            </button>
-          </div>
-          <!-- social links -->
-          <div class="space-x-4">
-            <a href="#" class="w-6 h-6 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path
-                  d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
-              </svg></a>
-            <a href="#" class="w-6 h-6 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                <path
-                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
-              </svg></a>
-            <a href="#" class="w-6 h-6 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/>
-              </svg></a>
-          </div>
+        <div class="bg-white p-3 rounded-lg shadow-sm max-w-[80%]">
+          <p class="text-sm">Hello! How can I help with your order today?</p>
+          <span class="text-xs text-gray-500 mt-1 block">Just now</span>
         </div>
       </div>
     </div>
-    <h5 class="text-center font-semibold py-4">All rights reserved © Djini's Bakehouse 2024</h5>
+    <div class="p-3 border-t border-gray-200">
+      <div class="flex">
+        <input type="text" id="chat-input" placeholder="Type your message..."
+          class="flex-1 border border-gray-300 rounded-l-lg px-3 py-2 focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+        <button id="send-message"
+          class="bg-red-500 text-white px-4 py-2 rounded-r-lg hover:bg-red-600 transition-colors">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top"
+    class="fixed bottom-6 right-20 bg-gray-800 text-white rounded-full p-3 shadow-lg hover:bg-gray-700 transition-colors z-40 opacity-0 invisible">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Loading Overlay -->
+  <div id="loading-overlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white p-8 rounded-lg shadow-xl text-center">
+      <div class="loading-spinner mx-auto mb-4"></div>
+      <h3 class="text-lg font-bold text-gray-800 mb-1">Processing Your Order</h3>
+      <p class="text-gray-600">Please wait while we secure your payment...</p>
+    </div>
+  </div>
+
+  <footer class="bg-red-50 mt-24">
+    <div class="container mx-auto py-8 px-4">
+      <!-- Newsletter Signup -->
+      <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <div class="mb-4 md:mb-0 md:mr-6">
+            <h3 class="text-lg font-bold text-gray-800 mb-1">Join Our Newsletter</h3>
+            <p class="text-sm text-gray-600">Get special offers, recipes and more delivered to your inbox</p>
+          </div>
+          <div class="w-full md:w-1/2">
+            <form class="flex">
+              <input type="email" placeholder="Your email address"
+                class="flex-1 form-input px-4 py-2 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-red-200 focus:border-red-500 transition-colors">
+              <button type="submit"
+                class="bg-red-500 text-white px-4 py-2 rounded-r-lg hover:bg-red-600 transition-colors">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-6 items-center justify-between mb-8">
+        <div>
+          <img class="h-52" src="../images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="Djini's Bakehouse Logo" />
+        </div>
+        <div class="text-center md:text-right">
+          <p class="text-gray-600 mb-2">Customer Service: <a href="tel:+15551234567" class="text-red-500">(555)
+              123-4567</a></p>
+          <p class="text-gray-600 mb-4">Email: <a href="mailto:info@djinisbakehouse.com"
+              class="text-red-500">info@djinisbakehouse.com</a></p>
+          <div class="flex justify-center md:justify-end space-x-4">
+            <a href="#" class="text-gray-600 hover:text-red-500 transition-colors"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-600 hover:text-red-500 transition-colors"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-600 hover:text-red-500 transition-colors"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-600 hover:text-red-500 transition-colors"><i class="fab fa-pinterest"></i></a>
+            <a href="#" class="text-gray-600 hover:text-red-500 transition-colors"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Links -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h3 class="text-lg font-medium text-gray-800 mb-3">Shop</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors">Breads</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors">Pastries</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors">Cakes</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors">Seasonal Items</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors">Gift Cards</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-medium text-gray-800 mb-3">About</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors">Our Story</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors">Locations</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors">Careers</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors">Press</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors">Blog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-medium text-gray-800 mb-3">Help</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors">FAQs</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors">Shipping Policy</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors">Returns & Exchanges</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors">Contact Us</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors">Track Order</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-medium text-gray-800 mb-3">Download Our App</h3>
+          <p class="text-sm text-gray-600 mb-3">Order on the go, track deliveries, and earn rewards</p>
+          <div class="flex flex-col space-y-2">
+            <a href="#" class="block">
+              <img src="../images/app-store-badge.png" alt="Download on App Store" class="h-10">
+            </a>
+            <a href="#" class="block">
+              <img src="../images/google-play-badge.png" alt="Get it on Google Play" class="h-10">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-red-100 pt-6">
+        <div class="text-center space-y-4">
+          <p class="text-sm text-gray-600">Payment methods: Visa, Mastercard, American Express, Discover, PayPal, Apple
+            Pay, Google Pay</p>
+          <div class="flex flex-wrap justify-center gap-4 text-sm">
+            <a href="privacy.html" class="hover:text-red-500 transition-colors">Privacy Policy</a>
+            <a href="terms.html" class="hover:text-red-500 transition-colors">Terms of Service</a>
+            <a href="refund.html" class="hover:text-red-500 transition-colors">Refund Policy</a>
+            <a href="accessibility.html" class="hover:text-red-500 transition-colors">Accessibility</a>
+            <a href="sitemap.html" class="hover:text-red-500 transition-colors">Sitemap</a>
+          </div>
+          <p class="text-sm text-gray-600">© 2024 Djini's Bakehouse. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <!-- Cart JavaScript -->
-  <script src="js/cart.js"></script>
-  
+  <script src="../assets/js/cart.js"></script>
+
   <!-- Checkout page JavaScript -->
-  <script src="js/checkout.js"></script>
+  <script src="../assets/js/checkout.js"></script>
 </body>
 
 </html>

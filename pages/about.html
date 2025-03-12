@@ -5,74 +5,113 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Learn about Djini's Bakehouse - our story, mission, values, and the passionate team behind our delicious baked creations.">
-  <title>About Us - Djini's Bakehouse</title>
+  <meta name="description"
+    content="Learn about Djini's Bakehouse - our story, mission, values, and the passionate team behind our delicious baked creations. We pride ourselves on quality ingredients and handcrafted baking traditions." />
+  <meta name="keywords"
+    content="bakery, artisan bread, pastries, cakes, bakehouse, Djini's, about us, bakery team, bakery history" />
+  <title>About Us - Djini's Bakehouse | Our Story, Values & Team</title>
   <!-- favicon -->
   <link rel="shortcut icon" href="../images/Djini_s_Bakehouse_1_-removebg-preview.png" type="image/x-icon">
   <!-- tailwind cdn -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- AOS Animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <!-- Custom CSS -->
   <link rel="stylesheet" href="../assets/css/styles.css">
+  <!-- Swiper for image sliders -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
-<body class="text-gray-700 bg-gray-50 font-sans">
+<body class="text-gray-700 bg-gray-50 font-sans overflow-x-hidden">
+  <!-- Skip to content link for accessibility -->
+  <a href="#main-content" class="skip-to-content">Skip to content</a>
+
   <!-- Mobile menu JavaScript -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const menuBtn = document.getElementById('menu-btn');
       const mobileMenu = document.getElementById('mobile-menu');
-      
-      menuBtn.addEventListener('click', function() {
+
+      menuBtn.addEventListener('click', function () {
         mobileMenu.classList.toggle('hidden');
+        menuBtn.classList.toggle('active');
+        // Add animation class
+        if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('animate-fade-in');
+        }
       });
     });
   </script>
 
-  <nav class="fixed inset-x-0 top-0 z-30 w-full border border-gray-100 bg-white/80 py-2 px-4 shadow backdrop-blur-lg">
+  <nav
+    class="fixed inset-x-0 top-0 z-30 w-full border border-gray-100 bg-white/90 py-2 px-4 shadow backdrop-blur-lg transition-all duration-300">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <a class="flex items-center" href="../index.html">
+      <a class="flex items-center hover-scale transition-transform duration-300" href="../index.html">
         <img class="h-16 w-auto" src="../images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="Djini's Bakehouse">
         <span class="sr-only">Djini's Bakehouse</span>
       </a>
-      <button id="menu-btn" class="block md:hidden focus:outline-none" aria-label="Toggle menu">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-        </svg>
+      <button id="menu-btn" class="menu-toggle block md:hidden focus:outline-none" aria-label="Toggle menu"
+        aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
-      <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-white shadow-md md:hidden z-40 p-4">
-        <a href="../index.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Home</a>
-        <a href="products.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
-        <a href="order.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order Online</a>
+      <div id="mobile-menu"
+        class="hidden absolute top-full left-0 right-0 bg-white shadow-md md:hidden z-40 p-4 border-t border-gray-100">
+        <a href="../index.html"
+          class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg transition-colors">Home</a>
+        <a href="products.html"
+          class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg transition-colors">Products</a>
+        <a href="order.html"
+          class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg transition-colors">Order
+          Online</a>
         <a href="about.html" class="block text-gray-900 bg-gray-100 font-semibold px-3 py-2 rounded-lg">About</a>
-        <a href="contact.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Contact</a>
+        <a href="contact.html"
+          class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg transition-colors">Contact</a>
         <div class="mt-3 border-t pt-3">
-          <a href="signup.html" class="block text-gray-900 bg-gray-100 px-4 py-2 rounded-xl shadow mb-2 text-center">Sign Up</a>
-          <a href="login.html" class="block text-white bg-red-500 px-4 py-2 rounded-xl shadow text-center">Login</a>
+          <a href="signup.html"
+            class="block text-gray-900 bg-gray-100 px-4 py-2 rounded-xl shadow mb-2 text-center transition-colors hover:bg-gray-200">Sign
+            Up</a>
+          <a href="login.html"
+            class="block text-white bg-red-500 px-4 py-2 rounded-xl shadow text-center transition-colors hover:bg-red-600">Login</a>
         </div>
       </div>
       <div id="menu" class="hidden md:flex md:items-center md:gap-4">
-        <a href="../index.html" class="text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Home</a>
-        <a href="products.html" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
-        <a href="order.html" class="text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order Online</a>
+        <a href="../index.html"
+          class="text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg transition-colors">Home</a>
+        <a href="products.html"
+          class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg transition-colors">Products</a>
+        <a href="order.html"
+          class="text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg transition-colors">Order Online</a>
         <a href="about.html" class="text-gray-900 bg-gray-100 font-semibold px-3 py-2 rounded-lg">About</a>
-        <a href="contact.html" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Contact</a>
+        <a href="contact.html"
+          class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg transition-colors">Contact</a>
       </div>
       <div class="hidden md:flex items-center gap-3">
-        <a href="cart.html" class="text-gray-900 hover:text-red-500 relative transition-colors" aria-label="Shopping cart">
+        <a href="cart.html" class="text-gray-900 hover:text-red-500 relative transition-colors"
+          aria-label="Shopping cart">
           <i class="fas fa-shopping-cart text-xl cart-icon"></i>
-          <span id="cart-count" class="cart-count absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+          <span id="cart-count"
+            class="cart-count absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
         </a>
-        <a href="signup.html" class="text-gray-900 bg-white hover:bg-gray-100 px-4 py-2 rounded-xl shadow transition-colors">Sign Up</a>
-        <a href="login.html" class="text-white bg-red-500 hover:bg-red-600 px-4 py-2 rounded-xl shadow transition-colors">Login</a>
-        
+        <a href="signup.html"
+          class="text-gray-900 bg-white hover:bg-gray-100 px-4 py-2 rounded-xl shadow transition-colors">Sign Up</a>
+        <a href="login.html"
+          class="text-white bg-red-500 hover:bg-red-600 px-4 py-2 rounded-xl shadow transition-colors">Login</a>
+
         <!-- Profile Menu (hidden by default, shown when logged in) -->
         <div class="relative group profile-menu hidden">
           <button class="flex items-center space-x-1 text-gray-900">
-            <img src="../images/profile-placeholder.png" alt="Profile" class="w-8 h-8 rounded-full border-2 border-red-500">
+            <img src="../images/profile-placeholder.png" alt="Profile"
+              class="w-8 h-8 rounded-full border-2 border-red-500">
             <span class="font-medium" id="user-name">John Doe</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
@@ -97,154 +136,413 @@
   </nav>
 
   <!-- Page Header -->
-  <header class="pt-32 pb-20 bg-gradient-to-br from-red-50 to-orange-50">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto text-center">
+  <header class="pt-32 pb-20 bg-gradient-to-br from-red-50 to-orange-50 relative overflow-hidden">
+    <!-- Decorative elements -->
+    <div class="absolute -top-20 -left-20 w-40 h-40 rounded-full bg-red-200 opacity-30"></div>
+    <div class="absolute top-40 right-20 w-24 h-24 rounded-full bg-orange-200 opacity-40"></div>
+    <div class="absolute bottom-10 left-1/4 w-16 h-16 rounded-full bg-yellow-200 opacity-30"></div>
+
+    <div class="container mx-auto px-4 relative">
+      <div class="max-w-4xl mx-auto text-center" data-aos="fade-up" data-aos-duration="800">
         <h1 class="text-5xl md:text-6xl font-bold text-gray-700 mb-6">Our <span class="text-red-500">Story</span></h1>
-        <p class="text-xl text-gray-600 leading-relaxed">Discover the passion and craftsmanship behind Djini's Bakehouse, where every bite tells a story of tradition, innovation, and love for baking.</p>
+        <p class="text-xl text-gray-600 leading-relaxed">Discover the passion and craftsmanship behind Djini's
+          Bakehouse, where every bite tells a story of tradition, innovation, and love for baking.</p>
+      </div>
+    </div>
+
+    <!-- Breadcrumbs for SEO and navigation -->
+    <div class="container mx-auto px-4 mt-8">
+      <div class="max-w-4xl mx-auto">
+        <nav class="flex text-sm text-gray-500" aria-label="Breadcrumb">
+          <ol class="inline-flex items-center space-x-1 md:space-x-3">
+            <li class="inline-flex items-center">
+              <a href="../index.html" class="hover:text-red-500 transition-colors">Home</a>
+            </li>
+            <li>
+              <div class="flex items-center">
+                <svg class="w-3 h-3 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 6 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="m1 9 4-4-4-4" />
+                </svg>
+                <span class="ml-1 text-red-500 font-medium">About Us</span>
+              </div>
+            </li>
+          </ol>
+        </nav>
       </div>
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- Our Story Section -->
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-white overflow-hidden">
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          <div class="order-2 lg:order-1">
+          <div class="order-2 lg:order-1" data-aos="fade-right" data-aos-duration="1000">
             <h2 class="text-3xl font-bold text-gray-700 mb-6">How It All <span class="text-red-500">Began</span></h2>
-            <p class="text-gray-600 mb-4 leading-relaxed">Djini's Bakehouse was born from a simple passion - creating delicious baked goods that bring joy to people's lives. Founded in 2015 by Master Baker Diana "Djini" Johnson, our bakery started as a small corner shop with just three signature items.</p>
-            <p class="text-gray-600 mb-4 leading-relaxed">Diana's journey began in her grandmother's kitchen, where she learned the secrets of traditional baking. After formal training at the prestigious Paris Culinary Institute and working in renowned bakeries across Europe, she returned home with a vision to blend classic techniques with innovative flavors.</p>
-            <p class="text-gray-600 leading-relaxed">What started as a small operation has grown into the beloved bakery you know today, but our commitment remains the same: crafting exceptional baked goods with the finest ingredients, made fresh daily with attention to detail and a sprinkle of love.</p>
+            <p class="text-gray-600 mb-4 leading-relaxed">Djini's Bakehouse was born from a simple passion - creating
+              delicious baked goods that bring joy to people's lives. Founded in 2015 by Master Baker Diana "Djini"
+              Johnson, our bakery started as a small corner shop with just three signature items.</p>
+            <p class="text-gray-600 mb-4 leading-relaxed">Diana's journey began in her grandmother's kitchen, where she
+              learned the secrets of traditional baking. After formal training at the prestigious Paris Culinary
+              Institute and working in renowned bakeries across Europe, she returned home with a vision to blend classic
+              techniques with innovative flavors.</p>
+            <p class="text-gray-600 leading-relaxed">What started as a small operation has grown into the beloved bakery
+              you know today, but our commitment remains the same: crafting exceptional baked goods with the finest
+              ingredients, made fresh daily with attention to detail and a sprinkle of love.</p>
+
+            <!-- Timeline of our history -->
+            <div class="mt-8 relative">
+              <div class="absolute left-4 top-0 h-full w-0.5 bg-red-100"></div>
+
+              <div class="mb-8 pl-10 relative">
+                <div
+                  class="absolute left-0 top-1.5 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                  2015</div>
+                <h3 class="font-semibold text-lg text-gray-800">The Beginning</h3>
+                <p class="text-sm text-gray-600">Diana opens the first Djini's Bakehouse location with her signature
+                  sourdough bread, croissants, and chocolate chip cookies.</p>
+              </div>
+
+              <div class="mb-8 pl-10 relative">
+                <div
+                  class="absolute left-0 top-1.5 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                  2017</div>
+                <h3 class="font-semibold text-lg text-gray-800">First Expansion</h3>
+                <p class="text-sm text-gray-600">After growing popularity, we expanded our menu and moved to a larger
+                  location downtown.</p>
+              </div>
+
+              <div class="mb-8 pl-10 relative">
+                <div
+                  class="absolute left-0 top-1.5 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                  2019</div>
+                <h3 class="font-semibold text-lg text-gray-800">Bakery Classes</h3>
+                <p class="text-sm text-gray-600">Started offering baking classes to share our passion and techniques
+                  with the community.</p>
+              </div>
+
+              <div class="pl-10 relative">
+                <div
+                  class="absolute left-0 top-1.5 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                  2022</div>
+                <h3 class="font-semibold text-lg text-gray-800">Today</h3>
+                <p class="text-sm text-gray-600">With two locations and an online store, we continue to grow while
+                  maintaining our commitment to quality.</p>
+              </div>
+            </div>
           </div>
-          <div class="order-1 lg:order-2">
-            <img src="../images/bakery-story.jpg" alt="Djini's Bakehouse founder in her first bakery location" class="rounded-lg shadow-xl w-full h-auto object-cover" width="600" height="400">
+          <div class="order-1 lg:order-2 relative" data-aos="fade-left" data-aos-duration="1000">
+            <div class="relative z-10 rounded-lg shadow-xl overflow-hidden zoom-container">
+              <img src="../images/bakery-story.jpg" alt="Djini's Bakehouse founder in her first bakery location"
+                class="w-full h-auto object-cover zoom-image" width="600" height="400">
+            </div>
+            <!-- Decorative elements -->
+            <div class="absolute top-10 -right-10 w-32 h-32 rounded-full bg-red-50 -z-10"></div>
+            <div class="absolute -bottom-10 -left-10 w-40 h-40 rounded-full bg-orange-50 -z-10"></div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Our Mission Section (New) -->
+    <section class="py-16 bg-red-50 relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-32 bg-white rounded-b-[100px] -translate-y-16"></div>
+
+      <div class="container mx-auto px-4 relative">
+        <div class="max-w-3xl mx-auto text-center" data-aos="fade-up" data-aos-duration="800">
+          <h2 class="text-3xl font-bold text-gray-700 mb-6">Our <span class="text-red-500">Mission</span></h2>
+          <div class="relative inline-block">
+            <i class="fas fa-quote-left text-red-200 text-6xl absolute -top-6 -left-8"></i>
+            <blockquote class="text-xl italic text-gray-700 z-10 relative px-10">
+              To create moments of joy through exceptional baking, while nurturing our community and honoring
+              traditional craftsmanship.
+            </blockquote>
+            <i class="fas fa-quote-right text-red-200 text-6xl absolute -bottom-6 -right-8"></i>
+          </div>
+          <p class="mt-8 text-gray-600 leading-relaxed">
+            At Djini's Bakehouse, we believe in the power of good food to bring people together. Each day, we strive to
+            create baked goods that not only taste exceptional but also create meaningful connections and memories for
+            our customers.
+          </p>
+        </div>
+      </div>
+
+      <div class="absolute bottom-0 left-0 w-full h-32 bg-white rounded-t-[100px] translate-y-16"></div>
+    </section>
+
     <!-- Our Values Section -->
-    <section class="py-16 bg-red-50">
+    <section class="py-16 bg-white overflow-hidden">
       <div class="container mx-auto px-4">
-        <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-duration="800">
           <h2 class="text-3xl font-bold text-gray-700 mb-4">Our <span class="text-red-500">Values</span></h2>
           <p class="text-gray-600">The principles that guide everything we do at Djini's Bakehouse.</p>
         </div>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+          <div
+            class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2"
+            data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
             <div class="bg-red-100 rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
               <i class="fas fa-leaf text-red-500 text-2xl"></i>
             </div>
             <h3 class="text-xl font-bold text-gray-700 mb-3 text-center">Quality Ingredients</h3>
-            <p class="text-gray-600 text-center">We believe great baking starts with great ingredients. We source locally whenever possible and use only premium, natural ingredients with no artificial preservatives.</p>
+            <p class="text-gray-600 text-center">We believe great baking starts with great ingredients. We source
+              locally whenever possible and use only premium, natural ingredients with no artificial preservatives.</p>
           </div>
-          
-          <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+
+          <div
+            class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2"
+            data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
             <div class="bg-red-100 rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
               <i class="fas fa-hands text-red-500 text-2xl"></i>
             </div>
             <h3 class="text-xl font-bold text-gray-700 mb-3 text-center">Handcrafted With Care</h3>
-            <p class="text-gray-600 text-center">Every item is made by hand with attention to detail. We believe in the artistry of baking and the unique character that comes from handcrafted products.</p>
+            <p class="text-gray-600 text-center">Every item is made by hand with attention to detail. We believe in the
+              artistry of baking and the unique character that comes from handcrafted products.</p>
           </div>
-          
-          <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+
+          <div
+            class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2"
+            data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
             <div class="bg-red-100 rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
               <i class="fas fa-heart text-red-500 text-2xl"></i>
             </div>
             <h3 class="text-xl font-bold text-gray-700 mb-3 text-center">Community First</h3>
-            <p class="text-gray-600 text-center">We're proud to be part of our local community. We support local farmers, participate in community events, and donate leftover baked goods to local food banks.</p>
+            <p class="text-gray-600 text-center">We're proud to be part of our local community. We support local
+              farmers, participate in community events, and donate leftover baked goods to local food banks.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Meet Our Team Section -->
-    <section class="py-16 bg-white">
-      <div class="container mx-auto px-4">
-        <div class="text-center max-w-3xl mx-auto mb-12">
+    <section class="py-16 bg-gray-50 relative overflow-hidden">
+      <div
+        class="absolute top-0 right-0 w-64 h-64 bg-red-100 rounded-full opacity-30 transform translate-x-1/2 -translate-y-1/2">
+      </div>
+      <div
+        class="absolute bottom-0 left-0 w-48 h-48 bg-orange-100 rounded-full opacity-40 transform -translate-x-1/3 translate-y-1/3">
+      </div>
+
+      <div class="container mx-auto px-4 relative">
+        <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-duration="800">
           <h2 class="text-3xl font-bold text-gray-700 mb-4">Meet Our <span class="text-red-500">Team</span></h2>
-          <p class="text-gray-600">The talented individuals who pour their hearts into creating your favorite treats.</p>
+          <p class="text-gray-600">The talented individuals who pour their hearts into creating your favorite treats.
+          </p>
         </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-          <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
-            <img src="../images/chef-diana.jpg" alt="Diana Johnson, Founder & Head Baker" class="w-full h-64 object-cover" width="300" height="300">
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-700 mb-1">Diana Johnson</h3>
-              <p class="text-red-500 font-medium mb-3">Founder & Head Baker</p>
-              <p class="text-gray-600 text-sm">With over 20 years of baking experience, Diana's creativity and passion drive our unique recipes and flavors.</p>
-              <div class="flex mt-4 space-x-3">
-                <a href="#" class="text-gray-500 hover:text-red-500" aria-label="Twitter">
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" class="text-gray-500 hover:text-red-500" aria-label="Instagram">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="text-gray-500 hover:text-red-500" aria-label="LinkedIn">
-                  <i class="fab fa-linkedin"></i>
-                </a>
+
+        <!-- Team member slider -->
+        <div class="swiper team-swiper max-w-6xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
+          <div class="swiper-wrapper">
+            <!-- Team Member 1 -->
+            <div class="swiper-slide p-4">
+              <div
+                class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 h-full flex flex-col">
+                <div class="overflow-hidden">
+                  <img src="../images/chef-diana.jpg" alt="Diana Johnson, Founder & Head Baker"
+                    class="w-full h-64 object-cover transition-transform hover:scale-105 duration-500" width="300"
+                    height="300">
+                </div>
+                <div class="p-6 flex-grow">
+                  <h3 class="text-xl font-bold text-gray-700 mb-1">Diana Johnson</h3>
+                  <p class="text-red-500 font-medium mb-3">Founder & Head Baker</p>
+                  <p class="text-gray-600 text-sm">With over 20 years of baking experience, Diana's creativity and
+                    passion drive our unique recipes and flavors.</p>
+                  <div class="flex mt-4 space-x-3">
+                    <a href="#" class="text-gray-500 hover:text-red-500 transition-colors" aria-label="Twitter">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-red-500 transition-colors" aria-label="Instagram">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-red-500 transition-colors" aria-label="LinkedIn">
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="swiper-slide p-4">
+              <div
+                class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 h-full flex flex-col">
+                <div class="overflow-hidden">
+                  <img src="../images/chef-michael.jpg" alt="Michael Chen, Executive Pastry Chef"
+                    class="w-full h-64 object-cover transition-transform hover:scale-105 duration-500" width="300"
+                    height="300">
+                </div>
+                <div class="p-6 flex-grow">
+                  <h3 class="text-xl font-bold text-gray-700 mb-1">Michael Chen</h3>
+                  <p class="text-red-500 font-medium mb-3">Executive Pastry Chef</p>
+                  <p class="text-gray-600 text-sm">Michael brings innovation to our pastry kitchen with his expert
+                    technique and artistic presentations.</p>
+                  <div class="flex mt-4 space-x-3">
+                    <a href="#" class="text-gray-500 hover:text-red-500 transition-colors" aria-label="Twitter">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-red-500 transition-colors" aria-label="Instagram">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-red-500 transition-colors" aria-label="LinkedIn">
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="swiper-slide p-4">
+              <div
+                class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 h-full flex flex-col">
+                <div class="overflow-hidden">
+                  <img src="../images/chef-sarah.jpg" alt="Sarah Thompson, Head Bread Baker"
+                    class="w-full h-64 object-cover transition-transform hover:scale-105 duration-500" width="300"
+                    height="300">
+                </div>
+                <div class="p-6 flex-grow">
+                  <h3 class="text-xl font-bold text-gray-700 mb-1">Sarah Thompson</h3>
+                  <p class="text-red-500 font-medium mb-3">Head Bread Baker</p>
+                  <p class="text-gray-600 text-sm">Our bread whisperer, Sarah's knowledge of fermentation and baking
+                    science ensures perfect loaves every time.</p>
+                  <div class="flex mt-4 space-x-3">
+                    <a href="#" class="text-gray-500 hover:text-red-500 transition-colors" aria-label="Twitter">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-red-500 transition-colors" aria-label="Instagram">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-red-500 transition-colors" aria-label="LinkedIn">
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div class="swiper-slide p-4">
+              <div
+                class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 h-full flex flex-col">
+                <div class="overflow-hidden">
+                  <img src="../images/chef-james.jpg" alt="James Rodriguez, Cake Specialist"
+                    class="w-full h-64 object-cover transition-transform hover:scale-105 duration-500" width="300"
+                    height="300">
+                </div>
+                <div class="p-6 flex-grow">
+                  <h3 class="text-xl font-bold text-gray-700 mb-1">James Rodriguez</h3>
+                  <p class="text-red-500 font-medium mb-3">Cake Specialist</p>
+                  <p class="text-gray-600 text-sm">James creates our stunning custom cakes with his remarkable design
+                    skills and flavor combinations.</p>
+                  <div class="flex mt-4 space-x-3">
+                    <a href="#" class="text-gray-500 hover:text-red-500 transition-colors" aria-label="Twitter">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-red-500 transition-colors" aria-label="Instagram">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-red-500 transition-colors" aria-label="LinkedIn">
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Additional Team Member -->
+            <div class="swiper-slide p-4">
+              <div
+                class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 h-full flex flex-col">
+                <div class="overflow-hidden">
+                  <img src="../images/chef-emma.jpg" alt="Emma Wilson, Pastry Chef"
+                    class="w-full h-64 object-cover transition-transform hover:scale-105 duration-500" width="300"
+                    height="300">
+                </div>
+                <div class="p-6 flex-grow">
+                  <h3 class="text-xl font-bold text-gray-700 mb-1">Emma Wilson</h3>
+                  <p class="text-red-500 font-medium mb-3">Pastry Chef</p>
+                  <p class="text-gray-600 text-sm">Emma specializes in French pastries and brings a delicate touch to
+                    our most intricate creations.</p>
+                  <div class="flex mt-4 space-x-3">
+                    <a href="#" class="text-gray-500 hover:text-red-500 transition-colors" aria-label="Twitter">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-red-500 transition-colors" aria-label="Instagram">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-red-500 transition-colors" aria-label="LinkedIn">
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          
-          <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
-            <img src="../images/chef-michael.jpg" alt="Michael Chen, Executive Pastry Chef" class="w-full h-64 object-cover" width="300" height="300">
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-700 mb-1">Michael Chen</h3>
-              <p class="text-red-500 font-medium mb-3">Executive Pastry Chef</p>
-              <p class="text-gray-600 text-sm">Michael brings innovation to our pastry kitchen with his expert technique and artistic presentations.</p>
-              <div class="flex mt-4 space-x-3">
-                <a href="#" class="text-gray-500 hover:text-red-500" aria-label="Twitter">
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" class="text-gray-500 hover:text-red-500" aria-label="Instagram">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="text-gray-500 hover:text-red-500" aria-label="LinkedIn">
-                  <i class="fab fa-linkedin"></i>
-                </a>
+          <!-- Add navigation -->
+          <div class="swiper-button-next text-red-500"></div>
+          <div class="swiper-button-prev text-red-500"></div>
+          <!-- Add pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Kitchen Section -->
+    <section class="py-16 bg-white relative overflow-hidden">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+          <div data-aos="fade-right" data-aos-duration="1000">
+            <div class="relative">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-red-500/20 to-orange-500/20 rounded-lg transform rotate-3">
               </div>
+              <img src="../images/bakery-kitchen.jpg" alt="Inside Djini's Bakehouse kitchen"
+                class="rounded-lg shadow-xl w-full h-auto object-cover relative z-10" width="600" height="400">
+            </div>
+
+            <!-- Video tour button -->
+            <div class="mt-6 text-center">
+              <button
+                class="group bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-full inline-flex items-center transition-colors shadow-md hover:shadow-lg"
+                data-modal-target="video-modal">
+                <i
+                  class="fas fa-play mr-2 bg-white text-red-500 w-8 h-8 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"></i>
+                Watch Kitchen Tour
+              </button>
             </div>
           </div>
-          
-          <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
-            <img src="../images/chef-sarah.jpg" alt="Sarah Thompson, Head Bread Baker" class="w-full h-64 object-cover" width="300" height="300">
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-700 mb-1">Sarah Thompson</h3>
-              <p class="text-red-500 font-medium mb-3">Head Bread Baker</p>
-              <p class="text-gray-600 text-sm">Our bread whisperer, Sarah's knowledge of fermentation and baking science ensures perfect loaves every time.</p>
-              <div class="flex mt-4 space-x-3">
-                <a href="#" class="text-gray-500 hover:text-red-500" aria-label="Twitter">
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" class="text-gray-500 hover:text-red-500" aria-label="Instagram">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="text-gray-500 hover:text-red-500" aria-label="LinkedIn">
-                  <i class="fab fa-linkedin"></i>
-                </a>
+          <div data-aos="fade-left" data-aos-duration="1000">
+            <h2 class="text-3xl font-bold text-gray-700 mb-6">Our <span class="text-red-500">Kitchen</span></h2>
+            <p class="text-gray-600 mb-4 leading-relaxed">Step into the heart of Djini's Bakehouse, where all the magic
+              happens. Our state-of-the-art kitchen combines modern equipment with traditional baking methods to create
+              the perfect environment for crafting exceptional baked goods.</p>
+            <p class="text-gray-600 mb-4 leading-relaxed">Every day, our kitchen comes alive at 3:00 AM as our bakers
+              begin the day's production. The air fills with the irresistible aroma of fresh bread, the gentle hum of
+              mixers, and the warmth of ovens working at full capacity.</p>
+            <p class="text-gray-600 leading-relaxed">We take pride in maintaining the highest standards of cleanliness
+              and quality control. Our kitchen is regularly inspected and has received top ratings for food safety and
+              handling procedures.</p>
+
+            <!-- Kitchen facts -->
+            <div class="grid grid-cols-2 gap-4 mt-8">
+              <div class="bg-red-50 p-4 rounded-lg">
+                <div class="font-bold text-2xl text-red-500">24</div>
+                <div class="text-gray-700">Varieties of bread baked daily</div>
               </div>
-            </div>
-          </div>
-          
-          <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
-            <img src="../images/chef-james.jpg" alt="James Rodriguez, Cake Specialist" class="w-full h-64 object-cover" width="300" height="300">
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-700 mb-1">James Rodriguez</h3>
-              <p class="text-red-500 font-medium mb-3">Cake Specialist</p>
-              <p class="text-gray-600 text-sm">James creates our stunning custom cakes with his remarkable design skills and flavor combinations.</p>
-              <div class="flex mt-4 space-x-3">
-                <a href="#" class="text-gray-500 hover:text-red-500" aria-label="Twitter">
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" class="text-gray-500 hover:text-red-500" aria-label="Instagram">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="text-gray-500 hover:text-red-500" aria-label="LinkedIn">
-                  <i class="fab fa-linkedin"></i>
-                </a>
+              <div class="bg-red-50 p-4 rounded-lg">
+                <div class="font-bold text-2xl text-red-500">3:00 AM</div>
+                <div class="text-gray-700">When our bakers start their day</div>
+              </div>
+              <div class="bg-red-50 p-4 rounded-lg">
+                <div class="font-bold text-2xl text-red-500">3,500+</div>
+                <div class="text-gray-700">Items baked on a typical day</div>
+              </div>
+              <div class="bg-red-50 p-4 rounded-lg">
+                <div class="font-bold text-2xl text-red-500">5 Stars</div>
+                <div class="text-gray-700">Health inspection rating</div>
               </div>
             </div>
           </div>
@@ -252,19 +550,106 @@
       </div>
     </section>
 
-    <!-- Our Kitchen Section -->
-    <section class="py-16 bg-gradient-to-br from-orange-50 to-red-50">
-      <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          <div>
-            <img src="../images/bakery-kitchen.jpg" alt="Inside Djini's Bakehouse kitchen" class="rounded-lg shadow-xl w-full h-auto object-cover" width="600" height="400">
+    <!-- Customer Testimonials (New) -->
+    <section class="py-16 bg-gradient-to-br from-red-50 to-orange-50 relative overflow-hidden">
+      <div class="absolute top-10 right-10 text-9xl text-red-200 opacity-20">
+        <i class="fas fa-quote-right"></i>
+      </div>
+      <div class="absolute bottom-10 left-10 text-9xl text-orange-200 opacity-20">
+        <i class="fas fa-quote-left"></i>
+      </div>
+
+      <div class="container mx-auto px-4 relative">
+        <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-duration="800">
+          <h2 class="text-3xl font-bold text-gray-700 mb-4">What Our <span class="text-red-500">Customers</span> Say
+          </h2>
+          <p class="text-gray-600">Don't just take our word for it - here's what our customers have to say about Djini's
+            Bakehouse.</p>
+        </div>
+
+        <!-- Testimonials slider -->
+        <div class="swiper testimonials-swiper max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
+          <div class="swiper-wrapper">
+            <!-- Testimonial 1 -->
+            <div class="swiper-slide">
+              <div class="bg-white rounded-lg shadow-lg p-8 mx-4">
+                <div class="flex items-center mb-4">
+                  <div class="text-yellow-400 flex mr-2">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span class="text-gray-500">5.0</span>
+                </div>
+                <p class="text-gray-600 italic mb-6">"I've never tasted sourdough this good anywhere else! The texture
+                  is perfect - crispy crust and soft inside. Every time I visit, the quality is consistently excellent.
+                  This place is a hidden gem!"</p>
+                <div class="flex items-center">
+                  <img src="../images/customer-1.jpg" alt="Sarah M." class="w-12 h-12 rounded-full mr-4 object-cover">
+                  <div>
+                    <h4 class="font-medium text-gray-800">Sarah M.</h4>
+                    <p class="text-gray-500 text-sm">Loyal customer since 2018</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="swiper-slide">
+              <div class="bg-white rounded-lg shadow-lg p-8 mx-4">
+                <div class="flex items-center mb-4">
+                  <div class="text-yellow-400 flex mr-2">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span class="text-gray-500">5.0</span>
+                </div>
+                <p class="text-gray-600 italic mb-6">"Diana and her team made my daughter's wedding cake, and it was
+                  absolutely stunning! Not only did it look beautiful, but it tasted amazing. Guests kept asking where
+                  we got it. Highly recommend for special occasions!"</p>
+                <div class="flex items-center">
+                  <img src="../images/customer-2.jpg" alt="Robert K." class="w-12 h-12 rounded-full mr-4 object-cover">
+                  <div>
+                    <h4 class="font-medium text-gray-800">Robert K.</h4>
+                    <p class="text-gray-500 text-sm">Wedding order, June 2023</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="swiper-slide">
+              <div class="bg-white rounded-lg shadow-lg p-8 mx-4">
+                <div class="flex items-center mb-4">
+                  <div class="text-yellow-400 flex mr-2">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <span class="text-gray-500">4.5</span>
+                </div>
+                <p class="text-gray-600 italic mb-6">"I attend their monthly bread making class, and it's been
+                  life-changing! Michael is a patient teacher who makes complex techniques accessible. I'm now baking my
+                  own bread at home, though it's still not as good as Djini's!"</p>
+                <div class="flex items-center">
+                  <img src="../images/customer-3.jpg" alt="Tanya L." class="w-12 h-12 rounded-full mr-4 object-cover">
+                  <div>
+                    <h4 class="font-medium text-gray-800">Tanya L.</h4>
+                    <p class="text-gray-500 text-sm">Baking class participant</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <h2 class="text-3xl font-bold text-gray-700 mb-6">Our <span class="text-red-500">Kitchen</span></h2>
-            <p class="text-gray-600 mb-4 leading-relaxed">Step into the heart of Djini's Bakehouse, where all the magic happens. Our state-of-the-art kitchen combines modern equipment with traditional baking methods to create the perfect environment for crafting exceptional baked goods.</p>
-            <p class="text-gray-600 mb-4 leading-relaxed">Every day, our kitchen comes alive at 3:00 AM as our bakers begin the day's production. The air fills with the irresistible aroma of fresh bread, the gentle hum of mixers, and the warmth of ovens working at full capacity.</p>
-            <p class="text-gray-600 leading-relaxed">We take pride in maintaining the highest standards of cleanliness and quality control. Our kitchen is regularly inspected and has received top ratings for food safety and handling procedures.</p>
-          </div>
+          <!-- Add pagination -->
+          <div class="swiper-pagination"></div>
         </div>
       </div>
     </section>
@@ -272,96 +657,189 @@
     <!-- Our Achievements Section -->
     <section class="py-16 bg-white">
       <div class="container mx-auto px-4">
-        <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-duration="800">
           <h2 class="text-3xl font-bold text-gray-700 mb-4">Our <span class="text-red-500">Achievements</span></h2>
           <p class="text-gray-600">We're honored to be recognized for our commitment to quality and excellence.</p>
         </div>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-          <div class="text-center">
-            <div class="bg-red-100 rounded-full w-20 h-20 flex items-center justify-center mb-4 mx-auto">
+          <div class="text-center" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">
+            <div
+              class="bg-red-100 rounded-full w-20 h-20 flex items-center justify-center mb-4 mx-auto transform transition-transform hover:scale-110 hover:bg-red-200">
               <i class="fas fa-trophy text-red-500 text-3xl"></i>
             </div>
             <h3 class="text-xl font-bold text-gray-700 mb-2">Best Bakery</h3>
             <p class="text-gray-600">City Food Awards<br>2023</p>
           </div>
-          
-          <div class="text-center">
-            <div class="bg-red-100 rounded-full w-20 h-20 flex items-center justify-center mb-4 mx-auto">
+
+          <div class="text-center" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
+            <div
+              class="bg-red-100 rounded-full w-20 h-20 flex items-center justify-center mb-4 mx-auto transform transition-transform hover:scale-110 hover:bg-red-200">
               <i class="fas fa-award text-red-500 text-3xl"></i>
             </div>
             <h3 class="text-xl font-bold text-gray-700 mb-2">Best Sourdough</h3>
             <p class="text-gray-600">National Bread Competition<br>2022</p>
           </div>
-          
-          <div class="text-center">
-            <div class="bg-red-100 rounded-full w-20 h-20 flex items-center justify-center mb-4 mx-auto">
+
+          <div class="text-center" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
+            <div
+              class="bg-red-100 rounded-full w-20 h-20 flex items-center justify-center mb-4 mx-auto transform transition-transform hover:scale-110 hover:bg-red-200">
               <i class="fas fa-medal text-red-500 text-3xl"></i>
             </div>
             <h3 class="text-xl font-bold text-gray-700 mb-2">Top 10 Bakeries</h3>
             <p class="text-gray-600">Food & Dining Magazine<br>2021</p>
           </div>
-          
-          <div class="text-center">
-            <div class="bg-red-100 rounded-full w-20 h-20 flex items-center justify-center mb-4 mx-auto">
+
+          <div class="text-center" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400">
+            <div
+              class="bg-red-100 rounded-full w-20 h-20 flex items-center justify-center mb-4 mx-auto transform transition-transform hover:scale-110 hover:bg-red-200">
               <i class="fas fa-star text-red-500 text-3xl"></i>
             </div>
             <h3 class="text-xl font-bold text-gray-700 mb-2">People's Choice</h3>
             <p class="text-gray-600">Community Business Awards<br>2020</p>
           </div>
         </div>
+
+        <!-- Press coverage -->
+        <div class="max-w-5xl mx-auto mt-16 text-center" data-aos="fade-up" data-aos-duration="800">
+          <h3 class="text-xl font-bold text-gray-700 mb-8">As Featured In</h3>
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center opacity-70">
+            <img src="../images/press-1.png" alt="Food & Wine Magazine"
+              class="h-10 w-auto mx-auto grayscale hover:grayscale-0 transition-all duration-300">
+            <img src="../images/press-2.png" alt="The New York Times"
+              class="h-10 w-auto mx-auto grayscale hover:grayscale-0 transition-all duration-300">
+            <img src="../images/press-3.png" alt="Food Network"
+              class="h-10 w-auto mx-auto grayscale hover:grayscale-0 transition-all duration-300">
+            <img src="../images/press-4.png" alt="Bon Appétit"
+              class="h-10 w-auto mx-auto grayscale hover:grayscale-0 transition-all duration-300">
+            <img src="../images/press-5.png" alt="Local Eater"
+              class="h-10 w-auto mx-auto grayscale hover:grayscale-0 transition-all duration-300">
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Sustainability Section -->
-    <section class="py-16 bg-green-50">
-      <div class="container mx-auto px-4">
+    <section class="py-16 bg-green-50 relative overflow-hidden">
+      <div class="absolute top-0 right-0 opacity-10">
+        <i class="fas fa-leaf text-green-600 text-9xl"></i>
+      </div>
+      <div class="absolute bottom-0 left-0 opacity-10">
+        <i class="fas fa-recycle text-green-600 text-9xl"></i>
+      </div>
+
+      <div class="container mx-auto px-4 relative">
         <div class="max-w-4xl mx-auto">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-700 mb-4">Our Commitment to <span class="text-green-600">Sustainability</span></h2>
+          <div class="text-center mb-12" data-aos="fade-up" data-aos-duration="800">
+            <h2 class="text-3xl font-bold text-gray-700 mb-4">Our Commitment to <span
+                class="text-green-600">Sustainability</span></h2>
             <p class="text-gray-600">We believe in baking responsibly for a better world.</p>
           </div>
-          
+
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-md">
+            <div
+              class="bg-white p-6 rounded-lg shadow-md transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+              data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
               <div class="flex items-center mb-4">
                 <div class="bg-green-100 rounded-full w-12 h-12 flex items-center justify-center mr-4">
                   <i class="fas fa-recycle text-green-600 text-xl"></i>
                 </div>
                 <h3 class="text-xl font-bold text-gray-700">Eco-Friendly Packaging</h3>
               </div>
-              <p class="text-gray-600">We've transitioned to 100% compostable or recyclable packaging for all our products, reducing our environmental footprint while maintaining product freshness.</p>
+              <p class="text-gray-600">We've transitioned to 100% compostable or recyclable packaging for all our
+                products, reducing our environmental footprint while maintaining product freshness.</p>
+
+              <!-- Progress indicator -->
+              <div class="mt-4">
+                <div class="flex justify-between text-sm text-gray-500 mb-1">
+                  <span>Progress</span>
+                  <span>100%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div class="bg-green-500 h-2 rounded-full" style="width: 100%"></div>
+                </div>
+              </div>
             </div>
-            
-            <div class="bg-white p-6 rounded-lg shadow-md">
+
+            <div
+              class="bg-white p-6 rounded-lg shadow-md transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+              data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
               <div class="flex items-center mb-4">
                 <div class="bg-green-100 rounded-full w-12 h-12 flex items-center justify-center mr-4">
                   <i class="fas fa-carrot text-green-600 text-xl"></i>
                 </div>
                 <h3 class="text-xl font-bold text-gray-700">Local Sourcing</h3>
               </div>
-              <p class="text-gray-600">We source 80% of our ingredients from farms within a 100-mile radius, supporting local agriculture and reducing transportation emissions.</p>
+              <p class="text-gray-600">We source 80% of our ingredients from farms within a 100-mile radius, supporting
+                local agriculture and reducing transportation emissions.</p>
+
+              <!-- Progress indicator -->
+              <div class="mt-4">
+                <div class="flex justify-between text-sm text-gray-500 mb-1">
+                  <span>Progress</span>
+                  <span>80%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div class="bg-green-500 h-2 rounded-full" style="width: 80%"></div>
+                </div>
+              </div>
             </div>
-            
-            <div class="bg-white p-6 rounded-lg shadow-md">
+
+            <div
+              class="bg-white p-6 rounded-lg shadow-md transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+              data-aos="fade-right" data-aos-duration="800" data-aos-delay="300">
               <div class="flex items-center mb-4">
                 <div class="bg-green-100 rounded-full w-12 h-12 flex items-center justify-center mr-4">
                   <i class="fas fa-water text-green-600 text-xl"></i>
                 </div>
                 <h3 class="text-xl font-bold text-gray-700">Water Conservation</h3>
               </div>
-              <p class="text-gray-600">Our water recycling system has reduced our water usage by 40%, helping to preserve this precious resource while maintaining rigorous cleanliness standards.</p>
+              <p class="text-gray-600">Our water recycling system has reduced our water usage by 40%, helping to
+                preserve this precious resource while maintaining rigorous cleanliness standards.</p>
+
+              <!-- Progress indicator -->
+              <div class="mt-4">
+                <div class="flex justify-between text-sm text-gray-500 mb-1">
+                  <span>Progress</span>
+                  <span>40%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div class="bg-green-500 h-2 rounded-full" style="width: 40%"></div>
+                </div>
+              </div>
             </div>
-            
-            <div class="bg-white p-6 rounded-lg shadow-md">
+
+            <div
+              class="bg-white p-6 rounded-lg shadow-md transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+              data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
               <div class="flex items-center mb-4">
                 <div class="bg-green-100 rounded-full w-12 h-12 flex items-center justify-center mr-4">
                   <i class="fas fa-lightbulb text-green-600 text-xl"></i>
                 </div>
                 <h3 class="text-xl font-bold text-gray-700">Energy Efficiency</h3>
               </div>
-              <p class="text-gray-600">We've invested in energy-efficient ovens and equipment, and our facility uses solar panels to offset 30% of our electricity usage.</p>
+              <p class="text-gray-600">We've invested in energy-efficient ovens and equipment, and our facility uses
+                solar panels to offset 30% of our electricity usage.</p>
+
+              <!-- Progress indicator -->
+              <div class="mt-4">
+                <div class="flex justify-between text-sm text-gray-500 mb-1">
+                  <span>Progress</span>
+                  <span>30%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div class="bg-green-500 h-2 rounded-full" style="width: 30%"></div>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <div class="text-center mt-12" data-aos="fade-up" data-aos-duration="800">
+            <a href="sustainability.html"
+              class="text-green-600 font-medium flex items-center justify-center hover:text-green-700 transition-colors">
+              Learn more about our sustainability initiatives
+              <i class="fas fa-arrow-right ml-2"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -370,18 +848,26 @@
     <!-- Join Our Team Section -->
     <section class="py-16 bg-white">
       <div class="container mx-auto px-4">
-        <div class="max-w-5xl mx-auto bg-gradient-to-br from-red-500 to-orange-500 rounded-2xl shadow-xl overflow-hidden">
+        <div
+          class="max-w-5xl mx-auto bg-gradient-to-br from-red-500 to-orange-500 rounded-2xl shadow-xl overflow-hidden transform transition-transform hover:shadow-2xl"
+          data-aos="zoom-in" data-aos-duration="1000">
           <div class="grid grid-cols-1 lg:grid-cols-2">
             <div class="p-10 lg:p-12">
               <h2 class="text-3xl font-bold text-white mb-4">Join Our Team</h2>
-              <p class="text-white/90 mb-6">Are you passionate about baking? Do you have an eye for detail and a commitment to quality? We're always looking for talented individuals to join our growing team.</p>
-              <p class="text-white/90 mb-8">Working at Djini's Bakehouse means being part of a supportive community that values creativity, hard work, and continuous learning.</p>
-              <a href="careers.html" class="inline-block bg-white text-red-500 font-bold px-6 py-3 rounded-lg hover:bg-gray-100 transition shadow-md">
+              <p class="text-white/90 mb-6">Are you passionate about baking? Do you have an eye for detail and a
+                commitment to quality? We're always looking for talented individuals to join our growing team.</p>
+              <p class="text-white/90 mb-8">Working at Djini's Bakehouse means being part of a supportive community that
+                values creativity, hard work, and continuous learning.</p>
+              <a href="careers.html"
+                class="inline-block bg-white text-red-500 font-bold px-6 py-3 rounded-lg hover:bg-gray-100 transition shadow-md">
                 View Current Openings
               </a>
             </div>
-            <div class="hidden lg:block">
-              <img src="../images/bakery-team.jpg" alt="Djini's Bakehouse team at work" class="h-full w-full object-cover" width="600" height="400">
+            <div class="hidden lg:block relative overflow-hidden">
+              <img src="../images/bakery-team.jpg" alt="Djini's Bakehouse team at work"
+                class="h-full w-full object-cover transition-transform hover:scale-105 duration-1000" width="600"
+                height="400">
+              <div class="absolute inset-0 bg-gradient-to-r from-red-500/30 to-transparent"></div>
             </div>
           </div>
         </div>
@@ -391,46 +877,91 @@
     <!-- Visit Us Section -->
     <section class="py-16 bg-gray-50">
       <div class="container mx-auto px-4">
-        <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-duration="800">
           <h2 class="text-3xl font-bold text-gray-700 mb-4">Visit <span class="text-red-500">Us</span></h2>
-          <p class="text-gray-600">We'd love to welcome you to our bakery. Come experience the sights, smells, and tastes of Djini's Bakehouse in person.</p>
+          <p class="text-gray-600">We'd love to welcome you to our bakery. Come experience the sights, smells, and
+            tastes of Djini's Bakehouse in person.</p>
         </div>
-        
+
         <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
-          <div class="lg:col-span-3">
+          <div class="lg:col-span-3" data-aos="fade-right" data-aos-duration="1000">
             <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0625364133704!2d-122.41941548493247!3d37.77492977975919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580a97cae20eb%3A0x5cbaee91b2b5b38e!2sBakery%20St%2C%20San%20Francisco%2C%20CA%2094110%2C%20USA!5e0!3m2!1sen!2s!4v1710281528615!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0625364133704!2d-122.41941548493247!3d37.77492977975919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580a97cae20eb%3A0x5cbaee91b2b5b38e!2sBakery%20St%2C%20San%20Francisco%2C%20CA%2094110%2C%20USA!5e0!3m2!1sen!2s!4v1710281528615!5m2!1sen!2s"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
-          
-          <div class="lg:col-span-2">
+
+          <div class="lg:col-span-2" data-aos="fade-left" data-aos-duration="1000">
             <div class="bg-white rounded-lg shadow-lg p-8 h-full">
               <h3 class="text-2xl font-bold text-gray-700 mb-4">Our Locations</h3>
-              
+
               <div class="mb-6">
                 <h4 class="font-bold text-gray-700 mb-2">Main Bakery & Café</h4>
                 <address class="not-italic text-gray-600 mb-3">
-                  123 Bakery Lane<br>
-                  Sweetville, CA 94123<br>
-                  (555) 123-4567
+                  <div class="flex items-start">
+                    <i class="fas fa-map-marker-alt text-red-500 mt-1 mr-3"></i>
+                    <div>
+                      123 Bakery Lane<br>
+                      Sweetville, CA 94123
+                    </div>
+                  </div>
+                  <div class="flex items-center mt-2">
+                    <i class="fas fa-phone text-red-500 mr-3"></i>
+                    <a href="tel:+15551234567" class="hover:text-red-500 transition-colors">(555) 123-4567</a>
+                  </div>
                 </address>
-                <div class="text-gray-600">
-                  <p class="mb-1"><span class="font-medium">Mon-Fri:</span> 7:00 AM - 6:00 PM</p>
-                  <p><span class="font-medium">Sat-Sun:</span> 8:00 AM - 5:00 PM</p>
+                <div class="text-gray-600 pl-7">
+                  <div class="flex items-center mb-1">
+                    <i class="far fa-clock text-red-500 mr-3"></i>
+                    <div>
+                      <p class="mb-1"><span class="font-medium">Mon-Fri:</span> 7:00 AM - 6:00 PM</p>
+                      <p><span class="font-medium">Sat-Sun:</span> 8:00 AM - 5:00 PM</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-              
+
               <div>
                 <h4 class="font-bold text-gray-700 mb-2">Downtown Kiosk</h4>
                 <address class="not-italic text-gray-600 mb-3">
-                  456 Market Street<br>
-                  Sweetville, CA 94123<br>
-                  (555) 987-6543
+                  <div class="flex items-start">
+                    <i class="fas fa-map-marker-alt text-red-500 mt-1 mr-3"></i>
+                    <div>
+                      456 Market Street<br>
+                      Sweetville, CA 94123
+                    </div>
+                  </div>
+                  <div class="flex items-center mt-2">
+                    <i class="fas fa-phone text-red-500 mr-3"></i>
+                    <a href="tel:+15559876543" class="hover:text-red-500 transition-colors">(555) 987-6543</a>
+                  </div>
                 </address>
-                <div class="text-gray-600">
-                  <p class="mb-1"><span class="font-medium">Mon-Fri:</span> 6:00 AM - 3:00 PM</p>
-                  <p><span class="font-medium">Sat:</span> 8:00 AM - 2:00 PM</p>
-                  <p><span class="font-medium">Sun:</span> Closed</p>
+                <div class="text-gray-600 pl-7">
+                  <div class="flex items-center mb-1">
+                    <i class="far fa-clock text-red-500 mr-3"></i>
+                    <div>
+                      <p class="mb-1"><span class="font-medium">Mon-Fri:</span> 6:00 AM - 3:00 PM</p>
+                      <p class="mb-1"><span class="font-medium">Sat:</span> 8:00 AM - 2:00 PM</p>
+                      <p><span class="font-medium">Sun:</span> Closed</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick contact form -->
+              <div class="mt-6 pt-6 border-t">
+                <h4 class="text-lg font-bold text-gray-700 mb-3">Get in Touch</h4>
+                <div class="flex space-x-2">
+                  <a href="mailto:info@djinisbakehouse.com"
+                    class="flex-1 bg-red-500 text-white text-center py-2 px-3 rounded hover:bg-red-600 transition-colors">
+                    <i class="fas fa-envelope mr-1"></i> Email Us
+                  </a>
+                  <a href="contact.html"
+                    class="flex-1 bg-gray-100 text-gray-700 text-center py-2 px-3 rounded hover:bg-gray-200 transition-colors">
+                    <i class="fas fa-paper-plane mr-1"></i> Contact Form
+                  </a>
                 </div>
               </div>
             </div>
@@ -442,65 +973,119 @@
     <!-- FAQ Section -->
     <section class="py-16 bg-white">
       <div class="container mx-auto px-4">
-        <div class="text-center max-w-3xl mx-auto mb-12">
-          <h2 class="text-3xl font-bold text-gray-700 mb-4">Frequently Asked <span class="text-red-500">Questions</span></h2>
+        <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-duration="800">
+          <h2 class="text-3xl font-bold text-gray-700 mb-4">Frequently Asked <span class="text-red-500">Questions</span>
+          </h2>
           <p class="text-gray-600">Get answers to some of our most commonly asked questions.</p>
         </div>
-        
-        <div class="max-w-3xl mx-auto">
+
+        <div class="max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
           <div class="bg-white shadow-lg rounded-lg overflow-hidden">
             <div class="divide-y">
               <div class="p-6">
-                <button class="faq-question flex justify-between items-center w-full text-left font-semibold">
+                <button
+                  class="faq-question flex justify-between items-center w-full text-left font-semibold focus:outline-none">
                   <span>Do you offer gluten-free options?</span>
                   <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
                 </button>
                 <div class="faq-answer hidden mt-4 text-gray-600">
-                  <p>Yes! We offer a variety of gluten-free products, including bread, pastries, and cakes. Our gluten-free items are prepared in a dedicated area to minimize cross-contamination. However, please note that they are made in the same facility as our regular products. All gluten-free items are clearly labeled in our display cases and online ordering system.</p>
+                  <p>Yes! We offer a variety of gluten-free products, including bread, pastries, and cakes. Our
+                    gluten-free items are prepared in a dedicated area to minimize cross-contamination. However, please
+                    note that they are made in the same facility as our regular products. All gluten-free items are
+                    clearly labeled in our display cases and online ordering system.</p>
                 </div>
               </div>
-              
+
               <div class="p-6">
-                <button class="faq-question flex justify-between items-center w-full text-left font-semibold">
+                <button
+                  class="faq-question flex justify-between items-center w-full text-left font-semibold focus:outline-none">
                   <span>Can I place a custom order?</span>
                   <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
                 </button>
                 <div class="faq-answer hidden mt-4 text-gray-600">
-                  <p>Absolutely! We love creating custom orders for special occasions. Whether it's a birthday cake, wedding pastries, or corporate event catering, we can work with you to create something perfect for your needs. Custom orders should be placed at least 48 hours in advance, with more notice required for larger orders or specialty items. Please visit our "Custom Orders" page or contact us directly to discuss your requirements.</p>
+                  <p>Absolutely! We love creating custom orders for special occasions. Whether it's a birthday cake,
+                    wedding pastries, or corporate event catering, we can work with you to create something perfect for
+                    your needs. Custom orders should be placed at least 48 hours in advance, with more notice required
+                    for larger orders or specialty items. Please visit our "Custom Orders" page or contact us directly
+                    to discuss your requirements.</p>
                 </div>
               </div>
-              
+
               <div class="p-6">
-                <button class="faq-question flex justify-between items-center w-full text-left font-semibold">
+                <button
+                  class="faq-question flex justify-between items-center w-full text-left font-semibold focus:outline-none">
                   <span>What ingredients do you use?</span>
                   <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
                 </button>
                 <div class="faq-answer hidden mt-4 text-gray-600">
-                  <p>We believe in using only the highest quality ingredients in our products. We use organic flour, cage-free eggs, hormone-free dairy, and seasonal fruits from local farms whenever possible. We avoid artificial preservatives, colors, and flavors, focusing instead on creating authentic, delicious baked goods with clean ingredients. Detailed ingredient lists for all our products are available upon request or can be viewed on our products page.</p>
+                  <p>We believe in using only the highest quality ingredients in our products. We use organic flour,
+                    cage-free eggs, hormone-free dairy, and seasonal fruits from local farms whenever possible. We avoid
+                    artificial preservatives, colors, and flavors, focusing instead on creating authentic, delicious
+                    baked goods with clean ingredients. Detailed ingredient lists for all our products are available
+                    upon request or can be viewed on our products page.</p>
                 </div>
               </div>
-              
+
               <div class="p-6">
-                <button class="faq-question flex justify-between items-center w-full text-left font-semibold">
+                <button
+                  class="faq-question flex justify-between items-center w-full text-left font-semibold focus:outline-none">
                   <span>Do you ship your products?</span>
                   <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
                 </button>
                 <div class="faq-answer hidden mt-4 text-gray-600">
-                  <p>Yes, we offer shipping for select products that travel well, including our cookies, brownies, and certain shelf-stable items. We currently ship within the continental United States. All shipped items are carefully packaged to ensure they arrive in perfect condition. For local customers, we also offer delivery services within a 15-mile radius of our bakery. Please note that some of our fresh products are only available for in-store pickup to maintain their quality and freshness.</p>
+                  <p>Yes, we offer shipping for select products that travel well, including our cookies, brownies, and
+                    certain shelf-stable items. We currently ship within the continental United States. All shipped
+                    items are carefully packaged to ensure they arrive in perfect condition. For local customers, we
+                    also offer delivery services within a 15-mile radius of our bakery. Please note that some of our
+                    fresh products are only available for in-store pickup to maintain their quality and freshness.</p>
                 </div>
               </div>
-              
+
               <div class="p-6">
-                <button class="faq-question flex justify-between items-center w-full text-left font-semibold">
+                <button
+                  class="faq-question flex justify-between items-center w-full text-left font-semibold focus:outline-none">
                   <span>Do you offer classes or workshops?</span>
                   <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
                 </button>
                 <div class="faq-answer hidden mt-4 text-gray-600">
-                  <p>Yes, we offer a variety of baking classes and workshops throughout the year! These range from beginner-friendly sessions to advanced techniques. Our most popular classes include sourdough bread making, French pastry basics, cake decorating, and seasonal special workshops. Classes are kept small to ensure personalized instruction. Check our "Events" page for the current schedule and to reserve your spot, as classes tend to fill up quickly.</p>
+                  <p>Yes, we offer a variety of baking classes and workshops throughout the year! These range from
+                    beginner-friendly sessions to advanced techniques. Our most popular classes include sourdough bread
+                    making, French pastry basics, cake decorating, and seasonal special workshops. Classes are kept
+                    small to ensure personalized instruction. Check our "Events" page for the current schedule and to
+                    reserve your spot, as classes tend to fill up quickly.</p>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- More questions CTA -->
+          <div class="text-center mt-8">
+            <p class="text-gray-600 mb-4">Don't see your question here?</p>
+            <a href="contact.html"
+              class="inline-block bg-red-500 text-white py-2 px-6 rounded-lg hover:bg-red-600 transition-colors shadow">
+              Ask Us Directly
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section (New) -->
+    <section class="py-12 bg-gradient-to-r from-red-500 to-orange-500 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up" data-aos-duration="800">
+          <h2 class="text-2xl font-bold mb-4">Join Our Newsletter</h2>
+          <p class="mb-6 text-white/90">Be the first to know about new seasonal items, special promotions, and upcoming
+            events.</p>
+          <form class="newsletter-form flex flex-col sm:flex-row max-w-lg mx-auto">
+            <input type="email" placeholder="Your email address"
+              class="w-full px-4 py-3 rounded-lg sm:rounded-r-none text-gray-700 mb-2 sm:mb-0" required>
+            <button type="submit"
+              class="bg-white text-red-500 font-semibold px-6 py-3 rounded-lg sm:rounded-l-none hover:bg-gray-100 transition-colors">
+              Subscribe
+            </button>
+          </form>
+          <p class="text-sm mt-4 text-white/80">We respect your privacy. Unsubscribe at any time.</p>
         </div>
       </div>
     </section>
@@ -509,15 +1094,15 @@
   <footer class="bg-red-50 mt-12">
     <div class="container mx-auto py-8 px-4 max-w-7xl">
       <div class="flex flex-col md:flex-row gap-6 items-center justify-between mb-8">
-        <div>
+        <div class="hover-scale transition-transform">
           <img class="h-72" src="../images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="Djini's Bakehouse Logo" />
         </div>
         <div class="flex flex-col md:flex-row items-center gap-4">
           <h3 class="text-xl me-10 text-gray-700">
             Become a part of us?
           </h3>
-          <a href="contact.html" 
-             class="text-white bg-gradient-to-br from-[#FF8938] to-[#FF0000] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 hover:scale-105 duration-500 transition font-bold rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2 shadow-md">
+          <a href="contact.html"
+            class="text-white bg-gradient-to-br from-[#FF8938] to-[#FF0000] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 hover:scale-105 duration-500 transition font-bold rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2 shadow-md">
             Contact
           </a>
         </div>
@@ -533,17 +1118,21 @@
         </div>
         <div class="my-8 space-y-4">
           <h3 class="text-xl text-gray-700 font-bold">Our Service</h3>
-          <a href="custom-orders.html" class="block text-gray-600 hover:text-red-500 transition-colors">Custom Orders</a>
+          <a href="custom-orders.html" class="block text-gray-600 hover:text-red-500 transition-colors">Custom
+            Orders</a>
           <a href="order.html" class="block text-gray-600 hover:text-red-500 transition-colors">Online Ordering</a>
-          <a href="products.html?filter=special" class="block text-gray-600 hover:text-red-500 transition-colors">Seasonal Specials</a>
-          <a href="gift-packaging.html" class="block text-gray-600 hover:text-red-500 transition-colors">Gift Packaging</a>
+          <a href="products.html?filter=special"
+            class="block text-gray-600 hover:text-red-500 transition-colors">Seasonal Specials</a>
+          <a href="gift-packaging.html" class="block text-gray-600 hover:text-red-500 transition-colors">Gift
+            Packaging</a>
         </div>
         <div class="my-8 space-y-4">
           <h3 class="text-xl text-gray-700 font-bold">Help</h3>
           <a href="faq.html" class="block text-gray-600 hover:text-red-500 transition-colors">FAQs</a>
           <a href="contact.html" class="block text-gray-600 hover:text-red-500 transition-colors">Contact Us</a>
           <a href="order-tracking.html" class="block text-gray-600 hover:text-red-500 transition-colors">Track Order</a>
-          <a href="shipping.html" class="block text-gray-600 hover:text-red-500 transition-colors">Shipping Information</a>
+          <a href="shipping.html" class="block text-gray-600 hover:text-red-500 transition-colors">Shipping
+            Information</a>
         </div>
         <div class="my-8 space-y-4">
           <h3 class="text-xl text-gray-700 font-bold">
@@ -551,7 +1140,8 @@
           </h3>
           <!-- subscribe -->
           <div class="flex items-center justify-center md:justify-start">
-            <input type="email" placeholder="Email address" class="bg-transparent border-b-2 py-2 focus:outline-none" aria-label="Email address" />
+            <input type="email" placeholder="Email address" class="bg-transparent border-b-2 py-2 focus:outline-none"
+              aria-label="Email address" />
             <button type="button" aria-label="Subscribe"
               class="text-white bg-gradient-to-br from-[#FF8938] to-[#FF0000] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 hover:scale-105 transition font-bold rounded-full text-xl p-2 text-center -ml-4 mb-2">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
@@ -561,56 +1151,145 @@
             </button>
           </div>
           <!-- social links -->
-          <div class="space-x-4">
-            <a href="#" class="w-6 h-6 inline-block text-gray-600 hover:text-red-500 transition-colors" aria-label="Facebook">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
-                <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
-              </svg>
+          <div class="space-x-4 social-links">
+            <a href="#"
+              class="social-link w-10 h-10 inline-flex items-center justify-center text-gray-600 hover:text-red-500 hover:bg-red-50 rounded-full transition-colors"
+              aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
             </a>
-            <a href="#" class="w-6 h-6 inline-block text-gray-600 hover:text-red-500 transition-colors" aria-label="Instagram">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
-                <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
-              </svg>
+            <a href="#"
+              class="social-link w-10 h-10 inline-flex items-center justify-center text-gray-600 hover:text-red-500 hover:bg-red-50 rounded-full transition-colors"
+              aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
             </a>
-            <a href="#" class="w-6 h-6 inline-block text-gray-600 hover:text-red-500 transition-colors" aria-label="Twitter">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
-                <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/>
-              </svg>
+            <a href="#"
+              class="social-link w-10 h-10 inline-flex items-center justify-center text-gray-600 hover:text-red-500 hover:bg-red-50 rounded-full transition-colors"
+              aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#"
+              class="social-link w-10 h-10 inline-flex items-center justify-center text-gray-600 hover:text-red-500 hover:bg-red-50 rounded-full transition-colors"
+              aria-label="Pinterest">
+              <i class="fab fa-pinterest"></i>
             </a>
           </div>
         </div>
       </div>
     </div>
     <div class="py-4 border-t border-red-100">
-      <h5 class="text-center font-semibold py-2 text-gray-600">All rights reserved © Djini's Bakehouse 2024</h5>
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-center font-medium py-2 text-gray-600">All rights reserved © Djini's Bakehouse 2024</p>
+          <div class="flex items-center space-x-4">
+            <a href="accessibility.html"
+              class="text-gray-600 hover:text-red-500 transition-colors text-sm">Accessibility</a>
+            <span class="text-gray-400">|</span>
+            <a href="sitemap.html" class="text-gray-600 hover:text-red-500 transition-colors text-sm">Sitemap</a>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Back to top button -->
+    <button id="back-to-top"
+      class="fixed bottom-8 right-8 bg-red-500 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform transition-transform hover:scale-110 hover:bg-red-600 opacity-0 invisible z-50">
+      <i class="fas fa-chevron-up"></i>
+    </button>
   </footer>
 
-  <!-- FAQ Accordion JavaScript -->
+  <!-- Video Modal -->
+  <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-10 hidden group-hover:block">
+    <div class="bg-white rounded-lg overflow-hidden max-w-4xl w-full mx-4">
+      <div class="flex justify-between items-center bg-gray-100 p-4">
+        <h3 class="text-lg font-medium text-gray-800">Kitchen Tour Video</h3>
+        <button class="text-gray-500 hover:text-gray-700 focus:outline-none" id="close-video-modal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="p-6">
+        <div class="video-container" id="video-container">
+          <!-- Video will be inserted here by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <!-- AOS Animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <!-- Main JavaScript -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
+      // Initialize AOS animations
+      AOS.init({
+        once: true, // Whether animation should happen only once
+        mirror: false,
+      });
+
+      // Team member slider
+      const teamSwiper = new Swiper('.team-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        autoplay: {
+          delay: 5000,
+        },
+        loop: true,
+        pagination: {
+          el: '.team-swiper .swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.team-swiper .swiper-button-next',
+          prevEl: '.team-swiper .swiper-button-prev',
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 4,
+          },
+        },
+      });
+
+      // Testimonials slider
+      const testimonialsSwiper = new Swiper('.testimonials-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 6000,
+        },
+        pagination: {
+          el: '.testimonials-swiper .swiper-pagination',
+          clickable: true,
+        },
+      });
+
       // FAQ Accordion functionality
       const faqQuestions = document.querySelectorAll('.faq-question');
-      
+
       faqQuestions.forEach(question => {
-        question.addEventListener('click', function() {
+        question.addEventListener('click', function () {
           const answer = this.nextElementSibling;
           const icon = this.querySelector('.fa-chevron-down');
-          
+
           // Toggle answer visibility
           answer.classList.toggle('hidden');
-          
+
           // Rotate icon
           if (icon) {
             icon.style.transform = answer.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
           }
-          
+
           // Close other answers
           faqQuestions.forEach(otherQuestion => {
             if (otherQuestion !== question) {
               const otherAnswer = otherQuestion.nextElementSibling;
               const otherIcon = otherQuestion.querySelector('.fa-chevron-down');
-              
+
               otherAnswer.classList.add('hidden');
               if (otherIcon) {
                 otherIcon.style.transform = 'rotate(0deg)';
@@ -619,16 +1298,90 @@
           });
         });
       });
-      
+
+      // Video modal
+      const videoModal = document.getElementById('video-modal');
+      const videoContainer = document.getElementById('video-container');
+      const openVideoBtn = document.querySelector('[data-modal-target="video-modal"]');
+      const closeVideoBtn = document.getElementById('close-video-modal');
+
+      if (openVideoBtn && videoModal && closeVideoBtn) {
+        openVideoBtn.addEventListener('click', function () {
+          // Create iframe for YouTube video
+          videoContainer.innerHTML = `
+            <iframe 
+              width="100%" 
+              height="400" 
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" 
+              title="Djini's Bakehouse Kitchen Tour" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          `;
+
+          // Show modal
+          videoModal.classList.remove('hidden');
+          document.body.classList.add('overflow-hidden');
+        });
+
+        closeVideoBtn.addEventListener('click', closeVideoModal);
+
+        // Close on click outside
+        videoModal.addEventListener('click', function (e) {
+          if (e.target === videoModal) {
+            closeVideoModal();
+          }
+        });
+
+        // Close on escape key
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && !videoModal.classList.contains('hidden')) {
+            closeVideoModal();
+          }
+        });
+      }
+
+      function closeVideoModal() {
+        videoModal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+        // Remove the iframe to stop video
+        videoContainer.innerHTML = '';
+      }
+
+      // Back to top functionality
+      const backToTopButton = document.getElementById('back-to-top');
+
+      if (backToTopButton) {
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function () {
+          if (window.pageYOffset > 300) {
+            backToTopButton.classList.remove('opacity-0', 'invisible');
+            backToTopButton.classList.add('opacity-100', 'visible');
+          } else {
+            backToTopButton.classList.remove('opacity-100', 'visible');
+            backToTopButton.classList.add('opacity-0', 'invisible');
+          }
+        });
+
+        // Scroll to top on click
+        backToTopButton.addEventListener('click', function () {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      }
+
       // Update cart count in header
       function updateCartCount() {
         const cart = JSON.parse(localStorage.getItem('djinisCart')) || [];
         const cartCountElement = document.getElementById('cart-count');
-        
+
         if (cartCountElement) {
           const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
           cartCountElement.textContent = totalItems;
-          
+
           // Make count invisible if 0
           if (totalItems === 0) {
             cartCountElement.classList.add('invisible');
@@ -637,20 +1390,20 @@
           }
         }
       }
-      
+
       // Check login status
       function checkLoginStatus() {
         const userAuth = JSON.parse(localStorage.getItem('djinisUserAuth'));
         const profileMenu = document.querySelector('.profile-menu');
         const loginBtn = document.querySelector('a[href="login.html"]');
         const signupBtn = document.querySelector('a[href="signup.html"]');
-        
+
         if (userAuth && userAuth.isLoggedIn && profileMenu && loginBtn && signupBtn) {
           // Show profile menu, hide login/signup buttons
           profileMenu.classList.remove('hidden');
           loginBtn.classList.add('hidden');
           signupBtn.classList.add('hidden');
-          
+
           // Update user name
           const userName = document.getElementById('user-name');
           if (userName) {
@@ -658,20 +1411,20 @@
           }
         }
       }
-      
+
       // Initialize
       updateCartCount();
       checkLoginStatus();
-      
+
       // Handle logout
       const logoutButtons = document.querySelectorAll('.logout-button');
       logoutButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
+        button.addEventListener('click', function (e) {
           e.preventDefault();
-          
+
           // Clear user auth
           localStorage.removeItem('djinisUserAuth');
-          
+
           // Redirect to home page
           window.location.href = '../index.html';
         });
