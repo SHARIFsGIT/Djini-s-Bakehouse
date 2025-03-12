@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile - Djini's Bakehouse</title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="images/Djini_s_Bakehouse_1_-removebg-preview.png" type="image/x-icon">
+  <!-- tailwind cdn -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="text-[#777777] bg-gray-50">
+  <!-- Mobile menu JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      menuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    });
+  </script>
+
+  <nav class="fixed inset-x-0 top-0 z-30 w-full border border-gray-100 bg-white/80 py-2 px-4 shadow backdrop-blur-lg">
+    <div class="flex items-center justify-between">
+      <a class="flex items-center" href="index.html">
+        <img class="h-16 w-auto" src="images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="Djini's Bakehouse">
+        <span class="sr-only">Djini's Bakehouse</span>
+      </a>
+      <button id="menu-btn" class="block md:hidden focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+      <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-white shadow-md md:hidden z-40 p-4">
+        <a href="index.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Home</a>
+        <a href="products.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
+        <a href="order.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order Online</a>
+        <a href="about.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">About</a>
+        <a href="contact.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Contact</a>
+        <div class="mt-3 border-t pt-3">
+          <a href="logout.html" class="block text-white bg-red-600 px-4 py-2 rounded-xl shadow text-center">Log Out</a>
+        </div>
+      </div>
+      <div id="menu" class="hidden md:flex md:items-center md:gap-4">
+        <a href="index.html" class="text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Home</a>
+        <a href="products.html" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
+        <a href="order.html" class="text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order Online</a>
+        <a href="about.html" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">About</a>
+        <a href="contact.html" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Contact</a>
+      </div>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="cart.html" class="text-gray-900 hover:text-red-500 relative">
+          <i class="fas fa-shopping-cart text-xl"></i>
+          <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+        </a>
+        <div class="relative group">
+          <button class="flex items-center space-x-1 text-gray-900">
+            <img src="images/profile-placeholder.png" alt="Profile" class="w-8 h-8 rounded-full border-2 border-red-500">
+            <span class="font-medium" id="user-name">John Doe</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-10 hidden group-hover:block">
+            <a href="profile.html" class="block px-4 py-2 text-gray-800 hover:bg-red-50">
+              <i class="fas fa-user mr-2"></i> My Profile
+            </a>
+            <a href="orders.html" class="block px-4 py-2 text-gray-800 hover:bg-red-50">
+              <i class="fas fa-shopping-bag mr-2"></i> My Orders
+            </a>
+            <a href="addresses.html" class="block px-4 py-2 text-gray-800 hover:bg-red-50">
+              <i class="fas fa-map-marker-alt mr-2"></i> My Addresses
+            </a>
+            <a href="favorites.html" class="block px-4 py-2 text-gray-800 hover:bg-red-50">
+              <i class="fas fa-heart mr-2"></i> Favorites
+            </a>
+            <div class="border-t my-2"></div>
+            <a href="logout.html" class="block px-4 py-2 text-gray-800 hover:bg-red-50">
+              <i class="fas fa-sign-out-alt mr-2"></i> Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mx-auto px-4 py-8 mt-24">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-4xl font-bold text-gray-700 mb-6">My Profile</h1>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Sidebar Navigation -->
+        <div class="lg:col-span-1">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="p-6 bg-gradient-to-r from-red-500 to-orange-500 text-white">
+              <div class="flex items-center space-x-4">
+                <img src="images/profile-placeholder.png" alt="Profile" class="w-16 h-16 rounded-full border-2 border-white">
+                <div>
+                  <h2 class="font-bold text-xl" id="sidebar-user-name">John Doe</h2>
+                  <p class="text-sm opacity-80" id="sidebar-user-email">john.doe@example.com</p>
+                </div>
+              </div>
+            </div>
+            <nav class="py-4">
+              <a href="profile.html" class="flex items-center px-6 py-3 text-gray-700 bg-red-50 border-l-4 border-red-500">
+                <i class="fas fa-user mr-3 w-5 text-center"></i>
+                <span>Profile Information</span>
+              </a>
+              <a href="orders.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-shopping-bag mr-3 w-5 text-center"></i>
+                <span>Order History</span>
+              </a>
+              <a href="addresses.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-map-marker-alt mr-3 w-5 text-center"></i>
+                <span>Saved Addresses</span>
+              </a>
+              <a href="payment-methods.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-credit-card mr-3 w-5 text-center"></i>
+                <span>Payment Methods</span>
+              </a>
+              <a href="favorites.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-heart mr-3 w-5 text-center"></i>
+                <span>Favorite Items</span>
+              </a>
+              <a href="settings.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-cog mr-3 w-5 text-center"></i>
+                <span>Account Settings</span>
+              </a>
+              <a href="logout.html" class="flex items-center px-6 py-3 text-red-600 hover:bg-red-50 transition-colors mt-4">
+                <i class="fas fa-sign-out-alt mr-3 w-5 text-center"></i>
+                <span>Logout</span>
+              </a>
+            </nav>
+          </div>
+        </div>
+        
+        <!-- Main Content Area -->
+        <div class="lg:col-span-3">
+          <!-- Profile Information Card -->
+          <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <div class="flex justify-between items-center mb-6">
+              <h2 class="text-2xl font-bold text-gray-700">Profile Information</h2>
+              <button id="edit-profile-btn" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition">
+                <i class="fas fa-edit mr-2"></i> Edit
+              </button>
+            </div>
+            
+            <!-- View Mode (Default) -->
+            <div id="profile-view-mode">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h3 class="text-sm font-medium text-gray-500 mb-1">Full Name</h3>
+                  <p class="text-lg text-gray-800" id="view-full-name">John Doe</p>
+                </div>
+                <div>
+                  <h3 class="text-sm font-medium text-gray-500 mb-1">Email Address</h3>
+                  <p class="text-lg text-gray-800" id="view-email">john.doe@example.com</p>
+                </div>
+                <div>
+                  <h3 class="text-sm font-medium text-gray-500 mb-1">Phone Number</h3>
+                  <p class="text-lg text-gray-800" id="view-phone">(555) 123-4567</p>
+                </div>
+                <div>
+                  <h3 class="text-sm font-medium text-gray-500 mb-1">Date of Birth</h3>
+                  <p class="text-lg text-gray-800" id="view-dob">January 15, 1985</p>
+                </div>
+                <div class="md:col-span-2">
+                  <h3 class="text-sm font-medium text-gray-500 mb-1">About Me</h3>
+                  <p class="text-lg text-gray-800" id="view-about">I love all kinds of pastries and baked goods! I frequently order from Djini's Bakehouse for family gatherings and special occasions.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Edit Mode (Hidden by default) -->
+            <div id="profile-edit-mode" class="hidden">
+              <form id="profile-edit-form">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label for="edit-first-name" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                    <input type="text" id="edit-first-name" value="John" class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
+                  </div>
+                  <div>
+                    <label for="edit-last-name" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                    <input type="text" id="edit-last-name" value="Doe" class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
+                  </div>
+                  <div>
+                    <label for="edit-email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                    <input type="email" id="edit-email" value="john.doe@example.com" class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
+                  </div>
+                  <div>
+                    <label for="edit-phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                    <input type="tel" id="edit-phone" value="(555) 123-4567" class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
+                  </div>
+                  <div>
+                    <label for="edit-dob" class="block text-sm font-medium text-gray-700 mb-1">Date of Birth</label>
+                    <input type="date" id="edit-dob" value="1985-01-15" class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
+                  </div>
+                  <div class="md:col-span-2">
+                    <label for="edit-about" class="block text-sm font-medium text-gray-700 mb-1">About Me</label>
+                    <textarea id="edit-about" rows="4" class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">I love all kinds of pastries and baked goods! I frequently order from Djini's Bakehouse for family gatherings and special occasions.</textarea>
+                  </div>
+                </div>
+                <div class="flex justify-end space-x-4 mt-6">
+                  <button type="button" id="cancel-edit-btn" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                    Cancel
+                  </button>
+                  <button type="submit" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition">
+                    Save Changes
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          
+          <!-- Password Change Card -->
+          <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <div class="flex justify-between items-center mb-6">
+              <h2 class="text-2xl font-bold text-gray-700">Password</h2>
+              <button id="change-password-btn" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition">
+                <i class="fas fa-key mr-2"></i> Change
+              </button>
+            </div>
+            
+            <div id="password-info">
+              <p class="text-gray-600">Your password was last changed on <span class="font-medium">August 15, 2023</span></p>
+            </div>
+            
+            <!-- Password Change Form (Hidden by default) -->
+            <div id="password-change-form" class="hidden">
+              <form id="password-form">
+                <div class="space-y-4">
+                  <div>
+                    <label for="current-password" class="block text-sm font-medium text-gray-700 mb-1">Current Password</label>
+                    <input type="password" id="current-password" class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
+                  </div>
+                  <div>
+                    <label for="new-password" class="block text-sm font-medium text-gray-700 mb-1">New Password</label>
+                    <input type="password" id="new-password" class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
+                    <p class="text-xs text-gray-500 mt-1">Password must be at least 8 characters and include a number and special character.</p>
+                  </div>
+                  <div>
+                    <label for="confirm-password" class="block text-sm font-medium text-gray-700 mb-1">Confirm New Password</label>
+                    <input type="password" id="confirm-password" class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none">
+                  </div>
+                </div>
+                <div class="flex justify-end space-x-4 mt-6">
+                  <button type="button" id="cancel-password-btn" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                    Cancel
+                  </button>
+                  <button type="submit" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition">
+                    Update Password
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          
+          <!-- Email Preferences Card -->
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-2xl font-bold text-gray-700 mb-6">Email Preferences</h2>
+            <form id="email-preferences-form">
+              <div class="space-y-4">
+                <label class="custom-checkbox flex items-start py-2">
+                  <input type="checkbox" checked>
+                  <span class="checkmark mt-1"></span>
+                  <div class="ml-3">
+                    <span class="font-medium">Order Updates</span>
+                    <p class="text-sm text-gray-500">Receive emails about your order status and shipping updates.</p>
+                  </div>
+                </label>
+                <label class="custom-checkbox flex items-start py-2">
+                  <input type="checkbox" checked>
+                  <span class="checkmark mt-1"></span>
+                  <div class="ml-3">
+                    <span class="font-medium">Promotions & Deals</span>
+                    <p class="text-sm text-gray-500">Receive emails about discounts, special offers, and promotions.</p>
+                  </div>
+                </label>
+                <label class="custom-checkbox flex items-start py-2">
+                  <input type="checkbox">
+                  <span class="checkmark mt-1"></span>
+                  <div class="ml-3">
+                    <span class="font-medium">New Products</span>
+                    <p class="text-sm text-gray-500">Be the first to know when we launch new products or seasonal items.</p>
+                  </div>
+                </label>
+                <label class="custom-checkbox flex items-start py-2">
+                  <input type="checkbox" checked>
+                  <span class="checkmark mt-1"></span>
+                  <div class="ml-3">
+                    <span class="font-medium">Bakehouse Newsletter</span>
+                    <p class="text-sm text-gray-500">Monthly newsletter with recipes, tips, and bakery insights.</p>
+                  </div>
+                </label>
+              </div>
+              <div class="flex justify-end mt-6">
+                <button type="submit" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition">
+                  Save Preferences
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-red-50 mt-24">
+    <div class="container mx-auto py-4 px-4">
+      <div class="flex flex-col md:flex-row gap-6 items-center justify-between mb-2">
+        <div>
+          <img class="h-72" src="images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="" />
+        </div>
+        <div class="flex flex-col md:flex-row items-center gap-4">
+          <h3 class="text-xl me-10">
+            Become a part of us?
+          </h3>
+          <a href="contact.html" type="button"
+            class="text-white bg-gradient-to-br from-[#FF8938] to-[#FF0000] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 hover:scale-105 duration-500 transition font-bold rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2">
+            Contact
+          </a>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-center md:text-start">
+        <div class="my-8 space-y-4">
+          <h3 class="text-xl text-gray-700 font-bold">Quick Links</h3>
+          <a href="index.html" class="block">Home</a>
+          <a href="products.html" class="block">Products</a>
+          <a href="about.html" class="block">About Us</a>
+          <a href="privacy.html" class="block">Privacy Policy</a>
+          <a href="terms.html" class="block">Terms & Conditions</a>
+        </div>
+        <div class="my-8 space-y-4">
+          <h3 class="text-xl text-gray-700 font-bold">Our Service</h3>
+          <a href="custom-orders.html" class="block">Custom Orders</a>
+          <a href="order.html" class="block">Online Ordering</a>
+          <a href="products.html?filter=special" class="block">Seasonal Specials</a>
+          <a href="gift-packaging.html" class="block">Gift Packaging</a>
+        </div>
+        <div class="my-8 space-y-4">
+          <h3 class="text-xl text-gray-700 font-bold">Help</h3>
+          <a href="faq.html" class="block">FAQs</a>
+          <a href="contact.html" class="block">Contact Us</a>
+          <a href="order-tracking.html" class="block">Track Order</a>
+          <a href="shipping.html" class="block">Shipping Information</a>
+        </div>
+        <div class="my-8 space-y-4">
+          <h3 class="text-xl text-gray-700 font-bold">
+            Be a part of our team
+          </h3>
+          <!-- subscribe -->
+          <div class="flex items-center justify-center md:justify-start">
+            <input type="email" placeholder="Email address" class="bg-transparent border-b-2 py-2 focus:outline-none" />
+            <button type="button"
+              class="text-white bg-gradient-to-br from-[#FF8938] to-[#FF0000] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 hover:scale-105 transition font-bold rounded-full text-xl p-2 text-center -ml-4 mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                stroke="currentColor" class="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+          </div>
+          <!-- social links -->
+          <div class="space-x-4">
+            <a href="#" class="w-6 h-6 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path
+                  d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+              </svg></a>
+            <a href="#" class="w-6 h-6 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+              </svg></a>
+            <a href="#" class="w-6 h-6 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/>
+              </svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h5 class="text-center font-semibold py-4">All rights reserved © Djini's Bakehouse 2024</h5>
+  </footer>
+
+  <!-- Profile page JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Profile Edit Functionality
+      const editProfileBtn = document.getElementById('edit-profile-btn');
+      const cancelEditBtn = document.getElementById('cancel-edit-btn');
+      const profileViewMode = document.getElementById('profile-view-mode');
+      const profileEditMode = document.getElementById('profile-edit-mode');
+      const profileEditForm = document.getElementById('profile-edit-form');
+      
+      // Toggle edit mode
+      editProfileBtn.addEventListener('click', function() {
+        profileViewMode.classList.add('hidden');
+        profileEditMode.classList.remove('hidden');
+      });
+      
+      // Cancel edit
+      cancelEditBtn.addEventListener('click', function() {
+        profileViewMode.classList.remove('hidden');
+        profileEditMode.classList.add('hidden');
+      });
+      
+      // Submit profile form
+      profileEditForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        // Get form values
+        const firstName = document.getElementById('edit-first-name').value;
+        const lastName = document.getElementById('edit-last-name').value;
+        const email = document.getElementById('edit-email').value;
+        const phone = document.getElementById('edit-phone').value;
+        const dob = document.getElementById('edit-dob').value;
+        const about = document.getElementById('edit-about').value;
+        
+        // Update view mode with new values
+        document.getElementById('view-full-name').textContent = `${firstName} ${lastName}`;
+        document.getElementById('view-email').textContent = email;
+        document.getElementById('view-phone').textContent = phone;
+        
+        // Format date
+        const dobDate = new Date(dob);
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('view-dob').textContent = dobDate.toLocaleDateString('en-US', options);
+        
+        document.getElementById('view-about').textContent = about;
+        
+        // Update user name in header and sidebar
+        document.getElementById('user-name').textContent = `${firstName} ${lastName}`;
+        document.getElementById('sidebar-user-name').textContent = `${firstName} ${lastName}`;
+        document.getElementById('sidebar-user-email').textContent = email;
+        
+        // Save to localStorage
+        const userData = {
+          firstName,
+          lastName,
+          email,
+          phone,
+          dob,
+          about,
+          lastUpdated: new Date().toISOString()
+        };
+        
+        localStorage.setItem('djinisUserProfile', JSON.stringify(userData));
+        
+        // Show success message
+        const successMessage = document.createElement('div');
+        successMessage.className = 'bg-green-100 text-green-700 p-4 rounded-lg mt-4';
+        successMessage.innerHTML = '<i class="fas fa-check-circle mr-2"></i> Profile information updated successfully.';
+        
+        profileEditForm.appendChild(successMessage);
+        
+        // Remove message after 3 seconds
+        setTimeout(() => {
+          successMessage.remove();
+          // Switch back to view mode
+          profileViewMode.classList.remove('hidden');
+          profileEditMode.classList.add('hidden');
+        }, 3000);
+      });
+      
+      // Password Change Functionality
+      const changePasswordBtn = document.getElementById('change-password-btn');
+      const cancelPasswordBtn = document.getElementById('cancel-password-btn');
+      const passwordInfo = document.getElementById('password-info');
+      const passwordChangeForm = document.getElementById('password-change-form');
+      const passwordForm = document.getElementById('password-form');
+      
+      // Toggle password change form
+      changePasswordBtn.addEventListener('click', function() {
+        passwordInfo.classList.add('hidden');
+        passwordChangeForm.classList.remove('hidden');
+      });
+      
+      // Cancel password change
+      cancelPasswordBtn.addEventListener('click', function() {
+        passwordInfo.classList.remove('hidden');
+        passwordChangeForm.classList.add('hidden');
+        passwordForm.reset();
+      });
+      
+      // Submit password form
+      passwordForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const currentPassword = document.getElementById('current-password').value;
+        const newPassword = document.getElementById('new-password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+        
+        // Simple validation
+        if (newPassword !== confirmPassword) {
+          const errorMessage = document.createElement('div');
+          errorMessage.className = 'bg-red-100 text-red-700 p-4 rounded-lg mt-4';
+          errorMessage.innerHTML = '<i class="fas fa-exclamation-circle mr-2"></i> New passwords do not match.';
+          
+          passwordForm.appendChild(errorMessage);
+          
+          // Remove message after 3 seconds
+          setTimeout(() => {
+            errorMessage.remove();
+          }, 3000);
+          
+          return;
+        }
+        
+        // Simulate password change
+        const successMessage = document.createElement('div');
+        successMessage.className = 'bg-green-100 text-green-700 p-4 rounded-lg mt-4';
+        successMessage.innerHTML = '<i class="fas fa-check-circle mr-2"></i> Password changed successfully.';
+        
+        passwordForm.appendChild(successMessage);
+        
+        // Update last changed date
+        const today = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const formattedDate = today.toLocaleDateString('en-US', options);
+        
+        document.querySelector('#password-info p').innerHTML = `Your password was last changed on <span class="font-medium">${formattedDate}</span>`;
+        
+        // Remove message after 3 seconds
+        setTimeout(() => {
+          successMessage.remove();
+          // Switch back to info mode
+          passwordInfo.classList.remove('hidden');
+          passwordChangeForm.classList.add('hidden');
+          passwordForm.reset();
+        }, 3000);
+      });
+      
+      // Email Preferences Form
+      const emailPreferencesForm = document.getElementById('email-preferences-form');
+      
+      emailPreferencesForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        // Get checked preferences
+        const checkboxes = emailPreferencesForm.querySelectorAll('input[type="checkbox"]');
+        const preferences = {};
+        
+        checkboxes.forEach(checkbox => {
+          const prefName = checkbox.parentElement.querySelector('.font-medium').textContent;
+          preferences[prefName] = checkbox.checked;
+        });
+        
+        // Save to localStorage
+        localStorage.setItem('djinisEmailPreferences', JSON.stringify(preferences));
+        
+        // Show success message
+        const successMessage = document.createElement('div');
+        successMessage.className = 'bg-green-100 text-green-700 p-4 rounded-lg mt-4';
+        successMessage.innerHTML = '<i class="fas fa-check-circle mr-2"></i> Email preferences saved successfully.';
+        
+        emailPreferencesForm.appendChild(successMessage);
+        
+        // Remove message after 3 seconds
+        setTimeout(() => {
+          successMessage.remove();
+        }, 3000);
+      });
+      
+      // Load user data from localStorage
+      function loadUserData() {
+        const userData = JSON.parse(localStorage.getItem('djinisUserProfile'));
+        
+        if (userData) {
+          // Update view mode
+          document.getElementById('view-full-name').textContent = `${userData.firstName} ${userData.lastName}`;
+          document.getElementById('view-email').textContent = userData.email;
+          document.getElementById('view-phone').textContent = userData.phone;
+          
+          // Format date
+          const dobDate = new Date(userData.dob);
+          const options = { year: 'numeric', month: 'long', day: 'numeric' };
+          document.getElementById('view-dob').textContent = dobDate.toLocaleDateString('en-US', options);
+          
+          document.getElementById('view-about').textContent = userData.about;
+          
+          // Update edit form
+          document.getElementById('edit-first-name').value = userData.firstName;
+          document.getElementById('edit-last-name').value = userData.lastName;
+          document.getElementById('edit-email').value = userData.email;
+          document.getElementById('edit-phone').value = userData.phone;
+          document.getElementById('edit-dob').value = userData.dob;
+          document.getElementById('edit-about').value = userData.about;
+          
+          // Update user name in header and sidebar
+          document.getElementById('user-name').textContent = `${userData.firstName} ${userData.lastName}`;
+          document.getElementById('sidebar-user-name').textContent = `${userData.firstName} ${userData.lastName}`;
+          document.getElementById('sidebar-user-email').textContent = userData.email;
+        }
+      }
+      
+      // Load email preferences from localStorage
+      function loadEmailPreferences() {
+        const preferences = JSON.parse(localStorage.getItem('djinisEmailPreferences'));
+        
+        if (preferences) {
+          const checkboxes = emailPreferencesForm.querySelectorAll('input[type="checkbox"]');
+          
+          checkboxes.forEach(checkbox => {
+            const prefName = checkbox.parentElement.querySelector('.font-medium').textContent;
+            if (preferences[prefName] !== undefined) {
+              checkbox.checked = preferences[prefName];
+            }
+          });
+        }
+      }
+      
+      // Initial load
+      loadUserData();
+      loadEmailPreferences();
+    });
+  </script>
+
+  <!-- Cart functionality -->
+  <script src="js/cart.js"></script>
+</body>
+
+</html>

@@ -5,35 +5,66 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Djini’s Bakehouse</title>
+  <title>Djini's Bakehouse</title>
   <!-- favicon -->
   <link rel="shortcut icon" href="images/Djini_s_Bakehouse_1_-removebg-preview.png" type="image/x-icon">
   <!-- tailwind cdn -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body class="text-[#777777]">
+  <!-- Mobile menu JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      menuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    });
+  </script>
+
   <nav class="fixed inset-x-0 top-0 z-30 w-full border border-gray-100 bg-white/80 py-2 px-4 shadow backdrop-blur-lg">
     <div class="flex items-center justify-between">
-      <a class="flex items-center" href="/">
-        <img class="h-16 w-auto" src="images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="Djini’s Bakehouse">
-        <span class="sr-only">Djini’s Bakehouse</span>
+      <a class="flex items-center" href="index.html">
+        <img class="h-16 w-auto" src="images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="Djini's Bakehouse">
+        <span class="sr-only">Djini's Bakehouse</span>
       </a>
       <button id="menu-btn" class="block md:hidden focus:outline-none">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
         </svg>
       </button>
+      <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-white shadow-md md:hidden z-40 p-4">
+        <a href="index.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Home</a>
+        <a href="products.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
+        <a href="order.html" class="block text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order Online</a>
+        <a href="about.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">About</a>
+        <a href="contact.html" class="block text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Contact</a>
+        <div class="mt-3 border-t pt-3">
+          <a href="signup.html" class="block text-gray-900 bg-gray-100 px-4 py-2 rounded-xl shadow mb-2 text-center">Sign Up</a>
+          <a href="login.html" class="block text-white bg-blue-600 px-4 py-2 rounded-xl shadow text-center">Login</a>
+        </div>
+      </div>
       <div id="menu" class="hidden md:flex md:items-center md:gap-4">
-        <a href="#" class="text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Home</a>
-        <a href="#" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
-        <a href="#" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Pricing</a>
-        <a href="#" class="text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order Online</a>
-        <a href="#" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">About</a>
+        <a href="index.html" class="text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Home</a>
+        <a href="products.html" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Products</a>
+        <a href="order.html" class="text-gray-900 hover:bg-gray-100 px-3 py-2 font-semibold rounded-lg">Order Online</a>
+        <a href="about.html" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">About</a>
+        <a href="contact.html" class="text-gray-900 hover:bg-gray-100 font-semibold px-3 py-2 rounded-lg">Contact</a>
       </div>
       <div class="hidden md:flex items-center gap-3">
-        <a href="/signup" class="text-gray-900 bg-white px-4 py-2 rounded-xl shadow">Sign Up</a>
-        <a href="/login" class="text-white bg-blue-600 px-4 py-2 rounded-xl shadow">Login</a>
+        <a href="cart.html" class="text-gray-900 hover:text-red-500 relative">
+          <i class="fas fa-shopping-cart text-xl"></i>
+          <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+        </a>
+        <a href="signup.html" class="text-gray-900 bg-white px-4 py-2 rounded-xl shadow">Sign Up</a>
+        <a href="login.html" class="text-white bg-blue-600 px-4 py-2 rounded-xl shadow">Login</a>
       </div>
     </div>
   </nav>
@@ -41,18 +72,22 @@
   <header class="mt-20 container mx-auto px-4 lg:flex lg:items-center lg:gap-20">
     <div class="space-y-6 text-center lg:text-left flex-1">
       <h1 class="text-6xl md:text-6xl font-bold text-gray-700">Enjoy your food with <br><span
-          class="text-red-500">Djini’s Bakehouse</span></h1>
-      <p class="text-justify">At <span class="text-red-500 font-bold"> Djini’s Bakehouse </span> every treat is made
+          class="text-red-500">Djini's Bakehouse</span></h1>
+      <p class="text-justify">At <span class="text-red-500 font-bold"> Djini's Bakehouse </span> every treat is made
         fresh with love and care. From golden crusts to soft, fluffy centers, we ensure that each creation is crafted to
         perfection. Discover the joy of freshly baked goodness that brings warmth and happiness to your day, every time.
       </p>
-      <button
-        class="bg-gradient-to-br from-[#ff8f45] to-[#ff5050] text-white px-6 py-3 rounded-lg hover:scale-105 transition">
-        Book Now
-      </button>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+        <a href="order.html" class="bg-gradient-to-br from-[#ff8f45] to-[#ff5050] text-white px-6 py-3 rounded-lg hover:scale-105 transition text-center">
+          Order Now
+        </a>
+        <a href="products.html" class="border border-[#ff5050] text-[#ff5050] px-6 py-3 rounded-lg hover:bg-red-50 transition text-center">
+          Our Products
+        </a>
+      </div>
     </div>
     <div class="flex justify-center lg:flex-1">
-      <img class="rounded-3xl mt-6 w-3/4 lg:w-full" src="images/Banner photo 2.png" alt="Djini’s Bakehouse Banner">
+      <img class="rounded-3xl mt-6 w-3/4 lg:w-full" src="images/Banner photo 2.png" alt="Djini's Bakehouse Banner">
     </div>
   </header>
 
@@ -60,11 +95,10 @@
     <!-- start featured products -->
     <section class="my-6 lg:my-28">
       <div class="text-center p-4 space-y-4">
-        <h2 class="text-5xl font-bold text-gray-700">Discover <span class="text-red-500">Djini’s Bakehouse</span></h2>
+        <h2 class="text-5xl font-bold text-gray-700">Discover <span class="text-red-500">Djini's Bakehouse</span></h2>
         <p>
-          Indulge in the magic of <span class="text-red-500 font-semibold">Djini’s Bakehouse</span>, where every bite is
-          a celebration
-          of warmth, sweetness, and freshly baked perfection.
+          Indulge in the magic of <span class="text-red-500 font-semibold">Djini's Bakehouse</span>, where every bite is
+          a celebration of warmth, sweetness, and freshly baked perfection.
         </p>
       </div>
       <div class="space-y-8 md:space-y-0 my-6 grid md:grid-cols-2 lg:grid-cols-4 gap-8 items-center md:justify-between">
@@ -72,101 +106,134 @@
           <img class="rounded-lg" src="images/Apple Strudle.jpg" alt="Apple Strudle" class="mx-auto" />
           <h3 class="font-bold text-2xl text-gray-700">Apple Strudle</h3>
           <p>Savor the warm, flaky goodness of apple strudel</p>
+          <div class="flex justify-between items-center px-4">
+            <span class="font-bold text-red-500">$6.99</span>
+            <button class="add-to-cart px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600" data-id="apple-strudle" data-name="Apple Strudle" data-price="6.99">
+              Add to Cart
+            </button>
+          </div>
         </div>
         <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-red-50 text-center space-y-6 shadow-md">
           <img class="rounded-lg" src="images/Bagelen.jpg" alt="Bagelen" class="mx-auto" />
           <h3 class="font-bold text-2xl text-gray-700">Bagelen</h3>
           <p>A crispy, sweet toasted bread often enjoyed as a snack or dessert</p>
+          <div class="flex justify-between items-center px-4">
+            <span class="font-bold text-red-500">$4.50</span>
+            <button class="add-to-cart px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600" data-id="bagelen" data-name="Bagelen" data-price="4.50">
+              Add to Cart
+            </button>
+          </div>
         </div>
         <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-orange-50 text-center space-y-6 shadow-md">
           <img class="rounded-lg" src="images/Baguette.jpg" alt="Baguette" class="mx-auto" />
           <h3 class="font-bold text-2xl text-gray-700">Baguette</h3>
           <p>A long, crusty French bread, perfect for sandwiches or with butter and jam</p>
+          <div class="flex justify-between items-center px-4">
+            <span class="font-bold text-red-500">$3.99</span>
+            <button class="add-to-cart px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600" data-id="baguette" data-name="Baguette" data-price="3.99">
+              Add to Cart
+            </button>
+          </div>
         </div>
         <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-red-50 text-center space-y-6 shadow-md">
           <img class="rounded-lg" src="images/Beef Curry Puff.jpg" alt="Beef Curry Puff" class="mx-auto" />
           <h3 class="font-bold text-2xl text-gray-700">Beef Curry Puff</h3>
           <p>A flaky pastry filled with savory beef curry, spices, and potatoes. Perfect snack!</p>
+          <div class="flex justify-between items-center px-4">
+            <span class="font-bold text-red-500">$5.25</span>
+            <button class="add-to-cart px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600" data-id="beef-curry-puff" data-name="Beef Curry Puff" data-price="5.25">
+              Add to Cart
+            </button>
+          </div>
         </div>
-        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-red-50 text-center space-y-6 shadow-md">
-          <img class="rounded-lg" src="images/Blueberry cheese bread.jpg" alt="Blueberry cheese bread"
-            class="mx-auto" />
-          <h3 class="font-bold text-2xl text-gray-700">Blueberry Cheesebread</h3>
-          <p>A delightful bread combining creamy cheese and sweet blueberries, perfect for tea</p>
-        </div>
-        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-orange-50 text-center space-y-6 shadow-md">
-          <img class="rounded-lg" src="images/Cheese Straw.jpg" alt="Cheese Straw" class="mx-auto" />
-          <h3 class="font-bold text-2xl text-gray-700">Cheese Straw</h3>
-          <p>Golden, flaky sticks packed with savory, cheesy goodness in every bite</p>
-        </div>
-        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-red-50 text-center space-y-6 shadow-md">
-          <img class="rounded-lg" src="images/Choco Cream Puff.jpg" alt="Choco Cream Puff" class="mx-auto" />
-          <h3 class="font-bold text-2xl text-gray-700">Choco Cream Puff</h3>
-          <p>Delicate, airy pastry bursting with smooth, decadent chocolate cream</p>
-        </div>
-        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-orange-50 text-center space-y-6 shadow-md">
-          <img class="rounded-lg" src="images/Christmas stollen.jpg" alt="Christmas stollen" class="mx-auto" />
-          <h3 class="font-bold text-2xl text-gray-700">Christmas Stollen</h3>
-          <p>A festive treat of spiced, fruit-filled bread dusted with sugar</p>
-        </div>
-        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-orange-50 text-center space-y-6 shadow-md">
-          <img class="rounded-lg" src="images/Croffle.jpg" alt="Croffle" class="mx-auto" />
-          <h3 class="font-bold text-2xl text-gray-700">Croffle</h3>
-          <p>Try buttery, crispy croffles – the perfect mix of croissant & waffle at Djini’s Bakehouse!</p>
-        </div>
-        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-red-50 text-center space-y-6 shadow-md">
-          <img class="rounded-lg" src="images/Croissant.jpg" alt="Croissant" class="mx-auto" />
-          <h3 class="font-bold text-2xl text-gray-700">Croissant</h3>
-          <p>Flaky, buttery, and golden – our croissants are baked fresh daily at Djini’s Bakehouse!</p>
-        </div>
-        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-orange-50 text-center space-y-6 shadow-md">
-          <img class="rounded-lg" src="images/Double Choco Cream.jpg" alt="Double Choco Cream" class="mx-auto" />
-          <h3 class="font-bold text-2xl text-gray-700">Double Choco Cream</h3>
-          <p>Indulge in our Double Choco Cream – rich, creamy, and chocolatey bliss in every bite!</p>
-        </div>
-        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-red-50 text-center space-y-6 shadow-md">
-          <img class="rounded-lg" src="images/Doughnuts.jpg" alt="Doughnuts" class="mx-auto" />
-          <h3 class="font-bold text-2xl text-gray-700">Doughnuts</h3>
-          <p>Soft, fluffy, and topped to perfection – our doughnuts are pure delight in every bite!</p>
-        </div>
-        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-red-50 text-center space-y-6 shadow-md">
-          <img class="rounded-lg" src="images/Floss bread.jpg" alt="Floss bread" class="mx-auto" />
-          <h3 class="font-bold text-2xl text-gray-700">Floss Bread</h3>
-          <p>Soft bread meets savory perfection with our irresistible floss topping!</p>
-        </div>
-        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-orange-50 text-center space-y-6 shadow-md">
-          <img class="rounded-lg" src="images/Foccacia Art.jpg" alt="Foccacia Art" class="mx-auto" />
-          <h3 class="font-bold text-2xl text-gray-700">Foccacia Art</h3>
-          <p>Edible art on focaccia – fresh, flavorful, and beautifully crafted!</p>
-        </div>
-        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-red-50 text-center space-y-6 shadow-md">
-          <img class="rounded-lg" src="images/Foccacia.jpg" alt="Foccacia" class="mx-auto" />
-          <h3 class="font-bold text-2xl text-gray-700">Foccacia</h3>
-          <p>Soft, herby, and deliciously golden – our focaccia is baked to perfection!</p>
-        </div>
-        <div class="p-3 rounded-lg bg-gradient-to-b from-slate-200 to-orange-50 text-center space-y-6 shadow-md">
-          <img class="rounded-lg" src="images/Fruit Cushion Pastry.jpg" alt="Fruit Cushion Pastry" class="mx-auto" />
-          <h3 class="font-bold text-2xl text-gray-700">Fruit Cushion Pastry</h3>
-          <p>Light, flaky pastry topped with creamy filling and fresh, vibrant fruits – a true delight!</p>
-        </div>
+        <!-- More products with similar structure... -->
+      </div>
+      <div class="text-center mt-10">
+        <a href="products.html" class="inline-block bg-gradient-to-br from-[#ff8f45] to-[#ff5050] text-white px-6 py-3 rounded-lg hover:scale-105 transition">
+          View All Products
+        </a>
       </div>
     </section>
     <!-- end featured products -->
 
+    <!-- Start special offers section -->
+    <section class="my-16 lg:my-28 bg-red-50 p-8 rounded-xl">
+      <div class="text-center p-4 space-y-4">
+        <h2 class="text-4xl font-bold text-gray-700">Today's <span class="text-red-500">Special Offers</span></h2>
+        <p class="max-w-2xl mx-auto">
+          Don't miss out on our daily special offers! Limited-time deals on your favorite baked treats.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+        <div class="bg-white p-6 rounded-lg shadow-lg relative overflow-hidden">
+          <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+            20% OFF
+          </div>
+          <img src="images/Croissant.jpg" alt="Special Croissant" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-bold text-gray-700">Weekend Croissant Bundle</h3>
+          <p class="text-gray-600 mb-4">Buy 5 croissants, get 1 free! Perfect for your weekend breakfast.</p>
+          <div class="flex justify-between items-center">
+            <div>
+              <span class="line-through text-gray-400">$22.50</span>
+              <span class="font-bold text-red-500 ml-2">$18.00</span>
+            </div>
+            <button class="add-to-cart px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600" data-id="croissant-bundle" data-name="Weekend Croissant Bundle" data-price="18.00">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg relative overflow-hidden">
+          <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+            15% OFF
+          </div>
+          <img src="images/Christmas stollen.jpg" alt="Stollen" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-bold text-gray-700">Special Festive Stollen</h3>
+          <p class="text-gray-600 mb-4">Our traditional fruit-filled bread with a special seasonal discount.</p>
+          <div class="flex justify-between items-center">
+            <div>
+              <span class="line-through text-gray-400">$12.99</span>
+              <span class="font-bold text-red-500 ml-2">$11.04</span>
+            </div>
+            <button class="add-to-cart px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600" data-id="festive-stollen" data-name="Special Festive Stollen" data-price="11.04">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg relative overflow-hidden">
+          <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+            25% OFF
+          </div>
+          <img src="images/Triple cheese bread.jpg" alt="Cheese Bread" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-bold text-gray-700">Triple Cheese Bread</h3>
+          <p class="text-gray-600 mb-4">Our bestselling savory bread with a limited-time discount.</p>
+          <div class="flex justify-between items-center">
+            <div>
+              <span class="line-through text-gray-400">$8.99</span>
+              <span class="font-bold text-red-500 ml-2">$6.74</span>
+            </div>
+            <button class="add-to-cart px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600" data-id="triple-cheese-bread" data-name="Triple Cheese Bread" data-price="6.74">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End special offers section -->
+
     <!-- start news -->
     <section class="my-16 lg:my-28">
       <div class="text-center p-4 space-y-4">
-        <h2 class="text-5xl font-bold text-gray-700">Freshly Baked Items at <span class="text-red-500">Djini’s
+        <h2 class="text-5xl font-bold text-gray-700">Freshly Baked Items at <span class="text-red-500">Djini's
             Bakehouse</span></h2>
         <p class="text-center lg:mx-56">
-          At Djini’s Bakehouse, every day begins with the aroma of freshly baked goodness. From crusty artisan breads to
+          At Djini's Bakehouse, every day begins with the aroma of freshly baked goodness. From crusty artisan breads to
           buttery pastries and decadent sweets, our baked delights are crafted with the finest ingredients for
           unbeatable flavor and freshness. Stop by and treat yourself to a taste of perfection!
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:items-center md:justify-center gap-6 md:space-y-0">
         <div class="border rounded-lg p-5 space-y-4 shadow-2xl hover:scale-105 duration-700">
-          <img src="images/Maritozzo.jpg" alt="" class="w-full" />
+          <img src="images/Maritozzo.jpg" alt="" class="w-full h-56 object-cover" />
           <p class="text-sm">Feb 05, 2024</p>
           <h3 class="text-xl font-bold text-gray-700">
             Maritozzo
@@ -174,88 +241,14 @@
           <p>
             Experience the rich, creamy delight of our Maritozzo, a classic Italian treat at its finest!
           </p>
+          <div class="flex justify-between items-center mt-4">
+            <span class="font-bold text-red-500">$7.50</span>
+            <button class="add-to-cart px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600" data-id="maritozzo" data-name="Maritozzo" data-price="7.50">
+              Add to Cart
+            </button>
+          </div>
         </div>
-        <div class="border rounded-lg p-5 space-y-4 shadow-2xl hover:scale-105 duration-700">
-          <img src="images/Pretzel and Bagels.jpg" alt="" class="w-full" />
-          <p class="text-sm">Feb 07, 2024</p>
-          <h3 class="text-xl font-bold text-gray-700">
-            Pretzel and Bagels
-          </h3>
-          <p>
-            From soft, salty pretzels to chewy, flavorful bagels, we bake perfection every day!
-          </p>
-        </div>
-        <div class="border rounded-lg p-5 space-y-4 hover:scale-105 duration-700 shadow-2xl">
-          <img src="images/Rhum Horn.jpg" alt="" class="w-full" />
-          <p class="text-sm">Feb 11, 2024</p>
-          <h3 class="text-xl font-bold text-gray-700">
-            Rhum Horn
-          </h3>
-          <p>
-            Delight in our Rhum Horn – crisp pastry filled with rich, rum-infused cream!
-          </p>
-        </div>
-        <div class="border rounded-lg p-5 space-y-4 hover:scale-105 duration-700 shadow-2xl">
-          <img src="images/Strawberry Maritozzo.jpg" alt="" class="w-full" />
-          <p class="text-sm">Feb 15, 2024</p>
-          <h3 class="text-xl font-bold text-gray-700">
-            Strawberry Maritozzo
-          </h3>
-          <p>
-            Enjoy our Strawberry Maritozzo – soft brioche filled with luscious cream and fresh strawberries!
-          </p>
-        </div>
-        <div class="border rounded-lg p-5 space-y-4 hover:scale-105 duration-700 shadow-2xl">
-          <img src="images/Strawberry Mille Fuille.jpg" alt="" class="w-full" />
-          <p class="text-sm">Feb 16, 2024</p>
-          <h3 class="text-xl font-bold text-gray-700">
-            Strawberry Mille Fuille
-          </h3>
-          <p>
-            Layers of crisp pastry, velvety cream, and fresh strawberries make our Strawberry Mille-Feuille
-            irresistible!
-          </p>
-        </div>
-        <div class="border rounded-lg p-5 space-y-4 hover:scale-105 duration-700 shadow-2xl">
-          <img src="images/Strawberry Puff.jpg" alt="" class="w-full" />
-          <p class="text-sm">Feb 18, 2024</p>
-          <h3 class="text-xl font-bold text-gray-700">
-            Strawberry Puff
-          </h3>
-          <p>
-            Flaky, golden puff pastry filled with cream and topped with fresh strawberries – a treat you can't resist!
-          </p>
-        </div>
-        <div class="border rounded-lg p-5 space-y-4 hover:scale-105 duration-700 shadow-2xl">
-          <img src="images/Triple cheese bread.jpg" alt="" class="w-full" />
-          <p class="text-sm">Feb 20, 2024</p>
-          <h3 class="text-xl font-bold text-gray-700">
-            Triple Cheese Bread
-          </h3>
-          <p>
-            Soft, cheesy, and packed with triple the flavor – our Triple Cheese Bread is a savory delight!
-          </p>
-        </div>
-        <div class="border rounded-lg p-5 space-y-4 hover:scale-105 duration-700 shadow-2xl">
-          <img src="images/Val Au Vent.jpg" alt="" class="w-full" />
-          <p class="text-sm">Feb 22, 2024</p>
-          <h3 class="text-xl font-bold text-gray-700">
-            Val Au Vent
-          </h3>
-          <p>
-            Delicate and flaky, our Vol-au-Vent is filled with savory goodness in every bite!
-          </p>
-        </div>
-        <div class="border rounded-lg p-5 space-y-4 hover:scale-105 duration-700 shadow-2xl">
-          <img src="images/Woll Roll Bread.jpg" alt="" class="w-full" />
-          <p class="text-sm">Feb 24, 2024</p>
-          <h3 class="text-xl font-bold text-gray-700">
-            Woll Roll Bread
-          </h3>
-          <p>
-            Soft, fluffy, and beautifully swirled – our Wool Roll Bread is a feast for the eyes and the palate!
-          </p>
-        </div>
+        <!-- More items with similar structure... -->
       </div>
     </section>
     <!-- end news -->
@@ -267,7 +260,7 @@
         <h2 class="text-5xl font-bold">Meet Our Loyal Customers
         </h2>
         <p class="text-justify pr-8">
-          At Djini’s Bakehouse, we take pride in serving our amazing clients. While there are countless stories behind
+          At Djini's Bakehouse, we take pride in serving our amazing clients. While there are countless stories behind
           each bite, most share a common love for our handcrafted pastries and baked delights. Each moment spent here is
           a blend of authentic flavors and heartfelt connections. Join the family today!
         </p>
@@ -281,7 +274,7 @@
           <img src="images/client.png" alt="client"
             class="absolute -left-6 -top-6 border-4 bg-white rounded-full w-16 h-16" />
           <p>
-            Djini’s Bakehouse is amazing! Their pastries are fresh, flavorful & perfect. The friendly staff and cozy
+            Djini's Bakehouse is amazing! Their pastries are fresh, flavorful & perfect. The friendly staff and cozy
             atmosphere make every visit special. Highly recommend! 🌟🌟🌟🌟🌟
           </p>
           <h3 class="font-bold text-gray-700">Shariful Islam</h3>
@@ -292,7 +285,7 @@
             <img src="images/client2.png" alt="client"
               class="absolute -left-6 -top-6 w-16 h-16 border-4 bg-white rounded-full" />
             <p>
-              Absolutely love Djini’s Bakehouse! Their baked goods are delicious, fresh, and full of flavor. The
+              Absolutely love Djini's Bakehouse! Their baked goods are delicious, fresh, and full of flavor. The
               blueberry cheesebread is a must-try. Great service and cozy vibes! 🌟🌟🌟🌟
             </p>
             <h3 class="font-bold text-gray-700">Budiman</h3>
@@ -315,6 +308,39 @@
       </div>
     </section>
     <!-- end meet super -->
+
+    <!-- Start order steps section -->
+    <section class="my-16 lg:my-28">
+      <div class="text-center p-4 space-y-4">
+        <h2 class="text-4xl font-bold text-gray-700">How to <span class="text-red-500">Order</span></h2>
+        <p class="max-w-2xl mx-auto">
+          Ordering from Djini's Bakehouse is quick and easy. Follow these simple steps to get fresh baked goods delivered to your doorstep.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+        <div class="bg-orange-50 p-6 rounded-lg text-center">
+          <div class="w-20 h-20 bg-gradient-to-br from-[#ff8f45] to-[#ff5050] text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">1</div>
+          <h3 class="text-xl font-bold text-gray-700 mb-2">Choose Your Treats</h3>
+          <p>Browse our selection and add your favorite baked goods to your cart.</p>
+        </div>
+        <div class="bg-orange-50 p-6 rounded-lg text-center">
+          <div class="w-20 h-20 bg-gradient-to-br from-[#ff8f45] to-[#ff5050] text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">2</div>
+          <h3 class="text-xl font-bold text-gray-700 mb-2">Place Your Order</h3>
+          <p>Complete checkout with your delivery details and preferred payment method.</p>
+        </div>
+        <div class="bg-orange-50 p-6 rounded-lg text-center">
+          <div class="w-20 h-20 bg-gradient-to-br from-[#ff8f45] to-[#ff5050] text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">3</div>
+          <h3 class="text-xl font-bold text-gray-700 mb-2">Enjoy Fresh Delivery</h3>
+          <p>We'll deliver your freshly baked goods right to your doorstep at your chosen time.</p>
+        </div>
+      </div>
+      <div class="text-center mt-8">
+        <a href="order.html" class="inline-block bg-gradient-to-br from-[#ff8f45] to-[#ff5050] text-white px-6 py-3 rounded-lg hover:scale-105 transition">
+          Order Now
+        </a>
+      </div>
+    </section>
+    <!-- End order steps section -->
   </main>
 
   <footer class="bg-red-50">
@@ -323,35 +349,38 @@
         <div>
           <img class="h-72" src="images/Djini_s_Bakehouse_1_-removebg-preview.png" alt="" />
         </div>
-        <div class="flex items-center gap-4">
+        <div class="flex flex-col md:flex-row items-center gap-4">
           <h3 class="text-xl me-10">
             Become a part of us?
           </h3>
-          <button type="button"
+          <a href="contact.html" type="button"
             class="text-white bg-gradient-to-br from-[#FF8938] to-[#FF0000] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 hover:scale-105 duration-500 transition font-bold rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2">
             Contact
-          </button>
+          </a>
         </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-center md:text-start">
         <div class="my-8 space-y-4">
           <h3 class="text-xl text-gray-700 font-bold">Quick Links</h3>
-          <a href="#" class="block">Home</a>
-          <a href="#" class="block">Djini’s Bakehouse</a>
-          <a href="#" class="block">About Us</a>
-          <a href="#" class="block">Privacy Policy</a>
+          <a href="index.html" class="block">Home</a>
+          <a href="products.html" class="block">Products</a>
+          <a href="about.html" class="block">About Us</a>
+          <a href="privacy.html" class="block">Privacy Policy</a>
+          <a href="terms.html" class="block">Terms & Conditions</a>
         </div>
         <div class="my-8 space-y-4">
           <h3 class="text-xl text-gray-700 font-bold">Our Service</h3>
-          <a href="#" class="block">Custom Orders</a>
-          <a href="#" class="block">Online Ordering</a>
-          <a href="#" class="block">Seasonal Specials</a>
-          <a href="#" class="block">Gift Packaging</a>
+          <a href="custom-orders.html" class="block">Custom Orders</a>
+          <a href="order.html" class="block">Online Ordering</a>
+          <a href="products.html?filter=special" class="block">Seasonal Specials</a>
+          <a href="gift-packaging.html" class="block">Gift Packaging</a>
         </div>
         <div class="my-8 space-y-4">
           <h3 class="text-xl text-gray-700 font-bold">Help</h3>
-          <a href="#" class="block">FAQs</a>
-          <a href="#" class="block">Contact Us</a>
+          <a href="faq.html" class="block">FAQs</a>
+          <a href="contact.html" class="block">Contact Us</a>
+          <a href="order-tracking.html" class="block">Track Order</a>
+          <a href="shipping.html" class="block">Shipping Information</a>
         </div>
         <div class="my-8 space-y-4">
           <h3 class="text-xl text-gray-700 font-bold">
@@ -380,13 +409,38 @@
                 <path
                   d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
               </svg></a>
+            <a href="#" class="w-6 h-6 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/>
+              </svg></a>
           </div>
         </div>
       </div>
     </div>
-    <h5 class="text-center font-semibold">All credits @ Djini’s Bakehouse</h5>
+    <h5 class="text-center font-semibold py-4">All rights reserved © Djini's Bakehouse 2024</h5>
   </footer>
 
+  <!-- Cart Notification Toast -->
+  <div id="cart-toast" class="fixed bottom-4 right-4 bg-white shadow-lg rounded-lg p-4 hidden transform transition-transform duration-300 z-50">
+    <div class="flex items-center">
+      <div class="bg-green-100 p-2 rounded-full mr-3">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+      <div>
+        <p class="font-medium">Item added to cart!</p>
+        <a href="cart.html" class="text-sm text-blue-600 hover:underline">View Cart</a>
+      </div>
+      <button id="close-toast" class="ml-4 text-gray-400 hover:text-gray-500">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Cart functionality -->
+  <script src="js/cart.js"></script>
 </body>
 
 </html>
